@@ -1,0 +1,32 @@
+stages:
+  - on-mr
+  - production-release
+
+on-mr-job:
+  image: nixos/nix
+  stage: on-mr
+  rules:
+    - if: $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
+  script:
+    - nix --extra-experimental-features 'nix-command flakes' --accept-flake-config develop -c npm install
+    - echo "PUBLIC_API_URL=https://api.wikimusic.jointhefreeworld.org" >> .env
+    - nix --extra-experimental-features 'nix-command flakes' --accept-flake-config develop -c npm run build
+
+production-release-job:
+  image: nixos/nix
+  stage: production-release
+  rules:
+    - if: $CI_COMMIT_BRANCH == "trunk"
+  artifacts:
+    paths:
+      - master-release.tar.gz
+  before_script:
+    - mkdir /root/.aws && touch /root/.aws/credentials
+    - echo "[default]" >> /root/.aws/credentials
+    - echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> /root/.aws/credentials
+    - echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> /root/.aws/credentials
+  script:
+    - nix --extra-experimental-features 'nix-command flakes' --accept-flake-config develop -c npm install
+    - echo "PUBLIC_API_URL=https://api.wikimusic.jointhefreeworld.org" >> .env
+    - nix --extra-experimental-features 'nix-command flakes' --accept-flake-config develop -c npm run build
+    - nix --extra-experimental-features 'nix-command flakes' --accept-flake-config develop -c make aws-upload
