@@ -12,5 +12,5 @@ aws-upload:
 deploy:
 	cd /etc/byggsteg/job-clone/carvoeiro-water-fun/trunk && sudo npm install
 	cd /etc/byggsteg/job-clone/carvoeiro-water-fun/trunk && sudo npm run build
-	sudo rm -rf /srv/http/carvoeirowaterfun.com/*
-	sudo cp -Rf /etc/byggsteg/job-clone/carvoeiro-water-fun/trunk/build/* /srv/http/carvoeirowaterfun.com/
+	sudo rm -rfv /srv/http/carvoeirowaterfun.com/*
+	sudo cp -Rfv /etc/byggsteg/job-clone/carvoeiro-water-fun/trunk/build/* /srv/http/carvoeirowaterfun.com/
