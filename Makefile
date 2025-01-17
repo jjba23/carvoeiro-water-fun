@@ -9,3 +9,8 @@ aws-upload:
 	aws s3 rm s3://carvoeirowaterfun.com --recursive
 	aws s3 cp build s3://carvoeirowaterfun.com/ --recursive
 	aws s3 ls s3://carvoeirowaterfun.com/
+deploy:
+	cd /etc/byggsteg/job-clone/carvoeiro-water-fun/trunk && sudo npm install
+	cd /etc/byggsteg/job-clone/carvoeiro-water-fun/trunk && sudo npm run build
+	sudo rm -rf /srv/http/carvoeirowaterfun.com/*
+	sudo cp -Rf /etc/byggsteg/job-clone/carvoeiro-water-fun/trunk/build/* /srv/http/carvoeirowaterfun.com/
