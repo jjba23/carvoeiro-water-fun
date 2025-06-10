@@ -44,5 +44,9 @@
     "ky": "^1.8.1",
     "svelte-sonner": "^0.3.28"
   },
-  "type": "module"
+  "type": "module",
+  "exports": {
+   ".": {
+     "svelte": "./dist/index.js"
+   }
 }
