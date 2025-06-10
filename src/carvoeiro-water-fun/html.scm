@@ -308,7 +308,7 @@ formatting."
                (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
                                                 justify-center items-center))))
                     ,(em (G_ "find the source code here:"))
-                    ,(a "codeberg.org/jjba23/carvoeiro-water-fun"
+                    ,(a "https://codeberg.org/jjba23/carvoeiro-water-fun"
                         #:size 'text-sm)))))
 
 (define* (carvoeiro-water-fun-main-body)
