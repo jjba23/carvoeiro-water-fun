@@ -264,8 +264,7 @@ formatting."
 ;; ================================
 
 (begin
-  (define* (carvoeiro-water-fun-html-template 
-                                              #:key title body)
+  (define* (carvoeiro-water-fun-html-template #:key title body)
     `(html (head (title ,title)
                  (link (@ (rel preconnect)
                           (href "https://fonts.googleapis.com")))
@@ -299,16 +298,16 @@ formatting."
   (export carvoeiro-water-fun-html-template))
 
 (define* (carvoeiro-water-fun-page-footer)
-  `(,(hr)
-    (div (@ (class ,(mk-class '(block text-center font-sans))))
-         (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
-                                          justify-center))))
-              ,(em (G_ "this website was rendered with Lisp (Guile Scheme) code")))
-         (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
-                                          justify-center items-center))))
-              ,(em (G_ "find the source code here:"))
-              ,(a "codeberg.org/jjba23/carvoeiro-water-fun"
-                  #:size 'text-sm)))))
+  `(,(hr) (div (@ (class ,(mk-class '(block text-center font-sans))))
+               (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
+                                                justify-center))))
+                    ,(em (G_
+                          "this website was rendered with Lisp (Guile Scheme) code")))
+               (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
+                                                justify-center items-center))))
+                    ,(em (G_ "find the source code here:"))
+                    ,(a "codeberg.org/jjba23/carvoeiro-water-fun"
+                        #:size 'text-sm)))))
 
 (define* (carvoeiro-water-fun-main-body)
   `("TEST"))
@@ -317,6 +316,5 @@ formatting."
   (with-output-to-string (lambda ()
                            (sxml->xml (carvoeiro-water-fun-html-template
                                        #:title "Carvoeiro Water Fun"
-                                       #:body (carvoeiro-water-fun-main-body
-                                               ))))))
+                                       #:body (carvoeiro-water-fun-main-body))))))
 

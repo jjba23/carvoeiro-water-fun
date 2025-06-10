@@ -15,7 +15,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with carvoeiro-water-fun. If not, see <https://www.gnu.org/licenses/>.
 
-
 (define-module (carvoeiro-water-fun renderer)
   #:declarative? #f
   #:use-module (carvoeiro-water-fun html)
@@ -29,7 +28,7 @@
   (log-info "\tresources-dir: ~a" resources-dir)
   (log-info "\toutput-dir: ~a" output-dir)
 
-  (let* ((clean-dist-cmd (format #f "rm -rfv ~a" output-dir ))
+  (let* ((clean-dist-cmd (format #f "rm -rfv ~a" output-dir))
          (mkdir-dist-cmd (format #f "mkdir -p ~a/js" output-dir))
          (cp-to-dist-cmd (format #f
                           "cp -rfv ~a/js/tailwind.js ~a/js/tailwind.js"

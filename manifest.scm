@@ -34,7 +34,6 @@
              ((guix licenses)
               #:prefix license:))
 
-
 (define-public guile-hygguile
   (package
     (name "guile-hygguile")
@@ -62,7 +61,6 @@
         hygge + guile = hygguile")
     (license license:lgpl3+)))
 
-(packages->manifest (list (specification->package "make") guile-next
-                          darkhttpd guile-ares-rs
-                          guile-hygguile))
+(packages->manifest (list (specification->package "make") guile-next darkhttpd
+                          guile-ares-rs guile-hygguile))
 
