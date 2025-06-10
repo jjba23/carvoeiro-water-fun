@@ -20,6 +20,7 @@
   #:use-module (ice-9 getopt-long)
   #:use-module (carvoeiro-water-fun prelude)
   #:use-module (carvoeiro-water-fun renderer)
+  #:use-module (kracht prelude)
   #:export (main))
 
 (define* (main #:key (args (command-line)))

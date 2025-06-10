@@ -33,11 +33,12 @@
   #:use-module (ice-9 textual-ports)
   #:use-module (ice-9 time)
   #:use-module (hygguile hygguile)
+  #:use-module (kracht prelude)
   #:use-module (carvoeiro-water-fun prelude)
   #:use-module (ice-9 string-fun)
   #:use-module (ice-9 iconv)
   #:use-module (ice-9 threads)
-  #:export (carvoeiro-water-fun carvoeiro-water-fun-main-body
+  #:export (carvoeiro-water-fun carvoeiro-water-fun-main-body asset-library
                                 carvoeiro-water-fun-page-footer
                                 carvoeiro-water-fun-html-template))
 
@@ -263,19 +264,22 @@ formatting."
 
 ;; ================================
 
-(begin
-  (define* (carvoeiro-water-fun-html-template #:key title body)
-    `(html (head (title ,title)
-                 (link (@ (rel preconnect)
-                          (href "https://fonts.googleapis.com")))
-                 (link (@ (rel preconnect)
-                          (href "https://fonts.gstatic.com")
-                          (crossorigin "")))
-                 (link (@ (rel stylesheet)
-                          (href
-                           "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap")))
-                 (style (@ (type "text/tailwindcss"))
-                  "
+(define-public asset-library
+  (build-asset-library '("resources/css/phosphor.css"
+                         "resources/js/tailwind.js")))
+
+(define* (carvoeiro-water-fun-html-template #:key title body)
+  `(html (head (title ,title)
+               (link (@ (rel preconnect)
+                        (href "https://fonts.googleapis.com")))
+               (link (@ (rel preconnect)
+                        (href "https://fonts.gstatic.com")
+                        (crossorigin "")))
+               (link (@ (rel stylesheet)
+                        (href
+                         "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap")))
+               (style (@ (type "text/tailwindcss"))
+                "
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
@@ -283,19 +287,17 @@ formatting."
   --font-mono: \"IBM Plex Mono\", monospace;
 }
 ")
-                 (link (@ (rel "stylesheet")
-                          (href
-                           "https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css")))
-                 (meta (@ (name "viewport")
-                          (content "width=device-width, initial-scale=1.0")))
-                 (meta (@ (charset "UTF-8")))
-                 (script (@ (src "js/tailwind.js")) ()))
-           (body (@ (class "break-words"))
-                 (div (@ (class ,(mk-class '(container mx-auto py-4 sm:py-6
-                                                       px-3 sm:px-6))))
-                      ,@body
-                      ,(carvoeiro-water-fun-page-footer)))))
-  (export carvoeiro-water-fun-html-template))
+               (style ,(assoc-ref asset-library "resources/css/phosphor.css"))
+               (meta (@ (name "viewport")
+                        (content "width=device-width, initial-scale=1.0")))
+               (meta (@ (charset "UTF-8")))
+               (script ,(assoc-ref asset-library "resources/js/tailwind.js"))
+               (script (@ (src "js/tailwind.js")) ()))
+         (body (@ (class "break-words"))
+               (div (@ (class ,(mk-class '(container mx-auto py-4 sm:py-6 px-3
+                                                     sm:px-6))))
+                    ,@body
+                    ,(carvoeiro-water-fun-page-footer)))))
 
 (define* (carvoeiro-water-fun-page-footer)
   `(,(hr) (div (@ (class ,(mk-class '(block text-center font-sans))))
@@ -310,7 +312,21 @@ formatting."
                         #:size 'text-sm)))))
 
 (define* (carvoeiro-water-fun-main-body)
-  `("TEST"))
+  `((div ,(h1 (G_ "Carvoeiro"))
+         ,(h1 (G_ "Water Fun")))
+    (span "⚓")
+    ,(p (G_
+         "Book a boat tour around the beautiful cliffs and caves of the Algarve, in the region of Carvoeiro, Benagil, or take a Kayak tour with us.")
+        #:weight 'font-light)
+    ,(p (G_
+         "Here you can find kayak tours and rentals of nautical equipment to enjoy relaxing moments of leisure with family and friends.")
+        #:weight 'font-light)
+    ,(icon-button #:icon 'calendar
+                  #:content (G_ "Book Now")
+                  #:background '(bg-green-700)
+                  #:color '(text-stone-200)
+                  #:icon-css '(text-stone-100 text-xl)
+                  #:hover-background '(hover:bg-green-900))))
 
 (define* (carvoeiro-water-fun)
   (with-output-to-string (lambda ()
