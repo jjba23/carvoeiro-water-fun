@@ -311,22 +311,59 @@ formatting."
                     ,(a "https://codeberg.org/jjba23/carvoeiro-water-fun"
                         #:size 'text-sm)))))
 
+(define* (mk-header-img src)
+  `((img (@ (class ,(mk-class '(h-auto max-h-80 max-w-full w-full sm:w-1/2 md:w-1/3
+                                       rounded-xl)))
+            (src ,src)))))
+
 (define* (carvoeiro-water-fun-main-body)
-  `((div ,(h1 (G_ "Carvoeiro"))
-         ,(h1 (G_ "Water Fun")))
-    (span "⚓")
-    ,(p (G_
-         "Book a boat tour around the beautiful cliffs and caves of the Algarve, in the region of Carvoeiro, Benagil, or take a Kayak tour with us.")
-        #:weight 'font-light)
-    ,(p (G_
-         "Here you can find kayak tours and rentals of nautical equipment to enjoy relaxing moments of leisure with family and friends.")
-        #:weight 'font-light)
-    ,(icon-button #:icon 'calendar
-                  #:content (G_ "Book Now")
-                  #:background '(bg-green-700)
-                  #:color '(text-stone-200)
-                  #:icon-css '(text-stone-100 text-xl)
-                  #:hover-background '(hover:bg-green-900))))
+  `((div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-2))))
+         ,(h1 (G_ "Carvoeiro"))
+         ,(h1 (G_ "Water Fun"))
+         (span (@ (class ,(mk-class '(text-3xl)))) "⚓"))
+    
+    (div (@ (class ,(mk-class '(my-3 max-w-prose flex flex-col gap-3))))
+         ,(p (G_
+              "Book a boat tour around the beautiful cliffs and caves of the Algarve, in the region of Carvoeiro, Benagil, or take a Kayak tour with us.")
+             #:weight 'font-light)
+             (div (@ (class ,(mk-class '(my-3 flex flex-row flex-wrap gap-4))))
+         ,(a (icon-button #:icon 'sailboat
+                          #:content (G_ "About the Boat Tour")
+                          #:background '(bg-teal-700)
+                          #:color '(text-stone-200)
+                          #:icon-css '(text-stone-100 text-xl)
+                          #:hover-background '(hover:bg-teal-900))
+             #:href "/services/speedboat")
+         ,(a (icon-button #:icon 'calendar
+                          #:content (G_ "Book Now")
+                          #:background '(bg-green-700)
+                          #:color '(text-stone-200)
+                          #:icon-css '(text-stone-100 text-xl)
+                          #:hover-background '(hover:bg-green-900))
+             #:href "/request-reservation/boat-tour"))
+         ,(p (G_
+              "Here you can find kayak tours and rentals of nautical equipment to enjoy relaxing moments of leisure with family and friends.")
+             #:weight 'font-light))
+
+    ,(hr)
+
+    (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-2 items-center
+                                     justify-center))))
+         ,(mk-header-img "/img/FB_IMG_1719434096367.jpg")
+         ,(mk-header-img "/img/car2.jpeg")
+         ,(mk-header-img "/img/barco-scaled.jpg"))
+    ,(hr)
+    (div (@(class ,(mk-class '(my-3)))) ,(h3 (G_ "Enjoy Algarve's spectacular coast"))
+         (div (@ (class ,(mk-class '(my-3 max-w-prose flex flex-col gap-3))))
+              ,(p (G_
+                   "Take a boat tour with us, or row in a kayak, and make your way to the many beautiful caves in the Algarve's coastline.")
+                  #:weight 'font-light)
+              ,(p (G_
+                   "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our coasts, and add to the magical experience of a great holiday here.")
+                  #:weight 'font-light)
+              ,(p (G_
+                   "The Algarve’s coastline is known for its limestone cliffs, rock formations, grottos, and many sea caves. While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
+                  #:weight 'font-light)))))
 
 (define* (carvoeiro-water-fun)
   (with-output-to-string (lambda ()

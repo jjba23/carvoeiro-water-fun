@@ -39,6 +39,9 @@
                           "cp -rfv ~a/css ~a/css"
                           resources-dir output-dir)
                           (format #f
+                          "cp -rfv ~a/img ~a/img"
+                          resources-dir output-dir)
+                          (format #f
                           "cp -rfv ~a/ttf ~a/ttf"
                           resources-dir output-dir))))
     (log-info "executing: ~a" clean-dist-cmd)
