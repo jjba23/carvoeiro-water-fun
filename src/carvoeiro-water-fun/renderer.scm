@@ -55,3 +55,4 @@
       (lambda ()
         (display (carvoeiro-water-fun))))
     (log-info "Completed rendering of page")))
+
