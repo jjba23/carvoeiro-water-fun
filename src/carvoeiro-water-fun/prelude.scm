@@ -26,7 +26,8 @@
   #:use-module (ice-9 popen)
   #:use-module (ice-9 textual-ports)
   #:use-module (ice-9 regex)
-  #:export (
+  #:export (setup-i18n
+            G_
                         mk-class
                         syscall
                         log-message
@@ -34,6 +35,17 @@
                         log-info
                         log-error))
 
+(define (G_ msg)
+  (gettext msg))
+
+(define (setup-i18n locale)
+  (catch #t
+         (lambda ()
+           (setlocale LC_MESSAGES (format #f "~a.UTF-8" locale))
+           (bindtextdomain "carvoeiro-water-fun" "./resources/locale")
+           (textdomain "carvoeiro-water-fun"))
+         (lambda (key . args)
+           (display (format #f "error setting i18n up: ~a: ~a" key args)))))
 
 ;; mk-class: Convert a list of symbols into a CSS `class` attribute pair.
 ;;

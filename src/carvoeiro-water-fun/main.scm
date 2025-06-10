@@ -28,25 +28,17 @@
                         (output-dir (single-char #\o)
                                     (value #t))
                         (resources-dir (single-char #\r)
-                                       (value #t))
-                        (persona-file (single-char #\p)
-                                      (value #t)
-                                      (required? #t))))
+                                       (value #t))))
          
          (options (getopt-long args option-spec))
-         (persona-file (option-ref options
-                                   'persona-file #f))
          (output-dir (option-ref options
                                  'output-dir "./dist"))
          (resources-dir (option-ref options
                                     'resources-dir #f))
          (locale (option-ref options
-                             'locale "en")))
-    (log-info
-     "Carvoeiro Water Fun:")
-    (render-page
-                       #:locale (string->symbol locale)
-                       #:output-dir output-dir
-                       #:resources-dir resources-dir
-)))
+                             'locale "en_US")))
+    (log-info "Carvoeiro Water Fun:")
+    (render-page #:locale locale
+                 #:output-dir output-dir
+                 #:resources-dir resources-dir)))
 

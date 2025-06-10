@@ -23,48 +23,17 @@
   #:export (render-page))
 
 (define* (render-page #:key locale output-dir resources-dir)
+  (setup-i18n locale)
   (log-info "Start rendering with settings:")
   (log-info "\tlocale: ~a" locale)
   (log-info "\tresources-dir: ~a" resources-dir)
   (log-info "\toutput-dir: ~a" output-dir)
 
-  ;; choose person to generate curriculum vitae for
-  (load persona-file)
-
   (let* ((clean-dist-cmd (format #f "rm -rfv ~a" output-dir ))
          (mkdir-dist-cmd (format #f "mkdir -p ~a/js" output-dir))
          (cp-to-dist-cmd (format #f
                           "cp -rfv ~a/js/tailwind.js ~a/js/tailwind.js"
-                          resources-dir output-dir))
-         ;; build a persona by blending defaults and user settings
-         (persona `((display-name unquote
-                                  (get-setting 'display-name))
-                    (job-title unquote
-                               (get-setting 'job-title))
-                    (personal-contact unquote
-                                      (get-setting 'personal-contact))
-                    (personal-links unquote
-                                    (get-setting 'personal-links))
-                    (address-lines unquote
-                                   (get-setting 'address-lines))
-                    (driver-licenses unquote
-                                     (get-setting 'driver-licenses))
-                    (interests-hobbies unquote
-                                       (get-setting 'interests-hobbies))
-                    (languages unquote
-                               (get-setting 'languages))
-                    (education unquote
-                               (get-setting 'education))
-                    (titles unquote
-                            (get-setting 'titles))
-                    (short-intro unquote
-                                 (get-setting 'short-intro))
-                    (jobs unquote
-                          (get-setting 'jobs))
-                    (font unquote
-                          (get-setting 'font))
-                    (palette unquote
-                             (get-setting 'palette)))))
+                          resources-dir output-dir)))
     (log-info "executing: ~a" clean-dist-cmd)
     (syscall clean-dist-cmd)
 
@@ -76,5 +45,5 @@
 
     (with-output-to-file (format #f "~a/index.html" output-dir)
       (lambda ()
-        (display (carvoeiro-water-fun #:locale locale))))
+        (display (carvoeiro-water-fun))))
     (log-info "Completed rendering of page")))

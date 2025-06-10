@@ -15,7 +15,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with carvoeiro-water-fun. If not, see <https://www.gnu.org/licenses/>.
 
-
 (define-module (carvoeiro-water-fun html)
   #:declarative? #t
   #:use-module (web server)
@@ -33,10 +32,14 @@
   #:use-module (ice-9 popen)
   #:use-module (ice-9 textual-ports)
   #:use-module (ice-9 time)
+  #:use-module (hygguile hygguile)
   #:use-module (carvoeiro-water-fun prelude)
   #:use-module (ice-9 string-fun)
   #:use-module (ice-9 iconv)
-  #:use-module (ice-9 threads))
+  #:use-module (ice-9 threads)
+  #:export (carvoeiro-water-fun carvoeiro-water-fun-main-body
+                                carvoeiro-water-fun-page-footer
+                                carvoeiro-water-fun-html-template))
 
 ;; ====== Serialize (SXML) ======
 
@@ -261,7 +264,8 @@ formatting."
 ;; ================================
 
 (begin
-  (define* (carvoeiro-water-fun-html-template #:key title body locale persona)
+  (define* (carvoeiro-water-fun-html-template 
+                                              #:key title body)
     `(html (head (title ,title)
                  (link (@ (rel preconnect)
                           (href "https://fonts.googleapis.com")))
@@ -291,44 +295,28 @@ formatting."
                  (div (@ (class ,(mk-class '(container mx-auto py-4 sm:py-6
                                                        px-3 sm:px-6))))
                       ,@body
-                      ,(carvoeiro-water-fun-page-footer #:persona persona
-                                               #:locale locale)))))
+                      ,(carvoeiro-water-fun-page-footer)))))
   (export carvoeiro-water-fun-html-template))
 
-(begin
-  (define* (carvoeiro-water-fun-page-footer #:key locale persona)
-    `((hr)
-      (div (@ (class ,(mk-class '(block text-center font-sans))))
-           (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
-                                            justify-center))))
-                (small )
-                 "this website was rendered with Lisp (Guile Scheme) code"))
-           (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
-                                            justify-center items-center))))
-                (small (@ (class ,small-face)) "find the source code here:")
-                (a (@ (class ,(mk-class '(text-green-900 text-sm font-sans)))
-                      (href "https://codeberg.org/jjba23/carvoeiro-water-fun"))
-                   "codeberg.org/jjba23/carvoeiro-water-fun")))))
-  (export carvoeiro-water-fun-page-footer))
+(define* (carvoeiro-water-fun-page-footer)
+  `(,(hr)
+    (div (@ (class ,(mk-class '(block text-center font-sans))))
+         (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
+                                          justify-center))))
+              ,(em (G_ "this website was rendered with Lisp (Guile Scheme) code")))
+         (div (@ (class ,(mk-class '(flex flex-row gap-3 flex-wrap
+                                          justify-center items-center))))
+              ,(em (G_ "find the source code here:"))
+              ,(a "codeberg.org/jjba23/carvoeiro-water-fun"
+                  #:size 'text-sm)))))
 
-(begin
-  (define* (carvoeiro-water-fun-main-body #:key locale persona)
-    `(
-      "TEST"
-      ))
-  (export carvoeiro-water-fun-main-body))
+(define* (carvoeiro-water-fun-main-body)
+  `("TEST"))
 
-(begin
-  (define* (carvoeiro-water-fun #:key locale persona)
-    (with-output-to-string (lambda ()
-                             (sxml->xml (carvoeiro-water-fun-html-template #:title
-                                         "Carvoeiro Water Fun"
-                                         #:persona persona
-                                         #:body (carvoeiro-water-fun-main-body #:locale
-                                                                      locale
-                                                                      #:persona
-                                                                      persona)
-                                         #:locale locale)))))
-
-  (export carvoeiro-water-fun))
+(define* (carvoeiro-water-fun)
+  (with-output-to-string (lambda ()
+                           (sxml->xml (carvoeiro-water-fun-html-template
+                                       #:title "Carvoeiro Water Fun"
+                                       #:body (carvoeiro-water-fun-main-body
+                                               ))))))
 

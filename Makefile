@@ -18,13 +18,13 @@
 define carvoeiro-water-fun-build
 	guix shell -m manifest.scm -- \
 		guile -L ./src -c '((@(carvoeiro-water-fun main) main))' \
-		--locale $(2) --output-dir ./dist --resources-dir ./resources
+		--locale $(1) --output-dir ./dist --resources-dir ./resources
 endef
 
 build-en:
-	$(call carvoeiro-water-fun-build,"en")
+	$(call carvoeiro-water-fun-build,"en_US")
 build-pt:
-	$(call carvoeiro-water-fun-build,"pt")
+	$(call carvoeiro-water-fun-build,"pt_PT")
 
 serve:
 	darkhttpd ./dist --port 50065
