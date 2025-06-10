@@ -46,7 +46,8 @@
   },
   "type": "module",
   "exports": {
-   ".": {
-     "svelte": "./dist/index.js"
+     ".": {
+       "svelte": "./dist/index.js"
+     }
    }
 }
