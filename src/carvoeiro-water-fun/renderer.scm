@@ -33,7 +33,7 @@
          (mkdir-dist-cmd (format #f "mkdir -p ~a/js" output-dir))
          (cp-to-dist-cmds (list
                           (format #f
-                          "cp -rfv ~a/js ~a/js"
+                          "cp -rfv ~a/css ~a/css"
                           resources-dir output-dir)
                           (format #f
                           "cp -rfv ~a/img ~a/img"
