@@ -266,13 +266,12 @@ formatting."
 
 (define* (carvoeiro-water-fun-html-template #:key title body)
   `(html (head (title ,title)
-                                ,(hygguile-recommended-meta)
-                                ,(hygguile-recommended-resources)
-                                (link (@ (rel stylesheet)
-                                         (href "/css/carvoeiro-water-fun.olive.min.css"))
-                                      "")
-                                (script (@ (type speculationrules))
-                                        "
+               ,(hygguile-recommended-meta)
+               ,(hygguile-recommended-resources)
+               (link (@ (rel stylesheet)
+                        (href "/css/carvoeiro-water-fun.olive.min.css")) "")
+               (script (@ (type speculationrules))
+                       "
 {
   \"prerender\": [
     {
@@ -282,8 +281,9 @@ formatting."
     }
   ]
 }
-")  )
-         (body (@ (class ,(mk-class '(break-words bg-white-smoke-300 dark:bg-onyx-700))))
+"))
+         (body (@ (class ,(mk-class '(break-words bg-white-smoke-300
+                                                  dark:bg-onyx-700))))
                (div (@ (class ,(mk-class '(container mx-auto py-4 sm:py-6 px-3
                                                      sm:px-6))))
                     ,@body
@@ -350,8 +350,13 @@ formatting."
                                #:icon-css '(text-onyx-100 text-xl)
                                #:hover-background '(hover:bg-green-900))
                   #:href "#")
-               ,(ui-mode-button)
-              )
+              ,(ui-mode-button #:size '(text-sm)
+                               #:icon-css '(text-onyx-300 dark:text-stone-300
+                                                          text-md)
+                               #:background  '(bg-stone-500/75
+                                                          dark:bg-onyx-500/75)
+                               #:extra-classes '(py-1 px-2 max-w-prose
+                                                      cursor-pointer)))
          ,(p (G_
               "Here you can find kayak tours and rentals of nautical equipment to enjoy relaxing moments of leisure with family and friends.")
              #:weight '(font-light)))
@@ -450,7 +455,20 @@ formatting."
          ,(p (G_ "Death or Permanent Disability €1,120,000.00")
              #:weight '(font-light))
          ,(p (G_ "Treatment and Repatriation Expenses €196,000.00")
-             #:weight '(font-light)))))
+             #:weight '(font-light)))
+
+    (div ,(h4 (G_ "Leave a review"))
+         ,(em (G_ "You can read more reviews, and we are thankful if you write us one."))
+         (div
+          (img (@ (class ,(mk-class '(h-auto max-h-80
+                                       max-w-full
+                                       w-full
+                                       sm:w-1/2
+                                       md:w-1/3
+                                       lg:w-1/4
+                                       rounded-xl)))
+            (src "/img/carvoeiro-water-fun.png")))))
+    ))
 
 (define* (carvoeiro-water-fun)
   (with-output-to-string (lambda ()
