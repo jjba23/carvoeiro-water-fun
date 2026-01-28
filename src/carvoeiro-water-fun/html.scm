@@ -342,14 +342,14 @@ formatting."
                                #:color '(text-onyx-200)
                                #:icon-css '(text-onyx-100 text-xl)
                                #:hover-background '(hover:bg-teal-900))
-                  #:href "/services/speedboat")
+                  #:href "#")
               ,(a (icon-button #:icon 'calendar
                                #:content (G_ "Book Now")
                                #:background '(bg-green-700)
                                #:color '(text-onyx-200)
                                #:icon-css '(text-onyx-100 text-xl)
                                #:hover-background '(hover:bg-green-900))
-                  #:href "/request-reservation/boat-tour")
+                  #:href "#")
                ,(ui-mode-button)
               )
          ,(p (G_
