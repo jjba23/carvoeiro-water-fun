@@ -72,6 +72,11 @@
   "Build English version of the project."
   (build "en_US"))
 
+(define (build-and-serve-en)
+  "Build English version of the project."
+  (build "en_US")
+  (serve))
+
 (define (build-pt)
   "Build Portuguese version of the project."
   (build "pt_PT"))
@@ -97,7 +102,7 @@
                                      "--on-busy-update=restart"
                                      "--shell bash"
                                      "--watch . --"
-                                     "maak build-en && maak serve")))
+                                     "maak build-and-serve-en")))
 
 (define (hr)
   "Alias to hot-reloading."

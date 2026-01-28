@@ -31,6 +31,7 @@
              (gnu packages compression)
              (gnu packages texinfo)
              (gnu packages autotools)
+             (gnu packages rust-apps)
              ((guix licenses)
               #:prefix license:))
 
@@ -64,7 +65,6 @@ web components, whose names resemble the HTML counterparts, thus
 easing the learning curve, and reducing the cognitive load.")
     (license license:lgpl3+)))
 
-
 (define-public guile-kracht
   (package
     (name "guile-kracht")
@@ -90,7 +90,11 @@ easing the learning curve, and reducing the cognitive load.")
      "Good prelude for Guile Scheme, an opt-in enhancement to the standard library. kracht means power/strength in the Dutch language, and is also a recursive acronym which stands for: KRACHT Reliable And Consistent Helper Tools")
     (license license:lgpl3+)))
 
-(packages->manifest (list (specification->package "make") guile-next darkhttpd
-                          guile-ares-rs guile-hygguile
+(packages->manifest (list (specification->package "make")
+                          guile-next
+                          darkhttpd
+                          guile-ares-rs
+                          guile-hygguile
+                          watchexec
                           guile-kracht))
 

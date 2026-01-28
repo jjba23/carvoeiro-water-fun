@@ -19,7 +19,7 @@
   #:declarative? #f
   #:use-module (carvoeiro-water-fun html)
   #:use-module (carvoeiro-water-fun prelude)
-    #:use-module (kracht prelude)
+  #:use-module (kracht prelude)
   #:export (render-page))
 
 (define* (render-page #:key locale output-dir resources-dir)
@@ -31,20 +31,17 @@
 
   (let* ((clean-dist-cmd (format #f "rm -rfv ~a" output-dir))
          (mkdir-dist-cmd (format #f "mkdir -p ~a/js" output-dir))
-         (cp-to-dist-cmds (list
-                          (format #f
-                          "cp -rfv ~a/css ~a/css"
-                          resources-dir output-dir)
-                          (format #f
-                          "cp -rfv ~a/img ~a/img"
-                          resources-dir output-dir))))
+         (cp-to-dist-cmds (list (format #f "cp -rfv ~a/css ~a/css"
+                                        resources-dir output-dir)
+                                (format #f "cp -rfv ~a/img ~a/img"
+                                        resources-dir output-dir))))
     (log-info "executing: ~a" clean-dist-cmd)
     (syscall clean-dist-cmd)
 
     (log-info "executing: ~a" mkdir-dist-cmd)
     (syscall mkdir-dist-cmd)
 
-    (map (lambda(c)
+    (map (lambda (c)
            (log-info "executing: ~a" c)
            (syscall c)) cp-to-dist-cmds)
 
