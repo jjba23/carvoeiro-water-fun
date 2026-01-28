@@ -3,16 +3,16 @@
 ;; Copyright © Josep Jesus Bigorra Algaba
 
 ;; carvoeiro-water-fun is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
+;; it under the terms of the GNU Affero General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
 ;; (at your option) any later version.
 
 ;; carvoeiro-water-fun is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
+;; GNU Affero General Public License for more details.
 
-;; You should have received a copy of the GNU General Public License
+;; You should have received a copy of the GNU Affero General Public License
 ;; along with carvoeiro-water-fun. If not, see <https://www.gnu.org/licenses/>.
 
 (use-modules (guix packages)
@@ -37,7 +37,7 @@
 (define-public guile-hygguile
   (package
     (name "guile-hygguile")
-    (version "0.5.9")
+    (version "2.0.20")
     (source
      (origin
        (method git-fetch)
@@ -46,7 +46,7 @@
              (commit (string-append "v" version))))
        (file-name (git-file-name name version))
        (sha256
-        (base32 "01xixcay0qsbkmd47j46ky6cqn278ayb78sdf2cgq5fn3rbgigsc"))))
+        (base32 "1v6rp6zdrr457ix2zxgqd83vcdkyj8wcw48x020z3av6xh5b8vb0"))))
     (build-system guile-build-system)
     (native-inputs (list guile-3.0))
     (arguments
@@ -64,30 +64,31 @@ web components, whose names resemble the HTML counterparts, thus
 easing the learning curve, and reducing the cognitive load.")
     (license license:lgpl3+)))
 
+
 (define-public guile-kracht
   (package
-   (name "guile-kracht")
-   (version "0.1.2")
-   (source
-    (origin
-     (method git-fetch)
-     (uri (git-reference
-           (url "https://codeberg.org/jjba23/kracht.git")
-           (commit (string-append "v" version))))
-     (file-name (git-file-name name version))
-     (sha256
-      (base32 "08pgkj111sjwlkv3q30zqhrz2zxis06iknmb09qkmf3vh9ww1d73"))))
-   (build-system guile-build-system)
-   (native-inputs (list guile-3.0))
-   (arguments
-    (list
-     #:source-directory "src"))
-   (home-page "https://codeberg.org/jjba23/kracht")
-   (synopsis
-    "Good prelude for Guile Scheme, an opt-in enhancement to the standard library")
-   (description
-    "Good prelude for Guile Scheme, an opt-in enhancement to the standard library. kracht means power/strength in the Dutch language, and is also a recursive acronym which stands for: KRACHT Reliable And Consistent Helper Tools")
-   (license license:lgpl3+)))
+    (name "guile-kracht")
+    (version "0.1.10")
+    (source
+     (origin
+       (method git-fetch)
+       (uri (git-reference
+             (url "https://codeberg.org/jjba23/kracht.git")
+             (commit (string-append "v" version))))
+       (file-name (git-file-name name version))
+       (sha256
+        (base32 "1npicqxlahm03a6ass8f5jkjb9przn76maff5g69ag1cli8l56sw"))))
+    (build-system guile-build-system)
+    (native-inputs (list guile-3.0))
+    (arguments
+     (list
+      #:source-directory "src"))
+    (home-page "https://codeberg.org/jjba23/kracht")
+    (synopsis
+     "Good prelude for Guile Scheme, an opt-in enhancement to the standard library")
+    (description
+     "Good prelude for Guile Scheme, an opt-in enhancement to the standard library. kracht means power/strength in the Dutch language, and is also a recursive acronym which stands for: KRACHT Reliable And Consistent Helper Tools")
+    (license license:lgpl3+)))
 
 (packages->manifest (list (specification->package "make") guile-next darkhttpd
                           guile-ares-rs guile-hygguile
