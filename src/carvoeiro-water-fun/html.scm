@@ -43,7 +43,6 @@
                                 carvoeiro-water-fun-page-footer
                                 carvoeiro-water-fun-html-template))
 
-
 (define* (carvoeiro-water-fun-html-template #:key title body)
   `(html (head (title ,title)
                ,(hygguile-recommended-meta)
@@ -62,8 +61,7 @@
   ]
 }
 "))
-         (body (@ (class ,(mk-class '(break-words bg-white-smoke-300
-                                                  dark:bg-onyx-700))))
+         (body (@ (class ,(mk-class '(break-words bg-white-smoke-300))))
                (div (@ (class ,(mk-class '(container mx-auto py-4 sm:py-6 px-3
                                                      sm:px-6))))
                     ,@body
@@ -93,65 +91,72 @@
                     ,(a "https://codeberg.org/jjba23/carvoeiro-water-fun"
                         #:size '(text-sm)
                         #:weight '(font-medium)
-                        #:color '(text-onyx-600 dark:text-onyx-400))))))
+                        #:color '(text-onyx-700))))))
 
 (define* (mk-header-img src)
-  `((img (@ (class ,(mk-class '(h-auto max-h-96
-                                       max-w-full
-                                       w-full
-                                       sm:w-1/2
-                                       md:w-1/3
-                                       lg:w-1/4
-                                       shadow-xl
-                                       rounded-xl)))
+  `((img (@ (class ,(mk-class '(h-auto max-w-full shadow-xl rounded-xl)))
             (src ,src)))))
 
 (define* (carvoeiro-water-fun-main-body)
-  `((div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-2))))
+  `((div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-2 slide-from-right))))
          ,(h1 (G_ "Carvoeiro"))
-         ,(h1 (G_ "Water Fun"))
-         (span (@ (class ,(mk-class '(text-3xl)))) "⚓"))
+         (span (@ (class ,(mk-class '(text-3xl)))) "⚓")
+         ,(h1 (G_ "Water Fun")
+              #:color '(text-jeans-blue-300)))
     
-    (div (@ (class ,(mk-class '(my-3 max-w-prose flex flex-col gap-3))))
+    (div (@ (class ,(mk-class '(py-4 max-w-prose flex flex-col gap-4))))
          ,(p (G_
-              "Book a boat tour around the beautiful cliffs and caves of the Algarve, in the region of Carvoeiro, Benagil, or take a Kayak tour with us.")
-             #:weight '(font-light))
+              "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")
+             #:weight '(font-light)
+             #:size '(text-lg))
          (div (@ (class ,(mk-class '(my-3 flex flex-row flex-wrap gap-4))))
               ,(a (icon-button #:icon 'sailboat
                                #:content (G_ "About the Boat Tour")
-                               #:background '(bg-teal-700)
-                               #:color '(text-onyx-300)
-                               #:icon-css '(text-onyx-100 text-xl)
+                               #:background '(bg-jeans-blue-300)
+                               #:icon-css '(text-white-smoke-300 text-xl)
+                               #:color '(text-white-smoke-300)
                                #:hover-background '(hover:bg-teal-900))
                   #:href "#")
               ,(a (icon-button #:icon 'calendar
                                #:content (G_ "Book Now")
-                               #:background '(bg-green-700)
+                               #:background '(bg-orange-100)
                                #:color '(text-onyx-300)
                                #:icon-css '(text-onyx-100 text-xl)
                                #:hover-background '(hover:bg-green-900))
-                  #:href "#")
-              ;; ,(ui-mode-button #:size '(text-sm)
-              ;;                  #:icon-css '(text-onyx-300 dark:text-stone-300
-              ;;                                             text-md)
-              ;;                  #:background  '(bg-stone-500/75
-              ;;                                             dark:bg-onyx-500/75)
-              ;;                  #:extra-classes '(py-1 px-2 max-w-prose
-              ;;                                         cursor-pointer))
-              )
-         ,(p (G_
-              "Here you can find kayak tours and rentals of nautical equipment to enjoy relaxing moments of leisure with family and friends.")
-             #:weight '(font-light)))
+                  #:href "#"))
+         ,(em (G_
+               "Enjoy the best of Carvoeiro and Benagil from the beautiful ocean.")
+              #:weight '(font-light)
+              #:size '(text-lg)))
 
-    ,(hr)
+    ,(carousel #:id 'first-carousel
+               #:item-width '(w-96)
+               #:item-height '(h-auto)
+               #:fragments (list (mk-header-img
+                                  "/img/FB_IMG_1719434096367.jpg")
+                                 (mk-header-img "/img/car2.jpeg")
+                                 (mk-header-img "/img/barco-scaled.jpg"))
+               #:carousel-button-css '(absolute bottom-1/2
+                                                w-14
+                                                h-14
+                                                bg-stone-500/75
+                                                p-1
+                                                rounded-3xl
+                                                text-onyx-500
+                                                cursor-pointer
+                                                font-bold
+                                                text-3xl)
+               #:carousel-list-css '(flex gap-16
+                                          p-4
+                                          list-none
+                                          overflow-x-scroll
+                                          snap-x
+                                          bg-stone-300/75
+                                          rounded-xl
+                                          shadow-md
+                                          my-6))
 
-    (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-2 items-center
-                                     justify-center))))
-         ,(mk-header-img "/img/FB_IMG_1719434096367.jpg")
-         ,(mk-header-img "/img/car2.jpeg")
-         ,(mk-header-img "/img/barco-scaled.jpg"))
-    ,(hr)
-    (div (@ (class ,(mk-class '(my-3))))
+    (div (@ (class ,(mk-class '(py-6))))
          ,(h3 `(div ,(icon #:type 'island
                            #:icon-css '(text-xl text-onyx-600 mr-2))
                     ,(G_ "Enjoy Algarve's spectacular coast")))
@@ -174,7 +179,7 @@
                                      items-center
                                      justify-between
                                      my-8))))
-         (div (@ (class ,(mk-class '(max-w-prose))))
+         (div (@ (class ,(mk-class '(max-w-prose flex flex-col gap-3))))
               ,(h3 `(div ,(icon #:type 'phone-transfer
                                 #:icon-css '(text-xl text-onyx-600 mr-2))
                          ,(G_ "Contact us")))
@@ -187,10 +192,8 @@
                           #:icon-css '(text-xl text-onyx-600))
                    ,(p (G_ "WhatsApp:")
                        #:weight '(font-light))
-                   ,(a "+351 931 933 847"
-                       #:href "https://wa.me/+351931933847"
-                       #:color '(text-jeans-blue-600 dark:text-jeans-blue-300)
-                       #:hover '(hover:text-jeans-blue-900 dark:hover:text-jeans-blue-500)))
+                   ,(a "wa.me/+351931933847"
+                       #:href "https://wa.me/+351931933847"))
               (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
                                                items-center))))
                    ,(icon #:type 'phone
@@ -207,7 +210,8 @@
                        #:weight '(font-light))
                    ,(a "carvoeirowaterfun@gmail.com"
                        #:href "mailto:carvoeirowaterfun@gmail.com"))
-              (div ,(em (G_ "Call cost to mobile network."))
+              (div (@ (class ,(mk-class '(flex flex-col gap-2 mt-2))))
+                   ,(em (G_ "Note: Call costs to mobile network."))
                    ,(em (G_
                          "You may incur monetary costs while calling our phone number, as it will be a call to a Portuguese telephone."))))
          (div (@ (class ,(mk-class '(max-w-prose))))
@@ -240,17 +244,16 @@
              #:weight '(font-light)))
 
     (div ,(h4 (G_ "Leave a review"))
-         ,(em (G_ "You can read more reviews, and we are thankful if you write us one."))
-         (div
-          (img (@ (class ,(mk-class '(h-auto max-h-80
-                                       max-w-full
-                                       w-full
-                                       sm:w-1/2
-                                       md:w-1/3
-                                       lg:w-1/4
-                                       rounded-xl)))
-            (src "/img/carvoeiro-water-fun.png")))))
-    ))
+         ,(em (G_
+               "You can read more reviews, and we are thankful if you write us one."))
+         (div (img (@ (class ,(mk-class '(h-auto max-h-80
+                                                 max-w-full
+                                                 w-full
+                                                 sm:w-1/2
+                                                 md:w-1/3
+                                                 lg:w-1/4
+                                                 rounded-xl)))
+                      (src "/img/carvoeiro-water-fun.png")))))))
 
 (define* (carvoeiro-water-fun)
   (with-output-to-string (lambda ()
