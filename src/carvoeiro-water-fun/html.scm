@@ -385,7 +385,7 @@
                          (dd (G_ "2 hours")
                              #:size '(text-md))
                          (dt (G_ "Boarding location"))
-                         (dd "Praia do Carvoeiro (with transport to Portimão)"
+                         (dd "Praia do Carvoeiro (with free transport to Ferragudo)"
                           #:size '(text-md))))
               ,(p (G_
                    "This program includes a brief stop by the beach to dive whenever be possible.")
