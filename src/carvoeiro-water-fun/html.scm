@@ -199,14 +199,21 @@
                                      px-4
                                      md:px-6
                                      lg:px-8
-                                     py-4
+                                     py-12
                                      bg-white-smoke-500/75))))
          ,(contact-us-section)
          ,(where-to-find-us-section))
 
-    ,(leave-a-review-section)
-    ,(hr)
-    ,(insurance-section)
+    (div (@ (class ,(mk-class '(py-8 px-4
+                                     md:px-6
+                                     lg:px-8
+                                     flex
+                                     flex-row
+                                     flex-wrap
+                                     gap-4
+                                     justify-center))))
+         ,(leave-a-review-section)
+         ,(insurance-section))
 
     ))
 
@@ -232,28 +239,35 @@
 (define* (insurance-section)
   `((div (@ (class ,(mk-class '(px-4 md:px-6
                                      lg:px-8
-                                     max-w-prose
+                                     max-w-128
                                      flex
                                      flex-col
                                      gap-3))))
          ,(h4 (G_ "About us - Insurance"))
          ,(em (G_
-               "Proceedings from the Municipal Chamber of Lagoa E/8399/2023 date of 2023-03-13."))
+               "Proceedings from the Municipal Chamber of Lagoa E/8399/2023 date of 2023-03-13.")
+              #:size '(text-sm))
          ,(p (G_
               "Civil Liability Insurance Policy No. 85/25935 Maritime Tourism €50,000.00")
              #:weight '(font-light)
-             #:size '(text-md))
+             #:size '(text-sm))
          ,(p (G_ "Death or Permanent Disability €1,120,000.00")
              #:weight '(font-light)
-             #:size '(text-md))
+             #:size '(text-sm))
          ,(p (G_ "Treatment and Repatriation Expenses €196,000.00")
              #:weight '(font-light)
-             #:size '(text-md)))))
+             #:size '(text-sm)))))
 
 (define* (leave-a-review-section)
-  `((div ,(h4 (G_ "Leave a review"))
+  `((div (@ (class ,(mk-class '(flex flex-col gap-3))))
+         ,(h4 (G_ "Leave a review"))
          ,(em (G_
                "You can read more reviews, and we are thankful if you write us one."))
+         (a (@ (href "https://maps.app.goo.gl/evwhXe4U8YWzJuDe6")
+               (target _blank))
+            ,(icon-button #:icon 'link
+                          #:content (G_ "Reviews on Google Maps")
+                          #:size '(text-sm)))
          (div (img (@ (class ,(mk-class '(h-auto max-h-80
                                                  max-w-full
                                                  w-full
@@ -261,7 +275,7 @@
                                                  md:w-1/3
                                                  lg:w-1/4
                                                  rounded-xl)))
-                      (src "/img/carvoeiro-water-fun.png")))))))
+                      (src "/img/carvoeiro-water-fun-review.png")))))))
 
 (define* (carvoeiro-water-fun)
   (with-output-to-string (lambda ()
@@ -270,7 +284,7 @@
                                        #:body (carvoeiro-water-fun-main-body))))))
 
 (define* (where-to-find-us-section)
-  `((div (@ (class ,(mk-class '(lg:w-1/3 max-w-prose flex flex-col gap-3))))
+  `((div (@ (class ,(mk-class '(lg:w-1/3 max-w-prose flex flex-col gap-2))))
          ,(h3 `(div ,(icon #:type 'map-pin
                            #:icon-css '(text-xl text-onyx-600 mr-2))
                     ,(G_ "Where to find us?")))
@@ -286,9 +300,11 @@
          (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
                                           items-center my-4))))
               ,(p (G_ "Our address:")
-                  #:weight '(font-light))
+                  #:weight '(font-light)
+                  #:size '(text-md))
               ,(p
-                "Rua do Casino, 29 A, Carvoeiro, 8400-515 Praia do Carvoeiro")))))
+                "Rua do Casino, 29 A, Carvoeiro, 8400-515 Praia do Carvoeiro"
+                #:size '(text-md))))))
 
 (define* (contact-us-section)
   `((div (@ (id contact-us-section)
