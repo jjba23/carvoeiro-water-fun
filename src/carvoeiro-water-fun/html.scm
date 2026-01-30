@@ -58,7 +58,7 @@
 }
 "))
          (body (@ (class ,(mk-class '(break-words bg-white-smoke-300))))
-               (div (@ (class ,(mk-class '(py-8))))
+               (div (@ (class ,(mk-class '())))
                     ,@body
                     ,(footer-section)))))
 
@@ -67,7 +67,7 @@
             (src ,src)))))
 
 (define* (carvoeiro-water-fun-main-body)
-  `((div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-2 slide-from-right
+  `((div (@ (class ,(mk-class '(pt-12 flex flex-row flex-wrap gap-2 slide-from-right
                                      justify-center))))
          ,(h1 (G_ "Carvoeiro")
               #:weight '(font-light)
@@ -86,7 +86,7 @@
                                       justify-center
                                       w-full))))
          (div (@ (class ,(mk-class '(max-w-prose text-center flex flex-col
-                                                 gap-8 ))))
+                                                 gap-8))))
               ,(p (G_
                    "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")
                   #:weight '(font-light leading-8)
@@ -95,7 +95,7 @@
               (div (@ (class ,(mk-class '(my-3 flex flex-row flex-wrap gap-4
                                                justify-center))))
                    ,(a (icon-button #:icon 'sailboat
-                                    #:content (G_ "About the Boat Tour")
+                                    #:content (G_ "About the boat tour")
                                     #:background '(bg-stone-300)
                                     #:icon-css '(text-onyx-300 text-xl)
                                     #:color '(text-onyx-300)
@@ -103,7 +103,7 @@
                                     #:hover-background '(hover:bg-teal-900))
                        #:href "#about-boat-tour-section")
                    ,(a (icon-button #:icon 'calendar
-                                    #:content (G_ "Book Now - Contact")
+                                    #:content (G_ "Book your experience")
                                     #:background '(bg-jeans-blue-500)
                                     #:color '(text-white-smoke-300)
                                     #:icon-css '(text-white-smoke-100 text-xl)
@@ -172,18 +172,20 @@
     (div (@ (class ,(mk-class '(py-8 px-4 md:px-6 lg:px-8))))
          ,(about-boat-tour-section))
 
-    (div (@ (class ,(mk-class '(py-12 px-4
-                                      md:px-6
-                                      lg:px-8
-                                      bg-white-smoke-500/75
-                                      shadow-md
-                                      flex
-                                      flex-row
-                                      flex-wrap
-                                      gap-4
-                                      justify-center))))
-         ,(leave-a-review-section)
-         ,(insurance-section))
+    (div (@ (class ,(mk-class '(py-12 px-4 md:px-6 lg:px-8
+
+                                      ))))
+         (div (@ (class ,(mk-class '(bg-white-smoke-500/75 py-12
+                                     flex
+                                     flex-row
+                                     flex-wrap
+                                     gap-12
+                                     justify-center
+                                     border-lapis-lazuli-300/25
+                                     border-2
+                                     rounded-5xl))))
+              ,(leave-a-review-section)
+              ,(insurance-section)))
 
     ))
 
@@ -199,7 +201,7 @@
                                           align-center
                                           items-center))))
               (div (@ (class ,(mk-class '(my-3 md:max-w-128 lg:max-w-196 flex
-                                               flex-col gap-3 ))))
+                                               flex-col gap-3))))
                    ,(p (G_
                         "Take a boat tour with us, or row in a kayak, and make your way to the many beautiful caves in the Algarve's coastline.")
                        #:weight '(font-light leading-8))
@@ -242,7 +244,7 @@
              #:size '(text-sm)))))
 
 (define* (leave-a-review-section)
-  `((div (@ (class ,(mk-class '(flex flex-col gap-3))))
+  `((div (@ (class ,(mk-class '(flex flex-col gap-3 px-2))))
          (div (@ (class ,(mk-class '(flex flex-row gap-2))))
               ,(icon #:type 'list-star
                      #:icon-css '(text-xl text-onyx-700))
@@ -347,8 +349,13 @@
                (class ,(mk-class '(rounded-2xl shadow-xl)))) "")))
 
 (define* (about-boat-tour-section)
-  `((div (@ (id about-boat-tour-section) (class ,(mk-class '(flex flex-row flex-wrap gap-4 justify-center))))
-         (div (@ (class ,(mk-class '(flex flex-col gap-2 md:max-w-1/2 leading-6))))
+  `((div (@ (id about-boat-tour-section)
+            (class ,(mk-class '(flex flex-row flex-wrap gap-12 justify-center align-center items-center))))
+         (div (@ (class ,(mk-class '(flex flex-col gap-2 md:max-w-128
+                                          leading-6))))
+              (div (@ (class ,(mk-class '(flex flex-row gap-2 py-3))))
+                   ,(icon #:type 'sailboat)
+                   ,(h3 (G_ "About the boat tour")))
               ,(dl (list (dt (G_ "Tour duration"))
                          (dd (G_ "2 hours")
                              #:size '(text-md))
@@ -377,23 +384,22 @@
                   #:size '(text-md)
                   #:weight '(font-light)))
          (div (@ (class ,(mk-class '(md:max-w-1/3 leading-6))))
-              ,(dl (list (dt (G_ "Physical restrictions")
-                             )
+              ,(dl (list (dt (G_ "Health & Safety"))
                          (dd (G_
                               "We do not recommend the speed boat tour to people with serious back problems, or weighing more than 120kg and pregnant women in late stages of pregnancy.")
                              #:weight '(font-light)
                              #:size '(text-md))
                          (dt (G_ "Included"))
                          (dd (G_ "Life jacket, Waterproofing when necessary.")
-                                                          #:weight '(font-light)
+                             #:weight '(font-light)
                              #:size '(text-md))
                          (dt (G_ "Not included"))
                          (dd (G_ "Swimsuit, towel, sun lotion, sunglasses.")
-                                                          #:weight '(font-light)
+                             #:weight '(font-light)
                              #:size '(text-md))
                          (dt (G_ "Cancellation policy"))
                          (dd (G_
                               "For a full refund, cancel at least 24 hours in advance of the tour start date.")
-                                                          #:weight '(font-light)
+                             #:weight '(font-light)
                              #:size '(text-md))))))))
 

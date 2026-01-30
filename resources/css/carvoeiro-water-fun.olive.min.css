@@ -3111,6 +3111,96 @@ ol, ul {list-style:none;}
 .bg-prussian-blue-500 {background:oklch(0.3093 0.0627 254.14 / 1);}
 .bg-prussian-blue-700 {background:oklch(0.2593 0.0627 254.14 / 1);}
 .bg-prussian-blue-900 {background:oklch(0.2093 0.0627 254.14 / 1);}
+.bg-naples-yellow-100\/1 {background:oklch(1 0.1449 97.97 / 0.01);}
+.bg-naples-yellow-300\/1 {background:oklch(0.9511 0.1449 97.97 / 0.01);}
+.bg-naples-yellow-500\/1 {background:oklch(0.9011 0.1449 97.97 / 0.01);}
+.bg-naples-yellow-700\/1 {background:oklch(0.8511 0.1449 97.97 / 0.01);}
+.bg-naples-yellow-900\/1 {background:oklch(0.8011 0.1449 97.97 / 0.01);}
+.bg-naples-yellow-100\/5 {background:oklch(1 0.1449 97.97 / 0.05);}
+.bg-naples-yellow-300\/5 {background:oklch(0.9511 0.1449 97.97 / 0.05);}
+.bg-naples-yellow-500\/5 {background:oklch(0.9011 0.1449 97.97 / 0.05);}
+.bg-naples-yellow-700\/5 {background:oklch(0.8511 0.1449 97.97 / 0.05);}
+.bg-naples-yellow-900\/5 {background:oklch(0.8011 0.1449 97.97 / 0.05);}
+.bg-naples-yellow-100\/10 {background:oklch(1 0.1449 97.97 / 0.1);}
+.bg-naples-yellow-300\/10 {background:oklch(0.9511 0.1449 97.97 / 0.1);}
+.bg-naples-yellow-500\/10 {background:oklch(0.9011 0.1449 97.97 / 0.1);}
+.bg-naples-yellow-700\/10 {background:oklch(0.8511 0.1449 97.97 / 0.1);}
+.bg-naples-yellow-900\/10 {background:oklch(0.8011 0.1449 97.97 / 0.1);}
+.bg-naples-yellow-100\/25 {background:oklch(1 0.1449 97.97 / 0.2);}
+.bg-naples-yellow-300\/25 {background:oklch(0.9511 0.1449 97.97 / 0.2);}
+.bg-naples-yellow-500\/25 {background:oklch(0.9011 0.1449 97.97 / 0.2);}
+.bg-naples-yellow-700\/25 {background:oklch(0.8511 0.1449 97.97 / 0.2);}
+.bg-naples-yellow-900\/25 {background:oklch(0.8011 0.1449 97.97 / 0.2);}
+.bg-naples-yellow-100\/50 {background:oklch(1 0.1449 97.97 / 0.5);}
+.bg-naples-yellow-300\/50 {background:oklch(0.9511 0.1449 97.97 / 0.5);}
+.bg-naples-yellow-500\/50 {background:oklch(0.9011 0.1449 97.97 / 0.5);}
+.bg-naples-yellow-700\/50 {background:oklch(0.8511 0.1449 97.97 / 0.5);}
+.bg-naples-yellow-900\/50 {background:oklch(0.8011 0.1449 97.97 / 0.5);}
+.bg-naples-yellow-100\/75 {background:oklch(1 0.1449 97.97 / 0.7);}
+.bg-naples-yellow-300\/75 {background:oklch(0.9511 0.1449 97.97 / 0.7);}
+.bg-naples-yellow-500\/75 {background:oklch(0.9011 0.1449 97.97 / 0.7);}
+.bg-naples-yellow-700\/75 {background:oklch(0.8511 0.1449 97.97 / 0.7);}
+.bg-naples-yellow-900\/75 {background:oklch(0.8011 0.1449 97.97 / 0.7);}
+.bg-naples-yellow-100\/90 {background:oklch(1 0.1449 97.97 / 0.9);}
+.bg-naples-yellow-300\/90 {background:oklch(0.9511 0.1449 97.97 / 0.9);}
+.bg-naples-yellow-500\/90 {background:oklch(0.9011 0.1449 97.97 / 0.9);}
+.bg-naples-yellow-700\/90 {background:oklch(0.8511 0.1449 97.97 / 0.9);}
+.bg-naples-yellow-900\/90 {background:oklch(0.8011 0.1449 97.97 / 0.9);}
+.bg-naples-yellow-100\/95 {background:oklch(1 0.1449 97.97 / 0.95);}
+.bg-naples-yellow-300\/95 {background:oklch(0.9511 0.1449 97.97 / 0.95);}
+.bg-naples-yellow-500\/95 {background:oklch(0.9011 0.1449 97.97 / 0.95);}
+.bg-naples-yellow-700\/95 {background:oklch(0.8511 0.1449 97.97 / 0.95);}
+.bg-naples-yellow-900\/95 {background:oklch(0.8011 0.1449 97.97 / 0.95);}
+.bg-naples-yellow-100 {background:oklch(1 0.1449 97.97 / 1);}
+.bg-naples-yellow-300 {background:oklch(0.9511 0.1449 97.97 / 1);}
+.bg-naples-yellow-500 {background:oklch(0.9011 0.1449 97.97 / 1);}
+.bg-naples-yellow-700 {background:oklch(0.8511 0.1449 97.97 / 1);}
+.bg-naples-yellow-900 {background:oklch(0.8011 0.1449 97.97 / 1);}
+.bg-mikado-yellow-100\/1 {background:oklch(0.9538 0.1734 87.35 / 0.01);}
+.bg-mikado-yellow-300\/1 {background:oklch(0.9038 0.1734 87.35 / 0.01);}
+.bg-mikado-yellow-500\/1 {background:oklch(0.8538 0.1734 87.35 / 0.01);}
+.bg-mikado-yellow-700\/1 {background:oklch(0.8038 0.1734 87.35 / 0.01);}
+.bg-mikado-yellow-900\/1 {background:oklch(0.7538 0.1734 87.35 / 0.01);}
+.bg-mikado-yellow-100\/5 {background:oklch(0.9538 0.1734 87.35 / 0.05);}
+.bg-mikado-yellow-300\/5 {background:oklch(0.9038 0.1734 87.35 / 0.05);}
+.bg-mikado-yellow-500\/5 {background:oklch(0.8538 0.1734 87.35 / 0.05);}
+.bg-mikado-yellow-700\/5 {background:oklch(0.8038 0.1734 87.35 / 0.05);}
+.bg-mikado-yellow-900\/5 {background:oklch(0.7538 0.1734 87.35 / 0.05);}
+.bg-mikado-yellow-100\/10 {background:oklch(0.9538 0.1734 87.35 / 0.1);}
+.bg-mikado-yellow-300\/10 {background:oklch(0.9038 0.1734 87.35 / 0.1);}
+.bg-mikado-yellow-500\/10 {background:oklch(0.8538 0.1734 87.35 / 0.1);}
+.bg-mikado-yellow-700\/10 {background:oklch(0.8038 0.1734 87.35 / 0.1);}
+.bg-mikado-yellow-900\/10 {background:oklch(0.7538 0.1734 87.35 / 0.1);}
+.bg-mikado-yellow-100\/25 {background:oklch(0.9538 0.1734 87.35 / 0.2);}
+.bg-mikado-yellow-300\/25 {background:oklch(0.9038 0.1734 87.35 / 0.2);}
+.bg-mikado-yellow-500\/25 {background:oklch(0.8538 0.1734 87.35 / 0.2);}
+.bg-mikado-yellow-700\/25 {background:oklch(0.8038 0.1734 87.35 / 0.2);}
+.bg-mikado-yellow-900\/25 {background:oklch(0.7538 0.1734 87.35 / 0.2);}
+.bg-mikado-yellow-100\/50 {background:oklch(0.9538 0.1734 87.35 / 0.5);}
+.bg-mikado-yellow-300\/50 {background:oklch(0.9038 0.1734 87.35 / 0.5);}
+.bg-mikado-yellow-500\/50 {background:oklch(0.8538 0.1734 87.35 / 0.5);}
+.bg-mikado-yellow-700\/50 {background:oklch(0.8038 0.1734 87.35 / 0.5);}
+.bg-mikado-yellow-900\/50 {background:oklch(0.7538 0.1734 87.35 / 0.5);}
+.bg-mikado-yellow-100\/75 {background:oklch(0.9538 0.1734 87.35 / 0.7);}
+.bg-mikado-yellow-300\/75 {background:oklch(0.9038 0.1734 87.35 / 0.7);}
+.bg-mikado-yellow-500\/75 {background:oklch(0.8538 0.1734 87.35 / 0.7);}
+.bg-mikado-yellow-700\/75 {background:oklch(0.8038 0.1734 87.35 / 0.7);}
+.bg-mikado-yellow-900\/75 {background:oklch(0.7538 0.1734 87.35 / 0.7);}
+.bg-mikado-yellow-100\/90 {background:oklch(0.9538 0.1734 87.35 / 0.9);}
+.bg-mikado-yellow-300\/90 {background:oklch(0.9038 0.1734 87.35 / 0.9);}
+.bg-mikado-yellow-500\/90 {background:oklch(0.8538 0.1734 87.35 / 0.9);}
+.bg-mikado-yellow-700\/90 {background:oklch(0.8038 0.1734 87.35 / 0.9);}
+.bg-mikado-yellow-900\/90 {background:oklch(0.7538 0.1734 87.35 / 0.9);}
+.bg-mikado-yellow-100\/95 {background:oklch(0.9538 0.1734 87.35 / 0.95);}
+.bg-mikado-yellow-300\/95 {background:oklch(0.9038 0.1734 87.35 / 0.95);}
+.bg-mikado-yellow-500\/95 {background:oklch(0.8538 0.1734 87.35 / 0.95);}
+.bg-mikado-yellow-700\/95 {background:oklch(0.8038 0.1734 87.35 / 0.95);}
+.bg-mikado-yellow-900\/95 {background:oklch(0.7538 0.1734 87.35 / 0.95);}
+.bg-mikado-yellow-100 {background:oklch(0.9538 0.1734 87.35 / 1);}
+.bg-mikado-yellow-300 {background:oklch(0.9038 0.1734 87.35 / 1);}
+.bg-mikado-yellow-500 {background:oklch(0.8538 0.1734 87.35 / 1);}
+.bg-mikado-yellow-700 {background:oklch(0.8038 0.1734 87.35 / 1);}
+.bg-mikado-yellow-900 {background:oklch(0.7538 0.1734 87.35 / 1);}
 .bg-orange-100\/1 {background:oklch(0.8404 0.1444 57.26 / 0.01);}
 .bg-orange-300\/1 {background:oklch(0.7904 0.1444 57.26 / 0.01);}
 .bg-orange-500\/1 {background:oklch(0.7404 0.1444 57.26 / 0.01);}
@@ -3696,6 +3786,96 @@ ol, ul {list-style:none;}
 .text-prussian-blue-500 {color:oklch(0.3093 0.0627 254.14 / 1);}
 .text-prussian-blue-700 {color:oklch(0.2593 0.0627 254.14 / 1);}
 .text-prussian-blue-900 {color:oklch(0.2093 0.0627 254.14 / 1);}
+.text-naples-yellow-100\/1 {color:oklch(1 0.1449 97.97 / 0.01);}
+.text-naples-yellow-300\/1 {color:oklch(0.9511 0.1449 97.97 / 0.01);}
+.text-naples-yellow-500\/1 {color:oklch(0.9011 0.1449 97.97 / 0.01);}
+.text-naples-yellow-700\/1 {color:oklch(0.8511 0.1449 97.97 / 0.01);}
+.text-naples-yellow-900\/1 {color:oklch(0.8011 0.1449 97.97 / 0.01);}
+.text-naples-yellow-100\/5 {color:oklch(1 0.1449 97.97 / 0.05);}
+.text-naples-yellow-300\/5 {color:oklch(0.9511 0.1449 97.97 / 0.05);}
+.text-naples-yellow-500\/5 {color:oklch(0.9011 0.1449 97.97 / 0.05);}
+.text-naples-yellow-700\/5 {color:oklch(0.8511 0.1449 97.97 / 0.05);}
+.text-naples-yellow-900\/5 {color:oklch(0.8011 0.1449 97.97 / 0.05);}
+.text-naples-yellow-100\/10 {color:oklch(1 0.1449 97.97 / 0.1);}
+.text-naples-yellow-300\/10 {color:oklch(0.9511 0.1449 97.97 / 0.1);}
+.text-naples-yellow-500\/10 {color:oklch(0.9011 0.1449 97.97 / 0.1);}
+.text-naples-yellow-700\/10 {color:oklch(0.8511 0.1449 97.97 / 0.1);}
+.text-naples-yellow-900\/10 {color:oklch(0.8011 0.1449 97.97 / 0.1);}
+.text-naples-yellow-100\/25 {color:oklch(1 0.1449 97.97 / 0.2);}
+.text-naples-yellow-300\/25 {color:oklch(0.9511 0.1449 97.97 / 0.2);}
+.text-naples-yellow-500\/25 {color:oklch(0.9011 0.1449 97.97 / 0.2);}
+.text-naples-yellow-700\/25 {color:oklch(0.8511 0.1449 97.97 / 0.2);}
+.text-naples-yellow-900\/25 {color:oklch(0.8011 0.1449 97.97 / 0.2);}
+.text-naples-yellow-100\/50 {color:oklch(1 0.1449 97.97 / 0.5);}
+.text-naples-yellow-300\/50 {color:oklch(0.9511 0.1449 97.97 / 0.5);}
+.text-naples-yellow-500\/50 {color:oklch(0.9011 0.1449 97.97 / 0.5);}
+.text-naples-yellow-700\/50 {color:oklch(0.8511 0.1449 97.97 / 0.5);}
+.text-naples-yellow-900\/50 {color:oklch(0.8011 0.1449 97.97 / 0.5);}
+.text-naples-yellow-100\/75 {color:oklch(1 0.1449 97.97 / 0.7);}
+.text-naples-yellow-300\/75 {color:oklch(0.9511 0.1449 97.97 / 0.7);}
+.text-naples-yellow-500\/75 {color:oklch(0.9011 0.1449 97.97 / 0.7);}
+.text-naples-yellow-700\/75 {color:oklch(0.8511 0.1449 97.97 / 0.7);}
+.text-naples-yellow-900\/75 {color:oklch(0.8011 0.1449 97.97 / 0.7);}
+.text-naples-yellow-100\/90 {color:oklch(1 0.1449 97.97 / 0.9);}
+.text-naples-yellow-300\/90 {color:oklch(0.9511 0.1449 97.97 / 0.9);}
+.text-naples-yellow-500\/90 {color:oklch(0.9011 0.1449 97.97 / 0.9);}
+.text-naples-yellow-700\/90 {color:oklch(0.8511 0.1449 97.97 / 0.9);}
+.text-naples-yellow-900\/90 {color:oklch(0.8011 0.1449 97.97 / 0.9);}
+.text-naples-yellow-100\/95 {color:oklch(1 0.1449 97.97 / 0.95);}
+.text-naples-yellow-300\/95 {color:oklch(0.9511 0.1449 97.97 / 0.95);}
+.text-naples-yellow-500\/95 {color:oklch(0.9011 0.1449 97.97 / 0.95);}
+.text-naples-yellow-700\/95 {color:oklch(0.8511 0.1449 97.97 / 0.95);}
+.text-naples-yellow-900\/95 {color:oklch(0.8011 0.1449 97.97 / 0.95);}
+.text-naples-yellow-100 {color:oklch(1 0.1449 97.97 / 1);}
+.text-naples-yellow-300 {color:oklch(0.9511 0.1449 97.97 / 1);}
+.text-naples-yellow-500 {color:oklch(0.9011 0.1449 97.97 / 1);}
+.text-naples-yellow-700 {color:oklch(0.8511 0.1449 97.97 / 1);}
+.text-naples-yellow-900 {color:oklch(0.8011 0.1449 97.97 / 1);}
+.text-mikado-yellow-100\/1 {color:oklch(0.9538 0.1734 87.35 / 0.01);}
+.text-mikado-yellow-300\/1 {color:oklch(0.9038 0.1734 87.35 / 0.01);}
+.text-mikado-yellow-500\/1 {color:oklch(0.8538 0.1734 87.35 / 0.01);}
+.text-mikado-yellow-700\/1 {color:oklch(0.8038 0.1734 87.35 / 0.01);}
+.text-mikado-yellow-900\/1 {color:oklch(0.7538 0.1734 87.35 / 0.01);}
+.text-mikado-yellow-100\/5 {color:oklch(0.9538 0.1734 87.35 / 0.05);}
+.text-mikado-yellow-300\/5 {color:oklch(0.9038 0.1734 87.35 / 0.05);}
+.text-mikado-yellow-500\/5 {color:oklch(0.8538 0.1734 87.35 / 0.05);}
+.text-mikado-yellow-700\/5 {color:oklch(0.8038 0.1734 87.35 / 0.05);}
+.text-mikado-yellow-900\/5 {color:oklch(0.7538 0.1734 87.35 / 0.05);}
+.text-mikado-yellow-100\/10 {color:oklch(0.9538 0.1734 87.35 / 0.1);}
+.text-mikado-yellow-300\/10 {color:oklch(0.9038 0.1734 87.35 / 0.1);}
+.text-mikado-yellow-500\/10 {color:oklch(0.8538 0.1734 87.35 / 0.1);}
+.text-mikado-yellow-700\/10 {color:oklch(0.8038 0.1734 87.35 / 0.1);}
+.text-mikado-yellow-900\/10 {color:oklch(0.7538 0.1734 87.35 / 0.1);}
+.text-mikado-yellow-100\/25 {color:oklch(0.9538 0.1734 87.35 / 0.2);}
+.text-mikado-yellow-300\/25 {color:oklch(0.9038 0.1734 87.35 / 0.2);}
+.text-mikado-yellow-500\/25 {color:oklch(0.8538 0.1734 87.35 / 0.2);}
+.text-mikado-yellow-700\/25 {color:oklch(0.8038 0.1734 87.35 / 0.2);}
+.text-mikado-yellow-900\/25 {color:oklch(0.7538 0.1734 87.35 / 0.2);}
+.text-mikado-yellow-100\/50 {color:oklch(0.9538 0.1734 87.35 / 0.5);}
+.text-mikado-yellow-300\/50 {color:oklch(0.9038 0.1734 87.35 / 0.5);}
+.text-mikado-yellow-500\/50 {color:oklch(0.8538 0.1734 87.35 / 0.5);}
+.text-mikado-yellow-700\/50 {color:oklch(0.8038 0.1734 87.35 / 0.5);}
+.text-mikado-yellow-900\/50 {color:oklch(0.7538 0.1734 87.35 / 0.5);}
+.text-mikado-yellow-100\/75 {color:oklch(0.9538 0.1734 87.35 / 0.7);}
+.text-mikado-yellow-300\/75 {color:oklch(0.9038 0.1734 87.35 / 0.7);}
+.text-mikado-yellow-500\/75 {color:oklch(0.8538 0.1734 87.35 / 0.7);}
+.text-mikado-yellow-700\/75 {color:oklch(0.8038 0.1734 87.35 / 0.7);}
+.text-mikado-yellow-900\/75 {color:oklch(0.7538 0.1734 87.35 / 0.7);}
+.text-mikado-yellow-100\/90 {color:oklch(0.9538 0.1734 87.35 / 0.9);}
+.text-mikado-yellow-300\/90 {color:oklch(0.9038 0.1734 87.35 / 0.9);}
+.text-mikado-yellow-500\/90 {color:oklch(0.8538 0.1734 87.35 / 0.9);}
+.text-mikado-yellow-700\/90 {color:oklch(0.8038 0.1734 87.35 / 0.9);}
+.text-mikado-yellow-900\/90 {color:oklch(0.7538 0.1734 87.35 / 0.9);}
+.text-mikado-yellow-100\/95 {color:oklch(0.9538 0.1734 87.35 / 0.95);}
+.text-mikado-yellow-300\/95 {color:oklch(0.9038 0.1734 87.35 / 0.95);}
+.text-mikado-yellow-500\/95 {color:oklch(0.8538 0.1734 87.35 / 0.95);}
+.text-mikado-yellow-700\/95 {color:oklch(0.8038 0.1734 87.35 / 0.95);}
+.text-mikado-yellow-900\/95 {color:oklch(0.7538 0.1734 87.35 / 0.95);}
+.text-mikado-yellow-100 {color:oklch(0.9538 0.1734 87.35 / 1);}
+.text-mikado-yellow-300 {color:oklch(0.9038 0.1734 87.35 / 1);}
+.text-mikado-yellow-500 {color:oklch(0.8538 0.1734 87.35 / 1);}
+.text-mikado-yellow-700 {color:oklch(0.8038 0.1734 87.35 / 1);}
+.text-mikado-yellow-900 {color:oklch(0.7538 0.1734 87.35 / 1);}
 .text-orange-100\/1 {color:oklch(0.8404 0.1444 57.26 / 0.01);}
 .text-orange-300\/1 {color:oklch(0.7904 0.1444 57.26 / 0.01);}
 .text-orange-500\/1 {color:oklch(0.7404 0.1444 57.26 / 0.01);}
@@ -4281,6 +4461,96 @@ ol, ul {list-style:none;}
 .border-prussian-blue-500 {border-color:oklch(0.3093 0.0627 254.14 / 1);}
 .border-prussian-blue-700 {border-color:oklch(0.2593 0.0627 254.14 / 1);}
 .border-prussian-blue-900 {border-color:oklch(0.2093 0.0627 254.14 / 1);}
+.border-naples-yellow-100\/1 {border-color:oklch(1 0.1449 97.97 / 0.01);}
+.border-naples-yellow-300\/1 {border-color:oklch(0.9511 0.1449 97.97 / 0.01);}
+.border-naples-yellow-500\/1 {border-color:oklch(0.9011 0.1449 97.97 / 0.01);}
+.border-naples-yellow-700\/1 {border-color:oklch(0.8511 0.1449 97.97 / 0.01);}
+.border-naples-yellow-900\/1 {border-color:oklch(0.8011 0.1449 97.97 / 0.01);}
+.border-naples-yellow-100\/5 {border-color:oklch(1 0.1449 97.97 / 0.05);}
+.border-naples-yellow-300\/5 {border-color:oklch(0.9511 0.1449 97.97 / 0.05);}
+.border-naples-yellow-500\/5 {border-color:oklch(0.9011 0.1449 97.97 / 0.05);}
+.border-naples-yellow-700\/5 {border-color:oklch(0.8511 0.1449 97.97 / 0.05);}
+.border-naples-yellow-900\/5 {border-color:oklch(0.8011 0.1449 97.97 / 0.05);}
+.border-naples-yellow-100\/10 {border-color:oklch(1 0.1449 97.97 / 0.1);}
+.border-naples-yellow-300\/10 {border-color:oklch(0.9511 0.1449 97.97 / 0.1);}
+.border-naples-yellow-500\/10 {border-color:oklch(0.9011 0.1449 97.97 / 0.1);}
+.border-naples-yellow-700\/10 {border-color:oklch(0.8511 0.1449 97.97 / 0.1);}
+.border-naples-yellow-900\/10 {border-color:oklch(0.8011 0.1449 97.97 / 0.1);}
+.border-naples-yellow-100\/25 {border-color:oklch(1 0.1449 97.97 / 0.2);}
+.border-naples-yellow-300\/25 {border-color:oklch(0.9511 0.1449 97.97 / 0.2);}
+.border-naples-yellow-500\/25 {border-color:oklch(0.9011 0.1449 97.97 / 0.2);}
+.border-naples-yellow-700\/25 {border-color:oklch(0.8511 0.1449 97.97 / 0.2);}
+.border-naples-yellow-900\/25 {border-color:oklch(0.8011 0.1449 97.97 / 0.2);}
+.border-naples-yellow-100\/50 {border-color:oklch(1 0.1449 97.97 / 0.5);}
+.border-naples-yellow-300\/50 {border-color:oklch(0.9511 0.1449 97.97 / 0.5);}
+.border-naples-yellow-500\/50 {border-color:oklch(0.9011 0.1449 97.97 / 0.5);}
+.border-naples-yellow-700\/50 {border-color:oklch(0.8511 0.1449 97.97 / 0.5);}
+.border-naples-yellow-900\/50 {border-color:oklch(0.8011 0.1449 97.97 / 0.5);}
+.border-naples-yellow-100\/75 {border-color:oklch(1 0.1449 97.97 / 0.7);}
+.border-naples-yellow-300\/75 {border-color:oklch(0.9511 0.1449 97.97 / 0.7);}
+.border-naples-yellow-500\/75 {border-color:oklch(0.9011 0.1449 97.97 / 0.7);}
+.border-naples-yellow-700\/75 {border-color:oklch(0.8511 0.1449 97.97 / 0.7);}
+.border-naples-yellow-900\/75 {border-color:oklch(0.8011 0.1449 97.97 / 0.7);}
+.border-naples-yellow-100\/90 {border-color:oklch(1 0.1449 97.97 / 0.9);}
+.border-naples-yellow-300\/90 {border-color:oklch(0.9511 0.1449 97.97 / 0.9);}
+.border-naples-yellow-500\/90 {border-color:oklch(0.9011 0.1449 97.97 / 0.9);}
+.border-naples-yellow-700\/90 {border-color:oklch(0.8511 0.1449 97.97 / 0.9);}
+.border-naples-yellow-900\/90 {border-color:oklch(0.8011 0.1449 97.97 / 0.9);}
+.border-naples-yellow-100\/95 {border-color:oklch(1 0.1449 97.97 / 0.95);}
+.border-naples-yellow-300\/95 {border-color:oklch(0.9511 0.1449 97.97 / 0.95);}
+.border-naples-yellow-500\/95 {border-color:oklch(0.9011 0.1449 97.97 / 0.95);}
+.border-naples-yellow-700\/95 {border-color:oklch(0.8511 0.1449 97.97 / 0.95);}
+.border-naples-yellow-900\/95 {border-color:oklch(0.8011 0.1449 97.97 / 0.95);}
+.border-naples-yellow-100 {border-color:oklch(1 0.1449 97.97 / 1);}
+.border-naples-yellow-300 {border-color:oklch(0.9511 0.1449 97.97 / 1);}
+.border-naples-yellow-500 {border-color:oklch(0.9011 0.1449 97.97 / 1);}
+.border-naples-yellow-700 {border-color:oklch(0.8511 0.1449 97.97 / 1);}
+.border-naples-yellow-900 {border-color:oklch(0.8011 0.1449 97.97 / 1);}
+.border-mikado-yellow-100\/1 {border-color:oklch(0.9538 0.1734 87.35 / 0.01);}
+.border-mikado-yellow-300\/1 {border-color:oklch(0.9038 0.1734 87.35 / 0.01);}
+.border-mikado-yellow-500\/1 {border-color:oklch(0.8538 0.1734 87.35 / 0.01);}
+.border-mikado-yellow-700\/1 {border-color:oklch(0.8038 0.1734 87.35 / 0.01);}
+.border-mikado-yellow-900\/1 {border-color:oklch(0.7538 0.1734 87.35 / 0.01);}
+.border-mikado-yellow-100\/5 {border-color:oklch(0.9538 0.1734 87.35 / 0.05);}
+.border-mikado-yellow-300\/5 {border-color:oklch(0.9038 0.1734 87.35 / 0.05);}
+.border-mikado-yellow-500\/5 {border-color:oklch(0.8538 0.1734 87.35 / 0.05);}
+.border-mikado-yellow-700\/5 {border-color:oklch(0.8038 0.1734 87.35 / 0.05);}
+.border-mikado-yellow-900\/5 {border-color:oklch(0.7538 0.1734 87.35 / 0.05);}
+.border-mikado-yellow-100\/10 {border-color:oklch(0.9538 0.1734 87.35 / 0.1);}
+.border-mikado-yellow-300\/10 {border-color:oklch(0.9038 0.1734 87.35 / 0.1);}
+.border-mikado-yellow-500\/10 {border-color:oklch(0.8538 0.1734 87.35 / 0.1);}
+.border-mikado-yellow-700\/10 {border-color:oklch(0.8038 0.1734 87.35 / 0.1);}
+.border-mikado-yellow-900\/10 {border-color:oklch(0.7538 0.1734 87.35 / 0.1);}
+.border-mikado-yellow-100\/25 {border-color:oklch(0.9538 0.1734 87.35 / 0.2);}
+.border-mikado-yellow-300\/25 {border-color:oklch(0.9038 0.1734 87.35 / 0.2);}
+.border-mikado-yellow-500\/25 {border-color:oklch(0.8538 0.1734 87.35 / 0.2);}
+.border-mikado-yellow-700\/25 {border-color:oklch(0.8038 0.1734 87.35 / 0.2);}
+.border-mikado-yellow-900\/25 {border-color:oklch(0.7538 0.1734 87.35 / 0.2);}
+.border-mikado-yellow-100\/50 {border-color:oklch(0.9538 0.1734 87.35 / 0.5);}
+.border-mikado-yellow-300\/50 {border-color:oklch(0.9038 0.1734 87.35 / 0.5);}
+.border-mikado-yellow-500\/50 {border-color:oklch(0.8538 0.1734 87.35 / 0.5);}
+.border-mikado-yellow-700\/50 {border-color:oklch(0.8038 0.1734 87.35 / 0.5);}
+.border-mikado-yellow-900\/50 {border-color:oklch(0.7538 0.1734 87.35 / 0.5);}
+.border-mikado-yellow-100\/75 {border-color:oklch(0.9538 0.1734 87.35 / 0.7);}
+.border-mikado-yellow-300\/75 {border-color:oklch(0.9038 0.1734 87.35 / 0.7);}
+.border-mikado-yellow-500\/75 {border-color:oklch(0.8538 0.1734 87.35 / 0.7);}
+.border-mikado-yellow-700\/75 {border-color:oklch(0.8038 0.1734 87.35 / 0.7);}
+.border-mikado-yellow-900\/75 {border-color:oklch(0.7538 0.1734 87.35 / 0.7);}
+.border-mikado-yellow-100\/90 {border-color:oklch(0.9538 0.1734 87.35 / 0.9);}
+.border-mikado-yellow-300\/90 {border-color:oklch(0.9038 0.1734 87.35 / 0.9);}
+.border-mikado-yellow-500\/90 {border-color:oklch(0.8538 0.1734 87.35 / 0.9);}
+.border-mikado-yellow-700\/90 {border-color:oklch(0.8038 0.1734 87.35 / 0.9);}
+.border-mikado-yellow-900\/90 {border-color:oklch(0.7538 0.1734 87.35 / 0.9);}
+.border-mikado-yellow-100\/95 {border-color:oklch(0.9538 0.1734 87.35 / 0.95);}
+.border-mikado-yellow-300\/95 {border-color:oklch(0.9038 0.1734 87.35 / 0.95);}
+.border-mikado-yellow-500\/95 {border-color:oklch(0.8538 0.1734 87.35 / 0.95);}
+.border-mikado-yellow-700\/95 {border-color:oklch(0.8038 0.1734 87.35 / 0.95);}
+.border-mikado-yellow-900\/95 {border-color:oklch(0.7538 0.1734 87.35 / 0.95);}
+.border-mikado-yellow-100 {border-color:oklch(0.9538 0.1734 87.35 / 1);}
+.border-mikado-yellow-300 {border-color:oklch(0.9038 0.1734 87.35 / 1);}
+.border-mikado-yellow-500 {border-color:oklch(0.8538 0.1734 87.35 / 1);}
+.border-mikado-yellow-700 {border-color:oklch(0.8038 0.1734 87.35 / 1);}
+.border-mikado-yellow-900 {border-color:oklch(0.7538 0.1734 87.35 / 1);}
 .border-orange-100\/1 {border-color:oklch(0.8404 0.1444 57.26 / 0.01);}
 .border-orange-300\/1 {border-color:oklch(0.7904 0.1444 57.26 / 0.01);}
 .border-orange-500\/1 {border-color:oklch(0.7404 0.1444 57.26 / 0.01);}
@@ -4866,6 +5136,96 @@ ol, ul {list-style:none;}
 .decoration-prussian-blue-500 {text-decoration-color:oklch(0.3093 0.0627 254.14 / 1);}
 .decoration-prussian-blue-700 {text-decoration-color:oklch(0.2593 0.0627 254.14 / 1);}
 .decoration-prussian-blue-900 {text-decoration-color:oklch(0.2093 0.0627 254.14 / 1);}
+.decoration-naples-yellow-100\/1 {text-decoration-color:oklch(1 0.1449 97.97 / 0.01);}
+.decoration-naples-yellow-300\/1 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.01);}
+.decoration-naples-yellow-500\/1 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.01);}
+.decoration-naples-yellow-700\/1 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.01);}
+.decoration-naples-yellow-900\/1 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.01);}
+.decoration-naples-yellow-100\/5 {text-decoration-color:oklch(1 0.1449 97.97 / 0.05);}
+.decoration-naples-yellow-300\/5 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.05);}
+.decoration-naples-yellow-500\/5 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.05);}
+.decoration-naples-yellow-700\/5 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.05);}
+.decoration-naples-yellow-900\/5 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.05);}
+.decoration-naples-yellow-100\/10 {text-decoration-color:oklch(1 0.1449 97.97 / 0.1);}
+.decoration-naples-yellow-300\/10 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.1);}
+.decoration-naples-yellow-500\/10 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.1);}
+.decoration-naples-yellow-700\/10 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.1);}
+.decoration-naples-yellow-900\/10 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.1);}
+.decoration-naples-yellow-100\/25 {text-decoration-color:oklch(1 0.1449 97.97 / 0.2);}
+.decoration-naples-yellow-300\/25 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.2);}
+.decoration-naples-yellow-500\/25 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.2);}
+.decoration-naples-yellow-700\/25 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.2);}
+.decoration-naples-yellow-900\/25 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.2);}
+.decoration-naples-yellow-100\/50 {text-decoration-color:oklch(1 0.1449 97.97 / 0.5);}
+.decoration-naples-yellow-300\/50 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.5);}
+.decoration-naples-yellow-500\/50 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.5);}
+.decoration-naples-yellow-700\/50 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.5);}
+.decoration-naples-yellow-900\/50 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.5);}
+.decoration-naples-yellow-100\/75 {text-decoration-color:oklch(1 0.1449 97.97 / 0.7);}
+.decoration-naples-yellow-300\/75 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.7);}
+.decoration-naples-yellow-500\/75 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.7);}
+.decoration-naples-yellow-700\/75 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.7);}
+.decoration-naples-yellow-900\/75 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.7);}
+.decoration-naples-yellow-100\/90 {text-decoration-color:oklch(1 0.1449 97.97 / 0.9);}
+.decoration-naples-yellow-300\/90 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.9);}
+.decoration-naples-yellow-500\/90 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.9);}
+.decoration-naples-yellow-700\/90 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.9);}
+.decoration-naples-yellow-900\/90 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.9);}
+.decoration-naples-yellow-100\/95 {text-decoration-color:oklch(1 0.1449 97.97 / 0.95);}
+.decoration-naples-yellow-300\/95 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.95);}
+.decoration-naples-yellow-500\/95 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.95);}
+.decoration-naples-yellow-700\/95 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.95);}
+.decoration-naples-yellow-900\/95 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.95);}
+.decoration-naples-yellow-100 {text-decoration-color:oklch(1 0.1449 97.97 / 1);}
+.decoration-naples-yellow-300 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 1);}
+.decoration-naples-yellow-500 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 1);}
+.decoration-naples-yellow-700 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 1);}
+.decoration-naples-yellow-900 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 1);}
+.decoration-mikado-yellow-100\/1 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.01);}
+.decoration-mikado-yellow-300\/1 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.01);}
+.decoration-mikado-yellow-500\/1 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.01);}
+.decoration-mikado-yellow-700\/1 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.01);}
+.decoration-mikado-yellow-900\/1 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.01);}
+.decoration-mikado-yellow-100\/5 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.05);}
+.decoration-mikado-yellow-300\/5 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.05);}
+.decoration-mikado-yellow-500\/5 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.05);}
+.decoration-mikado-yellow-700\/5 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.05);}
+.decoration-mikado-yellow-900\/5 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.05);}
+.decoration-mikado-yellow-100\/10 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.1);}
+.decoration-mikado-yellow-300\/10 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.1);}
+.decoration-mikado-yellow-500\/10 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.1);}
+.decoration-mikado-yellow-700\/10 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.1);}
+.decoration-mikado-yellow-900\/10 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.1);}
+.decoration-mikado-yellow-100\/25 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.2);}
+.decoration-mikado-yellow-300\/25 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.2);}
+.decoration-mikado-yellow-500\/25 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.2);}
+.decoration-mikado-yellow-700\/25 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.2);}
+.decoration-mikado-yellow-900\/25 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.2);}
+.decoration-mikado-yellow-100\/50 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.5);}
+.decoration-mikado-yellow-300\/50 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.5);}
+.decoration-mikado-yellow-500\/50 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.5);}
+.decoration-mikado-yellow-700\/50 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.5);}
+.decoration-mikado-yellow-900\/50 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.5);}
+.decoration-mikado-yellow-100\/75 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.7);}
+.decoration-mikado-yellow-300\/75 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.7);}
+.decoration-mikado-yellow-500\/75 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.7);}
+.decoration-mikado-yellow-700\/75 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.7);}
+.decoration-mikado-yellow-900\/75 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.7);}
+.decoration-mikado-yellow-100\/90 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.9);}
+.decoration-mikado-yellow-300\/90 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.9);}
+.decoration-mikado-yellow-500\/90 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.9);}
+.decoration-mikado-yellow-700\/90 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.9);}
+.decoration-mikado-yellow-900\/90 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.9);}
+.decoration-mikado-yellow-100\/95 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.95);}
+.decoration-mikado-yellow-300\/95 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.95);}
+.decoration-mikado-yellow-500\/95 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.95);}
+.decoration-mikado-yellow-700\/95 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.95);}
+.decoration-mikado-yellow-900\/95 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.95);}
+.decoration-mikado-yellow-100 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 1);}
+.decoration-mikado-yellow-300 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 1);}
+.decoration-mikado-yellow-500 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 1);}
+.decoration-mikado-yellow-700 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 1);}
+.decoration-mikado-yellow-900 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 1);}
 .decoration-orange-100\/1 {text-decoration-color:oklch(0.8404 0.1444 57.26 / 0.01);}
 .decoration-orange-300\/1 {text-decoration-color:oklch(0.7904 0.1444 57.26 / 0.01);}
 .decoration-orange-500\/1 {text-decoration-color:oklch(0.7404 0.1444 57.26 / 0.01);}
@@ -5471,6 +5831,96 @@ ol, ul {list-style:none;}
 .hover\:bg-prussian-blue-500 {&:hover {background:oklch(0.3093 0.0627 254.14 / 1);}}
 .hover\:bg-prussian-blue-700 {&:hover {background:oklch(0.2593 0.0627 254.14 / 1);}}
 .hover\:bg-prussian-blue-900 {&:hover {background:oklch(0.2093 0.0627 254.14 / 1);}}
+.hover\:bg-naples-yellow-100\/1 {&:hover {background:oklch(1 0.1449 97.97 / 0.01);}}
+.hover\:bg-naples-yellow-300\/1 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.01);}}
+.hover\:bg-naples-yellow-500\/1 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.01);}}
+.hover\:bg-naples-yellow-700\/1 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.01);}}
+.hover\:bg-naples-yellow-900\/1 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.01);}}
+.hover\:bg-naples-yellow-100\/5 {&:hover {background:oklch(1 0.1449 97.97 / 0.05);}}
+.hover\:bg-naples-yellow-300\/5 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.05);}}
+.hover\:bg-naples-yellow-500\/5 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.05);}}
+.hover\:bg-naples-yellow-700\/5 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.05);}}
+.hover\:bg-naples-yellow-900\/5 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.05);}}
+.hover\:bg-naples-yellow-100\/10 {&:hover {background:oklch(1 0.1449 97.97 / 0.1);}}
+.hover\:bg-naples-yellow-300\/10 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.1);}}
+.hover\:bg-naples-yellow-500\/10 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.1);}}
+.hover\:bg-naples-yellow-700\/10 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.1);}}
+.hover\:bg-naples-yellow-900\/10 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.1);}}
+.hover\:bg-naples-yellow-100\/25 {&:hover {background:oklch(1 0.1449 97.97 / 0.2);}}
+.hover\:bg-naples-yellow-300\/25 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.2);}}
+.hover\:bg-naples-yellow-500\/25 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.2);}}
+.hover\:bg-naples-yellow-700\/25 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.2);}}
+.hover\:bg-naples-yellow-900\/25 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.2);}}
+.hover\:bg-naples-yellow-100\/50 {&:hover {background:oklch(1 0.1449 97.97 / 0.5);}}
+.hover\:bg-naples-yellow-300\/50 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.5);}}
+.hover\:bg-naples-yellow-500\/50 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.5);}}
+.hover\:bg-naples-yellow-700\/50 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.5);}}
+.hover\:bg-naples-yellow-900\/50 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.5);}}
+.hover\:bg-naples-yellow-100\/75 {&:hover {background:oklch(1 0.1449 97.97 / 0.7);}}
+.hover\:bg-naples-yellow-300\/75 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.7);}}
+.hover\:bg-naples-yellow-500\/75 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.7);}}
+.hover\:bg-naples-yellow-700\/75 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.7);}}
+.hover\:bg-naples-yellow-900\/75 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.7);}}
+.hover\:bg-naples-yellow-100\/90 {&:hover {background:oklch(1 0.1449 97.97 / 0.9);}}
+.hover\:bg-naples-yellow-300\/90 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.9);}}
+.hover\:bg-naples-yellow-500\/90 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.9);}}
+.hover\:bg-naples-yellow-700\/90 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.9);}}
+.hover\:bg-naples-yellow-900\/90 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.9);}}
+.hover\:bg-naples-yellow-100\/95 {&:hover {background:oklch(1 0.1449 97.97 / 0.95);}}
+.hover\:bg-naples-yellow-300\/95 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.95);}}
+.hover\:bg-naples-yellow-500\/95 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.95);}}
+.hover\:bg-naples-yellow-700\/95 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.95);}}
+.hover\:bg-naples-yellow-900\/95 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.95);}}
+.hover\:bg-naples-yellow-100 {&:hover {background:oklch(1 0.1449 97.97 / 1);}}
+.hover\:bg-naples-yellow-300 {&:hover {background:oklch(0.9511 0.1449 97.97 / 1);}}
+.hover\:bg-naples-yellow-500 {&:hover {background:oklch(0.9011 0.1449 97.97 / 1);}}
+.hover\:bg-naples-yellow-700 {&:hover {background:oklch(0.8511 0.1449 97.97 / 1);}}
+.hover\:bg-naples-yellow-900 {&:hover {background:oklch(0.8011 0.1449 97.97 / 1);}}
+.hover\:bg-mikado-yellow-100\/1 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.01);}}
+.hover\:bg-mikado-yellow-300\/1 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.01);}}
+.hover\:bg-mikado-yellow-500\/1 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.01);}}
+.hover\:bg-mikado-yellow-700\/1 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.01);}}
+.hover\:bg-mikado-yellow-900\/1 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.01);}}
+.hover\:bg-mikado-yellow-100\/5 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.05);}}
+.hover\:bg-mikado-yellow-300\/5 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.05);}}
+.hover\:bg-mikado-yellow-500\/5 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.05);}}
+.hover\:bg-mikado-yellow-700\/5 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.05);}}
+.hover\:bg-mikado-yellow-900\/5 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.05);}}
+.hover\:bg-mikado-yellow-100\/10 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.1);}}
+.hover\:bg-mikado-yellow-300\/10 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.1);}}
+.hover\:bg-mikado-yellow-500\/10 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.1);}}
+.hover\:bg-mikado-yellow-700\/10 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.1);}}
+.hover\:bg-mikado-yellow-900\/10 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.1);}}
+.hover\:bg-mikado-yellow-100\/25 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.2);}}
+.hover\:bg-mikado-yellow-300\/25 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.2);}}
+.hover\:bg-mikado-yellow-500\/25 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.2);}}
+.hover\:bg-mikado-yellow-700\/25 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.2);}}
+.hover\:bg-mikado-yellow-900\/25 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.2);}}
+.hover\:bg-mikado-yellow-100\/50 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.5);}}
+.hover\:bg-mikado-yellow-300\/50 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.5);}}
+.hover\:bg-mikado-yellow-500\/50 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.5);}}
+.hover\:bg-mikado-yellow-700\/50 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.5);}}
+.hover\:bg-mikado-yellow-900\/50 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.5);}}
+.hover\:bg-mikado-yellow-100\/75 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.7);}}
+.hover\:bg-mikado-yellow-300\/75 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.7);}}
+.hover\:bg-mikado-yellow-500\/75 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.7);}}
+.hover\:bg-mikado-yellow-700\/75 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.7);}}
+.hover\:bg-mikado-yellow-900\/75 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.7);}}
+.hover\:bg-mikado-yellow-100\/90 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.9);}}
+.hover\:bg-mikado-yellow-300\/90 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.9);}}
+.hover\:bg-mikado-yellow-500\/90 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.9);}}
+.hover\:bg-mikado-yellow-700\/90 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.9);}}
+.hover\:bg-mikado-yellow-900\/90 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.9);}}
+.hover\:bg-mikado-yellow-100\/95 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.95);}}
+.hover\:bg-mikado-yellow-300\/95 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.95);}}
+.hover\:bg-mikado-yellow-500\/95 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.95);}}
+.hover\:bg-mikado-yellow-700\/95 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.95);}}
+.hover\:bg-mikado-yellow-900\/95 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.95);}}
+.hover\:bg-mikado-yellow-100 {&:hover {background:oklch(0.9538 0.1734 87.35 / 1);}}
+.hover\:bg-mikado-yellow-300 {&:hover {background:oklch(0.9038 0.1734 87.35 / 1);}}
+.hover\:bg-mikado-yellow-500 {&:hover {background:oklch(0.8538 0.1734 87.35 / 1);}}
+.hover\:bg-mikado-yellow-700 {&:hover {background:oklch(0.8038 0.1734 87.35 / 1);}}
+.hover\:bg-mikado-yellow-900 {&:hover {background:oklch(0.7538 0.1734 87.35 / 1);}}
 .hover\:bg-orange-100\/1 {&:hover {background:oklch(0.8404 0.1444 57.26 / 0.01);}}
 .hover\:bg-orange-300\/1 {&:hover {background:oklch(0.7904 0.1444 57.26 / 0.01);}}
 .hover\:bg-orange-500\/1 {&:hover {background:oklch(0.7404 0.1444 57.26 / 0.01);}}
@@ -6056,6 +6506,96 @@ ol, ul {list-style:none;}
 .hover\:text-prussian-blue-500 {&:hover {color:oklch(0.3093 0.0627 254.14 / 1);}}
 .hover\:text-prussian-blue-700 {&:hover {color:oklch(0.2593 0.0627 254.14 / 1);}}
 .hover\:text-prussian-blue-900 {&:hover {color:oklch(0.2093 0.0627 254.14 / 1);}}
+.hover\:text-naples-yellow-100\/1 {&:hover {color:oklch(1 0.1449 97.97 / 0.01);}}
+.hover\:text-naples-yellow-300\/1 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.01);}}
+.hover\:text-naples-yellow-500\/1 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.01);}}
+.hover\:text-naples-yellow-700\/1 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.01);}}
+.hover\:text-naples-yellow-900\/1 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.01);}}
+.hover\:text-naples-yellow-100\/5 {&:hover {color:oklch(1 0.1449 97.97 / 0.05);}}
+.hover\:text-naples-yellow-300\/5 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.05);}}
+.hover\:text-naples-yellow-500\/5 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.05);}}
+.hover\:text-naples-yellow-700\/5 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.05);}}
+.hover\:text-naples-yellow-900\/5 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.05);}}
+.hover\:text-naples-yellow-100\/10 {&:hover {color:oklch(1 0.1449 97.97 / 0.1);}}
+.hover\:text-naples-yellow-300\/10 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.1);}}
+.hover\:text-naples-yellow-500\/10 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.1);}}
+.hover\:text-naples-yellow-700\/10 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.1);}}
+.hover\:text-naples-yellow-900\/10 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.1);}}
+.hover\:text-naples-yellow-100\/25 {&:hover {color:oklch(1 0.1449 97.97 / 0.2);}}
+.hover\:text-naples-yellow-300\/25 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.2);}}
+.hover\:text-naples-yellow-500\/25 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.2);}}
+.hover\:text-naples-yellow-700\/25 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.2);}}
+.hover\:text-naples-yellow-900\/25 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.2);}}
+.hover\:text-naples-yellow-100\/50 {&:hover {color:oklch(1 0.1449 97.97 / 0.5);}}
+.hover\:text-naples-yellow-300\/50 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.5);}}
+.hover\:text-naples-yellow-500\/50 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.5);}}
+.hover\:text-naples-yellow-700\/50 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.5);}}
+.hover\:text-naples-yellow-900\/50 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.5);}}
+.hover\:text-naples-yellow-100\/75 {&:hover {color:oklch(1 0.1449 97.97 / 0.7);}}
+.hover\:text-naples-yellow-300\/75 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.7);}}
+.hover\:text-naples-yellow-500\/75 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.7);}}
+.hover\:text-naples-yellow-700\/75 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.7);}}
+.hover\:text-naples-yellow-900\/75 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.7);}}
+.hover\:text-naples-yellow-100\/90 {&:hover {color:oklch(1 0.1449 97.97 / 0.9);}}
+.hover\:text-naples-yellow-300\/90 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.9);}}
+.hover\:text-naples-yellow-500\/90 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.9);}}
+.hover\:text-naples-yellow-700\/90 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.9);}}
+.hover\:text-naples-yellow-900\/90 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.9);}}
+.hover\:text-naples-yellow-100\/95 {&:hover {color:oklch(1 0.1449 97.97 / 0.95);}}
+.hover\:text-naples-yellow-300\/95 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.95);}}
+.hover\:text-naples-yellow-500\/95 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.95);}}
+.hover\:text-naples-yellow-700\/95 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.95);}}
+.hover\:text-naples-yellow-900\/95 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.95);}}
+.hover\:text-naples-yellow-100 {&:hover {color:oklch(1 0.1449 97.97 / 1);}}
+.hover\:text-naples-yellow-300 {&:hover {color:oklch(0.9511 0.1449 97.97 / 1);}}
+.hover\:text-naples-yellow-500 {&:hover {color:oklch(0.9011 0.1449 97.97 / 1);}}
+.hover\:text-naples-yellow-700 {&:hover {color:oklch(0.8511 0.1449 97.97 / 1);}}
+.hover\:text-naples-yellow-900 {&:hover {color:oklch(0.8011 0.1449 97.97 / 1);}}
+.hover\:text-mikado-yellow-100\/1 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.01);}}
+.hover\:text-mikado-yellow-300\/1 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.01);}}
+.hover\:text-mikado-yellow-500\/1 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.01);}}
+.hover\:text-mikado-yellow-700\/1 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.01);}}
+.hover\:text-mikado-yellow-900\/1 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.01);}}
+.hover\:text-mikado-yellow-100\/5 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.05);}}
+.hover\:text-mikado-yellow-300\/5 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.05);}}
+.hover\:text-mikado-yellow-500\/5 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.05);}}
+.hover\:text-mikado-yellow-700\/5 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.05);}}
+.hover\:text-mikado-yellow-900\/5 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.05);}}
+.hover\:text-mikado-yellow-100\/10 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.1);}}
+.hover\:text-mikado-yellow-300\/10 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.1);}}
+.hover\:text-mikado-yellow-500\/10 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.1);}}
+.hover\:text-mikado-yellow-700\/10 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.1);}}
+.hover\:text-mikado-yellow-900\/10 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.1);}}
+.hover\:text-mikado-yellow-100\/25 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.2);}}
+.hover\:text-mikado-yellow-300\/25 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.2);}}
+.hover\:text-mikado-yellow-500\/25 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.2);}}
+.hover\:text-mikado-yellow-700\/25 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.2);}}
+.hover\:text-mikado-yellow-900\/25 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.2);}}
+.hover\:text-mikado-yellow-100\/50 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.5);}}
+.hover\:text-mikado-yellow-300\/50 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.5);}}
+.hover\:text-mikado-yellow-500\/50 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.5);}}
+.hover\:text-mikado-yellow-700\/50 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.5);}}
+.hover\:text-mikado-yellow-900\/50 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.5);}}
+.hover\:text-mikado-yellow-100\/75 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.7);}}
+.hover\:text-mikado-yellow-300\/75 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.7);}}
+.hover\:text-mikado-yellow-500\/75 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.7);}}
+.hover\:text-mikado-yellow-700\/75 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.7);}}
+.hover\:text-mikado-yellow-900\/75 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.7);}}
+.hover\:text-mikado-yellow-100\/90 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.9);}}
+.hover\:text-mikado-yellow-300\/90 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.9);}}
+.hover\:text-mikado-yellow-500\/90 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.9);}}
+.hover\:text-mikado-yellow-700\/90 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.9);}}
+.hover\:text-mikado-yellow-900\/90 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.9);}}
+.hover\:text-mikado-yellow-100\/95 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.95);}}
+.hover\:text-mikado-yellow-300\/95 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.95);}}
+.hover\:text-mikado-yellow-500\/95 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.95);}}
+.hover\:text-mikado-yellow-700\/95 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.95);}}
+.hover\:text-mikado-yellow-900\/95 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.95);}}
+.hover\:text-mikado-yellow-100 {&:hover {color:oklch(0.9538 0.1734 87.35 / 1);}}
+.hover\:text-mikado-yellow-300 {&:hover {color:oklch(0.9038 0.1734 87.35 / 1);}}
+.hover\:text-mikado-yellow-500 {&:hover {color:oklch(0.8538 0.1734 87.35 / 1);}}
+.hover\:text-mikado-yellow-700 {&:hover {color:oklch(0.8038 0.1734 87.35 / 1);}}
+.hover\:text-mikado-yellow-900 {&:hover {color:oklch(0.7538 0.1734 87.35 / 1);}}
 .hover\:text-orange-100\/1 {&:hover {color:oklch(0.8404 0.1444 57.26 / 0.01);}}
 .hover\:text-orange-300\/1 {&:hover {color:oklch(0.7904 0.1444 57.26 / 0.01);}}
 .hover\:text-orange-500\/1 {&:hover {color:oklch(0.7404 0.1444 57.26 / 0.01);}}
@@ -6641,6 +7181,96 @@ ol, ul {list-style:none;}
 .hover\:border-prussian-blue-500 {&:hover {border-color:oklch(0.3093 0.0627 254.14 / 1);}}
 .hover\:border-prussian-blue-700 {&:hover {border-color:oklch(0.2593 0.0627 254.14 / 1);}}
 .hover\:border-prussian-blue-900 {&:hover {border-color:oklch(0.2093 0.0627 254.14 / 1);}}
+.hover\:border-naples-yellow-100\/1 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.01);}}
+.hover\:border-naples-yellow-300\/1 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.01);}}
+.hover\:border-naples-yellow-500\/1 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.01);}}
+.hover\:border-naples-yellow-700\/1 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.01);}}
+.hover\:border-naples-yellow-900\/1 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.01);}}
+.hover\:border-naples-yellow-100\/5 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.05);}}
+.hover\:border-naples-yellow-300\/5 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.05);}}
+.hover\:border-naples-yellow-500\/5 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.05);}}
+.hover\:border-naples-yellow-700\/5 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.05);}}
+.hover\:border-naples-yellow-900\/5 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.05);}}
+.hover\:border-naples-yellow-100\/10 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.1);}}
+.hover\:border-naples-yellow-300\/10 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.1);}}
+.hover\:border-naples-yellow-500\/10 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.1);}}
+.hover\:border-naples-yellow-700\/10 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.1);}}
+.hover\:border-naples-yellow-900\/10 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.1);}}
+.hover\:border-naples-yellow-100\/25 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.2);}}
+.hover\:border-naples-yellow-300\/25 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.2);}}
+.hover\:border-naples-yellow-500\/25 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.2);}}
+.hover\:border-naples-yellow-700\/25 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.2);}}
+.hover\:border-naples-yellow-900\/25 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.2);}}
+.hover\:border-naples-yellow-100\/50 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.5);}}
+.hover\:border-naples-yellow-300\/50 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.5);}}
+.hover\:border-naples-yellow-500\/50 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.5);}}
+.hover\:border-naples-yellow-700\/50 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.5);}}
+.hover\:border-naples-yellow-900\/50 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.5);}}
+.hover\:border-naples-yellow-100\/75 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.7);}}
+.hover\:border-naples-yellow-300\/75 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.7);}}
+.hover\:border-naples-yellow-500\/75 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.7);}}
+.hover\:border-naples-yellow-700\/75 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.7);}}
+.hover\:border-naples-yellow-900\/75 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.7);}}
+.hover\:border-naples-yellow-100\/90 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.9);}}
+.hover\:border-naples-yellow-300\/90 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.9);}}
+.hover\:border-naples-yellow-500\/90 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.9);}}
+.hover\:border-naples-yellow-700\/90 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.9);}}
+.hover\:border-naples-yellow-900\/90 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.9);}}
+.hover\:border-naples-yellow-100\/95 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.95);}}
+.hover\:border-naples-yellow-300\/95 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.95);}}
+.hover\:border-naples-yellow-500\/95 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.95);}}
+.hover\:border-naples-yellow-700\/95 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.95);}}
+.hover\:border-naples-yellow-900\/95 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.95);}}
+.hover\:border-naples-yellow-100 {&:hover {border-color:oklch(1 0.1449 97.97 / 1);}}
+.hover\:border-naples-yellow-300 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 1);}}
+.hover\:border-naples-yellow-500 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 1);}}
+.hover\:border-naples-yellow-700 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 1);}}
+.hover\:border-naples-yellow-900 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 1);}}
+.hover\:border-mikado-yellow-100\/1 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.01);}}
+.hover\:border-mikado-yellow-300\/1 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.01);}}
+.hover\:border-mikado-yellow-500\/1 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.01);}}
+.hover\:border-mikado-yellow-700\/1 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.01);}}
+.hover\:border-mikado-yellow-900\/1 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.01);}}
+.hover\:border-mikado-yellow-100\/5 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.05);}}
+.hover\:border-mikado-yellow-300\/5 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.05);}}
+.hover\:border-mikado-yellow-500\/5 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.05);}}
+.hover\:border-mikado-yellow-700\/5 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.05);}}
+.hover\:border-mikado-yellow-900\/5 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.05);}}
+.hover\:border-mikado-yellow-100\/10 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.1);}}
+.hover\:border-mikado-yellow-300\/10 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.1);}}
+.hover\:border-mikado-yellow-500\/10 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.1);}}
+.hover\:border-mikado-yellow-700\/10 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.1);}}
+.hover\:border-mikado-yellow-900\/10 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.1);}}
+.hover\:border-mikado-yellow-100\/25 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.2);}}
+.hover\:border-mikado-yellow-300\/25 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.2);}}
+.hover\:border-mikado-yellow-500\/25 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.2);}}
+.hover\:border-mikado-yellow-700\/25 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.2);}}
+.hover\:border-mikado-yellow-900\/25 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.2);}}
+.hover\:border-mikado-yellow-100\/50 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.5);}}
+.hover\:border-mikado-yellow-300\/50 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.5);}}
+.hover\:border-mikado-yellow-500\/50 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.5);}}
+.hover\:border-mikado-yellow-700\/50 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.5);}}
+.hover\:border-mikado-yellow-900\/50 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.5);}}
+.hover\:border-mikado-yellow-100\/75 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.7);}}
+.hover\:border-mikado-yellow-300\/75 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.7);}}
+.hover\:border-mikado-yellow-500\/75 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.7);}}
+.hover\:border-mikado-yellow-700\/75 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.7);}}
+.hover\:border-mikado-yellow-900\/75 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.7);}}
+.hover\:border-mikado-yellow-100\/90 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.9);}}
+.hover\:border-mikado-yellow-300\/90 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.9);}}
+.hover\:border-mikado-yellow-500\/90 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.9);}}
+.hover\:border-mikado-yellow-700\/90 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.9);}}
+.hover\:border-mikado-yellow-900\/90 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.9);}}
+.hover\:border-mikado-yellow-100\/95 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.95);}}
+.hover\:border-mikado-yellow-300\/95 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.95);}}
+.hover\:border-mikado-yellow-500\/95 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.95);}}
+.hover\:border-mikado-yellow-700\/95 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.95);}}
+.hover\:border-mikado-yellow-900\/95 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.95);}}
+.hover\:border-mikado-yellow-100 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 1);}}
+.hover\:border-mikado-yellow-300 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 1);}}
+.hover\:border-mikado-yellow-500 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 1);}}
+.hover\:border-mikado-yellow-700 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 1);}}
+.hover\:border-mikado-yellow-900 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 1);}}
 .hover\:border-orange-100\/1 {&:hover {border-color:oklch(0.8404 0.1444 57.26 / 0.01);}}
 .hover\:border-orange-300\/1 {&:hover {border-color:oklch(0.7904 0.1444 57.26 / 0.01);}}
 .hover\:border-orange-500\/1 {&:hover {border-color:oklch(0.7404 0.1444 57.26 / 0.01);}}
@@ -7226,6 +7856,96 @@ ol, ul {list-style:none;}
 .hover\:decoration-prussian-blue-500 {&:hover {text-decoration-color:oklch(0.3093 0.0627 254.14 / 1);}}
 .hover\:decoration-prussian-blue-700 {&:hover {text-decoration-color:oklch(0.2593 0.0627 254.14 / 1);}}
 .hover\:decoration-prussian-blue-900 {&:hover {text-decoration-color:oklch(0.2093 0.0627 254.14 / 1);}}
+.hover\:decoration-naples-yellow-100\/1 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.01);}}
+.hover\:decoration-naples-yellow-300\/1 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.01);}}
+.hover\:decoration-naples-yellow-500\/1 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.01);}}
+.hover\:decoration-naples-yellow-700\/1 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.01);}}
+.hover\:decoration-naples-yellow-900\/1 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.01);}}
+.hover\:decoration-naples-yellow-100\/5 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.05);}}
+.hover\:decoration-naples-yellow-300\/5 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.05);}}
+.hover\:decoration-naples-yellow-500\/5 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.05);}}
+.hover\:decoration-naples-yellow-700\/5 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.05);}}
+.hover\:decoration-naples-yellow-900\/5 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.05);}}
+.hover\:decoration-naples-yellow-100\/10 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.1);}}
+.hover\:decoration-naples-yellow-300\/10 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.1);}}
+.hover\:decoration-naples-yellow-500\/10 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.1);}}
+.hover\:decoration-naples-yellow-700\/10 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.1);}}
+.hover\:decoration-naples-yellow-900\/10 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.1);}}
+.hover\:decoration-naples-yellow-100\/25 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.2);}}
+.hover\:decoration-naples-yellow-300\/25 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.2);}}
+.hover\:decoration-naples-yellow-500\/25 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.2);}}
+.hover\:decoration-naples-yellow-700\/25 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.2);}}
+.hover\:decoration-naples-yellow-900\/25 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.2);}}
+.hover\:decoration-naples-yellow-100\/50 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.5);}}
+.hover\:decoration-naples-yellow-300\/50 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.5);}}
+.hover\:decoration-naples-yellow-500\/50 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.5);}}
+.hover\:decoration-naples-yellow-700\/50 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.5);}}
+.hover\:decoration-naples-yellow-900\/50 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.5);}}
+.hover\:decoration-naples-yellow-100\/75 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.7);}}
+.hover\:decoration-naples-yellow-300\/75 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.7);}}
+.hover\:decoration-naples-yellow-500\/75 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.7);}}
+.hover\:decoration-naples-yellow-700\/75 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.7);}}
+.hover\:decoration-naples-yellow-900\/75 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.7);}}
+.hover\:decoration-naples-yellow-100\/90 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.9);}}
+.hover\:decoration-naples-yellow-300\/90 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.9);}}
+.hover\:decoration-naples-yellow-500\/90 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.9);}}
+.hover\:decoration-naples-yellow-700\/90 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.9);}}
+.hover\:decoration-naples-yellow-900\/90 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.9);}}
+.hover\:decoration-naples-yellow-100\/95 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.95);}}
+.hover\:decoration-naples-yellow-300\/95 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.95);}}
+.hover\:decoration-naples-yellow-500\/95 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.95);}}
+.hover\:decoration-naples-yellow-700\/95 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.95);}}
+.hover\:decoration-naples-yellow-900\/95 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.95);}}
+.hover\:decoration-naples-yellow-100 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 1);}}
+.hover\:decoration-naples-yellow-300 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 1);}}
+.hover\:decoration-naples-yellow-500 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 1);}}
+.hover\:decoration-naples-yellow-700 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 1);}}
+.hover\:decoration-naples-yellow-900 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 1);}}
+.hover\:decoration-mikado-yellow-100\/1 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.01);}}
+.hover\:decoration-mikado-yellow-300\/1 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.01);}}
+.hover\:decoration-mikado-yellow-500\/1 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.01);}}
+.hover\:decoration-mikado-yellow-700\/1 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.01);}}
+.hover\:decoration-mikado-yellow-900\/1 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.01);}}
+.hover\:decoration-mikado-yellow-100\/5 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.05);}}
+.hover\:decoration-mikado-yellow-300\/5 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.05);}}
+.hover\:decoration-mikado-yellow-500\/5 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.05);}}
+.hover\:decoration-mikado-yellow-700\/5 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.05);}}
+.hover\:decoration-mikado-yellow-900\/5 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.05);}}
+.hover\:decoration-mikado-yellow-100\/10 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.1);}}
+.hover\:decoration-mikado-yellow-300\/10 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.1);}}
+.hover\:decoration-mikado-yellow-500\/10 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.1);}}
+.hover\:decoration-mikado-yellow-700\/10 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.1);}}
+.hover\:decoration-mikado-yellow-900\/10 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.1);}}
+.hover\:decoration-mikado-yellow-100\/25 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.2);}}
+.hover\:decoration-mikado-yellow-300\/25 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.2);}}
+.hover\:decoration-mikado-yellow-500\/25 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.2);}}
+.hover\:decoration-mikado-yellow-700\/25 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.2);}}
+.hover\:decoration-mikado-yellow-900\/25 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.2);}}
+.hover\:decoration-mikado-yellow-100\/50 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.5);}}
+.hover\:decoration-mikado-yellow-300\/50 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.5);}}
+.hover\:decoration-mikado-yellow-500\/50 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.5);}}
+.hover\:decoration-mikado-yellow-700\/50 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.5);}}
+.hover\:decoration-mikado-yellow-900\/50 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.5);}}
+.hover\:decoration-mikado-yellow-100\/75 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.7);}}
+.hover\:decoration-mikado-yellow-300\/75 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.7);}}
+.hover\:decoration-mikado-yellow-500\/75 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.7);}}
+.hover\:decoration-mikado-yellow-700\/75 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.7);}}
+.hover\:decoration-mikado-yellow-900\/75 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.7);}}
+.hover\:decoration-mikado-yellow-100\/90 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.9);}}
+.hover\:decoration-mikado-yellow-300\/90 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.9);}}
+.hover\:decoration-mikado-yellow-500\/90 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.9);}}
+.hover\:decoration-mikado-yellow-700\/90 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.9);}}
+.hover\:decoration-mikado-yellow-900\/90 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.9);}}
+.hover\:decoration-mikado-yellow-100\/95 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.95);}}
+.hover\:decoration-mikado-yellow-300\/95 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.95);}}
+.hover\:decoration-mikado-yellow-500\/95 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.95);}}
+.hover\:decoration-mikado-yellow-700\/95 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.95);}}
+.hover\:decoration-mikado-yellow-900\/95 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.95);}}
+.hover\:decoration-mikado-yellow-100 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 1);}}
+.hover\:decoration-mikado-yellow-300 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 1);}}
+.hover\:decoration-mikado-yellow-500 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 1);}}
+.hover\:decoration-mikado-yellow-700 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 1);}}
+.hover\:decoration-mikado-yellow-900 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 1);}}
 .hover\:decoration-orange-100\/1 {&:hover {text-decoration-color:oklch(0.8404 0.1444 57.26 / 0.01);}}
 .hover\:decoration-orange-300\/1 {&:hover {text-decoration-color:oklch(0.7904 0.1444 57.26 / 0.01);}}
 .hover\:decoration-orange-500\/1 {&:hover {text-decoration-color:oklch(0.7404 0.1444 57.26 / 0.01);}}
@@ -7836,6 +8556,96 @@ ol, ul {list-style:none;}
 .dark\:bg-prussian-blue-500 {background:oklch(0.3093 0.0627 254.14 / 1);}
 .dark\:bg-prussian-blue-700 {background:oklch(0.2593 0.0627 254.14 / 1);}
 .dark\:bg-prussian-blue-900 {background:oklch(0.2093 0.0627 254.14 / 1);}
+.dark\:bg-naples-yellow-100\/1 {background:oklch(1 0.1449 97.97 / 0.01);}
+.dark\:bg-naples-yellow-300\/1 {background:oklch(0.9511 0.1449 97.97 / 0.01);}
+.dark\:bg-naples-yellow-500\/1 {background:oklch(0.9011 0.1449 97.97 / 0.01);}
+.dark\:bg-naples-yellow-700\/1 {background:oklch(0.8511 0.1449 97.97 / 0.01);}
+.dark\:bg-naples-yellow-900\/1 {background:oklch(0.8011 0.1449 97.97 / 0.01);}
+.dark\:bg-naples-yellow-100\/5 {background:oklch(1 0.1449 97.97 / 0.05);}
+.dark\:bg-naples-yellow-300\/5 {background:oklch(0.9511 0.1449 97.97 / 0.05);}
+.dark\:bg-naples-yellow-500\/5 {background:oklch(0.9011 0.1449 97.97 / 0.05);}
+.dark\:bg-naples-yellow-700\/5 {background:oklch(0.8511 0.1449 97.97 / 0.05);}
+.dark\:bg-naples-yellow-900\/5 {background:oklch(0.8011 0.1449 97.97 / 0.05);}
+.dark\:bg-naples-yellow-100\/10 {background:oklch(1 0.1449 97.97 / 0.1);}
+.dark\:bg-naples-yellow-300\/10 {background:oklch(0.9511 0.1449 97.97 / 0.1);}
+.dark\:bg-naples-yellow-500\/10 {background:oklch(0.9011 0.1449 97.97 / 0.1);}
+.dark\:bg-naples-yellow-700\/10 {background:oklch(0.8511 0.1449 97.97 / 0.1);}
+.dark\:bg-naples-yellow-900\/10 {background:oklch(0.8011 0.1449 97.97 / 0.1);}
+.dark\:bg-naples-yellow-100\/25 {background:oklch(1 0.1449 97.97 / 0.2);}
+.dark\:bg-naples-yellow-300\/25 {background:oklch(0.9511 0.1449 97.97 / 0.2);}
+.dark\:bg-naples-yellow-500\/25 {background:oklch(0.9011 0.1449 97.97 / 0.2);}
+.dark\:bg-naples-yellow-700\/25 {background:oklch(0.8511 0.1449 97.97 / 0.2);}
+.dark\:bg-naples-yellow-900\/25 {background:oklch(0.8011 0.1449 97.97 / 0.2);}
+.dark\:bg-naples-yellow-100\/50 {background:oklch(1 0.1449 97.97 / 0.5);}
+.dark\:bg-naples-yellow-300\/50 {background:oklch(0.9511 0.1449 97.97 / 0.5);}
+.dark\:bg-naples-yellow-500\/50 {background:oklch(0.9011 0.1449 97.97 / 0.5);}
+.dark\:bg-naples-yellow-700\/50 {background:oklch(0.8511 0.1449 97.97 / 0.5);}
+.dark\:bg-naples-yellow-900\/50 {background:oklch(0.8011 0.1449 97.97 / 0.5);}
+.dark\:bg-naples-yellow-100\/75 {background:oklch(1 0.1449 97.97 / 0.7);}
+.dark\:bg-naples-yellow-300\/75 {background:oklch(0.9511 0.1449 97.97 / 0.7);}
+.dark\:bg-naples-yellow-500\/75 {background:oklch(0.9011 0.1449 97.97 / 0.7);}
+.dark\:bg-naples-yellow-700\/75 {background:oklch(0.8511 0.1449 97.97 / 0.7);}
+.dark\:bg-naples-yellow-900\/75 {background:oklch(0.8011 0.1449 97.97 / 0.7);}
+.dark\:bg-naples-yellow-100\/90 {background:oklch(1 0.1449 97.97 / 0.9);}
+.dark\:bg-naples-yellow-300\/90 {background:oklch(0.9511 0.1449 97.97 / 0.9);}
+.dark\:bg-naples-yellow-500\/90 {background:oklch(0.9011 0.1449 97.97 / 0.9);}
+.dark\:bg-naples-yellow-700\/90 {background:oklch(0.8511 0.1449 97.97 / 0.9);}
+.dark\:bg-naples-yellow-900\/90 {background:oklch(0.8011 0.1449 97.97 / 0.9);}
+.dark\:bg-naples-yellow-100\/95 {background:oklch(1 0.1449 97.97 / 0.95);}
+.dark\:bg-naples-yellow-300\/95 {background:oklch(0.9511 0.1449 97.97 / 0.95);}
+.dark\:bg-naples-yellow-500\/95 {background:oklch(0.9011 0.1449 97.97 / 0.95);}
+.dark\:bg-naples-yellow-700\/95 {background:oklch(0.8511 0.1449 97.97 / 0.95);}
+.dark\:bg-naples-yellow-900\/95 {background:oklch(0.8011 0.1449 97.97 / 0.95);}
+.dark\:bg-naples-yellow-100 {background:oklch(1 0.1449 97.97 / 1);}
+.dark\:bg-naples-yellow-300 {background:oklch(0.9511 0.1449 97.97 / 1);}
+.dark\:bg-naples-yellow-500 {background:oklch(0.9011 0.1449 97.97 / 1);}
+.dark\:bg-naples-yellow-700 {background:oklch(0.8511 0.1449 97.97 / 1);}
+.dark\:bg-naples-yellow-900 {background:oklch(0.8011 0.1449 97.97 / 1);}
+.dark\:bg-mikado-yellow-100\/1 {background:oklch(0.9538 0.1734 87.35 / 0.01);}
+.dark\:bg-mikado-yellow-300\/1 {background:oklch(0.9038 0.1734 87.35 / 0.01);}
+.dark\:bg-mikado-yellow-500\/1 {background:oklch(0.8538 0.1734 87.35 / 0.01);}
+.dark\:bg-mikado-yellow-700\/1 {background:oklch(0.8038 0.1734 87.35 / 0.01);}
+.dark\:bg-mikado-yellow-900\/1 {background:oklch(0.7538 0.1734 87.35 / 0.01);}
+.dark\:bg-mikado-yellow-100\/5 {background:oklch(0.9538 0.1734 87.35 / 0.05);}
+.dark\:bg-mikado-yellow-300\/5 {background:oklch(0.9038 0.1734 87.35 / 0.05);}
+.dark\:bg-mikado-yellow-500\/5 {background:oklch(0.8538 0.1734 87.35 / 0.05);}
+.dark\:bg-mikado-yellow-700\/5 {background:oklch(0.8038 0.1734 87.35 / 0.05);}
+.dark\:bg-mikado-yellow-900\/5 {background:oklch(0.7538 0.1734 87.35 / 0.05);}
+.dark\:bg-mikado-yellow-100\/10 {background:oklch(0.9538 0.1734 87.35 / 0.1);}
+.dark\:bg-mikado-yellow-300\/10 {background:oklch(0.9038 0.1734 87.35 / 0.1);}
+.dark\:bg-mikado-yellow-500\/10 {background:oklch(0.8538 0.1734 87.35 / 0.1);}
+.dark\:bg-mikado-yellow-700\/10 {background:oklch(0.8038 0.1734 87.35 / 0.1);}
+.dark\:bg-mikado-yellow-900\/10 {background:oklch(0.7538 0.1734 87.35 / 0.1);}
+.dark\:bg-mikado-yellow-100\/25 {background:oklch(0.9538 0.1734 87.35 / 0.2);}
+.dark\:bg-mikado-yellow-300\/25 {background:oklch(0.9038 0.1734 87.35 / 0.2);}
+.dark\:bg-mikado-yellow-500\/25 {background:oklch(0.8538 0.1734 87.35 / 0.2);}
+.dark\:bg-mikado-yellow-700\/25 {background:oklch(0.8038 0.1734 87.35 / 0.2);}
+.dark\:bg-mikado-yellow-900\/25 {background:oklch(0.7538 0.1734 87.35 / 0.2);}
+.dark\:bg-mikado-yellow-100\/50 {background:oklch(0.9538 0.1734 87.35 / 0.5);}
+.dark\:bg-mikado-yellow-300\/50 {background:oklch(0.9038 0.1734 87.35 / 0.5);}
+.dark\:bg-mikado-yellow-500\/50 {background:oklch(0.8538 0.1734 87.35 / 0.5);}
+.dark\:bg-mikado-yellow-700\/50 {background:oklch(0.8038 0.1734 87.35 / 0.5);}
+.dark\:bg-mikado-yellow-900\/50 {background:oklch(0.7538 0.1734 87.35 / 0.5);}
+.dark\:bg-mikado-yellow-100\/75 {background:oklch(0.9538 0.1734 87.35 / 0.7);}
+.dark\:bg-mikado-yellow-300\/75 {background:oklch(0.9038 0.1734 87.35 / 0.7);}
+.dark\:bg-mikado-yellow-500\/75 {background:oklch(0.8538 0.1734 87.35 / 0.7);}
+.dark\:bg-mikado-yellow-700\/75 {background:oklch(0.8038 0.1734 87.35 / 0.7);}
+.dark\:bg-mikado-yellow-900\/75 {background:oklch(0.7538 0.1734 87.35 / 0.7);}
+.dark\:bg-mikado-yellow-100\/90 {background:oklch(0.9538 0.1734 87.35 / 0.9);}
+.dark\:bg-mikado-yellow-300\/90 {background:oklch(0.9038 0.1734 87.35 / 0.9);}
+.dark\:bg-mikado-yellow-500\/90 {background:oklch(0.8538 0.1734 87.35 / 0.9);}
+.dark\:bg-mikado-yellow-700\/90 {background:oklch(0.8038 0.1734 87.35 / 0.9);}
+.dark\:bg-mikado-yellow-900\/90 {background:oklch(0.7538 0.1734 87.35 / 0.9);}
+.dark\:bg-mikado-yellow-100\/95 {background:oklch(0.9538 0.1734 87.35 / 0.95);}
+.dark\:bg-mikado-yellow-300\/95 {background:oklch(0.9038 0.1734 87.35 / 0.95);}
+.dark\:bg-mikado-yellow-500\/95 {background:oklch(0.8538 0.1734 87.35 / 0.95);}
+.dark\:bg-mikado-yellow-700\/95 {background:oklch(0.8038 0.1734 87.35 / 0.95);}
+.dark\:bg-mikado-yellow-900\/95 {background:oklch(0.7538 0.1734 87.35 / 0.95);}
+.dark\:bg-mikado-yellow-100 {background:oklch(0.9538 0.1734 87.35 / 1);}
+.dark\:bg-mikado-yellow-300 {background:oklch(0.9038 0.1734 87.35 / 1);}
+.dark\:bg-mikado-yellow-500 {background:oklch(0.8538 0.1734 87.35 / 1);}
+.dark\:bg-mikado-yellow-700 {background:oklch(0.8038 0.1734 87.35 / 1);}
+.dark\:bg-mikado-yellow-900 {background:oklch(0.7538 0.1734 87.35 / 1);}
 .dark\:bg-orange-100\/1 {background:oklch(0.8404 0.1444 57.26 / 0.01);}
 .dark\:bg-orange-300\/1 {background:oklch(0.7904 0.1444 57.26 / 0.01);}
 .dark\:bg-orange-500\/1 {background:oklch(0.7404 0.1444 57.26 / 0.01);}
@@ -8421,6 +9231,96 @@ ol, ul {list-style:none;}
 .dark\:text-prussian-blue-500 {color:oklch(0.3093 0.0627 254.14 / 1);}
 .dark\:text-prussian-blue-700 {color:oklch(0.2593 0.0627 254.14 / 1);}
 .dark\:text-prussian-blue-900 {color:oklch(0.2093 0.0627 254.14 / 1);}
+.dark\:text-naples-yellow-100\/1 {color:oklch(1 0.1449 97.97 / 0.01);}
+.dark\:text-naples-yellow-300\/1 {color:oklch(0.9511 0.1449 97.97 / 0.01);}
+.dark\:text-naples-yellow-500\/1 {color:oklch(0.9011 0.1449 97.97 / 0.01);}
+.dark\:text-naples-yellow-700\/1 {color:oklch(0.8511 0.1449 97.97 / 0.01);}
+.dark\:text-naples-yellow-900\/1 {color:oklch(0.8011 0.1449 97.97 / 0.01);}
+.dark\:text-naples-yellow-100\/5 {color:oklch(1 0.1449 97.97 / 0.05);}
+.dark\:text-naples-yellow-300\/5 {color:oklch(0.9511 0.1449 97.97 / 0.05);}
+.dark\:text-naples-yellow-500\/5 {color:oklch(0.9011 0.1449 97.97 / 0.05);}
+.dark\:text-naples-yellow-700\/5 {color:oklch(0.8511 0.1449 97.97 / 0.05);}
+.dark\:text-naples-yellow-900\/5 {color:oklch(0.8011 0.1449 97.97 / 0.05);}
+.dark\:text-naples-yellow-100\/10 {color:oklch(1 0.1449 97.97 / 0.1);}
+.dark\:text-naples-yellow-300\/10 {color:oklch(0.9511 0.1449 97.97 / 0.1);}
+.dark\:text-naples-yellow-500\/10 {color:oklch(0.9011 0.1449 97.97 / 0.1);}
+.dark\:text-naples-yellow-700\/10 {color:oklch(0.8511 0.1449 97.97 / 0.1);}
+.dark\:text-naples-yellow-900\/10 {color:oklch(0.8011 0.1449 97.97 / 0.1);}
+.dark\:text-naples-yellow-100\/25 {color:oklch(1 0.1449 97.97 / 0.2);}
+.dark\:text-naples-yellow-300\/25 {color:oklch(0.9511 0.1449 97.97 / 0.2);}
+.dark\:text-naples-yellow-500\/25 {color:oklch(0.9011 0.1449 97.97 / 0.2);}
+.dark\:text-naples-yellow-700\/25 {color:oklch(0.8511 0.1449 97.97 / 0.2);}
+.dark\:text-naples-yellow-900\/25 {color:oklch(0.8011 0.1449 97.97 / 0.2);}
+.dark\:text-naples-yellow-100\/50 {color:oklch(1 0.1449 97.97 / 0.5);}
+.dark\:text-naples-yellow-300\/50 {color:oklch(0.9511 0.1449 97.97 / 0.5);}
+.dark\:text-naples-yellow-500\/50 {color:oklch(0.9011 0.1449 97.97 / 0.5);}
+.dark\:text-naples-yellow-700\/50 {color:oklch(0.8511 0.1449 97.97 / 0.5);}
+.dark\:text-naples-yellow-900\/50 {color:oklch(0.8011 0.1449 97.97 / 0.5);}
+.dark\:text-naples-yellow-100\/75 {color:oklch(1 0.1449 97.97 / 0.7);}
+.dark\:text-naples-yellow-300\/75 {color:oklch(0.9511 0.1449 97.97 / 0.7);}
+.dark\:text-naples-yellow-500\/75 {color:oklch(0.9011 0.1449 97.97 / 0.7);}
+.dark\:text-naples-yellow-700\/75 {color:oklch(0.8511 0.1449 97.97 / 0.7);}
+.dark\:text-naples-yellow-900\/75 {color:oklch(0.8011 0.1449 97.97 / 0.7);}
+.dark\:text-naples-yellow-100\/90 {color:oklch(1 0.1449 97.97 / 0.9);}
+.dark\:text-naples-yellow-300\/90 {color:oklch(0.9511 0.1449 97.97 / 0.9);}
+.dark\:text-naples-yellow-500\/90 {color:oklch(0.9011 0.1449 97.97 / 0.9);}
+.dark\:text-naples-yellow-700\/90 {color:oklch(0.8511 0.1449 97.97 / 0.9);}
+.dark\:text-naples-yellow-900\/90 {color:oklch(0.8011 0.1449 97.97 / 0.9);}
+.dark\:text-naples-yellow-100\/95 {color:oklch(1 0.1449 97.97 / 0.95);}
+.dark\:text-naples-yellow-300\/95 {color:oklch(0.9511 0.1449 97.97 / 0.95);}
+.dark\:text-naples-yellow-500\/95 {color:oklch(0.9011 0.1449 97.97 / 0.95);}
+.dark\:text-naples-yellow-700\/95 {color:oklch(0.8511 0.1449 97.97 / 0.95);}
+.dark\:text-naples-yellow-900\/95 {color:oklch(0.8011 0.1449 97.97 / 0.95);}
+.dark\:text-naples-yellow-100 {color:oklch(1 0.1449 97.97 / 1);}
+.dark\:text-naples-yellow-300 {color:oklch(0.9511 0.1449 97.97 / 1);}
+.dark\:text-naples-yellow-500 {color:oklch(0.9011 0.1449 97.97 / 1);}
+.dark\:text-naples-yellow-700 {color:oklch(0.8511 0.1449 97.97 / 1);}
+.dark\:text-naples-yellow-900 {color:oklch(0.8011 0.1449 97.97 / 1);}
+.dark\:text-mikado-yellow-100\/1 {color:oklch(0.9538 0.1734 87.35 / 0.01);}
+.dark\:text-mikado-yellow-300\/1 {color:oklch(0.9038 0.1734 87.35 / 0.01);}
+.dark\:text-mikado-yellow-500\/1 {color:oklch(0.8538 0.1734 87.35 / 0.01);}
+.dark\:text-mikado-yellow-700\/1 {color:oklch(0.8038 0.1734 87.35 / 0.01);}
+.dark\:text-mikado-yellow-900\/1 {color:oklch(0.7538 0.1734 87.35 / 0.01);}
+.dark\:text-mikado-yellow-100\/5 {color:oklch(0.9538 0.1734 87.35 / 0.05);}
+.dark\:text-mikado-yellow-300\/5 {color:oklch(0.9038 0.1734 87.35 / 0.05);}
+.dark\:text-mikado-yellow-500\/5 {color:oklch(0.8538 0.1734 87.35 / 0.05);}
+.dark\:text-mikado-yellow-700\/5 {color:oklch(0.8038 0.1734 87.35 / 0.05);}
+.dark\:text-mikado-yellow-900\/5 {color:oklch(0.7538 0.1734 87.35 / 0.05);}
+.dark\:text-mikado-yellow-100\/10 {color:oklch(0.9538 0.1734 87.35 / 0.1);}
+.dark\:text-mikado-yellow-300\/10 {color:oklch(0.9038 0.1734 87.35 / 0.1);}
+.dark\:text-mikado-yellow-500\/10 {color:oklch(0.8538 0.1734 87.35 / 0.1);}
+.dark\:text-mikado-yellow-700\/10 {color:oklch(0.8038 0.1734 87.35 / 0.1);}
+.dark\:text-mikado-yellow-900\/10 {color:oklch(0.7538 0.1734 87.35 / 0.1);}
+.dark\:text-mikado-yellow-100\/25 {color:oklch(0.9538 0.1734 87.35 / 0.2);}
+.dark\:text-mikado-yellow-300\/25 {color:oklch(0.9038 0.1734 87.35 / 0.2);}
+.dark\:text-mikado-yellow-500\/25 {color:oklch(0.8538 0.1734 87.35 / 0.2);}
+.dark\:text-mikado-yellow-700\/25 {color:oklch(0.8038 0.1734 87.35 / 0.2);}
+.dark\:text-mikado-yellow-900\/25 {color:oklch(0.7538 0.1734 87.35 / 0.2);}
+.dark\:text-mikado-yellow-100\/50 {color:oklch(0.9538 0.1734 87.35 / 0.5);}
+.dark\:text-mikado-yellow-300\/50 {color:oklch(0.9038 0.1734 87.35 / 0.5);}
+.dark\:text-mikado-yellow-500\/50 {color:oklch(0.8538 0.1734 87.35 / 0.5);}
+.dark\:text-mikado-yellow-700\/50 {color:oklch(0.8038 0.1734 87.35 / 0.5);}
+.dark\:text-mikado-yellow-900\/50 {color:oklch(0.7538 0.1734 87.35 / 0.5);}
+.dark\:text-mikado-yellow-100\/75 {color:oklch(0.9538 0.1734 87.35 / 0.7);}
+.dark\:text-mikado-yellow-300\/75 {color:oklch(0.9038 0.1734 87.35 / 0.7);}
+.dark\:text-mikado-yellow-500\/75 {color:oklch(0.8538 0.1734 87.35 / 0.7);}
+.dark\:text-mikado-yellow-700\/75 {color:oklch(0.8038 0.1734 87.35 / 0.7);}
+.dark\:text-mikado-yellow-900\/75 {color:oklch(0.7538 0.1734 87.35 / 0.7);}
+.dark\:text-mikado-yellow-100\/90 {color:oklch(0.9538 0.1734 87.35 / 0.9);}
+.dark\:text-mikado-yellow-300\/90 {color:oklch(0.9038 0.1734 87.35 / 0.9);}
+.dark\:text-mikado-yellow-500\/90 {color:oklch(0.8538 0.1734 87.35 / 0.9);}
+.dark\:text-mikado-yellow-700\/90 {color:oklch(0.8038 0.1734 87.35 / 0.9);}
+.dark\:text-mikado-yellow-900\/90 {color:oklch(0.7538 0.1734 87.35 / 0.9);}
+.dark\:text-mikado-yellow-100\/95 {color:oklch(0.9538 0.1734 87.35 / 0.95);}
+.dark\:text-mikado-yellow-300\/95 {color:oklch(0.9038 0.1734 87.35 / 0.95);}
+.dark\:text-mikado-yellow-500\/95 {color:oklch(0.8538 0.1734 87.35 / 0.95);}
+.dark\:text-mikado-yellow-700\/95 {color:oklch(0.8038 0.1734 87.35 / 0.95);}
+.dark\:text-mikado-yellow-900\/95 {color:oklch(0.7538 0.1734 87.35 / 0.95);}
+.dark\:text-mikado-yellow-100 {color:oklch(0.9538 0.1734 87.35 / 1);}
+.dark\:text-mikado-yellow-300 {color:oklch(0.9038 0.1734 87.35 / 1);}
+.dark\:text-mikado-yellow-500 {color:oklch(0.8538 0.1734 87.35 / 1);}
+.dark\:text-mikado-yellow-700 {color:oklch(0.8038 0.1734 87.35 / 1);}
+.dark\:text-mikado-yellow-900 {color:oklch(0.7538 0.1734 87.35 / 1);}
 .dark\:text-orange-100\/1 {color:oklch(0.8404 0.1444 57.26 / 0.01);}
 .dark\:text-orange-300\/1 {color:oklch(0.7904 0.1444 57.26 / 0.01);}
 .dark\:text-orange-500\/1 {color:oklch(0.7404 0.1444 57.26 / 0.01);}
@@ -9006,6 +9906,96 @@ ol, ul {list-style:none;}
 .dark\:border-prussian-blue-500 {border-color:oklch(0.3093 0.0627 254.14 / 1);}
 .dark\:border-prussian-blue-700 {border-color:oklch(0.2593 0.0627 254.14 / 1);}
 .dark\:border-prussian-blue-900 {border-color:oklch(0.2093 0.0627 254.14 / 1);}
+.dark\:border-naples-yellow-100\/1 {border-color:oklch(1 0.1449 97.97 / 0.01);}
+.dark\:border-naples-yellow-300\/1 {border-color:oklch(0.9511 0.1449 97.97 / 0.01);}
+.dark\:border-naples-yellow-500\/1 {border-color:oklch(0.9011 0.1449 97.97 / 0.01);}
+.dark\:border-naples-yellow-700\/1 {border-color:oklch(0.8511 0.1449 97.97 / 0.01);}
+.dark\:border-naples-yellow-900\/1 {border-color:oklch(0.8011 0.1449 97.97 / 0.01);}
+.dark\:border-naples-yellow-100\/5 {border-color:oklch(1 0.1449 97.97 / 0.05);}
+.dark\:border-naples-yellow-300\/5 {border-color:oklch(0.9511 0.1449 97.97 / 0.05);}
+.dark\:border-naples-yellow-500\/5 {border-color:oklch(0.9011 0.1449 97.97 / 0.05);}
+.dark\:border-naples-yellow-700\/5 {border-color:oklch(0.8511 0.1449 97.97 / 0.05);}
+.dark\:border-naples-yellow-900\/5 {border-color:oklch(0.8011 0.1449 97.97 / 0.05);}
+.dark\:border-naples-yellow-100\/10 {border-color:oklch(1 0.1449 97.97 / 0.1);}
+.dark\:border-naples-yellow-300\/10 {border-color:oklch(0.9511 0.1449 97.97 / 0.1);}
+.dark\:border-naples-yellow-500\/10 {border-color:oklch(0.9011 0.1449 97.97 / 0.1);}
+.dark\:border-naples-yellow-700\/10 {border-color:oklch(0.8511 0.1449 97.97 / 0.1);}
+.dark\:border-naples-yellow-900\/10 {border-color:oklch(0.8011 0.1449 97.97 / 0.1);}
+.dark\:border-naples-yellow-100\/25 {border-color:oklch(1 0.1449 97.97 / 0.2);}
+.dark\:border-naples-yellow-300\/25 {border-color:oklch(0.9511 0.1449 97.97 / 0.2);}
+.dark\:border-naples-yellow-500\/25 {border-color:oklch(0.9011 0.1449 97.97 / 0.2);}
+.dark\:border-naples-yellow-700\/25 {border-color:oklch(0.8511 0.1449 97.97 / 0.2);}
+.dark\:border-naples-yellow-900\/25 {border-color:oklch(0.8011 0.1449 97.97 / 0.2);}
+.dark\:border-naples-yellow-100\/50 {border-color:oklch(1 0.1449 97.97 / 0.5);}
+.dark\:border-naples-yellow-300\/50 {border-color:oklch(0.9511 0.1449 97.97 / 0.5);}
+.dark\:border-naples-yellow-500\/50 {border-color:oklch(0.9011 0.1449 97.97 / 0.5);}
+.dark\:border-naples-yellow-700\/50 {border-color:oklch(0.8511 0.1449 97.97 / 0.5);}
+.dark\:border-naples-yellow-900\/50 {border-color:oklch(0.8011 0.1449 97.97 / 0.5);}
+.dark\:border-naples-yellow-100\/75 {border-color:oklch(1 0.1449 97.97 / 0.7);}
+.dark\:border-naples-yellow-300\/75 {border-color:oklch(0.9511 0.1449 97.97 / 0.7);}
+.dark\:border-naples-yellow-500\/75 {border-color:oklch(0.9011 0.1449 97.97 / 0.7);}
+.dark\:border-naples-yellow-700\/75 {border-color:oklch(0.8511 0.1449 97.97 / 0.7);}
+.dark\:border-naples-yellow-900\/75 {border-color:oklch(0.8011 0.1449 97.97 / 0.7);}
+.dark\:border-naples-yellow-100\/90 {border-color:oklch(1 0.1449 97.97 / 0.9);}
+.dark\:border-naples-yellow-300\/90 {border-color:oklch(0.9511 0.1449 97.97 / 0.9);}
+.dark\:border-naples-yellow-500\/90 {border-color:oklch(0.9011 0.1449 97.97 / 0.9);}
+.dark\:border-naples-yellow-700\/90 {border-color:oklch(0.8511 0.1449 97.97 / 0.9);}
+.dark\:border-naples-yellow-900\/90 {border-color:oklch(0.8011 0.1449 97.97 / 0.9);}
+.dark\:border-naples-yellow-100\/95 {border-color:oklch(1 0.1449 97.97 / 0.95);}
+.dark\:border-naples-yellow-300\/95 {border-color:oklch(0.9511 0.1449 97.97 / 0.95);}
+.dark\:border-naples-yellow-500\/95 {border-color:oklch(0.9011 0.1449 97.97 / 0.95);}
+.dark\:border-naples-yellow-700\/95 {border-color:oklch(0.8511 0.1449 97.97 / 0.95);}
+.dark\:border-naples-yellow-900\/95 {border-color:oklch(0.8011 0.1449 97.97 / 0.95);}
+.dark\:border-naples-yellow-100 {border-color:oklch(1 0.1449 97.97 / 1);}
+.dark\:border-naples-yellow-300 {border-color:oklch(0.9511 0.1449 97.97 / 1);}
+.dark\:border-naples-yellow-500 {border-color:oklch(0.9011 0.1449 97.97 / 1);}
+.dark\:border-naples-yellow-700 {border-color:oklch(0.8511 0.1449 97.97 / 1);}
+.dark\:border-naples-yellow-900 {border-color:oklch(0.8011 0.1449 97.97 / 1);}
+.dark\:border-mikado-yellow-100\/1 {border-color:oklch(0.9538 0.1734 87.35 / 0.01);}
+.dark\:border-mikado-yellow-300\/1 {border-color:oklch(0.9038 0.1734 87.35 / 0.01);}
+.dark\:border-mikado-yellow-500\/1 {border-color:oklch(0.8538 0.1734 87.35 / 0.01);}
+.dark\:border-mikado-yellow-700\/1 {border-color:oklch(0.8038 0.1734 87.35 / 0.01);}
+.dark\:border-mikado-yellow-900\/1 {border-color:oklch(0.7538 0.1734 87.35 / 0.01);}
+.dark\:border-mikado-yellow-100\/5 {border-color:oklch(0.9538 0.1734 87.35 / 0.05);}
+.dark\:border-mikado-yellow-300\/5 {border-color:oklch(0.9038 0.1734 87.35 / 0.05);}
+.dark\:border-mikado-yellow-500\/5 {border-color:oklch(0.8538 0.1734 87.35 / 0.05);}
+.dark\:border-mikado-yellow-700\/5 {border-color:oklch(0.8038 0.1734 87.35 / 0.05);}
+.dark\:border-mikado-yellow-900\/5 {border-color:oklch(0.7538 0.1734 87.35 / 0.05);}
+.dark\:border-mikado-yellow-100\/10 {border-color:oklch(0.9538 0.1734 87.35 / 0.1);}
+.dark\:border-mikado-yellow-300\/10 {border-color:oklch(0.9038 0.1734 87.35 / 0.1);}
+.dark\:border-mikado-yellow-500\/10 {border-color:oklch(0.8538 0.1734 87.35 / 0.1);}
+.dark\:border-mikado-yellow-700\/10 {border-color:oklch(0.8038 0.1734 87.35 / 0.1);}
+.dark\:border-mikado-yellow-900\/10 {border-color:oklch(0.7538 0.1734 87.35 / 0.1);}
+.dark\:border-mikado-yellow-100\/25 {border-color:oklch(0.9538 0.1734 87.35 / 0.2);}
+.dark\:border-mikado-yellow-300\/25 {border-color:oklch(0.9038 0.1734 87.35 / 0.2);}
+.dark\:border-mikado-yellow-500\/25 {border-color:oklch(0.8538 0.1734 87.35 / 0.2);}
+.dark\:border-mikado-yellow-700\/25 {border-color:oklch(0.8038 0.1734 87.35 / 0.2);}
+.dark\:border-mikado-yellow-900\/25 {border-color:oklch(0.7538 0.1734 87.35 / 0.2);}
+.dark\:border-mikado-yellow-100\/50 {border-color:oklch(0.9538 0.1734 87.35 / 0.5);}
+.dark\:border-mikado-yellow-300\/50 {border-color:oklch(0.9038 0.1734 87.35 / 0.5);}
+.dark\:border-mikado-yellow-500\/50 {border-color:oklch(0.8538 0.1734 87.35 / 0.5);}
+.dark\:border-mikado-yellow-700\/50 {border-color:oklch(0.8038 0.1734 87.35 / 0.5);}
+.dark\:border-mikado-yellow-900\/50 {border-color:oklch(0.7538 0.1734 87.35 / 0.5);}
+.dark\:border-mikado-yellow-100\/75 {border-color:oklch(0.9538 0.1734 87.35 / 0.7);}
+.dark\:border-mikado-yellow-300\/75 {border-color:oklch(0.9038 0.1734 87.35 / 0.7);}
+.dark\:border-mikado-yellow-500\/75 {border-color:oklch(0.8538 0.1734 87.35 / 0.7);}
+.dark\:border-mikado-yellow-700\/75 {border-color:oklch(0.8038 0.1734 87.35 / 0.7);}
+.dark\:border-mikado-yellow-900\/75 {border-color:oklch(0.7538 0.1734 87.35 / 0.7);}
+.dark\:border-mikado-yellow-100\/90 {border-color:oklch(0.9538 0.1734 87.35 / 0.9);}
+.dark\:border-mikado-yellow-300\/90 {border-color:oklch(0.9038 0.1734 87.35 / 0.9);}
+.dark\:border-mikado-yellow-500\/90 {border-color:oklch(0.8538 0.1734 87.35 / 0.9);}
+.dark\:border-mikado-yellow-700\/90 {border-color:oklch(0.8038 0.1734 87.35 / 0.9);}
+.dark\:border-mikado-yellow-900\/90 {border-color:oklch(0.7538 0.1734 87.35 / 0.9);}
+.dark\:border-mikado-yellow-100\/95 {border-color:oklch(0.9538 0.1734 87.35 / 0.95);}
+.dark\:border-mikado-yellow-300\/95 {border-color:oklch(0.9038 0.1734 87.35 / 0.95);}
+.dark\:border-mikado-yellow-500\/95 {border-color:oklch(0.8538 0.1734 87.35 / 0.95);}
+.dark\:border-mikado-yellow-700\/95 {border-color:oklch(0.8038 0.1734 87.35 / 0.95);}
+.dark\:border-mikado-yellow-900\/95 {border-color:oklch(0.7538 0.1734 87.35 / 0.95);}
+.dark\:border-mikado-yellow-100 {border-color:oklch(0.9538 0.1734 87.35 / 1);}
+.dark\:border-mikado-yellow-300 {border-color:oklch(0.9038 0.1734 87.35 / 1);}
+.dark\:border-mikado-yellow-500 {border-color:oklch(0.8538 0.1734 87.35 / 1);}
+.dark\:border-mikado-yellow-700 {border-color:oklch(0.8038 0.1734 87.35 / 1);}
+.dark\:border-mikado-yellow-900 {border-color:oklch(0.7538 0.1734 87.35 / 1);}
 .dark\:border-orange-100\/1 {border-color:oklch(0.8404 0.1444 57.26 / 0.01);}
 .dark\:border-orange-300\/1 {border-color:oklch(0.7904 0.1444 57.26 / 0.01);}
 .dark\:border-orange-500\/1 {border-color:oklch(0.7404 0.1444 57.26 / 0.01);}
@@ -9591,6 +10581,96 @@ ol, ul {list-style:none;}
 .dark\:decoration-prussian-blue-500 {text-decoration-color:oklch(0.3093 0.0627 254.14 / 1);}
 .dark\:decoration-prussian-blue-700 {text-decoration-color:oklch(0.2593 0.0627 254.14 / 1);}
 .dark\:decoration-prussian-blue-900 {text-decoration-color:oklch(0.2093 0.0627 254.14 / 1);}
+.dark\:decoration-naples-yellow-100\/1 {text-decoration-color:oklch(1 0.1449 97.97 / 0.01);}
+.dark\:decoration-naples-yellow-300\/1 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.01);}
+.dark\:decoration-naples-yellow-500\/1 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.01);}
+.dark\:decoration-naples-yellow-700\/1 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.01);}
+.dark\:decoration-naples-yellow-900\/1 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.01);}
+.dark\:decoration-naples-yellow-100\/5 {text-decoration-color:oklch(1 0.1449 97.97 / 0.05);}
+.dark\:decoration-naples-yellow-300\/5 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.05);}
+.dark\:decoration-naples-yellow-500\/5 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.05);}
+.dark\:decoration-naples-yellow-700\/5 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.05);}
+.dark\:decoration-naples-yellow-900\/5 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.05);}
+.dark\:decoration-naples-yellow-100\/10 {text-decoration-color:oklch(1 0.1449 97.97 / 0.1);}
+.dark\:decoration-naples-yellow-300\/10 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.1);}
+.dark\:decoration-naples-yellow-500\/10 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.1);}
+.dark\:decoration-naples-yellow-700\/10 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.1);}
+.dark\:decoration-naples-yellow-900\/10 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.1);}
+.dark\:decoration-naples-yellow-100\/25 {text-decoration-color:oklch(1 0.1449 97.97 / 0.2);}
+.dark\:decoration-naples-yellow-300\/25 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.2);}
+.dark\:decoration-naples-yellow-500\/25 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.2);}
+.dark\:decoration-naples-yellow-700\/25 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.2);}
+.dark\:decoration-naples-yellow-900\/25 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.2);}
+.dark\:decoration-naples-yellow-100\/50 {text-decoration-color:oklch(1 0.1449 97.97 / 0.5);}
+.dark\:decoration-naples-yellow-300\/50 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.5);}
+.dark\:decoration-naples-yellow-500\/50 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.5);}
+.dark\:decoration-naples-yellow-700\/50 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.5);}
+.dark\:decoration-naples-yellow-900\/50 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.5);}
+.dark\:decoration-naples-yellow-100\/75 {text-decoration-color:oklch(1 0.1449 97.97 / 0.7);}
+.dark\:decoration-naples-yellow-300\/75 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.7);}
+.dark\:decoration-naples-yellow-500\/75 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.7);}
+.dark\:decoration-naples-yellow-700\/75 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.7);}
+.dark\:decoration-naples-yellow-900\/75 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.7);}
+.dark\:decoration-naples-yellow-100\/90 {text-decoration-color:oklch(1 0.1449 97.97 / 0.9);}
+.dark\:decoration-naples-yellow-300\/90 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.9);}
+.dark\:decoration-naples-yellow-500\/90 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.9);}
+.dark\:decoration-naples-yellow-700\/90 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.9);}
+.dark\:decoration-naples-yellow-900\/90 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.9);}
+.dark\:decoration-naples-yellow-100\/95 {text-decoration-color:oklch(1 0.1449 97.97 / 0.95);}
+.dark\:decoration-naples-yellow-300\/95 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.95);}
+.dark\:decoration-naples-yellow-500\/95 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.95);}
+.dark\:decoration-naples-yellow-700\/95 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.95);}
+.dark\:decoration-naples-yellow-900\/95 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.95);}
+.dark\:decoration-naples-yellow-100 {text-decoration-color:oklch(1 0.1449 97.97 / 1);}
+.dark\:decoration-naples-yellow-300 {text-decoration-color:oklch(0.9511 0.1449 97.97 / 1);}
+.dark\:decoration-naples-yellow-500 {text-decoration-color:oklch(0.9011 0.1449 97.97 / 1);}
+.dark\:decoration-naples-yellow-700 {text-decoration-color:oklch(0.8511 0.1449 97.97 / 1);}
+.dark\:decoration-naples-yellow-900 {text-decoration-color:oklch(0.8011 0.1449 97.97 / 1);}
+.dark\:decoration-mikado-yellow-100\/1 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.01);}
+.dark\:decoration-mikado-yellow-300\/1 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.01);}
+.dark\:decoration-mikado-yellow-500\/1 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.01);}
+.dark\:decoration-mikado-yellow-700\/1 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.01);}
+.dark\:decoration-mikado-yellow-900\/1 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.01);}
+.dark\:decoration-mikado-yellow-100\/5 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.05);}
+.dark\:decoration-mikado-yellow-300\/5 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.05);}
+.dark\:decoration-mikado-yellow-500\/5 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.05);}
+.dark\:decoration-mikado-yellow-700\/5 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.05);}
+.dark\:decoration-mikado-yellow-900\/5 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.05);}
+.dark\:decoration-mikado-yellow-100\/10 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.1);}
+.dark\:decoration-mikado-yellow-300\/10 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.1);}
+.dark\:decoration-mikado-yellow-500\/10 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.1);}
+.dark\:decoration-mikado-yellow-700\/10 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.1);}
+.dark\:decoration-mikado-yellow-900\/10 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.1);}
+.dark\:decoration-mikado-yellow-100\/25 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.2);}
+.dark\:decoration-mikado-yellow-300\/25 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.2);}
+.dark\:decoration-mikado-yellow-500\/25 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.2);}
+.dark\:decoration-mikado-yellow-700\/25 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.2);}
+.dark\:decoration-mikado-yellow-900\/25 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.2);}
+.dark\:decoration-mikado-yellow-100\/50 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.5);}
+.dark\:decoration-mikado-yellow-300\/50 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.5);}
+.dark\:decoration-mikado-yellow-500\/50 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.5);}
+.dark\:decoration-mikado-yellow-700\/50 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.5);}
+.dark\:decoration-mikado-yellow-900\/50 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.5);}
+.dark\:decoration-mikado-yellow-100\/75 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.7);}
+.dark\:decoration-mikado-yellow-300\/75 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.7);}
+.dark\:decoration-mikado-yellow-500\/75 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.7);}
+.dark\:decoration-mikado-yellow-700\/75 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.7);}
+.dark\:decoration-mikado-yellow-900\/75 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.7);}
+.dark\:decoration-mikado-yellow-100\/90 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.9);}
+.dark\:decoration-mikado-yellow-300\/90 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.9);}
+.dark\:decoration-mikado-yellow-500\/90 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.9);}
+.dark\:decoration-mikado-yellow-700\/90 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.9);}
+.dark\:decoration-mikado-yellow-900\/90 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.9);}
+.dark\:decoration-mikado-yellow-100\/95 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.95);}
+.dark\:decoration-mikado-yellow-300\/95 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.95);}
+.dark\:decoration-mikado-yellow-500\/95 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.95);}
+.dark\:decoration-mikado-yellow-700\/95 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.95);}
+.dark\:decoration-mikado-yellow-900\/95 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.95);}
+.dark\:decoration-mikado-yellow-100 {text-decoration-color:oklch(0.9538 0.1734 87.35 / 1);}
+.dark\:decoration-mikado-yellow-300 {text-decoration-color:oklch(0.9038 0.1734 87.35 / 1);}
+.dark\:decoration-mikado-yellow-500 {text-decoration-color:oklch(0.8538 0.1734 87.35 / 1);}
+.dark\:decoration-mikado-yellow-700 {text-decoration-color:oklch(0.8038 0.1734 87.35 / 1);}
+.dark\:decoration-mikado-yellow-900 {text-decoration-color:oklch(0.7538 0.1734 87.35 / 1);}
 .dark\:decoration-orange-100\/1 {text-decoration-color:oklch(0.8404 0.1444 57.26 / 0.01);}
 .dark\:decoration-orange-300\/1 {text-decoration-color:oklch(0.7904 0.1444 57.26 / 0.01);}
 .dark\:decoration-orange-500\/1 {text-decoration-color:oklch(0.7404 0.1444 57.26 / 0.01);}
@@ -10548,6 +11628,96 @@ ol, ul {list-style:none;}
 .hover\:dark\:bg-prussian-blue-500 {&:hover {background:oklch(0.3093 0.0627 254.14 / 1);}}
 .hover\:dark\:bg-prussian-blue-700 {&:hover {background:oklch(0.2593 0.0627 254.14 / 1);}}
 .hover\:dark\:bg-prussian-blue-900 {&:hover {background:oklch(0.2093 0.0627 254.14 / 1);}}
+.hover\:dark\:bg-naples-yellow-100\/1 {&:hover {background:oklch(1 0.1449 97.97 / 0.01);}}
+.hover\:dark\:bg-naples-yellow-300\/1 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.01);}}
+.hover\:dark\:bg-naples-yellow-500\/1 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.01);}}
+.hover\:dark\:bg-naples-yellow-700\/1 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.01);}}
+.hover\:dark\:bg-naples-yellow-900\/1 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.01);}}
+.hover\:dark\:bg-naples-yellow-100\/5 {&:hover {background:oklch(1 0.1449 97.97 / 0.05);}}
+.hover\:dark\:bg-naples-yellow-300\/5 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.05);}}
+.hover\:dark\:bg-naples-yellow-500\/5 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.05);}}
+.hover\:dark\:bg-naples-yellow-700\/5 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.05);}}
+.hover\:dark\:bg-naples-yellow-900\/5 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.05);}}
+.hover\:dark\:bg-naples-yellow-100\/10 {&:hover {background:oklch(1 0.1449 97.97 / 0.1);}}
+.hover\:dark\:bg-naples-yellow-300\/10 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.1);}}
+.hover\:dark\:bg-naples-yellow-500\/10 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.1);}}
+.hover\:dark\:bg-naples-yellow-700\/10 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.1);}}
+.hover\:dark\:bg-naples-yellow-900\/10 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.1);}}
+.hover\:dark\:bg-naples-yellow-100\/25 {&:hover {background:oklch(1 0.1449 97.97 / 0.2);}}
+.hover\:dark\:bg-naples-yellow-300\/25 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.2);}}
+.hover\:dark\:bg-naples-yellow-500\/25 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.2);}}
+.hover\:dark\:bg-naples-yellow-700\/25 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.2);}}
+.hover\:dark\:bg-naples-yellow-900\/25 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.2);}}
+.hover\:dark\:bg-naples-yellow-100\/50 {&:hover {background:oklch(1 0.1449 97.97 / 0.5);}}
+.hover\:dark\:bg-naples-yellow-300\/50 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.5);}}
+.hover\:dark\:bg-naples-yellow-500\/50 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.5);}}
+.hover\:dark\:bg-naples-yellow-700\/50 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.5);}}
+.hover\:dark\:bg-naples-yellow-900\/50 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.5);}}
+.hover\:dark\:bg-naples-yellow-100\/75 {&:hover {background:oklch(1 0.1449 97.97 / 0.7);}}
+.hover\:dark\:bg-naples-yellow-300\/75 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.7);}}
+.hover\:dark\:bg-naples-yellow-500\/75 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.7);}}
+.hover\:dark\:bg-naples-yellow-700\/75 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.7);}}
+.hover\:dark\:bg-naples-yellow-900\/75 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.7);}}
+.hover\:dark\:bg-naples-yellow-100\/90 {&:hover {background:oklch(1 0.1449 97.97 / 0.9);}}
+.hover\:dark\:bg-naples-yellow-300\/90 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.9);}}
+.hover\:dark\:bg-naples-yellow-500\/90 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.9);}}
+.hover\:dark\:bg-naples-yellow-700\/90 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.9);}}
+.hover\:dark\:bg-naples-yellow-900\/90 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.9);}}
+.hover\:dark\:bg-naples-yellow-100\/95 {&:hover {background:oklch(1 0.1449 97.97 / 0.95);}}
+.hover\:dark\:bg-naples-yellow-300\/95 {&:hover {background:oklch(0.9511 0.1449 97.97 / 0.95);}}
+.hover\:dark\:bg-naples-yellow-500\/95 {&:hover {background:oklch(0.9011 0.1449 97.97 / 0.95);}}
+.hover\:dark\:bg-naples-yellow-700\/95 {&:hover {background:oklch(0.8511 0.1449 97.97 / 0.95);}}
+.hover\:dark\:bg-naples-yellow-900\/95 {&:hover {background:oklch(0.8011 0.1449 97.97 / 0.95);}}
+.hover\:dark\:bg-naples-yellow-100 {&:hover {background:oklch(1 0.1449 97.97 / 1);}}
+.hover\:dark\:bg-naples-yellow-300 {&:hover {background:oklch(0.9511 0.1449 97.97 / 1);}}
+.hover\:dark\:bg-naples-yellow-500 {&:hover {background:oklch(0.9011 0.1449 97.97 / 1);}}
+.hover\:dark\:bg-naples-yellow-700 {&:hover {background:oklch(0.8511 0.1449 97.97 / 1);}}
+.hover\:dark\:bg-naples-yellow-900 {&:hover {background:oklch(0.8011 0.1449 97.97 / 1);}}
+.hover\:dark\:bg-mikado-yellow-100\/1 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:bg-mikado-yellow-300\/1 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.01);}}
+.hover\:dark\:bg-mikado-yellow-500\/1 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:bg-mikado-yellow-700\/1 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.01);}}
+.hover\:dark\:bg-mikado-yellow-900\/1 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:bg-mikado-yellow-100\/5 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:bg-mikado-yellow-300\/5 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.05);}}
+.hover\:dark\:bg-mikado-yellow-500\/5 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:bg-mikado-yellow-700\/5 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.05);}}
+.hover\:dark\:bg-mikado-yellow-900\/5 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:bg-mikado-yellow-100\/10 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:bg-mikado-yellow-300\/10 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.1);}}
+.hover\:dark\:bg-mikado-yellow-500\/10 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:bg-mikado-yellow-700\/10 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.1);}}
+.hover\:dark\:bg-mikado-yellow-900\/10 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:bg-mikado-yellow-100\/25 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:bg-mikado-yellow-300\/25 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.2);}}
+.hover\:dark\:bg-mikado-yellow-500\/25 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:bg-mikado-yellow-700\/25 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.2);}}
+.hover\:dark\:bg-mikado-yellow-900\/25 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:bg-mikado-yellow-100\/50 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:bg-mikado-yellow-300\/50 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.5);}}
+.hover\:dark\:bg-mikado-yellow-500\/50 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:bg-mikado-yellow-700\/50 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.5);}}
+.hover\:dark\:bg-mikado-yellow-900\/50 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:bg-mikado-yellow-100\/75 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:bg-mikado-yellow-300\/75 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.7);}}
+.hover\:dark\:bg-mikado-yellow-500\/75 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:bg-mikado-yellow-700\/75 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.7);}}
+.hover\:dark\:bg-mikado-yellow-900\/75 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:bg-mikado-yellow-100\/90 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:bg-mikado-yellow-300\/90 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.9);}}
+.hover\:dark\:bg-mikado-yellow-500\/90 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:bg-mikado-yellow-700\/90 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.9);}}
+.hover\:dark\:bg-mikado-yellow-900\/90 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:bg-mikado-yellow-100\/95 {&:hover {background:oklch(0.9538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:bg-mikado-yellow-300\/95 {&:hover {background:oklch(0.9038 0.1734 87.35 / 0.95);}}
+.hover\:dark\:bg-mikado-yellow-500\/95 {&:hover {background:oklch(0.8538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:bg-mikado-yellow-700\/95 {&:hover {background:oklch(0.8038 0.1734 87.35 / 0.95);}}
+.hover\:dark\:bg-mikado-yellow-900\/95 {&:hover {background:oklch(0.7538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:bg-mikado-yellow-100 {&:hover {background:oklch(0.9538 0.1734 87.35 / 1);}}
+.hover\:dark\:bg-mikado-yellow-300 {&:hover {background:oklch(0.9038 0.1734 87.35 / 1);}}
+.hover\:dark\:bg-mikado-yellow-500 {&:hover {background:oklch(0.8538 0.1734 87.35 / 1);}}
+.hover\:dark\:bg-mikado-yellow-700 {&:hover {background:oklch(0.8038 0.1734 87.35 / 1);}}
+.hover\:dark\:bg-mikado-yellow-900 {&:hover {background:oklch(0.7538 0.1734 87.35 / 1);}}
 .hover\:dark\:bg-orange-100\/1 {&:hover {background:oklch(0.8404 0.1444 57.26 / 0.01);}}
 .hover\:dark\:bg-orange-300\/1 {&:hover {background:oklch(0.7904 0.1444 57.26 / 0.01);}}
 .hover\:dark\:bg-orange-500\/1 {&:hover {background:oklch(0.7404 0.1444 57.26 / 0.01);}}
@@ -11133,6 +12303,96 @@ ol, ul {list-style:none;}
 .hover\:dark\:text-prussian-blue-500 {&:hover {color:oklch(0.3093 0.0627 254.14 / 1);}}
 .hover\:dark\:text-prussian-blue-700 {&:hover {color:oklch(0.2593 0.0627 254.14 / 1);}}
 .hover\:dark\:text-prussian-blue-900 {&:hover {color:oklch(0.2093 0.0627 254.14 / 1);}}
+.hover\:dark\:text-naples-yellow-100\/1 {&:hover {color:oklch(1 0.1449 97.97 / 0.01);}}
+.hover\:dark\:text-naples-yellow-300\/1 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.01);}}
+.hover\:dark\:text-naples-yellow-500\/1 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.01);}}
+.hover\:dark\:text-naples-yellow-700\/1 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.01);}}
+.hover\:dark\:text-naples-yellow-900\/1 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.01);}}
+.hover\:dark\:text-naples-yellow-100\/5 {&:hover {color:oklch(1 0.1449 97.97 / 0.05);}}
+.hover\:dark\:text-naples-yellow-300\/5 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.05);}}
+.hover\:dark\:text-naples-yellow-500\/5 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.05);}}
+.hover\:dark\:text-naples-yellow-700\/5 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.05);}}
+.hover\:dark\:text-naples-yellow-900\/5 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.05);}}
+.hover\:dark\:text-naples-yellow-100\/10 {&:hover {color:oklch(1 0.1449 97.97 / 0.1);}}
+.hover\:dark\:text-naples-yellow-300\/10 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.1);}}
+.hover\:dark\:text-naples-yellow-500\/10 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.1);}}
+.hover\:dark\:text-naples-yellow-700\/10 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.1);}}
+.hover\:dark\:text-naples-yellow-900\/10 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.1);}}
+.hover\:dark\:text-naples-yellow-100\/25 {&:hover {color:oklch(1 0.1449 97.97 / 0.2);}}
+.hover\:dark\:text-naples-yellow-300\/25 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.2);}}
+.hover\:dark\:text-naples-yellow-500\/25 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.2);}}
+.hover\:dark\:text-naples-yellow-700\/25 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.2);}}
+.hover\:dark\:text-naples-yellow-900\/25 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.2);}}
+.hover\:dark\:text-naples-yellow-100\/50 {&:hover {color:oklch(1 0.1449 97.97 / 0.5);}}
+.hover\:dark\:text-naples-yellow-300\/50 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.5);}}
+.hover\:dark\:text-naples-yellow-500\/50 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.5);}}
+.hover\:dark\:text-naples-yellow-700\/50 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.5);}}
+.hover\:dark\:text-naples-yellow-900\/50 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.5);}}
+.hover\:dark\:text-naples-yellow-100\/75 {&:hover {color:oklch(1 0.1449 97.97 / 0.7);}}
+.hover\:dark\:text-naples-yellow-300\/75 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.7);}}
+.hover\:dark\:text-naples-yellow-500\/75 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.7);}}
+.hover\:dark\:text-naples-yellow-700\/75 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.7);}}
+.hover\:dark\:text-naples-yellow-900\/75 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.7);}}
+.hover\:dark\:text-naples-yellow-100\/90 {&:hover {color:oklch(1 0.1449 97.97 / 0.9);}}
+.hover\:dark\:text-naples-yellow-300\/90 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.9);}}
+.hover\:dark\:text-naples-yellow-500\/90 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.9);}}
+.hover\:dark\:text-naples-yellow-700\/90 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.9);}}
+.hover\:dark\:text-naples-yellow-900\/90 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.9);}}
+.hover\:dark\:text-naples-yellow-100\/95 {&:hover {color:oklch(1 0.1449 97.97 / 0.95);}}
+.hover\:dark\:text-naples-yellow-300\/95 {&:hover {color:oklch(0.9511 0.1449 97.97 / 0.95);}}
+.hover\:dark\:text-naples-yellow-500\/95 {&:hover {color:oklch(0.9011 0.1449 97.97 / 0.95);}}
+.hover\:dark\:text-naples-yellow-700\/95 {&:hover {color:oklch(0.8511 0.1449 97.97 / 0.95);}}
+.hover\:dark\:text-naples-yellow-900\/95 {&:hover {color:oklch(0.8011 0.1449 97.97 / 0.95);}}
+.hover\:dark\:text-naples-yellow-100 {&:hover {color:oklch(1 0.1449 97.97 / 1);}}
+.hover\:dark\:text-naples-yellow-300 {&:hover {color:oklch(0.9511 0.1449 97.97 / 1);}}
+.hover\:dark\:text-naples-yellow-500 {&:hover {color:oklch(0.9011 0.1449 97.97 / 1);}}
+.hover\:dark\:text-naples-yellow-700 {&:hover {color:oklch(0.8511 0.1449 97.97 / 1);}}
+.hover\:dark\:text-naples-yellow-900 {&:hover {color:oklch(0.8011 0.1449 97.97 / 1);}}
+.hover\:dark\:text-mikado-yellow-100\/1 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:text-mikado-yellow-300\/1 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.01);}}
+.hover\:dark\:text-mikado-yellow-500\/1 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:text-mikado-yellow-700\/1 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.01);}}
+.hover\:dark\:text-mikado-yellow-900\/1 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:text-mikado-yellow-100\/5 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:text-mikado-yellow-300\/5 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.05);}}
+.hover\:dark\:text-mikado-yellow-500\/5 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:text-mikado-yellow-700\/5 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.05);}}
+.hover\:dark\:text-mikado-yellow-900\/5 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:text-mikado-yellow-100\/10 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:text-mikado-yellow-300\/10 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.1);}}
+.hover\:dark\:text-mikado-yellow-500\/10 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:text-mikado-yellow-700\/10 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.1);}}
+.hover\:dark\:text-mikado-yellow-900\/10 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:text-mikado-yellow-100\/25 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:text-mikado-yellow-300\/25 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.2);}}
+.hover\:dark\:text-mikado-yellow-500\/25 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:text-mikado-yellow-700\/25 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.2);}}
+.hover\:dark\:text-mikado-yellow-900\/25 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:text-mikado-yellow-100\/50 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:text-mikado-yellow-300\/50 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.5);}}
+.hover\:dark\:text-mikado-yellow-500\/50 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:text-mikado-yellow-700\/50 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.5);}}
+.hover\:dark\:text-mikado-yellow-900\/50 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:text-mikado-yellow-100\/75 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:text-mikado-yellow-300\/75 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.7);}}
+.hover\:dark\:text-mikado-yellow-500\/75 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:text-mikado-yellow-700\/75 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.7);}}
+.hover\:dark\:text-mikado-yellow-900\/75 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:text-mikado-yellow-100\/90 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:text-mikado-yellow-300\/90 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.9);}}
+.hover\:dark\:text-mikado-yellow-500\/90 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:text-mikado-yellow-700\/90 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.9);}}
+.hover\:dark\:text-mikado-yellow-900\/90 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:text-mikado-yellow-100\/95 {&:hover {color:oklch(0.9538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:text-mikado-yellow-300\/95 {&:hover {color:oklch(0.9038 0.1734 87.35 / 0.95);}}
+.hover\:dark\:text-mikado-yellow-500\/95 {&:hover {color:oklch(0.8538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:text-mikado-yellow-700\/95 {&:hover {color:oklch(0.8038 0.1734 87.35 / 0.95);}}
+.hover\:dark\:text-mikado-yellow-900\/95 {&:hover {color:oklch(0.7538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:text-mikado-yellow-100 {&:hover {color:oklch(0.9538 0.1734 87.35 / 1);}}
+.hover\:dark\:text-mikado-yellow-300 {&:hover {color:oklch(0.9038 0.1734 87.35 / 1);}}
+.hover\:dark\:text-mikado-yellow-500 {&:hover {color:oklch(0.8538 0.1734 87.35 / 1);}}
+.hover\:dark\:text-mikado-yellow-700 {&:hover {color:oklch(0.8038 0.1734 87.35 / 1);}}
+.hover\:dark\:text-mikado-yellow-900 {&:hover {color:oklch(0.7538 0.1734 87.35 / 1);}}
 .hover\:dark\:text-orange-100\/1 {&:hover {color:oklch(0.8404 0.1444 57.26 / 0.01);}}
 .hover\:dark\:text-orange-300\/1 {&:hover {color:oklch(0.7904 0.1444 57.26 / 0.01);}}
 .hover\:dark\:text-orange-500\/1 {&:hover {color:oklch(0.7404 0.1444 57.26 / 0.01);}}
@@ -11718,6 +12978,96 @@ ol, ul {list-style:none;}
 .hover\:dark\:border-prussian-blue-500 {&:hover {border-color:oklch(0.3093 0.0627 254.14 / 1);}}
 .hover\:dark\:border-prussian-blue-700 {&:hover {border-color:oklch(0.2593 0.0627 254.14 / 1);}}
 .hover\:dark\:border-prussian-blue-900 {&:hover {border-color:oklch(0.2093 0.0627 254.14 / 1);}}
+.hover\:dark\:border-naples-yellow-100\/1 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.01);}}
+.hover\:dark\:border-naples-yellow-300\/1 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.01);}}
+.hover\:dark\:border-naples-yellow-500\/1 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.01);}}
+.hover\:dark\:border-naples-yellow-700\/1 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.01);}}
+.hover\:dark\:border-naples-yellow-900\/1 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.01);}}
+.hover\:dark\:border-naples-yellow-100\/5 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.05);}}
+.hover\:dark\:border-naples-yellow-300\/5 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.05);}}
+.hover\:dark\:border-naples-yellow-500\/5 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.05);}}
+.hover\:dark\:border-naples-yellow-700\/5 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.05);}}
+.hover\:dark\:border-naples-yellow-900\/5 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.05);}}
+.hover\:dark\:border-naples-yellow-100\/10 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.1);}}
+.hover\:dark\:border-naples-yellow-300\/10 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.1);}}
+.hover\:dark\:border-naples-yellow-500\/10 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.1);}}
+.hover\:dark\:border-naples-yellow-700\/10 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.1);}}
+.hover\:dark\:border-naples-yellow-900\/10 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.1);}}
+.hover\:dark\:border-naples-yellow-100\/25 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.2);}}
+.hover\:dark\:border-naples-yellow-300\/25 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.2);}}
+.hover\:dark\:border-naples-yellow-500\/25 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.2);}}
+.hover\:dark\:border-naples-yellow-700\/25 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.2);}}
+.hover\:dark\:border-naples-yellow-900\/25 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.2);}}
+.hover\:dark\:border-naples-yellow-100\/50 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.5);}}
+.hover\:dark\:border-naples-yellow-300\/50 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.5);}}
+.hover\:dark\:border-naples-yellow-500\/50 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.5);}}
+.hover\:dark\:border-naples-yellow-700\/50 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.5);}}
+.hover\:dark\:border-naples-yellow-900\/50 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.5);}}
+.hover\:dark\:border-naples-yellow-100\/75 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.7);}}
+.hover\:dark\:border-naples-yellow-300\/75 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.7);}}
+.hover\:dark\:border-naples-yellow-500\/75 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.7);}}
+.hover\:dark\:border-naples-yellow-700\/75 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.7);}}
+.hover\:dark\:border-naples-yellow-900\/75 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.7);}}
+.hover\:dark\:border-naples-yellow-100\/90 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.9);}}
+.hover\:dark\:border-naples-yellow-300\/90 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.9);}}
+.hover\:dark\:border-naples-yellow-500\/90 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.9);}}
+.hover\:dark\:border-naples-yellow-700\/90 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.9);}}
+.hover\:dark\:border-naples-yellow-900\/90 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.9);}}
+.hover\:dark\:border-naples-yellow-100\/95 {&:hover {border-color:oklch(1 0.1449 97.97 / 0.95);}}
+.hover\:dark\:border-naples-yellow-300\/95 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 0.95);}}
+.hover\:dark\:border-naples-yellow-500\/95 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 0.95);}}
+.hover\:dark\:border-naples-yellow-700\/95 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 0.95);}}
+.hover\:dark\:border-naples-yellow-900\/95 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 0.95);}}
+.hover\:dark\:border-naples-yellow-100 {&:hover {border-color:oklch(1 0.1449 97.97 / 1);}}
+.hover\:dark\:border-naples-yellow-300 {&:hover {border-color:oklch(0.9511 0.1449 97.97 / 1);}}
+.hover\:dark\:border-naples-yellow-500 {&:hover {border-color:oklch(0.9011 0.1449 97.97 / 1);}}
+.hover\:dark\:border-naples-yellow-700 {&:hover {border-color:oklch(0.8511 0.1449 97.97 / 1);}}
+.hover\:dark\:border-naples-yellow-900 {&:hover {border-color:oklch(0.8011 0.1449 97.97 / 1);}}
+.hover\:dark\:border-mikado-yellow-100\/1 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:border-mikado-yellow-300\/1 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.01);}}
+.hover\:dark\:border-mikado-yellow-500\/1 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:border-mikado-yellow-700\/1 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.01);}}
+.hover\:dark\:border-mikado-yellow-900\/1 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:border-mikado-yellow-100\/5 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:border-mikado-yellow-300\/5 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.05);}}
+.hover\:dark\:border-mikado-yellow-500\/5 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:border-mikado-yellow-700\/5 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.05);}}
+.hover\:dark\:border-mikado-yellow-900\/5 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:border-mikado-yellow-100\/10 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:border-mikado-yellow-300\/10 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.1);}}
+.hover\:dark\:border-mikado-yellow-500\/10 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:border-mikado-yellow-700\/10 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.1);}}
+.hover\:dark\:border-mikado-yellow-900\/10 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:border-mikado-yellow-100\/25 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:border-mikado-yellow-300\/25 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.2);}}
+.hover\:dark\:border-mikado-yellow-500\/25 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:border-mikado-yellow-700\/25 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.2);}}
+.hover\:dark\:border-mikado-yellow-900\/25 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:border-mikado-yellow-100\/50 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:border-mikado-yellow-300\/50 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.5);}}
+.hover\:dark\:border-mikado-yellow-500\/50 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:border-mikado-yellow-700\/50 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.5);}}
+.hover\:dark\:border-mikado-yellow-900\/50 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:border-mikado-yellow-100\/75 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:border-mikado-yellow-300\/75 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.7);}}
+.hover\:dark\:border-mikado-yellow-500\/75 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:border-mikado-yellow-700\/75 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.7);}}
+.hover\:dark\:border-mikado-yellow-900\/75 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:border-mikado-yellow-100\/90 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:border-mikado-yellow-300\/90 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.9);}}
+.hover\:dark\:border-mikado-yellow-500\/90 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:border-mikado-yellow-700\/90 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.9);}}
+.hover\:dark\:border-mikado-yellow-900\/90 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:border-mikado-yellow-100\/95 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:border-mikado-yellow-300\/95 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 0.95);}}
+.hover\:dark\:border-mikado-yellow-500\/95 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:border-mikado-yellow-700\/95 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 0.95);}}
+.hover\:dark\:border-mikado-yellow-900\/95 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:border-mikado-yellow-100 {&:hover {border-color:oklch(0.9538 0.1734 87.35 / 1);}}
+.hover\:dark\:border-mikado-yellow-300 {&:hover {border-color:oklch(0.9038 0.1734 87.35 / 1);}}
+.hover\:dark\:border-mikado-yellow-500 {&:hover {border-color:oklch(0.8538 0.1734 87.35 / 1);}}
+.hover\:dark\:border-mikado-yellow-700 {&:hover {border-color:oklch(0.8038 0.1734 87.35 / 1);}}
+.hover\:dark\:border-mikado-yellow-900 {&:hover {border-color:oklch(0.7538 0.1734 87.35 / 1);}}
 .hover\:dark\:border-orange-100\/1 {&:hover {border-color:oklch(0.8404 0.1444 57.26 / 0.01);}}
 .hover\:dark\:border-orange-300\/1 {&:hover {border-color:oklch(0.7904 0.1444 57.26 / 0.01);}}
 .hover\:dark\:border-orange-500\/1 {&:hover {border-color:oklch(0.7404 0.1444 57.26 / 0.01);}}
@@ -12303,6 +13653,96 @@ ol, ul {list-style:none;}
 .hover\:dark\:decoration-prussian-blue-500 {&:hover {text-decoration-color:oklch(0.3093 0.0627 254.14 / 1);}}
 .hover\:dark\:decoration-prussian-blue-700 {&:hover {text-decoration-color:oklch(0.2593 0.0627 254.14 / 1);}}
 .hover\:dark\:decoration-prussian-blue-900 {&:hover {text-decoration-color:oklch(0.2093 0.0627 254.14 / 1);}}
+.hover\:dark\:decoration-naples-yellow-100\/1 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.01);}}
+.hover\:dark\:decoration-naples-yellow-300\/1 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.01);}}
+.hover\:dark\:decoration-naples-yellow-500\/1 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.01);}}
+.hover\:dark\:decoration-naples-yellow-700\/1 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.01);}}
+.hover\:dark\:decoration-naples-yellow-900\/1 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.01);}}
+.hover\:dark\:decoration-naples-yellow-100\/5 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.05);}}
+.hover\:dark\:decoration-naples-yellow-300\/5 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.05);}}
+.hover\:dark\:decoration-naples-yellow-500\/5 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.05);}}
+.hover\:dark\:decoration-naples-yellow-700\/5 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.05);}}
+.hover\:dark\:decoration-naples-yellow-900\/5 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.05);}}
+.hover\:dark\:decoration-naples-yellow-100\/10 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.1);}}
+.hover\:dark\:decoration-naples-yellow-300\/10 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.1);}}
+.hover\:dark\:decoration-naples-yellow-500\/10 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.1);}}
+.hover\:dark\:decoration-naples-yellow-700\/10 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.1);}}
+.hover\:dark\:decoration-naples-yellow-900\/10 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.1);}}
+.hover\:dark\:decoration-naples-yellow-100\/25 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.2);}}
+.hover\:dark\:decoration-naples-yellow-300\/25 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.2);}}
+.hover\:dark\:decoration-naples-yellow-500\/25 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.2);}}
+.hover\:dark\:decoration-naples-yellow-700\/25 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.2);}}
+.hover\:dark\:decoration-naples-yellow-900\/25 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.2);}}
+.hover\:dark\:decoration-naples-yellow-100\/50 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.5);}}
+.hover\:dark\:decoration-naples-yellow-300\/50 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.5);}}
+.hover\:dark\:decoration-naples-yellow-500\/50 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.5);}}
+.hover\:dark\:decoration-naples-yellow-700\/50 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.5);}}
+.hover\:dark\:decoration-naples-yellow-900\/50 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.5);}}
+.hover\:dark\:decoration-naples-yellow-100\/75 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.7);}}
+.hover\:dark\:decoration-naples-yellow-300\/75 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.7);}}
+.hover\:dark\:decoration-naples-yellow-500\/75 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.7);}}
+.hover\:dark\:decoration-naples-yellow-700\/75 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.7);}}
+.hover\:dark\:decoration-naples-yellow-900\/75 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.7);}}
+.hover\:dark\:decoration-naples-yellow-100\/90 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.9);}}
+.hover\:dark\:decoration-naples-yellow-300\/90 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.9);}}
+.hover\:dark\:decoration-naples-yellow-500\/90 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.9);}}
+.hover\:dark\:decoration-naples-yellow-700\/90 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.9);}}
+.hover\:dark\:decoration-naples-yellow-900\/90 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.9);}}
+.hover\:dark\:decoration-naples-yellow-100\/95 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 0.95);}}
+.hover\:dark\:decoration-naples-yellow-300\/95 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 0.95);}}
+.hover\:dark\:decoration-naples-yellow-500\/95 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 0.95);}}
+.hover\:dark\:decoration-naples-yellow-700\/95 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 0.95);}}
+.hover\:dark\:decoration-naples-yellow-900\/95 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 0.95);}}
+.hover\:dark\:decoration-naples-yellow-100 {&:hover {text-decoration-color:oklch(1 0.1449 97.97 / 1);}}
+.hover\:dark\:decoration-naples-yellow-300 {&:hover {text-decoration-color:oklch(0.9511 0.1449 97.97 / 1);}}
+.hover\:dark\:decoration-naples-yellow-500 {&:hover {text-decoration-color:oklch(0.9011 0.1449 97.97 / 1);}}
+.hover\:dark\:decoration-naples-yellow-700 {&:hover {text-decoration-color:oklch(0.8511 0.1449 97.97 / 1);}}
+.hover\:dark\:decoration-naples-yellow-900 {&:hover {text-decoration-color:oklch(0.8011 0.1449 97.97 / 1);}}
+.hover\:dark\:decoration-mikado-yellow-100\/1 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:decoration-mikado-yellow-300\/1 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.01);}}
+.hover\:dark\:decoration-mikado-yellow-500\/1 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:decoration-mikado-yellow-700\/1 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.01);}}
+.hover\:dark\:decoration-mikado-yellow-900\/1 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.01);}}
+.hover\:dark\:decoration-mikado-yellow-100\/5 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:decoration-mikado-yellow-300\/5 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.05);}}
+.hover\:dark\:decoration-mikado-yellow-500\/5 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:decoration-mikado-yellow-700\/5 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.05);}}
+.hover\:dark\:decoration-mikado-yellow-900\/5 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.05);}}
+.hover\:dark\:decoration-mikado-yellow-100\/10 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:decoration-mikado-yellow-300\/10 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.1);}}
+.hover\:dark\:decoration-mikado-yellow-500\/10 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:decoration-mikado-yellow-700\/10 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.1);}}
+.hover\:dark\:decoration-mikado-yellow-900\/10 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.1);}}
+.hover\:dark\:decoration-mikado-yellow-100\/25 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:decoration-mikado-yellow-300\/25 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.2);}}
+.hover\:dark\:decoration-mikado-yellow-500\/25 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:decoration-mikado-yellow-700\/25 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.2);}}
+.hover\:dark\:decoration-mikado-yellow-900\/25 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.2);}}
+.hover\:dark\:decoration-mikado-yellow-100\/50 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:decoration-mikado-yellow-300\/50 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.5);}}
+.hover\:dark\:decoration-mikado-yellow-500\/50 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:decoration-mikado-yellow-700\/50 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.5);}}
+.hover\:dark\:decoration-mikado-yellow-900\/50 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.5);}}
+.hover\:dark\:decoration-mikado-yellow-100\/75 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:decoration-mikado-yellow-300\/75 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.7);}}
+.hover\:dark\:decoration-mikado-yellow-500\/75 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:decoration-mikado-yellow-700\/75 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.7);}}
+.hover\:dark\:decoration-mikado-yellow-900\/75 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.7);}}
+.hover\:dark\:decoration-mikado-yellow-100\/90 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:decoration-mikado-yellow-300\/90 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.9);}}
+.hover\:dark\:decoration-mikado-yellow-500\/90 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:decoration-mikado-yellow-700\/90 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.9);}}
+.hover\:dark\:decoration-mikado-yellow-900\/90 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.9);}}
+.hover\:dark\:decoration-mikado-yellow-100\/95 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:decoration-mikado-yellow-300\/95 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 0.95);}}
+.hover\:dark\:decoration-mikado-yellow-500\/95 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:decoration-mikado-yellow-700\/95 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 0.95);}}
+.hover\:dark\:decoration-mikado-yellow-900\/95 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 0.95);}}
+.hover\:dark\:decoration-mikado-yellow-100 {&:hover {text-decoration-color:oklch(0.9538 0.1734 87.35 / 1);}}
+.hover\:dark\:decoration-mikado-yellow-300 {&:hover {text-decoration-color:oklch(0.9038 0.1734 87.35 / 1);}}
+.hover\:dark\:decoration-mikado-yellow-500 {&:hover {text-decoration-color:oklch(0.8538 0.1734 87.35 / 1);}}
+.hover\:dark\:decoration-mikado-yellow-700 {&:hover {text-decoration-color:oklch(0.8038 0.1734 87.35 / 1);}}
+.hover\:dark\:decoration-mikado-yellow-900 {&:hover {text-decoration-color:oklch(0.7538 0.1734 87.35 / 1);}}
 .hover\:dark\:decoration-orange-100\/1 {&:hover {text-decoration-color:oklch(0.8404 0.1444 57.26 / 0.01);}}
 .hover\:dark\:decoration-orange-300\/1 {&:hover {text-decoration-color:oklch(0.7904 0.1444 57.26 / 0.01);}}
 .hover\:dark\:decoration-orange-500\/1 {&:hover {text-decoration-color:oklch(0.7404 0.1444 57.26 / 0.01);}}

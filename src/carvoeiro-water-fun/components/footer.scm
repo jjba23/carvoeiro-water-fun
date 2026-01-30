@@ -105,9 +105,11 @@
                   #:size '(text-sm))))))
 
 (define* (footer-section)
-  `((div (@ (class ,(mk-class '(pt-16 pb-12
+  `(
+    (div (@ (class ,(mk-class '(pt-12 pb-12
                                       flex
                                       flex-row
+                                      bg-white-smoke-700/50
                                       flex-wrap
                                       gap-12
                                       justify-center
