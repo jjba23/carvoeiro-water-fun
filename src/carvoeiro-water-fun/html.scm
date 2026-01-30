@@ -167,9 +167,11 @@
                     #:item-width '(w-96)
                     #:item-height '(h-auto)
                     #:fragments (list (mk-header-img
-                                       "/img/FB_IMG_1719434096367.jpg")
-                                      (mk-header-img "/img/car2.jpeg")
-                                      (mk-header-img "/img/barco-scaled.jpg"))
+                                       "/img/FB_IMG_1719434026784.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434185151.jpg")
+                                      (mk-header-img "/img/barco-scaled.jpg")
+                                      (mk-header-img "/img/car2.jpeg"))
                     #:carousel-button-css '(absolute bottom-1/2
                                                      w-14
                                                      h-14
@@ -222,19 +224,29 @@
          ,(h3 `(div ,(icon #:type 'island
                            #:icon-css '(text-xl text-onyx-600 mr-2))
                     ,(G_ "Enjoy Algarve's spectacular coast")))
-         (div (@ (class ,(mk-class '(my-3 max-w-prose flex flex-col gap-3))))
-              ,(p (G_
-                   "Take a boat tour with us, or row in a kayak, and make your way to the many beautiful caves in the Algarve's coastline.")
-                  #:weight '(font-light))
-              ,(p (G_
-                   "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our coasts, and add to the magical experience of a great holiday here.")
-                  #:weight '(font-light))
-              ,(p (G_
-                   "The Algarve’s coastline is known for its beautiful cliffs, rock formations, grottos, and many sea caves.")
-                  #:weight '(font-light))
-              ,(p (G_
-                   "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
-                  #:weight '(font-light))))))
+         (div (@ (class ,(mk-class '(flex flex-row
+                                          flex-wrap
+                                          gap-6
+                                          justify-between
+                                          align-center
+                                          items-center))))
+              (div (@ (class ,(mk-class '(my-3 md:max-w-128 lg:max-w-196 flex
+                                               flex-col gap-3))))
+                   ,(p (G_
+                        "Take a boat tour with us, or row in a kayak, and make your way to the many beautiful caves in the Algarve's coastline.")
+                       #:weight '(font-light))
+                   ,(p (G_
+                        "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our coasts, and add to the magical experience of a great holiday here.")
+                       #:weight '(font-light))
+                   ,(p (G_
+                        "The Algarve’s coastline is known for its beautiful cliffs, rock formations, grottos, and many sea caves.")
+                       #:weight '(font-light))
+                   ,(p (G_
+                        "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
+                       #:weight '(font-light)))
+              (div (img (@ (class ,(mk-class '(h-auto md:max-w-96 lg:max-w-128
+                                                      shadow-2xl rounded-2xl)))
+                           (src "/img/FB_IMG_1685655800663(1).jpg"))))))))
 
 (define* (insurance-section)
   `((div (@ (class ,(mk-class '(px-4 md:px-6
@@ -242,7 +254,7 @@
                                      max-w-128
                                      flex
                                      flex-col
-                                     gap-3))))
+                                     gap-2))))
          ,(h4 (G_ "About us - Insurance"))
          ,(em (G_
                "Proceedings from the Municipal Chamber of Lagoa E/8399/2023 date of 2023-03-13.")
