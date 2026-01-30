@@ -40,7 +40,7 @@
   #:use-module (ice-9 iconv)
   #:use-module (ice-9 threads)
   #:export (carvoeiro-water-fun carvoeiro-water-fun-main-body asset-library
-                                carvoeiro-water-fun-page-footer
+                                footer-section
                                 carvoeiro-water-fun-html-template))
 
 (define* (carvoeiro-water-fun-html-template #:key title body)
@@ -61,73 +61,106 @@
   ]
 }
 "))
-         (body (@ (class ,(mk-class '(break-words bg-white-smoke-300))))
-               (div (@ (class ,(mk-class '(container mx-auto py-4 sm:py-6 px-3
-                                                     sm:px-6))))
+         (body (@ (class ,(mk-class '(break-words bg-white-smoke-500))))
+               (div (@ (class ,(mk-class '(py-8))))
                     ,@body
-                    ,(carvoeiro-water-fun-page-footer)))))
+                    ,(footer-section)))))
 
-(define* (carvoeiro-water-fun-page-footer)
-  `(,(hr) (div (@ (class ,(mk-class '(block text-center font-sans))))
-               (div (@ (class ,(mk-class '(my-3 flex flex-row gap-3 flex-wrap
-                                                justify-center))))
-                    ,(em (G_
-                          "this website was rendered with Lisp (Guile Scheme) code")))
+(define* (footer-section)
+  `(,(hr) (div (@ (class ,(mk-class '(flex flex-col
+                                           gap-3
+                                           text-center
+                                           align-center
+                                           items-center
+                                           px-4
+                                           md:px-6
+                                           lg:px-8))))
+
+               (div (@ (class ,(mk-class '(max-w-128))))
+                    ,(p (G_
+                         "Copyright © Carvoeiro Water Fun - All rights reserved")
+                        #:family '(font-serif)
+                        #:size '(text-md)
+                        #:weight '(font-light)))
+               (div (@ (class ,(mk-class '(max-w-96))))
+                    ,(p (G_
+                         "this page's source code is licensed under the GNU Affero General Public License v3 or newer")
+                        #:family '(font-serif)
+                        #:size '(text-sm)
+                        #:weight '(font-light)))
                (div (@ (class ,(mk-class '(my-3 flex
                                                 flex-row
-                                                gap-3
                                                 flex-wrap
-                                                justify-center
-                                                items-center))))
-                    ,(em (G_
-                          "this page's source code is licensed under the GNU Affero General Public License v3 or newer (at your convenience)")))
-               (div (@ (class ,(mk-class '(my-3 flex
-                                                flex-row
                                                 gap-3
-                                                flex-wrap
                                                 justify-center
-                                                items-center))))
-                    ,(em (G_ "find the source code here:"))
+                                                items-center
+                                                align-center))))
+                    ,(p (G_ "find the source code here:")
+                        #:size '(text-sm)
+                        #:weight '(font-light))
                     ,(a "https://codeberg.org/jjba23/carvoeiro-water-fun"
                         #:size '(text-sm)
-                        #:weight '(font-medium)
-                        #:color '(text-onyx-700))))))
+                        #:family '(font-serif)
+                        #:weight '(font-light))))))
 
 (define* (mk-header-img src)
   `((img (@ (class ,(mk-class '(h-auto max-w-full shadow-xl rounded-xl)))
             (src ,src)))))
 
 (define* (carvoeiro-water-fun-main-body)
-  `((div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-2 slide-from-right))))
-         ,(h1 (G_ "Carvoeiro"))
-         (span (@ (class ,(mk-class '(text-3xl)))) "⚓")
-         ,(h1 (G_ "Water Fun")
-              #:color '(text-jeans-blue-300)))
-    
-    (div (@ (class ,(mk-class '(py-4 max-w-prose flex flex-col gap-4))))
-         ,(p (G_
-              "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")
-             #:weight '(font-light)
-             #:size '(text-lg))
-         (div (@ (class ,(mk-class '(my-3 flex flex-row flex-wrap gap-4))))
-              ,(a (icon-button #:icon 'sailboat
-                               #:content (G_ "About the Boat Tour")
-                               #:background '(bg-jeans-blue-300)
-                               #:icon-css '(text-white-smoke-300 text-xl)
-                               #:color '(text-white-smoke-300)
-                               #:hover-background '(hover:bg-teal-900))
-                  #:href "#")
-              ,(a (icon-button #:icon 'calendar
-                               #:content (G_ "Book Now")
-                               #:background '(bg-orange-100)
-                               #:color '(text-onyx-300)
-                               #:icon-css '(text-onyx-100 text-xl)
-                               #:hover-background '(hover:bg-green-900))
-                  #:href "#"))
-         ,(em (G_
-               "Enjoy the best of Carvoeiro and Benagil from the beautiful ocean.")
+  `((div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-2 slide-from-right
+                                     justify-center))))
+         ,(h1 (G_ "Carvoeiro")
               #:weight '(font-light)
-              #:size '(text-lg)))
+              #:size '(text-16))
+         (span (@ (class ,(mk-class '(text-16)))) "⚓")
+         ,(h1 (G_ "Water Fun")
+              #:color '(text-jeans-blue-300)
+              #:weight '(font-light)
+              #:size '(text-16)))
+    (div (@ (class ,(mk-class '(py-12 px-4
+                                      md:px-6
+                                      lg:px-8
+                                      flex
+                                      flex-row
+                                      flex-wrap
+                                      justify-center
+                                      w-full))))
+         (div (@ (class ,(mk-class '(max-w-prose text-center flex flex-col
+                                                 gap-8))))
+              ,(p (G_
+                   "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")
+                  #:weight '(font-light)
+                  #:family '(font-serif)
+                  #:size '(text-lg))
+              (div (@ (class ,(mk-class '(my-3 flex flex-row flex-wrap gap-4
+                                               justify-center))))
+                   ,(a (icon-button #:icon 'sailboat
+                                    #:content (G_ "About the Boat Tour")
+                                    #:background '(bg-stone-300)
+                                    #:icon-css '(text-onyx-300 text-xl)
+                                    #:color '(text-onyx-300)
+                                    #:weight '(font-light)
+                                    #:hover-background '(hover:bg-teal-900))
+                       #:href "#")
+                   ,(a (icon-button #:icon 'calendar
+                                    #:content (G_ "Book Now - Contact")
+                                    #:background '(bg-jeans-blue-500)
+                                    #:color '(text-white-smoke-300)
+                                    #:icon-css '(text-white-smoke-100 text-xl)
+                                    #:weight '(font-light)
+                                    #:hover-background '(hover:bg-green-900))
+                       #:href "#contact-us-section"))
+              (div ,(em (G_ "Enjoy the best of")
+                        #:weight '(font-light)
+                        #:size '(text-lg))
+                   ,(em (G_ " Carvoeiro & Benagil ")
+                        #:weight '(font-bold)
+                        #:color '(text-onyx-100)
+                        #:size '(text-lg))
+                   ,(em (G_ "from the beautiful ocean.")
+                        #:weight '(font-light)
+                        #:size '(text-lg)))))
 
     ,(carousel #:id 'first-carousel
                #:item-width '(w-96)
@@ -177,73 +210,40 @@
                                      flex-wrap
                                      gap-2
                                      items-center
-                                     justify-between
-                                     my-8))))
-         (div (@ (class ,(mk-class '(max-w-prose flex flex-col gap-3))))
-              ,(h3 `(div ,(icon #:type 'phone-transfer
-                                #:icon-css '(text-xl text-onyx-600 mr-2))
-                         ,(G_ "Contact us")))
-              ,(p (G_
-                   "Please contact us for reservations and for any questions regarding the boat tour and offers!")
-                  #:weight '(font-light))
-              (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
-                                               items-center))))
-                   ,(icon #:type 'chat-circle-dots
-                          #:icon-css '(text-xl text-onyx-600))
-                   ,(p (G_ "WhatsApp:")
-                       #:weight '(font-light))
-                   ,(a "wa.me/+351931933847"
-                       #:href "https://wa.me/+351931933847"))
-              (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
-                                               items-center))))
-                   ,(icon #:type 'phone
-                          #:icon-css '(text-xl text-onyx-600))
-                   ,(p (G_ "Telephone:")
-                       #:weight '(font-light))
-                   ,(a "+351 931 933 847"
-                       #:href "tel:+351931933847"))
-              (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
-                                               items-center))))
-                   ,(icon #:type 'envelope
-                          #:icon-css '(text-xl text-onyx-600))
-                   ,(p (G_ "Email:")
-                       #:weight '(font-light))
-                   ,(a "carvoeirowaterfun@gmail.com"
-                       #:href "mailto:carvoeirowaterfun@gmail.com"))
-              (div (@ (class ,(mk-class '(flex flex-col gap-2 mt-2))))
-                   ,(em (G_ "Note: Call costs to mobile network."))
-                   ,(em (G_
-                         "You may incur monetary costs while calling our phone number, as it will be a call to a Portuguese telephone."))))
-         (div (@ (class ,(mk-class '(max-w-prose))))
-              ,(h3 `(div ,(icon #:type 'map-pin
-                                #:icon-css '(text-xl text-onyx-600 mr-2))
-                         ,(G_ "Where to find us?")))
-              (div (@ (class ,(mk-class '(my-3))))
-                   ,(em (G_ "Open daily from 09:00AM until 06:00PM.")))
-              ,(p (G_
-                   "You can find us daily, right on Carvoeiro's beach sands, and feel free to approach our co-workers.")
-                  #:weight '(font-light))
-              ,(p (G_
-                   "We really appreciate it if you can book our services in advance.")
-                  #:weight '(font-light))
-              (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
-                                               items-center my-4))))
-                   ,(p (G_ "Our address:")
-                       #:weight '(font-light))
-                   ,(p
-                     "Rua do Casino, 29 A, Carvoeiro, 8400-515 Praia do Carvoeiro"))))
-    (div ,(h4 (G_ "About us - Insurance"))
+                                     justify-center
+                                     py-3))))
+         ,(contact-us-section)
+         ,(where-to-find-us-section))
+
+    ,(leave-a-review-section)
+    ,(hr)
+    ,(insurance-section)
+
+    ))
+
+(define* (insurance-section)
+  `((div (@ (class ,(mk-class '(px-4 md:px-6
+                                     lg:px-8
+                                     max-w-prose
+                                     flex
+                                     flex-col
+                                     gap-3))))
+         ,(h4 (G_ "About us - Insurance"))
          ,(em (G_
                "Proceedings from the Municipal Chamber of Lagoa E/8399/2023 date of 2023-03-13."))
          ,(p (G_
               "Civil Liability Insurance Policy No. 85/25935 Maritime Tourism €50,000.00")
-             #:weight '(font-light))
+             #:weight '(font-light)
+             #:size '(text-md))
          ,(p (G_ "Death or Permanent Disability €1,120,000.00")
-             #:weight '(font-light))
+             #:weight '(font-light)
+             #:size '(text-md))
          ,(p (G_ "Treatment and Repatriation Expenses €196,000.00")
-             #:weight '(font-light)))
+             #:weight '(font-light)
+             #:size '(text-md)))))
 
-    (div ,(h4 (G_ "Leave a review"))
+(define* (leave-a-review-section)
+  `((div ,(h4 (G_ "Leave a review"))
          ,(em (G_
                "You can read more reviews, and we are thankful if you write us one."))
          (div (img (@ (class ,(mk-class '(h-auto max-h-80
@@ -261,3 +261,60 @@
                                        #:title "Carvoeiro Water Fun"
                                        #:body (carvoeiro-water-fun-main-body))))))
 
+(define* (where-to-find-us-section)
+  `((div (@ (class ,(mk-class '(md:w-1/2 max-w-prose px-4 md:px-6 lg:px-8))))
+         ,(h3 `(div ,(icon #:type 'map-pin
+                           #:icon-css '(text-xl text-onyx-600 mr-2))
+                    ,(G_ "Where to find us?")))
+         (div (@ (class ,(mk-class '(my-3))))
+              ,(em (G_ "Open daily from 09:00AM until 06:00PM.")))
+         ,(p (G_
+              "You can find us daily, right on Carvoeiro's beach sands, and feel free to approach our co-workers.")
+             #:weight '(font-light))
+         ,(p (G_
+              "We really appreciate it if you can book our services in advance.")
+             #:weight '(font-light))
+         (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
+                                          items-center my-4))))
+              ,(p (G_ "Our address:")
+                  #:weight '(font-light))
+              ,(p
+                "Rua do Casino, 29 A, Carvoeiro, 8400-515 Praia do Carvoeiro")))))
+
+(define* (contact-us-section)
+  `((div (@ (id contact-us-section)
+            (class ,(mk-class '(md:w-1/2 flex-col gap-3 px-4 md:px-6 lg:px-8))))
+         ,(h3 `(div ,(icon #:type 'phone-transfer
+                           #:icon-css '(text-xl text-onyx-600 mr-2))
+                    ,(G_ "Contact us")))
+         ,(p (G_
+              "Please contact us for reservations and for any questions regarding the boat tour and offers!")
+             #:weight '(font-light))
+         (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
+                                          items-center))))
+              ,(icon #:type 'chat-circle-dots
+                     #:icon-css '(text-xl text-onyx-600))
+              ,(p (G_ "WhatsApp:")
+                  #:weight '(font-light))
+              ,(a "wa.me/+351931933847"
+                  #:href "https://wa.me/+351931933847"))
+         (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
+                                          items-center))))
+              ,(icon #:type 'phone
+                     #:icon-css '(text-xl text-onyx-600))
+              ,(p (G_ "Telephone:")
+                  #:weight '(font-light))
+              ,(a "+351 931 933 847"
+                  #:href "tel:+351931933847"))
+         (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
+                                          items-center))))
+              ,(icon #:type 'envelope
+                     #:icon-css '(text-xl text-onyx-600))
+              ,(p (G_ "Email:")
+                  #:weight '(font-light))
+              ,(a "carvoeirowaterfun@gmail.com"
+                  #:href "mailto:carvoeirowaterfun@gmail.com"))
+         (div (@ (class ,(mk-class '(flex flex-col gap-2 mt-2))))
+              ,(em (G_ "Note: Call costs to mobile network."))
+              ,(em (G_
+                    "You may incur monetary costs while calling our phone number, as it will be a call to a Portuguese telephone."))))))
