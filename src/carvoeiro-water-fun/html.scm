@@ -61,7 +61,7 @@
   ]
 }
 "))
-         (body (@ (class ,(mk-class '(break-words bg-white-smoke-500))))
+         (body (@ (class ,(mk-class '(break-words bg-white-smoke-300))))
                (div (@ (class ,(mk-class '(py-8))))
                     ,@body
                     ,(footer-section)))))
@@ -104,7 +104,7 @@
                         #:weight '(font-light))))))
 
 (define* (mk-header-img src)
-  `((img (@ (class ,(mk-class '(h-auto max-w-full shadow-xl rounded-xl)))
+  `((img (@ (class ,(mk-class '(h-auto max-w-full shadow-2xl rounded-2xl)))
             (src ,src)))))
 
 (define* (carvoeiro-water-fun-main-body)
@@ -162,34 +162,56 @@
                         #:weight '(font-light)
                         #:size '(text-lg)))))
 
-    ,(carousel #:id 'first-carousel
-               #:item-width '(w-96)
-               #:item-height '(h-auto)
-               #:fragments (list (mk-header-img
-                                  "/img/FB_IMG_1719434096367.jpg")
-                                 (mk-header-img "/img/car2.jpeg")
-                                 (mk-header-img "/img/barco-scaled.jpg"))
-               #:carousel-button-css '(absolute bottom-1/2
-                                                w-14
-                                                h-14
-                                                bg-stone-500/75
-                                                p-1
-                                                rounded-3xl
-                                                text-onyx-500
-                                                cursor-pointer
-                                                font-bold
-                                                text-3xl)
-               #:carousel-list-css '(flex gap-16
-                                          p-4
-                                          list-none
-                                          overflow-x-scroll
-                                          snap-x
-                                          bg-stone-300/75
-                                          rounded-xl
-                                          shadow-md
-                                          my-6))
+    (div (@ (class ,(mk-class '(px-3))))
+         ,(carousel #:id 'first-carousel
+                    #:item-width '(w-96)
+                    #:item-height '(h-auto)
+                    #:fragments (list (mk-header-img
+                                       "/img/FB_IMG_1719434096367.jpg")
+                                      (mk-header-img "/img/car2.jpeg")
+                                      (mk-header-img "/img/barco-scaled.jpg"))
+                    #:carousel-button-css '(absolute bottom-1/2
+                                                     w-14
+                                                     h-14
+                                                     bg-stone-500/75
+                                                     p-1
+                                                     rounded-3xl
+                                                     text-onyx-500
+                                                     cursor-pointer
+                                                     font-bold
+                                                     text-3xl)
+                    #:carousel-list-css '(flex gap-16
+                                               p-4
+                                               list-none
+                                               overflow-x-scroll
+                                               snap-x
+                                               bg-stone-300/75
+                                               rounded-xl
+                                               shadow-md
+                                               my-6)))
 
-    (div (@ (class ,(mk-class '(py-6))))
+    ,(enjoy-algarve-section)
+    (div (@ (class ,(mk-class '(flex flex-row
+                                     flex-wrap
+                                     gap-10
+                                     items-center
+                                     justify-center
+                                     px-4
+                                     md:px-6
+                                     lg:px-8
+                                     py-4
+                                     bg-white-smoke-500/75))))
+         ,(contact-us-section)
+         ,(where-to-find-us-section))
+
+    ,(leave-a-review-section)
+    ,(hr)
+    ,(insurance-section)
+
+    ))
+
+(define* (enjoy-algarve-section)
+  `((div (@ (class ,(mk-class '(py-6 px-4 md:px-6 lg:px-8 bg-white shadow-xl))))
          ,(h3 `(div ,(icon #:type 'island
                            #:icon-css '(text-xl text-onyx-600 mr-2))
                     ,(G_ "Enjoy Algarve's spectacular coast")))
@@ -201,25 +223,11 @@
                    "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our coasts, and add to the magical experience of a great holiday here.")
                   #:weight '(font-light))
               ,(p (G_
-                   "The Algarve’s coastline is known for its jeans-blueonyx cliffs, rock formations, grottos, and many sea caves.")
+                   "The Algarve’s coastline is known for its beautiful cliffs, rock formations, grottos, and many sea caves.")
                   #:weight '(font-light))
               ,(p (G_
                    "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
-                  #:weight '(font-light))))
-    (div (@ (class ,(mk-class '(flex flex-row
-                                     flex-wrap
-                                     gap-2
-                                     items-center
-                                     justify-center
-                                     py-3))))
-         ,(contact-us-section)
-         ,(where-to-find-us-section))
-
-    ,(leave-a-review-section)
-    ,(hr)
-    ,(insurance-section)
-
-    ))
+                  #:weight '(font-light))))))
 
 (define* (insurance-section)
   `((div (@ (class ,(mk-class '(px-4 md:px-6
@@ -262,7 +270,7 @@
                                        #:body (carvoeiro-water-fun-main-body))))))
 
 (define* (where-to-find-us-section)
-  `((div (@ (class ,(mk-class '(md:w-1/2 max-w-prose px-4 md:px-6 lg:px-8))))
+  `((div (@ (class ,(mk-class '(lg:w-1/3 max-w-prose flex flex-col gap-3))))
          ,(h3 `(div ,(icon #:type 'map-pin
                            #:icon-css '(text-xl text-onyx-600 mr-2))
                     ,(G_ "Where to find us?")))
@@ -270,7 +278,8 @@
               ,(em (G_ "Open daily from 09:00AM until 06:00PM.")))
          ,(p (G_
               "You can find us daily, right on Carvoeiro's beach sands, and feel free to approach our co-workers.")
-             #:weight '(font-light))
+             #:weight '(font-light)
+             #:size '(text-md))
          ,(p (G_
               "We really appreciate it if you can book our services in advance.")
              #:weight '(font-light))
@@ -283,13 +292,14 @@
 
 (define* (contact-us-section)
   `((div (@ (id contact-us-section)
-            (class ,(mk-class '(md:w-1/2 flex-col gap-3 px-4 md:px-6 lg:px-8))))
+            (class ,(mk-class '(lg:w-1/3 flex flex-col gap-3 max-w-prose))))
          ,(h3 `(div ,(icon #:type 'phone-transfer
                            #:icon-css '(text-xl text-onyx-600 mr-2))
                     ,(G_ "Contact us")))
          ,(p (G_
               "Please contact us for reservations and for any questions regarding the boat tour and offers!")
-             #:weight '(font-light))
+             #:weight '(font-light)
+             #:size '(text-md))
          (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
                                           items-center))))
               ,(icon #:type 'chat-circle-dots
@@ -315,6 +325,8 @@
               ,(a "carvoeirowaterfun@gmail.com"
                   #:href "mailto:carvoeirowaterfun@gmail.com"))
          (div (@ (class ,(mk-class '(flex flex-col gap-2 mt-2))))
-              ,(em (G_ "Note: Call costs to mobile network."))
+              ,(em (G_ "Note: Call costs to mobile network.")
+                   #:size '(text-md))
               ,(em (G_
-                    "You may incur monetary costs while calling our phone number, as it will be a call to a Portuguese telephone."))))))
+                    "You may incur monetary costs while calling our phone number, as it will be a call to a Portuguese telephone.")
+                   #:size '(text-md))))))
