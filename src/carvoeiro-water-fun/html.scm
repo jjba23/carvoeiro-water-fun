@@ -206,6 +206,9 @@
          ,(contact-us-section)
          ,(where-to-find-us-section))
 
+    (div (@ (class ,(mk-class '(py-8 px-4 md:px-6 lg:px-8))))
+         ,(map-frame-section))
+
     (div (@ (class ,(mk-class '(py-8 px-4
                                      md:px-6
                                      lg:px-8
@@ -358,3 +361,17 @@
               ,(em (G_
                     "You may incur monetary costs while calling our phone number, as it will be a call to a Portuguese telephone.")
                    #:size '(text-md))))))
+
+(define map-frame-url
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3182.37556480607!2d-8.471684899999998!3d37.09617659999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ad764b5120b8b%3A0x108f3a9ef89e164e!2sCarvoeiro%20Water%20Fun!5e0!3m2!1snl!2snl!4v1718611022914!5m2!1snl!2snl")
+
+(define* (map-frame-section)
+  `((iframe (@ (src ,map-frame-url)
+               (width "100%")
+               (height 450)
+               (style "border:0;")
+               (allowfullscreen true)
+               (loading lazy)
+               (referrerpolicy "no-referrer-when-downgrade")
+               (class ,(mk-class '(rounded-2xl shadow-xl)))) "")))
+
