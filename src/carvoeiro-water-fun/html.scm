@@ -368,7 +368,7 @@
                   #:size '(text-md)
                   #:weight '(font-light))
               ,(p (G_
-                   "Experience the breathtaking beauty of Portugal's stunning Algarve coastline on this tour.")
+                   "Experience the breathtaking beauty of Portugal's stunning Algarve coastline on this tour. The boarding is done in Carvoeiro, we provide transport to Ferragudo to start the tour.")
                   #:size '(text-md)
                   #:weight '(font-light))
               ,(p (G_
