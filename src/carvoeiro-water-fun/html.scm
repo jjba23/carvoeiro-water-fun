@@ -220,6 +220,9 @@
          ,(leave-a-review-section)
          ,(insurance-section))
 
+    (div (@ (class ,(mk-class '(py-8 px-4 md:px-6 lg:px-8))))
+         ,(about-boat-tour-section))
+
     ))
 
 (define* (enjoy-algarve-section)
@@ -374,4 +377,49 @@
                (loading lazy)
                (referrerpolicy "no-referrer-when-downgrade")
                (class ,(mk-class '(rounded-2xl shadow-xl)))) "")))
+
+(define* (about-boat-tour-section)
+  `((div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-4 justify-center))))
+         (div (@ (class ,(mk-class '(flex flex-col gap-2 md:max-w-1/2))))
+              ,(dl (list (dt (G_ "Tour duration"))
+                         (dd (G_ "2 hours")
+                             #:size '(text-md))
+                         (dt (G_ "Boarding location"))
+                         (dd "Praia do Carvoeiro (with transport to Portimão)"
+                          #:size '(text-md))))
+              ,(p (G_
+                   "This program includes a brief stop by the beach to dive whenever be possible.")
+                  #:size '(text-md)
+                  #:weight '(font-light))
+              ,(p (G_
+                   "Experience the breathtaking beauty of Portugal's stunning Algarve coastline on this tour.")
+                  #:size '(text-md)
+                  #:weight '(font-light))
+              ,(p (G_
+                   "We are a team of professionals, passionate about the sea, who are dedicated to their work to make your trip a unique and unforgettable moment!")
+                  #:size '(text-md)
+                  #:weight '(font-light))
+              ,(p (G_
+                   "The trip will start heading to the dolphins habitat and on the way back we visit Praia da Marinha, Algar de Benagil, Olhos de Deus, the largest cave in the Algarve, and much more.")
+                  #:size '(text-md)
+                  #:weight '(font-light))
+              ,(p (G_
+                   "Our professionals like to share their extensive knowledge about the region, as well as marine life, and the local ecosystem, ensuring that all our passengers can fully understand and appreciate the wonderful marine life.")
+                  #:size '(text-md)
+                  #:weight '(font-light)))
+         (div (@ (class ,(mk-class '(md:max-w-1/3))))
+              ,(dl (list (dt (G_ "Physical restrictions"))
+                         (dd (G_
+                              "We do not recommend the speed boat tour to people with serious back problems, or weighing more than 120kg and pregnant women in late stages of pregnancy.")
+                             #:size '(text-md))
+                         (dt (G_ "Included"))
+                         (dd (G_ "Life jacket, Waterproofing when necessary.")
+                             #:size '(text-md))
+                         (dt (G_ "Not included"))
+                         (dd (G_ "Swimsuit, towel, sun lotion, sunglasses.")
+                             #:size '(text-md))
+                         (dt (G_ "Cancellation policy"))
+                         (dd (G_
+                              "For a full refund, cancel at least 24 hours in advance of the tour start date.")
+                             #:size '(text-md))))))))
 
