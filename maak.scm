@@ -152,16 +152,21 @@ Args: update? represents whether we should update a template or create a new one
 
 (define (build-en)
   "Build English version of the project."
-  (build "en_US"))
+  (build 'en_US'))
 
 (define (build-and-serve-en)
   "Build English version of the project."
-  (build "en_US")
+  (build 'en_US)
   (serve))
 
 (define (build-pt)
   "Build Portuguese version of the project."
-  (build "pt_PT"))
+  (build 'pt_PT))
+
+(define (build-and-serve-pt)
+  "Build Portuguese version of the project."
+  (build 'pt_PT)
+  (serve))
 
 (define (deploy)
   (build-pt)
@@ -184,7 +189,7 @@ Args: update? represents whether we should update a template or create a new one
                                      "--on-busy-update=restart"
                                      "--shell bash"
                                      "--watch . --"
-                                     "maak build-and-serve-en")))
+                                     "maak build-and-serve-pt")))
 
 (define (hr)
   "Alias to hot-reloading."
