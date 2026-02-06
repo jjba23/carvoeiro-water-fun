@@ -35,6 +35,88 @@
 (define http-port
   50065)
 
+;; The path to the directory where the i18n resources are located.
+(define i18n-dir
+  "./resources/locale")
+
+;; The text domain for the i18n translations.
+(define i18n-textdomain
+  "carvoeiro-water-fun")
+
+(define i18n-locales
+  '(en_US pt_PT))
+
+(define default-locale
+  'pt_PT)
+
+;; The main copyright holders of the project.
+(define copyright-holders
+  '("Josep Bigorra"))
+
+;; ====== Maak prelude ======
+
+;; Specify the directory where the MO file is located
+(bindtextdomain i18n-textdomain i18n-dir)
+(bind-textdomain-codeset i18n-textdomain "UTF-8")
+;; Specify the domain of the MO file
+(textdomain i18n-textdomain)
+(define G_
+  gettext)
+
+;; ====== Maak i18n abstractions ======
+
+(define (i18n-compile* lang)
+  "Compile the translation file (.po) into a machine-readable (.mo) format
+
+Args: lang represents the language code (e.g., en_US, pt_PT, etc.)
+
+Use msgfmt to compile the .po file into a .mo file for the specified language
+The output .mo file will be placed in the LC_MESSAGES directory under the language's folder."
+  ($ (list (~ "msgfmt -v -o ~a/~a/LC_MESSAGES/~a.mo" i18n-dir lang
+              i18n-textdomain)
+           (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain))))
+
+(define (i18n-init* lang)
+  "Initialize a new translation file from a template (.pot) for a specific language.
+
+Args: lang represents the language code (e.g., en_US, pt_PT, etc.)
+
+Use msginit to generate a .po file from the .pot template for the specified language
+The -l option sets the language, and --no-translator means no translator is pre-filled in the .po file
+The generated .po file is placed in the LC_MESSAGES directory for the given language"
+  (mkdir-p (~ "~a/~a/LC_MESSAGES" i18n-dir lang))
+  ($ (list (~ "msginit -l ~a.UTF8 -o" lang)
+           (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain)
+           (~ "-i ~a/~a.pot --no-translator" i18n-dir i18n-textdomain))
+     #:verbose? #t))
+
+(define (i18n-merge* lang)
+  "Merge translation updates from the template (.pot) into an existing .po file.
+
+Args: lang represents the language code (e.g., en_US, pt_PT, etc.)
+
+Use msgmerge to update the specified language's .po file with new translations from the template (.pot)
+The -U flag updates the .po file in place
+This ensures the .po file stays up-to-date with the latest changes in the template"
+  ($ (list "msgmerge -U"
+           (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain)
+           (~ "~a/~a.pot" i18n-dir i18n-textdomain))))
+
+(define* (i18n-extract* #:key (update? #t))
+  "Extract translatable strings from Scheme source files using xgettext.
+Args: update? represents whether we should update a template or create a new one."
+  ($ (list (~ "xgettext --default-domain=~a" i18n-textdomain)
+           (~ "--output=~a/~a.pot" i18n-dir i18n-textdomain)
+           "--language=Scheme --keyword=G_"
+           "--sort-by-file"
+           (if update? "--join-existing" "")
+           (~ "--copyright-holder=\"~a\""
+              (string-join copyright-holders ","))
+           (~ "--package-name=~a" i18n-textdomain)
+           "src/carvoeiro-water-fun/*.scm"
+           "--from-code UTF-8")
+     #:verbose? #t))
+
 ;; ====== Maak tasks ======
 
 (define (kill-server)
@@ -115,3 +197,29 @@
 (define (olive-css)
   ($ '("curl --verbose --output \"./resources/css/carvoeiro-water-fun.olive.min.css\""
        "\"https://codeberg.org/jjba23/olive-css/raw/branch/trunk/resources/css/carvoeiro-water-fun.olive.min.css\"")))
+
+;; ====== Maak i18n tasks ======
+
+(define (i18n-compile)
+  "Compile the translation files for all locales."
+  (for-each i18n-compile* i18n-locales))
+
+(define (i18n-init-en)
+  "Initialize a new translation file for en_US."
+  (i18n-init* 'en_US))
+
+(define (i18n-init-pt)
+  "Initialize a new translation file for pt_PT."
+  (i18n-init* 'pt_PT))
+
+(define (i18n-merge)
+  "Merge translation updates for all locales."
+  (for-each i18n-merge* i18n-locales))
+
+(define (i18n-new-template)
+  "Create a new i18n template based on strings extracted from source code."
+  (i18n-extract* #:update? #f))
+
+(define (i18n-update-template)
+  "Update the i18n template based on strings extracted from source code."
+  (i18n-extract* #:update? #t))
