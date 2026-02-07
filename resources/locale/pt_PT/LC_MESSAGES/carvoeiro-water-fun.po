@@ -20,17 +20,19 @@ msgstr ""
 
 #: src/carvoeiro-water-fun/html.scm:72
 msgid "Carvoeiro"
-msgstr ""
+msgstr "Carvoeiro"
 
 #: src/carvoeiro-water-fun/html.scm:76
 msgid "Water Fun"
-msgstr ""
+msgstr "Water Fun"
 
 #: src/carvoeiro-water-fun/html.scm:91
 msgid ""
 "Book a boat tour around the beautiful cliffs and caves or rent some nautical "
 "equipment for a fun beach day in the Algarve."
 msgstr ""
+"Reserve um passeio de barco pelas belas falésias e grutas ou alugue "
+"equipamento náutico para um divertido dia de praia no Algarve."
 
 #: src/carvoeiro-water-fun/html.scm:98 src/carvoeiro-water-fun/html.scm:358
 msgid "About the boat tour"
@@ -54,31 +56,39 @@ msgstr "desde o oceano."
 
 #: src/carvoeiro-water-fun/html.scm:196
 msgid "Enjoy Algarve's spectacular coast"
-msgstr ""
+msgstr "Desfrute da espetacular costa algarvia"
 
 #: src/carvoeiro-water-fun/html.scm:206
 msgid ""
 "Take a boat tour with us, or row in a kayak, and make your way to the many "
 "beautiful caves in the Algarve's coastline."
 msgstr ""
+"Faça um passeio de barco connosco ou reme num caiaque e explore as "
+"belas grutas da costa algarvia."
 
 #: src/carvoeiro-water-fun/html.scm:209
 msgid ""
 "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our "
 "coasts, and add to the magical experience of a great holiday here."
 msgstr ""
+"🐬 As corvinas e outras espécies de golfinhos e animais selvagens são comuns "
+" nas nossas costas e contribuem para a experiência mágica de umas férias fantásticas aqui."
 
 #: src/carvoeiro-water-fun/html.scm:212
 msgid ""
 "The Algarve’s coastline is known for its beautiful cliffs, rock formations, "
 "grottos, and many sea caves."
 msgstr ""
+"A costa algarvia é conhecida pelas suas belas arribas, formações rochosas, "
+"grutas e numerosas cavernas marinhas."
 
 #: src/carvoeiro-water-fun/html.scm:215
 msgid ""
 "While it’s possible to enjoy the beauty of the coast from land, seeing it "
 "from the sea is a unique experience."
 msgstr ""
+"Embora seja possível apreciar a beleza da costa por terra, vê-la do mar é "
+"uma experiência única."
 
 #: src/carvoeiro-water-fun/html.scm:231
 msgid "About us - Insurance"
@@ -105,33 +115,35 @@ msgstr ""
 
 #: src/carvoeiro-water-fun/html.scm:251
 msgid "Leave a review"
-msgstr ""
+msgstr "Deixe um comentário"
 
 #: src/carvoeiro-water-fun/html.scm:253
 msgid "You can read more reviews, and we are thankful if you write us one."
-msgstr ""
+msgstr "Pode ler mais avaliações, e agradecemos se escrever uma."
 
 #: src/carvoeiro-water-fun/html.scm:257
 msgid "Reviews on Google Maps"
-msgstr ""
+msgstr "Avaliações no Google Maps"
 
 #: src/carvoeiro-water-fun/html.scm:278
 msgid "Where to find us?"
-msgstr ""
+msgstr "Onde nos encontramos?"
 
 #: src/carvoeiro-water-fun/html.scm:280
 msgid "Open daily from 09:00AM until 06:00PM."
-msgstr ""
+msgstr "Aberto diariamente das 09:00 às 18:00."
 
 #: src/carvoeiro-water-fun/html.scm:282
 msgid ""
 "You can find us daily, right on Carvoeiro's beach sands, and feel free to "
 "approach our co-workers."
 msgstr ""
+"Pode encontrar-nos diariamente, mesmo na areia da praia do Carvoeiro, e "
+"sinta-se à vontade para conversar com os nossos colegas."
 
 #: src/carvoeiro-water-fun/html.scm:286
 msgid "We really appreciate it if you can book our services in advance."
-msgstr ""
+msgstr "Agradecemos se puder reservar os nossos serviços com antecedência."
 
 #: src/carvoeiro-water-fun/html.scm:290
 msgid "Our address:"

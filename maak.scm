@@ -29,7 +29,7 @@
   'carvoeiro-water-fun)
 
 (define hot-reload-file-types
-  '(scm))
+  '(scm po mo pot))
 
 ;; The TCP port on which the development web server will listen.
 (define http-port

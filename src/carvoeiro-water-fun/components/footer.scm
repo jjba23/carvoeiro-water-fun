@@ -67,7 +67,8 @@
               ,(p (G_ "find the source code here:")
                   #:size '(text-sm)
                   #:weight '(font-light))
-              ,(a "https://codeberg.org/jjba23/carvoeiro-water-fun"
+              ,(a "codeberg.org/jjba23/carvoeiro-water-fun"
+                  #:href "https://codeberg.org/jjba23/carvoeiro-water-fun"
                   #:size '(text-sm)
                   #:family '(font-serif)
                   #:weight '(font-light))))))
