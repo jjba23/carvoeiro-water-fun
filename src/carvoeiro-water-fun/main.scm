@@ -36,8 +36,8 @@
                                  'output-dir "./dist"))
          (resources-dir (option-ref options
                                     'resources-dir #f))
-         (locale (option-ref options
-                             'locale "en_US")))
+         (locale (string->symbol (option-ref options
+                             'locale "en_US"))))
     (log-info "Carvoeiro Water Fun:")
     (render-page #:locale locale
                  #:output-dir output-dir

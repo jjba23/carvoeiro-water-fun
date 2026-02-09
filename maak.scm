@@ -142,35 +142,28 @@ Args: update? represents whether we should update a template or create a new one
   (manifest-shell '("guile -L ./src"
                     "-c '((@ (ares server) run-nrepl-server))'")))
 
-(define (build locale)
+(define (build* locale output-dir)
+  (mkdir-p output-dir)
   (time-machine-manifest-shell (list "guile -L"
                                 "./src"
                                 "-c '((@(carvoeiro-water-fun main) main))'"
                                 (~ "--locale ~a" locale)
-                                "--output-dir ./dist"
+                                (~ "--output-dir ~a" output-dir)
                                 "--resources-dir ./resources")))
 
-(define (build-en)
-  "Build English version of the project."
-  (build 'en_US'))
+(define (build)
+  "Build."
+  (remkdir-p "./dist")
+  (build* 'en_US "./dist/en")
+  (build* 'pt_PT "./dist/pt")
+  (mv "dist/en/*" "dist/"))
 
-(define (build-and-serve-en)
-  "Build English version of the project."
-  (build 'en_US)
-  (serve))
-
-(define (build-pt)
-  "Build Portuguese version of the project."
-  (build 'pt_PT))
-
-(define (build-and-serve-pt)
-  "Build Portuguese version of the project."
-  (build 'pt_PT)
+(define (build-and-serve)
+  "Build and serve."
+  (build)
   (serve))
 
 (define (deploy)
-  (build-pt)
-  ;; Deploy
   (delete-file-recursively deploy-dir)
   (build-en)
   (mv "dist" deploy-dir)
@@ -189,7 +182,7 @@ Args: update? represents whether we should update a template or create a new one
                                      "--on-busy-update=restart"
                                      "--shell bash"
                                      "--watch . --"
-                                     "maak build-and-serve-pt")))
+                                     "maak build-and-serve")))
 
 (define (hr)
   "Alias to hot-reloading."

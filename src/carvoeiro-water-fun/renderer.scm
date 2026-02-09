@@ -29,24 +29,17 @@
   (log-info "\tresources-dir: ~a" resources-dir)
   (log-info "\toutput-dir: ~a" output-dir)
 
-  (let* ((clean-dist-cmd (format #f "rm -rfv ~a" output-dir))
-         (mkdir-dist-cmd (format #f "mkdir -p ~a/js" output-dir))
-         (cp-to-dist-cmds (list (format #f "cp -rfv ~a/css ~a/css"
+  (let* ((cp-to-dist-cmds (list (format #f "cp -rfv ~a/css ~a/css"
                                         resources-dir output-dir)
                                 (format #f "cp -rfv ~a/img ~a/img"
                                         resources-dir output-dir))))
-    (log-info "executing: ~a" clean-dist-cmd)
-    (syscall clean-dist-cmd)
-
-    (log-info "executing: ~a" mkdir-dist-cmd)
-    (syscall mkdir-dist-cmd)
-
+    
     (map (lambda (c)
            (log-info "executing: ~a" c)
            (syscall c)) cp-to-dist-cmds)
 
     (with-output-to-file (format #f "~a/index.html" output-dir)
       (lambda ()
-        (display (carvoeiro-water-fun))))
+        (display (carvoeiro-water-fun #:locale locale))))
     (log-info "Completed rendering of page")))
 

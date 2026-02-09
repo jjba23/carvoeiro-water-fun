@@ -67,7 +67,7 @@
   `((img (@ (class ,(mk-class '(h-auto max-w-full shadow-2xl rounded-2xl)))
             (src ,src)))))
 
-(define* (carvoeiro-water-fun-main-body)
+(define* (carvoeiro-water-fun-main-body #:key locale)
   `((div (@ (class ,(mk-class '(pt-12 flex
                                       flex-row
                                       flex-wrap
@@ -97,8 +97,28 @@
                   #:weight '(font-light leading-8)
                   #:family '(font-serif)
                   #:size '(text-lg))
-              (div (@ (class ,(mk-class '(my-3 flex flex-row flex-wrap gap-4
-                                               justify-center))))
+              (div (@ (class ,(mk-class '(my-3 flex
+                                               flex-row
+                                               flex-wrap
+                                               gap-4
+                                               justify-center
+                                               items-center
+                                               align-center))))
+                   ,locale
+                   ,(when (eq? locale
+                               'en_US)
+                      (a (button "🇵🇹 Português"
+                                 #:weight '(font-light)
+                                 #:size '(text-sm)
+                                 #:background '(bg-stone-300))
+                         #:href "/pt"))
+                   ,(when (eq? locale
+                               'pt_PT)
+                      (a (button "🇬🇧 English"
+                                 #:weight '(font-light)
+                                 #:size '(text-sm)
+                                 #:background '(bg-stone-300))
+                         #:href "/"))
                    ,(a (icon-button #:icon 'sailboat
                                     #:content (G_ "About the boat tour")
                                     #:background '(bg-stone-300)
@@ -219,8 +239,9 @@
                    ,(p (G_
                         "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
                        #:weight '(font-light leading-8)))
-              (div (img (@ (class ,(mk-class '(h-auto max-w-full md:max-w-96 lg:max-w-128
-                                                      shadow-2xl rounded-2xl)))
+              (div (img (@ (class ,(mk-class '(h-auto max-w-full md:max-w-96
+                                                      lg:max-w-128 shadow-2xl
+                                                      rounded-2xl)))
                            (src "/img/FB_IMG_1685655800663(1).jpg"))))))))
 
 (define* (insurance-section)
@@ -270,11 +291,12 @@
                                                  rounded-xl)))
                       (src "/img/carvoeiro-water-fun-review.png")))))))
 
-(define* (carvoeiro-water-fun)
+(define* (carvoeiro-water-fun #:key (locale 'en_US))
   (with-output-to-string (lambda ()
                            (sxml->xml (carvoeiro-water-fun-html-template
                                        #:title "Carvoeiro Water Fun"
-                                       #:body (carvoeiro-water-fun-main-body))))))
+                                       #:body (carvoeiro-water-fun-main-body
+                                               #:locale locale))))))
 
 (define* (where-to-find-us-section)
   `((div (@ (class ,(mk-class '(lg:w-1/3 max-w-prose flex flex-col gap-2))))
@@ -346,7 +368,7 @@
 (define* (map-frame-section)
   `((iframe (@ (src ,map-frame-url)
                (width "100%")
-               (height 450)
+               (height 500)
                (style "border:0;")
                (allowfullscreen true)
                (loading lazy)
