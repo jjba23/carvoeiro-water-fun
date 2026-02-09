@@ -166,7 +166,8 @@ Args: update? represents whether we should update a template or create a new one
 
 (define (deploy)
   (delete-file-recursively deploy-dir)
-  (build))
+  (build)
+  (mv "dist" deploy-dir))
 
 (define (hot-reload)
   "Hot-reloading developer's setup."
