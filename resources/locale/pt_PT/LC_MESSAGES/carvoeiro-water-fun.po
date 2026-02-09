@@ -92,26 +92,26 @@ msgstr ""
 
 #: src/carvoeiro-water-fun/html.scm:231
 msgid "About us - Insurance"
-msgstr ""
+msgstr "Sobre nós - Seguros"
 
 #: src/carvoeiro-water-fun/html.scm:233
 msgid ""
 "Proceedings from the Municipal Chamber of Lagoa E/8399/2023 date of "
 "2023-03-13."
-msgstr ""
+msgstr "Ata da Câmara Municipal de Lagoa E/8399/2023 data de 13/03/2023."
 
 #: src/carvoeiro-water-fun/html.scm:236
 msgid ""
 "Civil Liability Insurance Policy No. 85/25935 Maritime Tourism €50,000.00"
-msgstr ""
+msgstr "Apólice de Seguro de Responsabilidade Civil nº 85/25935 Turismo Marítimo 50.000,00 €"
 
 #: src/carvoeiro-water-fun/html.scm:239
 msgid "Death or Permanent Disability €1,120,000.00"
-msgstr ""
+msgstr "Morte ou invalidez permanente: 1.120.000,00 €"
 
 #: src/carvoeiro-water-fun/html.scm:242
 msgid "Treatment and Repatriation Expenses €196,000.00"
-msgstr ""
+msgstr "Despesas com tratamento e repatriamento: 196.000,00 €"
 
 #: src/carvoeiro-water-fun/html.scm:251
 msgid "Leave a review"
@@ -147,56 +147,60 @@ msgstr "Agradecemos se puder reservar os nossos serviços com antecedência."
 
 #: src/carvoeiro-water-fun/html.scm:290
 msgid "Our address:"
-msgstr ""
+msgstr "O nosso endereço:"
 
 #: src/carvoeiro-water-fun/html.scm:302
 msgid "Contact us"
-msgstr ""
+msgstr "Contacte-nos"
 
 #: src/carvoeiro-water-fun/html.scm:304
 msgid ""
 "Please contact us for reservations and for any questions regarding the boat "
 "tour and offers!"
 msgstr ""
+"Contacte-nos para reservas e para qualquer dúvida sobre o passeio de barco e ofertas!"
 
 #: src/carvoeiro-water-fun/html.scm:311
 msgid "WhatsApp:"
-msgstr ""
+msgstr "WhatsApp:"
 
 #: src/carvoeiro-water-fun/html.scm:319
 msgid "Telephone:"
-msgstr ""
+msgstr "Telefone:"
 
 #: src/carvoeiro-water-fun/html.scm:327
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
 #: src/carvoeiro-water-fun/html.scm:332
 msgid "Note: Call costs to mobile network."
-msgstr ""
+msgstr "Nota: o custo da chamada é para a rede móvel."
 
 #: src/carvoeiro-water-fun/html.scm:335
 msgid ""
 "You may incur monetary costs while calling our phone number, as it will be a "
 "call to a Portuguese telephone."
 msgstr ""
+"Poderá haver custos monetários ao ligar para o nosso número de telefone, uma vez "
+"que será uma chamada para um número de telefone português."
 
 #: src/carvoeiro-water-fun/html.scm:359
 msgid "Tour duration"
-msgstr ""
+msgstr "Duração da excursão"
 
 #: src/carvoeiro-water-fun/html.scm:360
 msgid "2 hours"
-msgstr ""
+msgstr "2 horas"
 
 #: src/carvoeiro-water-fun/html.scm:362
 msgid "Boarding location"
-msgstr ""
+msgstr "Local de embarque"
 
 #: src/carvoeiro-water-fun/html.scm:367
 msgid ""
 "This program includes a brief stop by the beach to dive whenever be possible."
 msgstr ""
+"Este programa inclui uma breve paragem na praia para mergulho, sempre que possível."
 
 #: src/carvoeiro-water-fun/html.scm:371
 msgid ""
@@ -204,12 +208,17 @@ msgid ""
 "on this tour. The boarding is done in Carvoeiro, we provide transport to "
 "Ferragudo to start the tour."
 msgstr ""
+"Descubra a beleza estonteante da deslumbrante costa algarvia, em Portugal, "
+"nesta excursão. O embarque é feito em Carvoeiro e nós providenciamos "
+"o transporte até Ferragudo para o início do passeio."
 
 #: src/carvoeiro-water-fun/html.scm:375
 msgid ""
 "We are a team of professionals, passionate about the sea, who are dedicated "
 "to their work to make your trip a unique and unforgettable moment!"
 msgstr ""
+"Somos uma equipa de profissionais apaixonados pelo mar, dedicados ao nosso "
+"trabalho para tornar a sua viagem num momento único e inesquecível!"
 
 #: src/carvoeiro-water-fun/html.scm:379
 msgid ""
@@ -217,6 +226,8 @@ msgid ""
 "visit Praia da Marinha, Algar de Benagil, Olhos de Deus, the largest cave in "
 "the Algarve, and much more."
 msgstr ""
+"A excursão terá início com uma visita ao habitat dos golfinhos e, no regresso, "
+"visitaremos a Praia da Marinha, o Algar de Benagil, os Olhos de Deus, a maior gruta do Algarve, e muito mais."
 
 #: src/carvoeiro-water-fun/html.scm:383
 msgid ""
@@ -224,10 +235,13 @@ msgid ""
 "as well as marine life, and the local ecosystem, ensuring that all our "
 "passengers can fully understand and appreciate the wonderful marine life."
 msgstr ""
+"Os nossos profissionais gostam de partilhar o seu vasto conhecimento sobre a região, "
+"bem como sobre a vida marinha e o ecossistema local, garantindo que todos os "
+"nossos passageiros possam compreender e apreciar plenamente a maravilhosa vida marinha."
 
 #: src/carvoeiro-water-fun/html.scm:387
 msgid "Health & Safety"
-msgstr ""
+msgstr "Saúde e Segurança"
 
 #: src/carvoeiro-water-fun/html.scm:389
 msgid ""
@@ -235,29 +249,33 @@ msgid ""
 "problems, or weighing more than 120kg and pregnant women in late stages of "
 "pregnancy."
 msgstr ""
+"Não recomendamos o passeio de lancha a pessoas com problemas graves de coluna, "
+"com peso superior a 120 kg ou a grávidas em estado avançado de gestação."
 
 #: src/carvoeiro-water-fun/html.scm:392
 msgid "Included"
-msgstr ""
+msgstr "Incluído"
 
 #: src/carvoeiro-water-fun/html.scm:393
 msgid "Life jacket, Waterproofing when necessary."
-msgstr ""
+msgstr "Colete salva-vidas, impermeabilização quando necessário."
 
 #: src/carvoeiro-water-fun/html.scm:396
 msgid "Not included"
-msgstr ""
+msgstr "Não incluído"
 
 #: src/carvoeiro-water-fun/html.scm:397
 msgid "Swimsuit, towel, sun lotion, sunglasses."
-msgstr ""
+msgstr "Fato de banho, toalha, protetor solar, óculos de sol."
 
 #: src/carvoeiro-water-fun/html.scm:400
 msgid "Cancellation policy"
-msgstr ""
+msgstr "Política de cancelamento"
 
 #: src/carvoeiro-water-fun/html.scm:402
 msgid ""
 "For a full refund, cancel at least 24 hours in advance of the tour start "
 "date."
 msgstr ""
+"Para obter o reembolso total, cancele com pelo menos 24 horas de "
+"antecedência da data de início do passeio."

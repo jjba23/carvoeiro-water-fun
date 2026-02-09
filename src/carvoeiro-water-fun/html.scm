@@ -40,7 +40,8 @@
                                 carvoeiro-water-fun-html-template))
 
 (define* (carvoeiro-water-fun-html-template #:key title body)
-  `(html (head (title ,title)
+  `(html (@ (style "scroll-behavior: smooth;"))
+         (head (title ,title)
                ,(hygguile-recommended-meta)
                ,(hygguile-recommended-resources)
                (link (@ (rel stylesheet)
@@ -67,8 +68,12 @@
             (src ,src)))))
 
 (define* (carvoeiro-water-fun-main-body)
-  `((div (@ (class ,(mk-class '(pt-12 flex flex-row flex-wrap gap-2 slide-from-right
-                                     justify-center))))
+  `((div (@ (class ,(mk-class '(pt-12 flex
+                                      flex-row
+                                      flex-wrap
+                                      gap-2
+                                      slide-from-right
+                                      justify-center))))
          ,(h1 (G_ "Carvoeiro")
               #:weight '(font-light)
               #:size '(text-16))
@@ -214,7 +219,7 @@
                    ,(p (G_
                         "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
                        #:weight '(font-light leading-8)))
-              (div (img (@ (class ,(mk-class '(h-auto md:max-w-96 lg:max-w-128
+              (div (img (@ (class ,(mk-class '(h-auto max-w-full md:max-w-96 lg:max-w-128
                                                       shadow-2xl rounded-2xl)))
                            (src "/img/FB_IMG_1685655800663(1).jpg"))))))))
 
@@ -257,7 +262,7 @@
                           #:content (G_ "Reviews on Google Maps")
                           #:size '(text-sm)))
          (div (img (@ (class ,(mk-class '(h-auto max-h-80
-                                                 max-w-full
+                                                 max-w-1/2
                                                  w-full
                                                  sm:w-1/2
                                                  md:w-1/3
@@ -350,7 +355,12 @@
 
 (define* (about-boat-tour-section)
   `((div (@ (id about-boat-tour-section)
-            (class ,(mk-class '(flex flex-row flex-wrap gap-12 justify-center align-center items-center))))
+            (class ,(mk-class '(flex flex-row
+                                     flex-wrap
+                                     gap-12
+                                     justify-center
+                                     align-center
+                                     items-center))))
          (div (@ (class ,(mk-class '(flex flex-col gap-2 md:max-w-128
                                           leading-6))))
               (div (@ (class ,(mk-class '(flex flex-row gap-2 py-3))))

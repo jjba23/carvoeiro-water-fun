@@ -26,12 +26,7 @@
   #:use-module (ice-9 popen)
   #:use-module (ice-9 textual-ports)
   #:use-module (ice-9 regex)
-  #:export (setup-i18n G_
-                       syscall
-                       log-message
-                       log
-                       log-info
-                       log-error))
+  #:export (setup-i18n G_))
 
 (define (G_ msg)
   (gettext msg))
