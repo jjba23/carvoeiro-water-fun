@@ -44,6 +44,17 @@
          (head (title ,title)
                ,(hygguile-recommended-meta)
                ,(hygguile-recommended-resources)
+               (meta (@ (property "og:image")
+                        (content
+                         "https://carvoeirowaterfun.com/img/barco-scaled.jpg"))
+                     "")
+               (meta (@ (property "og:title")
+                        (content ,title)) "")
+               (meta (@ (name description)
+                        (content ,(G_
+                                   "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")))
+                     "")
+
                (link (@ (rel stylesheet)
                         (href "/css/carvoeiro-water-fun.olive.min.css")) "")
                (script (@ (type speculationrules))
