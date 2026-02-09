@@ -74,46 +74,59 @@
                   #:weight '(font-light))))))
 
 (define* (info-links-footer-section)
-  `((div (@ (class ,(mk-class '(flex flex-col gap-2))))
-         (div (@ (class ,(mk-class '(flex flex- flex-wrap gap-3 items-center))))
+  `((div (@ (class ,(mk-class '(flex flex-col gap-3 md:gap-4))))
+         (div (@ (class ,(mk-class '(flex flex-col
+                                          sm:flex-row
+                                          flex-wrap
+                                          gap-1
+                                          sm:gap-3
+                                          items-center))))
               ,(icon #:type 'chat-circle-dots
                      #:icon-css '(text-md text-onyx-500))
               ,(p (G_ "WhatsApp:")
                   #:weight '(font-light)
-                  #:size '(text-sm))
+                  #:size '(text-md))
               ,(a "wa.me/+351931933847"
                   #:href "https://wa.me/+351931933847"
-                  #:size '(text-sm)))
-         (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
+                  #:size '(text-md)))
+         (div (@ (class ,(mk-class '(flex flex-col
+                                          sm:flex-row
+                                          flex-wrap
+                                          gap-1
+                                          sm:gap-3
                                           items-center))))
               ,(icon #:type 'phone
                      #:icon-css '(text-md text-onyx-500))
               ,(p (G_ "Telephone:")
                   #:weight '(font-light)
-                  #:size '(text-sm))
+                  #:size '(text-md))
               ,(a "+351 931 933 847"
                   #:href "tel:+351931933847"
-                  #:size '(text-sm)))
-         (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
+                  #:size '(text-md)))
+         (div (@ (class ,(mk-class '(flex flex-col
+                                          sm:flex-row
+                                          flex-wrap
+                                          gap-1
+                                          sm:gap-3
                                           items-center))))
               ,(icon #:type 'envelope
                      #:icon-css '(text-md text-onyx-500))
               ,(p (G_ "Email:")
                   #:weight '(font-light)
-                  #:size '(text-sm))
+                  #:size '(text-md))
               ,(a "carvoeirowaterfun@gmail.com"
                   #:href "mailto:carvoeirowaterfun@gmail.com"
-                  #:size '(text-sm))))))
+                  #:size '(text-md))))))
 
 (define* (footer-section)
-  `(
-    (div (@ (class ,(mk-class '(pt-12 pb-12
+  `((div (@ (class ,(mk-class '(pt-12 pb-12
                                       flex
                                       flex-row
                                       bg-white-smoke-700/50
                                       flex-wrap
                                       gap-12
                                       justify-center
-                                      align-center items-center))))
+                                      align-center
+                                      items-center))))
          ,(copy-footer-section)
          ,(info-links-footer-section))))

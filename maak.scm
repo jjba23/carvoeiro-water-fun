@@ -114,6 +114,7 @@ Args: update? represents whether we should update a template or create a new one
               (string-join copyright-holders ","))
            (~ "--package-name=~a" i18n-textdomain)
            "src/carvoeiro-water-fun/*.scm"
+           "src/carvoeiro-water-fun/components/*.scm"
            "--from-code UTF-8")
      #:verbose? #t))
 

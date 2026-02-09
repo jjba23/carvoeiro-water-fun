@@ -125,7 +125,7 @@
                                     #:icon-css '(text-onyx-300 text-xl)
                                     #:color '(text-onyx-300)
                                     #:weight '(font-light)
-                                    #:hover-background '(hover:bg-teal-900))
+                                    #:hover-background '(hover:bg-stone-700))
                        #:href "#about-boat-tour-section")
                    ,(a (icon-button #:icon 'calendar
                                     #:content (G_ "Book your experience")
@@ -133,7 +133,7 @@
                                     #:color '(text-white-smoke-300)
                                     #:icon-css '(text-white-smoke-100 text-xl)
                                     #:weight '(font-light)
-                                    #:hover-background '(hover:bg-green-900))
+                                    #:hover-background '(hover:bg-jeans-blue-900))
                        #:href "#contact-us-section"))
               (div ,(em (G_ "Enjoy the best of")
                         #:weight '(font-light)
@@ -206,8 +206,9 @@
                                      flex-wrap
                                      gap-12
                                      justify-center
-                                     border-lapis-lazuli-300/25
+                                     border-lapis-lazuli-100/50
                                      border-2
+                                     shadow-xl
                                      rounded-5xl))))
               ,(leave-a-review-section)
               ,(insurance-section)))
@@ -288,6 +289,7 @@
                                                  sm:w-1/2
                                                  md:w-1/3
                                                  lg:w-1/4
+                                                 shadow-xl
                                                  rounded-xl)))
                       (src "/img/carvoeiro-water-fun-review.png")))))))
 
