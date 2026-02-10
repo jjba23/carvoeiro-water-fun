@@ -260,7 +260,7 @@
               (div (img (@ (class ,(mk-class '(h-auto max-w-full md:max-w-96
                                                       lg:max-w-128 shadow-2xl
                                                       rounded-2xl)))
-                           (src "/img/FB_IMG_1685655800663(1).jpg"))))))))
+                           (src "/img/FB_IMG_1685655800663.jpg"))))))))
 
 (define* (insurance-section)
   `((div (@ (class ,(mk-class '(px-4 md:px-6

@@ -17,6 +17,11 @@
 
 (define-module (maak)
   #:use-module (maak maak)
+  #:use-module (ice-9 textual-ports)
+  #:use-module (ice-9 ports)
+  #:use-module (ice-9 string-fun)
+  #:use-module (ice-9 popen)
+  #:use-module (srfi srfi-1)
   #:declarative? #t)
 
 ;; ====== Maak constants ======
@@ -219,3 +224,31 @@ Args: update? represents whether we should update a template or create a new one
 (define (i18n-update-template)
   "Update the i18n template based on strings extracted from source code."
   (i18n-extract* #:update? #t))
+
+(define (string-replace-substrings str pairs)
+  (fold (lambda (s rem)
+          (string-replace-substring rem
+                                    (car s)
+                                    (cdr s))) str pairs))
+
+(define* (convert-to-avif file)
+  (let* ((destination-file (string-replace-substrings file
+                                                      '((".png" . "")
+                                                        (".jpg" . "")
+                                                        (".jpeg" . "")))))
+    (delete-file-recursively (~ "~a.avif" destination-file))
+    (log-info "converting file: ~a -> ~a.avif\n" file destination-file)
+    ($ (list (~ "magick ~a" file) "-quality 40" "-define avif:speed=1"
+             (~ "~a.avif" destination-file)))))
+
+(define (avif-gen)
+  "Generate AVIF images from others."
+  (let* ((find-cmd (string-join '("find ./resources/img -maxdepth 8"
+                                  "-name '*.jpg' -o  -name '*.jpeg'"
+                                  "-o -name '*.png'") " "))
+         (find-process (open-input-pipe find-cmd))
+         (original-files (string-split (string-trim-both (get-string-all
+                                                          find-process))
+                                       #\newline))
+         (_ (close-pipe find-process)))
+    (for-each convert-to-avif original-files)))
