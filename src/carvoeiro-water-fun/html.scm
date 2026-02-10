@@ -39,26 +39,8 @@
   #:export (carvoeiro-water-fun carvoeiro-water-fun-main-body asset-library
                                 carvoeiro-water-fun-html-template))
 
-(define* (carvoeiro-water-fun-html-template #:key title body)
-  `(html (@ (style "scroll-behavior: smooth;"))
-         (head (title ,title)
-               ,(hygguile-recommended-meta)
-               ,(hygguile-recommended-resources)
-               (meta (@ (property "og:image")
-                        (content
-                         "https://carvoeirowaterfun.com/img/barco-scaled.jpg"))
-                     "")
-               (meta (@ (property "og:title")
-                        (content ,title)) "")
-               (meta (@ (name description)
-                        (content ,(G_
-                                   "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")))
-                     "")
-
-               (link (@ (rel stylesheet)
-                        (href "/css/carvoeiro-water-fun.olive.min.css")) "")
-               (script (@ (type speculationrules))
-                       "
+(define speculation-rules
+  `((script (@ (type speculationrules)) "
 {
   \"prerender\": [
     {
@@ -68,11 +50,34 @@
     }
   ]
 }
-"))
-         (body (@ (class ,(mk-class '(break-words bg-white-smoke-300))))
-               (div (@ (class ,(mk-class '())))
-                    ,@body
-                    ,(footer-section)))))
+")))
+
+(define* (carvoeiro-water-fun-html-template #:key title body)
+  `(,doctype-html (html (@ (style "scroll-behavior: smooth;"))
+                        (head (title ,title)
+                              ,(hygguile-recommended-meta)
+                              ,(hygguile-recommended-resources)
+                              (meta (@ (property "og:image")
+                                       (content
+                                        "https://carvoeirowaterfun.com/img/barco-scaled.jpg"))
+                                    "")
+                              (meta (@ (property "og:title")
+                                       (content ,title)) "")
+                              (meta (@ (name description)
+                                       (content ,(G_
+                                                  "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")))
+                                    "")
+
+                              (link (@ (rel stylesheet)
+                                       (href
+                                        "/css/carvoeiro-water-fun.olive.min.css"))
+                                    "")
+                              ,speculation-rules)
+                        (body (@ (class ,(mk-class '(break-words
+                                                     bg-white-smoke-300))))
+                              (div (@ (class ,(mk-class '())))
+                                   ,@body
+                                   ,(footer-section))))))
 
 (define* (mk-header-img src)
   `((img (@ (class ,(mk-class '(h-auto max-w-full shadow-2xl rounded-2xl)))
@@ -382,6 +387,7 @@
   `((iframe (@ (src ,map-frame-url)
                (width "100%")
                (height 500)
+               (title (G_ "Map showing the location of our business"))
                (style "border:0;")
                (allowfullscreen true)
                (loading lazy)
