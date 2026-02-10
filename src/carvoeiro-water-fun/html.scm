@@ -52,8 +52,9 @@
 }
 ")))
 
-(define* (carvoeiro-water-fun-html-template #:key title body)
-  `(,doctype-html (html (@ (style "scroll-behavior: smooth;"))
+(define* (carvoeiro-water-fun-html-template #:key title body locale)
+  `(,doctype-html (html (@ (style "scroll-behavior: smooth;")
+                           (lang ,(string-take (format #f "~a" locale) 2)))
                         (head (title ,title)
                               ,(hygguile-recommended-meta)
                               ,(hygguile-recommended-resources)
@@ -313,6 +314,7 @@
   (with-output-to-string (lambda ()
                            (sxml->xml (carvoeiro-water-fun-html-template
                                        #:title "Carvoeiro Water Fun"
+                                       #:locale locale
                                        #:body (carvoeiro-water-fun-main-body
                                                #:locale locale))))))
 
