@@ -52,22 +52,23 @@
 }
 ")))
 
-  (define custom-fonts
-    `((link (@ (rel preconnect)
-               (href "https://fonts.googleapis.com")))
-      (link (@ (rel preconnect)
-               (href "https://fonts.gstatic.com")
-               (crossorigin "")))
-      (link (@ (rel stylesheet)
-               (href
-                "https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap")))))
+(define custom-fonts
+  `((link (@ (rel preconnect)
+             (href "https://fonts.googleapis.com")))
+    (link (@ (rel preconnect)
+             (href "https://fonts.gstatic.com")
+             (crossorigin "")))
+    (link (@ (rel stylesheet)
+             (href
+              "https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap")))))
 
 (define* (carvoeiro-water-fun-html-template #:key title body locale)
   `(,doctype-html (html (@ (style "scroll-behavior: smooth;")
                            (lang ,(string-take (format #f "~a" locale) 2)))
                         (head (title ,title)
                               ,(hygguile-recommended-meta)
-                              ,(hygguile-recommended-resources #:fonts custom-fonts)
+                              ,(hygguile-recommended-resources #:fonts
+                                                               custom-fonts)
                               (meta (@ (property "og:image")
                                        (content
                                         "https://carvoeirowaterfun.com/img/barco-scaled.jpg"))
