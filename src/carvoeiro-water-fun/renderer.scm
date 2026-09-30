@@ -31,9 +31,11 @@
 
   (let* ((cp-to-dist-cmds (list (format #f "cp -rfv ~a/css ~a/css"
                                         resources-dir output-dir)
+                                (format #f "cp -rfv ~a/js ~a/js"
+                                        resources-dir output-dir)
                                 (format #f "cp -rfv ~a/img ~a/img"
                                         resources-dir output-dir))))
-    
+
     (map (lambda (c)
            (log-info "executing: ~a" c)
            (syscall c)) cp-to-dist-cmds)
@@ -42,4 +44,3 @@
       (lambda ()
         (display (carvoeiro-water-fun #:locale locale))))
     (log-info "Completed rendering of page")))
-

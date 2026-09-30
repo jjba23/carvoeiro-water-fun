@@ -85,6 +85,7 @@
                                         "/css/carvoeiro-water-fun.olive.min.css"))
                                     "")
                               ,speculation-rules)
+                        (script (@(src "/js/symbanta.js")) "")
                         (body (@ (class ,(mk-class '(break-words
                                                      bg-white-smoke-300))))
                               (div (@ (class ,(mk-class '())))
