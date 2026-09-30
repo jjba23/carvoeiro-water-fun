@@ -48,13 +48,13 @@
                                      lg:px-8))))
          (div (@ (class ,(mk-class '(max-w-128))))
               ,(p (G_ "Copyright © Carvoeiro Water Fun - All rights reserved")
-                  #:family '(font-serif)
+                  #:family '(font-sans)
                   #:size '(text-md)
                   #:weight '(font-light)))
          (div (@ (class ,(mk-class '(max-w-96))))
               ,(p (G_
                    "this page's source code is licensed under the GNU Affero General Public License v3 or newer")
-                  #:family '(font-serif)
+                  #:family '(font-sans)
                   #:size '(text-sm)
                   #:weight '(font-light)))
          (div (@ (class ,(mk-class '(my-3 flex
@@ -64,13 +64,13 @@
                                           justify-center
                                           items-center
                                           align-center))))
-              ,(p (G_ "find the source code here:")
+              ,(p (G_ "find here the:")
                   #:size '(text-sm)
                   #:weight '(font-light))
-              ,(a "codeberg.org/jjba23/carvoeiro-water-fun"
+              ,(a "source code"
                   #:href "https://codeberg.org/jjba23/carvoeiro-water-fun"
                   #:size '(text-sm)
-                  #:family '(font-serif)
+                  #:family '(font-sans)
                   #:weight '(font-light))))))
 
 (define* (info-links-footer-section)
