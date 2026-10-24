@@ -16,13 +16,10 @@
 ;; along with carvoeiro-water-fun. If not, see <https://www.gnu.org/licenses/>.
 
 (define-module (maak)
+  #:declarative? #t
   #:use-module (maak maak)
-  #:use-module (ice-9 textual-ports)
-  #:use-module (ice-9 ports)
   #:use-module (ice-9 string-fun)
-  #:use-module (ice-9 popen)
-  #:use-module (srfi srfi-1)
-  #:declarative? #t)
+  #:use-module (srfi srfi-1))
 
 ;; ====== Maak constants ======
 
@@ -77,9 +74,9 @@ Args: lang represents the language code (e.g., en_US, pt_PT, etc.)
 
 Use msgfmt to compile the .po file into a .mo file for the specified language
 The output .mo file will be placed in the LC_MESSAGES directory under the language's folder."
-  ($ (list (~ "msgfmt -v -o ~a/~a/LC_MESSAGES/~a.mo" i18n-dir lang
-              i18n-textdomain)
-           (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain))))
+  (run (list "msgfmt" "-v" "-o"
+             (~ "~a/~a/LC_MESSAGES/~a.mo" i18n-dir lang i18n-textdomain)
+             (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain))))
 
 (define (i18n-init* lang)
   "Initialize a new translation file from a template (.pot) for a specific language.
@@ -90,10 +87,11 @@ Use msginit to generate a .po file from the .pot template for the specified lang
 The -l option sets the language, and --no-translator means no translator is pre-filled in the .po file
 The generated .po file is placed in the LC_MESSAGES directory for the given language"
   (mkdir-p (~ "~a/~a/LC_MESSAGES" i18n-dir lang))
-  ($ (list (~ "msginit -l ~a.UTF8 -o" lang)
-           (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain)
-           (~ "-i ~a/~a.pot --no-translator" i18n-dir i18n-textdomain))
-     #:verbose? #t))
+  (run (list "msginit" "-l" (~ "~a.UTF8" lang)
+             "-o" (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain)
+             "-i" (~ "~a/~a.pot" i18n-dir i18n-textdomain)
+             "--no-translator")
+       #:verbose? #t))
 
 (define (i18n-merge* lang)
   "Merge translation updates from the template (.pot) into an existing .po file.
@@ -103,36 +101,44 @@ Args: lang represents the language code (e.g., en_US, pt_PT, etc.)
 Use msgmerge to update the specified language's .po file with new translations from the template (.pot)
 The -U flag updates the .po file in place
 This ensures the .po file stays up-to-date with the latest changes in the template"
-  ($ (list "msgmerge -U"
-           (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain)
-           (~ "~a/~a.pot" i18n-dir i18n-textdomain))))
+  (run (list "msgmerge" "-U"
+             (~ "~a/~a/LC_MESSAGES/~a.po" i18n-dir lang i18n-textdomain)
+             (~ "~a/~a.pot" i18n-dir i18n-textdomain))))
 
 (define* (i18n-extract* #:key (update? #t))
   "Extract translatable strings from Scheme source files using xgettext.
 Args: update? represents whether we should update a template or create a new one."
-  ($ (list (~ "xgettext --default-domain=~a" i18n-textdomain)
-           (~ "--output=~a/~a.pot" i18n-dir i18n-textdomain)
-           "--language=Scheme --keyword=G_"
-           "--sort-by-file"
-           (if update? "--join-existing" "")
-           (~ "--copyright-holder=\"~a\""
-              (string-join copyright-holders ","))
-           (~ "--package-name=~a" i18n-textdomain)
-           "src/carvoeiro-water-fun/*.scm"
-           "src/carvoeiro-water-fun/components/*.scm"
-           "--from-code UTF-8")
-     #:verbose? #t))
+  ;; The source files are globs, and xgettext expands no globs itself, so the
+  ;; line is handed to the shell to name them.
+  (run (append (list "xgettext"
+                     (~ "--default-domain=~a" i18n-textdomain)
+                     (~ "--output=~a/~a.pot" i18n-dir i18n-textdomain)
+                     "--language=Scheme"
+                     "--keyword=G_"
+                     "--sort-by-file")
+               (if update? (list "--join-existing") '())
+               (list (~ "--copyright-holder=\"~a\""
+                        (string-join copyright-holders ","))
+                     (~ "--package-name=~a" i18n-textdomain)
+                     "src/carvoeiro-water-fun/*.scm"
+                     "src/carvoeiro-water-fun/components/*.scm"
+                     "--from-code" "UTF-8"))
+       #:expand? #t
+       #:verbose? #t))
 
 ;; ====== Maak tasks ======
 
 (define (kill-server)
   "Kill any running HTTP server in the same port."
-  ($ (list (~ "fuser -k ~a/tcp || true" http-port))))
+  ;; `fuser' exits non-zero when nothing holds the port, which is the answer
+  ;; this task wants rather than a failure.
+  (run (list "fuser" "-k" (~ "~a/tcp" http-port))
+       #:allow-failure? #t))
 
 (define (serve)
   "Run HTTP server serving the rendered production result of running."
   (kill-server)
-  ($ (list (~ "darkhttpd ./dist --port ~a" http-port))))
+  (run (list "darkhttpd" "./dist" "--port" (~ "~a" http-port))))
 
 (define (default)
   "Default task to run, call program's help."
@@ -140,29 +146,29 @@ Args: update? represents whether we should update a template or create a new one
 
 (define (fmt)
   "Format Scheme source code files according to the Guix style guide."
-  ($ '("find . -maxdepth 8 -name '*.scm'" "-type f -exec guix style -f {} \\;")
-     #:verbose? #t))
+  (run (list "find" "." "-maxdepth" "8" "-name" "*.scm" "-type" "f"
+             "-exec" "guix" "style" "-f" "{}" ";")
+       #:verbose? #t))
 
 (define (repl)
   "Development REPL."
-  (manifest-shell '("guile -L ./src"
-                    "-c '((@ (ares server) run-nrepl-server))'")))
+  (manifest-shell (list "guile" "-L" "./src"
+                        "-c" "'((@ (ares server) run-nrepl-server))'")))
 
 (define (build* locale output-dir)
   (mkdir-p output-dir)
-  (time-machine-manifest-shell (list "guile -L"
-                                "./src"
-                                "-c '((@(carvoeiro-water-fun main) main))'"
-                                (~ "--locale ~a" locale)
-                                (~ "--output-dir ~a" output-dir)
-                                "--resources-dir ./resources")))
+  (time-machine-manifest-shell (list "guile" "-L" "./src"
+                                     "-c" "'((@(carvoeiro-water-fun main) main))'"
+                                     (~ "--locale ~a" locale)
+                                     (~ "--output-dir ~a" output-dir)
+                                     "--resources-dir" "./resources")))
 
 (define (build)
   "Build."
   (remkdir-p "./dist")
   (build* 'en_US "./dist/en")
   (build* 'pt_PT "./dist/pt")
-  (mv "dist/en/*" "dist/"))
+  (mv "dist/en/*" "dist/" #:expand? #t))
 
 (define (build-and-serve)
   "Build and serve."
@@ -178,14 +184,14 @@ Args: update? represents whether we should update a template or create a new one
   "Hot-reloading developer's setup."
   (time-machine-manifest-shell (list "watchexec"
                                      "--clear"
-                                     (~ "--exts ~a"
-                                        (string-join (map symbol->string
-                                                      hot-reload-file-types)
-                                                     ","))
+                                     "--exts"
+                                     (string-join (map symbol->string
+                                                       hot-reload-file-types)
+                                                  ",")
                                      "--on-busy-update=restart"
-                                     "--shell bash"
-                                     "--watch . --"
-                                     "maak build-and-serve")))
+                                     "--shell" "bash"
+                                     "--watch" "."
+                                     "--" "maak" "build-and-serve")))
 
 (define (hr)
   "Alias to hot-reloading."
@@ -196,8 +202,10 @@ Args: update? represents whether we should update a template or create a new one
   (hot-reload))
 
 (define (olive-css)
-  ($ '("curl --verbose --output \"./resources/css/carvoeiro-water-fun.olive.min.css\""
-       "\"https://codeberg.org/jjba23/olive-css/raw/branch/trunk/resources/css/carvoeiro-water-fun.olive.min.css\"")))
+  (curl-download
+   "https://codeberg.org/jjba23/olive-css/raw/branch/trunk/resources/css/carvoeiro-water-fun.olive.min.css"
+   #:output "./resources/css/carvoeiro-water-fun.olive.min.css"
+   #:verbose? #t))
 
 ;; ====== Maak i18n tasks ======
 
@@ -238,17 +246,19 @@ Args: update? represents whether we should update a template or create a new one
                                                         (".jpeg" . "")))))
     (delete-file-recursively (~ "~a.avif" destination-file))
     (log-info "converting file: ~a -> ~a.avif\n" file destination-file)
-    ($ (list (~ "magick ~a" file) "-quality 40" "-define avif:speed=1"
-             (~ "~a.avif" destination-file)))))
+    (run (list "magick" file "-quality" "40" "-define" "avif:speed=1"
+               (~ "~a.avif" destination-file)))))
 
 (define (avif-gen)
   "Generate AVIF images from others."
-  (let* ((find-cmd (string-join '("find ./resources/img -maxdepth 8"
-                                  "-name '*.jpg' -o  -name '*.jpeg'"
-                                  "-o -name '*.png'") " "))
-         (find-process (open-input-pipe find-cmd))
-         (original-files (string-split (string-trim-both (get-string-all
-                                                          find-process))
-                                       #\newline))
-         (_ (close-pipe find-process)))
+  (let* ((original-files
+          (filter (lambda (file) (not (string=? file "")))
+                  (string-split
+                   (string-trim-both
+                    (capture (unwords (list "find" "./resources/img"
+                                            "-maxdepth" "8"
+                                            "-name" "'*.jpg'"
+                                            "-o" "-name" "'*.jpeg'"
+                                            "-o" "-name" "'*.png'"))))
+                   #\newline))))
     (for-each convert-to-avif original-files)))
