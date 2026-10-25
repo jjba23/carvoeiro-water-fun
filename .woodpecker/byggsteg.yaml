@@ -22,12 +22,11 @@ variables:
 steps:
   get-byggsteg-token-jointhefreeworld:
     image: *byggsteg_image
-    commands:
-      - /bin/byggsteg-woodpecker get-token
     when:
       - event: ["push"]
         branch: ["trunk"]
     settings:
+      BYGGSTEG_STEP: get-token
       BYGGSTEG_EMAIL:
         from_secret: "BYGGSTEG_EMAIL"
       BYGGSTEG_PASSWORD:
@@ -36,12 +35,11 @@ steps:
 
   submit-byggsteg-job-jointhefreeworld:
     image: *byggsteg_image
-    commands:
-      - /bin/byggsteg-woodpecker submit-job
     when:
       - event: ["push"]
         branch: ["trunk"]
     settings:
+      BYGGSTEG_STEP: submit-job
       BYGGSTEG_URL: *byggsteg_url
       BYGGSTEG_JOB_CODE: |
         (lambda()
@@ -52,10 +50,9 @@ steps:
 
   poll-byggsteg-job-jointhefreeworld:
     image: *byggsteg_image
-    commands:
-      - /bin/byggsteg-woodpecker poll-job
     when:
       - event: ["push"]
         branch: ["trunk"]
     settings:
+      BYGGSTEG_STEP: poll-job
       BYGGSTEG_URL: *byggsteg_url
