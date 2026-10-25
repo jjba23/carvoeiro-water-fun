@@ -16,14 +16,14 @@
 # along with carvoeiro-water-fun. If not, see <https://www.gnu.org/licenses/>.
 
 variables:
-  - &submit_job_image "docker.io/jjba23/byggsteg-woodpecker-submit-job:v0.2.0"
-  - &poll_job_image "docker.io/jjba23/byggsteg-woodpecker-poll-job:v0.2.0"
-  - &get_token_image "docker.io/jjba23/byggsteg-woodpecker-get-token:v0.2.0"
+  - &byggsteg_image "docker.io/jjba23/byggsteg-woodpecker:v0.3.0"
   - &byggsteg_url "https://byggsteg.jointhefreeworld.org"
 
 steps:
   get-byggsteg-token-jointhefreeworld:
-    image: *get_token_image
+    image: *byggsteg_image
+    commands:
+      - /bin/byggsteg-woodpecker get-token
     when:
       - event: ["push"]
         branch: ["trunk"]
@@ -35,7 +35,9 @@ steps:
       BYGGSTEG_URL: *byggsteg_url
 
   submit-byggsteg-job-jointhefreeworld:
-    image: *submit_job_image
+    image: *byggsteg_image
+    commands:
+      - /bin/byggsteg-woodpecker submit-job
     when:
       - event: ["push"]
         branch: ["trunk"]
@@ -49,7 +51,9 @@ steps:
             (clone-url . "%%CI_REPO_CLONE_URL%%")))
 
   poll-byggsteg-job-jointhefreeworld:
-    image: *poll_job_image
+    image: *byggsteg_image
+    commands:
+      - /bin/byggsteg-woodpecker poll-job
     when:
       - event: ["push"]
         branch: ["trunk"]
