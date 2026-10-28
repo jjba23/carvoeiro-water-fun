@@ -1,3 +1,9 @@
+/* Carvoeiro Water Fun
+
+ SPDX-LICENSE-IDENTIFIER: MIT
+ Copyright © Josep Bigorra <jjbigorra@gmail.com>
+*/
+
 /* symbanta
 *
 * Copyright © Josep Bigorra <jjbigorra@gmail.com>
