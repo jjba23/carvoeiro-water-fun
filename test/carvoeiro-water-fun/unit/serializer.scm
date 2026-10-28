@@ -1,6 +1,6 @@
 ;; Carvoeiro Water Fun
 ;;
-;; SPDX-LICENSE-IDENTIFIER: MIT
+;; SPDX-License-Identifier: MIT
 ;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 ;; The page is built by walking SXML, so the serializer decides whether the
@@ -56,4 +56,3 @@
                (assert-equal #:expect "<p>⚓ Carvoeiro · Benagil</p>"
                              #:got (serialize '(p "⚓ Carvoeiro · Benagil"))
                              #:name "the acorn and the accents survive"))))
-

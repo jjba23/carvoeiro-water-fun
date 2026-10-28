@@ -1,6 +1,6 @@
 ;; Carvoeiro Water Fun
 ;;
-;; SPDX-LICENSE-IDENTIFIER: MIT
+;; SPDX-License-Identifier: MIT
 ;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 ;; What a visitor actually receives: the document, the assets it asks for, the
@@ -18,7 +18,7 @@
   #:use-module (ice-9 textual-ports)
   #:use-module (carvoeiro-water-fun prelude)
   #:use-module (carvoeiro-water-fun html)
-  #:export (document-suite asset-suite motion-suite))
+  #:export (document-suite asset-suite motion-suite theme-suite))
 
 ;; ====== Helpers ======
 
@@ -145,6 +145,26 @@ recognised by the absence of an extension."
                              (assert-true (mentions? image "alt=")
                                           #:name "the photograph declares alt"))
                            images)))))
+
+(define theme-suite
+  (suite "the sea theme"
+         (test "dolphins, the boat and the caves are on the page"
+               (assert-true (mentions? english-page "FB_IMG_1719434007758.jpg")
+                            #:name "a dolphin leaps in the gallery")
+               (assert-true (mentions? english-page "FB_IMG_1719434096367.jpg")
+                            #:name "a dolphin rides at the bow")
+               (assert-true (mentions? english-page "FB_IMG_1719434138555.jpg")
+                            #:name "the boat waits in the harbour")
+               (assert-true (mentions? english-page "FB_IMG_1719434180086.jpg")
+                            #:name "a cave is lit from above")
+               (assert-true (mentions? english-page "FB_IMG_1719434196131.jpg")
+                            #:name "the grotto is framed"))
+         (test "the cave drifts as the page is read"
+               (assert-true (mentions? english-page "data-parallax")
+                            #:name "the grotto asks for a parallax layer"))
+         (test "the cards carry their icon coins"
+               (assert-true (>= (match-count "medallion" english-page) 6)
+                            #:name "each card head has a medallion"))))
 
 (define motion-suite
   (suite "the motion layer"

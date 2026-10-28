@@ -1,6 +1,6 @@
 ;; Carvoeiro Water Fun
 ;;
-;; SPDX-LICENSE-IDENTIFIER: MIT
+;; SPDX-License-Identifier: MIT
 ;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 ;; The motion layer is two hand-written files that have to agree with
@@ -81,7 +81,9 @@
                                         #:name (string-append class
                                                               " is defined")))
                          '(".photo-frame" ".gold-rule" ".spec-list" ".shimmer"
-                           ".footer-glass" ".carousel-glass" ".hero-title-row")))
+                           ".footer-glass" ".carousel-glass" ".hero-title-row"
+                           ".theme-card" ".medallion" ".grotto-frame"
+                           ".card-row")))
          (test "every animation has keyframes"
                (for-each (lambda (name)
                            (assert-true (member? name (keyframe-names stylesheet))

@@ -1,6 +1,6 @@
 ;; Carvoeiro Water Fun
 ;;
-;; SPDX-LICENSE-IDENTIFIER: MIT
+;; SPDX-License-Identifier: MIT
 ;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 (define-module (carvoeiro-water-fun html)
@@ -188,10 +188,18 @@
                     #:item-width '(w-96)
                     #:item-height '(h-auto)
                     #:fragments (list (mk-header-img
-                                       "/img/FB_IMG_1719434026784.jpg")
+                                       "/img/FB_IMG_1719434007758.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434096367.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434138555.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434185151.jpg")
                                       (mk-header-img "/img/barco-scaled.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434201178.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434026784.jpg")
                                       (mk-header-img "/img/car2.jpeg"))
                     #:carousel-button-css '(glass hover-lift absolute
                                                    bottom-1/2
@@ -210,11 +218,13 @@
                                                          my-6)))
 
     ,(enjoy-algarve-section)
-    (div (@ (class "glass glass--panel section-shell flex flex-row
-                    flex-wrap gap-10 items-center justify-center")
-            (data-reveal "true"))
-         ,(contact-us-section)
-         ,(where-to-find-us-section))
+    (div (@ (class "card-row section-shell"))
+         (div (@ (class "glass glass--card")
+                 (data-reveal "true"))
+              ,(contact-us-section))
+         (div (@ (class "glass glass--card")
+                 (data-reveal "true"))
+              ,(where-to-find-us-section)))
 
     (div (@ (class "section-shell")
             (data-reveal "true"))
@@ -224,44 +234,76 @@
             (data-reveal "true"))
          ,(about-boat-tour-section))
 
-    (div (@ (class "section-shell")
-            (data-reveal "true"))
-         (div (@ (class "glass glass--panel flex flex-row
-                         flex-wrap gap-12 justify-center"))
-              ,(leave-a-review-section)
+    (div (@ (class "card-row section-shell"))
+         (div (@ (class "glass glass--card")
+                 (data-reveal "true"))
+              ,(leave-a-review-section))
+         (div (@ (class "glass glass--card")
+                 (data-reveal "true"))
               ,(insurance-section)))))
 
 (define* (enjoy-algarve-section)
-  `((div (@ (class "glass glass--panel section-shell"))
-         ,(h3 `(div ,(icon #:type 'island
-                           #:icon-css '(text-xl text-onyx-500 mr-2))
-                    ,(G_ "Enjoy Algarve's spectacular coast")))
-         (div (@ (class ,(mk-class '(flex flex-row
-                                          flex-wrap
-                                          gap-6
-                                          justify-between
-                                          align-center
-                                          items-center))))
-              (div (@ (class ,(mk-class '(my-3 md:max-w-128 lg:max-w-196 flex
-                                               flex-col gap-3))))
-                   ,(p (G_
-                        "Take a boat tour with us, or row in a kayak, and make your way to the many beautiful caves in the Algarve's coastline.")
-                       #:weight '(font-light leading-8))
-                   ,(p (G_
-                        "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our coasts, and add to the magical experience of a great holiday here.")
-                       #:weight '(font-light leading-8))
-                   ,(p (G_
-                        "The Algarve’s coastline is known for its beautiful cliffs, rock formations, grottos, and many sea caves.")
-                       #:weight '(font-light leading-8))
-                   ,(p (G_
-                        "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
-                       #:weight '(font-light leading-8)))
-              (div (@ (class "photo-frame w-full md:max-w-96 lg:max-w-128"))
-                   (img (@ (class ,(mk-class '(h-auto w-full)))
-                           (src "/img/FB_IMG_1685655800663.jpg")
-                           (loading "lazy")
-                           (decoding "async")
-                           (alt ""))))))))
+  `((div (@ (class "section-shell")
+            (data-reveal "true"))
+         (div (@ (class "glass glass--panel"))
+              (div (@ (class "card-head"))
+                   (div (@ (class "medallion"))
+                        ,(icon #:type 'waves #:icon-css '(text-lg)))
+                   ,(h3 (G_ "Enjoy Algarve's spectacular coast")))
+              (div (@ (class "gold-rule")) "")
+              ,(p (G_
+                   "Take a boat tour with us, or row in a kayak, and make your way to the many beautiful caves in the Algarve's coastline.")
+                  #:weight '(font-light leading-8))
+              (div (@ (class ,(mk-class '(theme-grid my-6))))
+                   (div (@ (class "glass glass--card theme-card"))
+                        (div (@ (class "theme-card__media"))
+                             (img (@ (class "")
+                                     (src "/img/FB_IMG_1719434096367.jpg")
+                                     (loading "lazy")
+                                     (decoding "async")
+                                     (alt "")))
+                             (div (@ (class "medallion theme-card__badge"))
+                                  ,(icon #:type 'fish #:icon-css '(text-lg))))
+                        (div (@ (class "theme-card__body"))
+                             ,(p (G_
+                                  "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our coasts, and add to the magical experience of a great holiday here.")
+                                 #:size '(text-md)
+                                 #:weight '(font-light leading-8))))
+                   (div (@ (class "glass glass--card theme-card"))
+                        (div (@ (class "theme-card__media"))
+                             (img (@ (class "")
+                                     (src "/img/FB_IMG_1719434180086.jpg")
+                                     (loading "lazy")
+                                     (decoding "async")
+                                     (alt "")))
+                             (div (@ (class "medallion theme-card__badge"))
+                                  ,(icon #:type 'island #:icon-css '(text-lg))))
+                        (div (@ (class "theme-card__body"))
+                             ,(p (G_
+                                  "The Algarve’s coastline is known for its beautiful cliffs, rock formations, grottos, and many sea caves.")
+                                 #:size '(text-md)
+                                 #:weight '(font-light leading-8))))
+                   (div (@ (class "glass glass--card theme-card"))
+                        (div (@ (class "theme-card__media"))
+                             (img (@ (class "")
+                                     (src "/img/FB_IMG_1719434138555.jpg")
+                                     (loading "lazy")
+                                     (decoding "async")
+                                     (alt "")))
+                             (div (@ (class "medallion theme-card__badge"))
+                                  ,(icon #:type 'boat #:icon-css '(text-lg))))
+                        (div (@ (class "theme-card__body"))
+                             ,(p (G_
+                                  "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
+                                 #:size '(text-md)
+                                 #:weight '(font-light leading-8))))))
+     (div (@ (class "grotto-band") (data-reveal "true"))
+          (div (@ (class "grotto-frame") (data-parallax "26"))
+               (img (@ (class "")
+                       (src "/img/FB_IMG_1719434196131.jpg")
+                       (loading "lazy")
+                       (decoding "async")
+                       (alt ""))))))))
 
 (define* (insurance-section)
   `((div (@ (class ,(mk-class '(px-4 md:px-6
@@ -270,9 +312,9 @@
                                      flex
                                      flex-col
                                      gap-2))))
-         (div (@ (class ,(mk-class '(flex flex-row gap-2))))
-              ,(icon #:type 'newspaper
-                     #:icon-css '(text-xl text-onyx-700))
+         (div (@ (class "card-head"))
+              (div (@ (class "medallion"))
+                   ,(icon #:type 'newspaper #:icon-css '(text-lg)))
               ,(h4 (G_ "About us - Insurance")))
          ,(em (G_
                "Proceedings from the Municipal Chamber of Lagoa E/8399/2023 date of 2023-03-13.")
@@ -289,10 +331,10 @@
              #:size '(text-sm)))))
 
 (define* (leave-a-review-section)
-  `((div (@ (class ,(mk-class '(flex flex-col gap-3 px-2))))
-         (div (@ (class ,(mk-class '(flex flex-row gap-2))))
-              ,(icon #:type 'list-star
-                     #:icon-css '(text-xl text-onyx-700))
+  `((div (@ (class ,(mk-class '(review-card flex flex-col gap-3 px-2))))
+         (div (@ (class "card-head"))
+              (div (@ (class "medallion"))
+                   ,(icon #:type 'list-star #:icon-css '(text-lg)))
               ,(h4 (G_ "Leave a review")))
          ,(em (G_
                "You can read more reviews, and we are thankful if you write us one."))
@@ -305,8 +347,8 @@
                                                      max-w-prose
                                                      cursor-pointer)
                           #:size '(text-sm)))
-         (div (@ (class "photo-frame max-w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4"))
-              (img (@ (class ,(mk-class '(h-auto max-h-80 w-full)))
+         (div (@ (class "photo-frame review-qr"))
+              (img (@ (class ,(mk-class '(h-auto w-full)))
                       (src "/img/carvoeiro-water-fun-review.png")
                       (loading "lazy")
                       (decoding "async")
@@ -321,9 +363,10 @@
                                                #:locale locale))))))
 
 (define* (where-to-find-us-section)
-  `((div (@ (class ,(mk-class '(lg:w-1/3 max-w-prose flex flex-col gap-2))))
-         ,(h3 `(div ,(icon #:type 'map-pin
-                           #:icon-css '(text-xl text-onyx-500 mr-2))
+  `((div (@ (class ,(mk-class '(w-full max-w-prose flex flex-col gap-2))))
+         ,(h3 `(div (@ (class "card-head"))
+                    (div (@ (class "medallion"))
+                         ,(icon #:type 'map-pin #:icon-css '(text-lg)))
                     ,(G_ "Where to find us?")))
          (div (@ (class ,(mk-class '(my-3))))
               ,(em (G_ "Open daily from 09:00AM until 06:00PM.")))
@@ -345,9 +388,10 @@
 
 (define* (contact-us-section)
   `((div (@ (id contact-us-section)
-            (class ,(mk-class '(lg:w-1/3 flex flex-col gap-3 max-w-prose))))
-         ,(h3 `(div ,(icon #:type 'phone-transfer
-                           #:icon-css '(text-xl text-onyx-500 mr-2))
+            (class ,(mk-class '(w-full flex flex-col gap-3 max-w-prose))))
+         ,(h3 `(div (@ (class "card-head"))
+                    (div (@ (class "medallion"))
+                         ,(icon #:type 'phone-transfer #:icon-css '(text-lg)))
                     ,(G_ "Contact us")))
          ,(p (G_
               "Please contact us for reservations and for any questions regarding the boat tour and offers!")
@@ -409,8 +453,9 @@
                     flex-wrap gap-12 justify-center items-center"))
          (div (@ (class ,(mk-class '(flex flex-col gap-2 md:max-w-128
                                           leading-6))))
-              (div (@ (class ,(mk-class '(flex flex-row gap-2 py-3))))
-                   ,(icon #:type 'sailboat)
+              (div (@ (class "card-head"))
+                   (div (@ (class "medallion"))
+                        ,(icon #:type 'sailboat #:icon-css '(text-lg)))
                    ,(h3 (G_ "About the boat tour")))
               (div (@ (class "spec-list"))
                    ,(dl (list (dt (G_ "Tour duration"))

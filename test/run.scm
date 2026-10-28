@@ -1,6 +1,6 @@
 ;; Carvoeiro Water Fun
 ;;
-;; SPDX-LICENSE-IDENTIFIER: MIT
+;; SPDX-License-Identifier: MIT
 ;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 ;; Entry point of the test suite.  One veritas run over every suite keeps the
@@ -11,7 +11,7 @@
              ((carvoeiro-water-fun unit serializer)
               #:select (serializer-suite))
              ((carvoeiro-water-fun unit pages)
-              #:select (document-suite asset-suite motion-suite))
+              #:select (document-suite asset-suite motion-suite theme-suite))
              ((carvoeiro-water-fun unit structure)
               #:select (stylesheet-suite script-suite)))
 
@@ -19,6 +19,7 @@
              document-suite
              asset-suite
              motion-suite
+             theme-suite
              stylesheet-suite
              script-suite
              serializer-suite)

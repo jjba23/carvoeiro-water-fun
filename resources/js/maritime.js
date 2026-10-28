@@ -1,11 +1,12 @@
 /* Carvoeiro Water Fun — maritime motion
  *
- * SPDX-LICENSE-IDENTIFIER: MIT
+ * SPDX-License-Identifier: MIT
  * Copyright © Josep Bigorra <jjbigorra@gmail.com>
  *
- * Three small behaviours, no dependencies: sections arrive as they are scrolled
- * to, glass panels lean towards the pointer, and the tide line at the top fills
- * with the part of the page already read.  All of it is opt-out — with
+ * Four small behaviours, no dependencies: sections arrive as they are scrolled
+ * to, glass panels lean towards the pointer, photographs drift inside their
+ * frames, and the tide line at the top fills with the part of the page already
+ * read.  All of it is opt-out — with
  * prefers-reduced-motion the page is complete on its own and only the tide line
  * keeps working, because it reports the reading position rather than decorates.
  */
@@ -86,6 +87,57 @@
     };
 
     /**
+     * Drift each [data-parallax] layer inside its frame as the page is read.
+     * The attribute holds how many pixels the layer may travel; the offset is
+     * handed to the stylesheet, which owns the rest of the movement.
+     */
+    const parallax = () => {
+        /** @type {HTMLElement[]} */
+        const layers = Array.from(document.querySelectorAll("[data-parallax]"));
+        if (!layers.length || reducedMotion.matches) return;
+
+        /** @type {Set<Element>} */
+        const visible = new Set();
+
+        if ("IntersectionObserver" in window) {
+            const watcher = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) visible.add(entry.target);
+                    else visible.delete(entry.target);
+                });
+            }, { rootMargin: "120px" });
+            layers.forEach((layer) => watcher.observe(layer));
+        } else {
+            layers.forEach((layer) => visible.add(layer));
+        }
+
+        let queued = false;
+
+        const paint = () => {
+            queued = false;
+            const middle = window.innerHeight / 2;
+            visible.forEach((layer) => {
+                if (!(layer instanceof HTMLElement)) return;
+                const box = layer.getBoundingClientRect();
+                const depth = Number(layer.dataset.parallax) || 24;
+                const offset = ((box.top + box.height / 2 - middle)
+                    / window.innerHeight) * depth;
+                layer.style.setProperty("--parallax", offset.toFixed(2) + "px");
+            });
+        };
+
+        const schedule = () => {
+            if (queued) return;
+            queued = true;
+            requestAnimationFrame(paint);
+        };
+
+        window.addEventListener("scroll", schedule, { passive: true });
+        window.addEventListener("resize", schedule);
+        paint();
+    };
+
+    /**
      * Fill the tide line with the fraction of the page that has been read.
      */
     const tideLine = () => {
@@ -123,9 +175,14 @@
             panel.style.removeProperty("--tilt-x");
             panel.style.removeProperty("--tilt-y");
         });
+        document.querySelectorAll("[data-parallax]").forEach((layer) => {
+            if (!(layer instanceof HTMLElement)) return;
+            layer.style.removeProperty("--parallax");
+        });
     });
 
     reveal();
     tilt();
+    parallax();
     tideLine();
 })();
