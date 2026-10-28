@@ -167,7 +167,7 @@ in the opening screen asks to be fetched before the rest."
               (div (@ (class "gold-rule")) "")
               (div (@ (class "hero-content max-w-prose flex flex-col gap-8"))
                    ,(p (G_
-                        "Two hours on the water with the cliffs, caves and dolphins of the Algarve — or a kayak and a paddleboard for a slower day at the beach.")
+                        "Cast off from Carvoeiro and follow the cliffs — under the arches, into Benagil’s dome, out to where the dolphins run.")
                        #:weight '(font-light leading-8)
                        #:family '(font-serif)
                        #:size '(text-lg))

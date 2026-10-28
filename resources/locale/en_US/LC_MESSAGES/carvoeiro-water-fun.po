@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: carvoeiro-water-fun\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 22:56+0100\n"
+"POT-Creation-Date: 2026-10-28 23:10+0100\n"
 "PO-Revision-Date: 2026-01-31 00:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -32,19 +32,21 @@ msgstr "Explore"
 #: src/carvoeiro-water-fun/components/footer.scm:43
 #: src/carvoeiro-water-fun/html.scm:98 src/carvoeiro-water-fun/html.scm:123
 #: src/carvoeiro-water-fun/html.scm:153 src/carvoeiro-water-fun/html.scm:168
-#: src/carvoeiro-water-fun/html.scm:169 src/carvoeiro-water-fun/html.scm:358
-#: src/carvoeiro-water-fun/html.scm:390 src/carvoeiro-water-fun/html.scm:504
-#: src/carvoeiro-water-fun/html.scm:602 src/carvoeiro-water-fun/html.scm:623
-#: src/carvoeiro-water-fun/html.scm:647
+#: src/carvoeiro-water-fun/html.scm:169 src/carvoeiro-water-fun/html.scm:196
+#: src/carvoeiro-water-fun/html.scm:358 src/carvoeiro-water-fun/html.scm:390
+#: src/carvoeiro-water-fun/html.scm:504 src/carvoeiro-water-fun/html.scm:602
+#: src/carvoeiro-water-fun/html.scm:623 src/carvoeiro-water-fun/html.scm:647
+#: src/carvoeiro-water-fun/html.scm:649
 msgid "About the boat tour"
 msgstr "About the boat tour"
 
 #: src/carvoeiro-water-fun/components/footer.scm:46
 #: src/carvoeiro-water-fun/html.scm:106 src/carvoeiro-water-fun/html.scm:131
 #: src/carvoeiro-water-fun/html.scm:164 src/carvoeiro-water-fun/html.scm:179
-#: src/carvoeiro-water-fun/html.scm:180 src/carvoeiro-water-fun/html.scm:334
-#: src/carvoeiro-water-fun/html.scm:364 src/carvoeiro-water-fun/html.scm:410
-#: src/carvoeiro-water-fun/html.scm:411
+#: src/carvoeiro-water-fun/html.scm:180 src/carvoeiro-water-fun/html.scm:207
+#: src/carvoeiro-water-fun/html.scm:334 src/carvoeiro-water-fun/html.scm:364
+#: src/carvoeiro-water-fun/html.scm:410 src/carvoeiro-water-fun/html.scm:411
+#: src/carvoeiro-water-fun/html.scm:435
 msgid "Book your experience"
 msgstr "Book your experience"
 
@@ -52,6 +54,7 @@ msgstr "Book your experience"
 #: src/carvoeiro-water-fun/html.scm:257 src/carvoeiro-water-fun/html.scm:283
 #: src/carvoeiro-water-fun/html.scm:390 src/carvoeiro-water-fun/html.scm:420
 #: src/carvoeiro-water-fun/html.scm:459 src/carvoeiro-water-fun/html.scm:460
+#: src/carvoeiro-water-fun/html.scm:484
 msgid "Reviews on Google Maps"
 msgstr "Reviews on Google Maps"
 
@@ -64,6 +67,7 @@ msgstr "Copyright © Carvoeiro Water Fun - All rights reserved"
 #: src/carvoeiro-water-fun/html.scm:302 src/carvoeiro-water-fun/html.scm:329
 #: src/carvoeiro-water-fun/html.scm:440 src/carvoeiro-water-fun/html.scm:470
 #: src/carvoeiro-water-fun/html.scm:509 src/carvoeiro-water-fun/html.scm:510
+#: src/carvoeiro-water-fun/html.scm:533
 msgid "Contact us"
 msgstr "Contact us"
 
@@ -75,6 +79,7 @@ msgstr "Contact"
 #: src/carvoeiro-water-fun/html.scm:311 src/carvoeiro-water-fun/html.scm:338
 #: src/carvoeiro-water-fun/html.scm:449 src/carvoeiro-water-fun/html.scm:479
 #: src/carvoeiro-water-fun/html.scm:518 src/carvoeiro-water-fun/html.scm:519
+#: src/carvoeiro-water-fun/html.scm:542
 msgid "WhatsApp:"
 msgstr "WhatsApp:"
 
@@ -87,6 +92,7 @@ msgstr "this page's source code is licensed under the MIT License"
 #: src/carvoeiro-water-fun/html.scm:319 src/carvoeiro-water-fun/html.scm:346
 #: src/carvoeiro-water-fun/html.scm:458 src/carvoeiro-water-fun/html.scm:488
 #: src/carvoeiro-water-fun/html.scm:527 src/carvoeiro-water-fun/html.scm:528
+#: src/carvoeiro-water-fun/html.scm:551
 msgid "Telephone:"
 msgstr "Telephone:"
 
@@ -102,6 +108,7 @@ msgstr ""
 #: src/carvoeiro-water-fun/html.scm:327 src/carvoeiro-water-fun/html.scm:354
 #: src/carvoeiro-water-fun/html.scm:467 src/carvoeiro-water-fun/html.scm:497
 #: src/carvoeiro-water-fun/html.scm:536 src/carvoeiro-water-fun/html.scm:537
+#: src/carvoeiro-water-fun/html.scm:560
 msgid "Email:"
 msgstr "Email:"
 
@@ -129,13 +136,13 @@ msgstr "Boat tours, dolphins and the sea caves of the Algarve."
 
 #: src/carvoeiro-water-fun/html.scm:72 src/carvoeiro-water-fun/html.scm:77
 #: src/carvoeiro-water-fun/html.scm:114 src/carvoeiro-water-fun/html.scm:129
-#: src/carvoeiro-water-fun/html.scm:130
+#: src/carvoeiro-water-fun/html.scm:130 src/carvoeiro-water-fun/html.scm:157
 msgid "Carvoeiro"
 msgstr "Carvoeiro"
 
 #: src/carvoeiro-water-fun/html.scm:76 src/carvoeiro-water-fun/html.scm:81
 #: src/carvoeiro-water-fun/html.scm:123 src/carvoeiro-water-fun/html.scm:138
-#: src/carvoeiro-water-fun/html.scm:139
+#: src/carvoeiro-water-fun/html.scm:139 src/carvoeiro-water-fun/html.scm:166
 msgid "Water Fun"
 msgstr "Water Fun"
 
@@ -147,11 +154,12 @@ msgstr "Enjoy the best of"
 
 #: src/carvoeiro-water-fun/html.scm:116 src/carvoeiro-water-fun/html.scm:141
 #: src/carvoeiro-water-fun/html.scm:177 src/carvoeiro-water-fun/html.scm:192
-#: src/carvoeiro-water-fun/html.scm:193
+#: src/carvoeiro-water-fun/html.scm:193 src/carvoeiro-water-fun/html.scm:220
 msgid " Carvoeiro & Benagil "
 msgstr " Carvoeiro & Benagil "
 
-#: src/carvoeiro-water-fun/html.scm:117 src/carvoeiro-water-fun/html.scm:274
+#: src/carvoeiro-water-fun/html.scm:117 src/carvoeiro-water-fun/html.scm:144
+#: src/carvoeiro-water-fun/html.scm:274 src/carvoeiro-water-fun/html.scm:302
 msgid "Photograph"
 msgstr "Photograph"
 
@@ -167,7 +175,13 @@ msgid ""
 "or a kayak and a paddleboard for a slower day at the beach."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:190
+#: src/carvoeiro-water-fun/html.scm:170
+msgid ""
+"Cast off from Carvoeiro and follow the cliffs — under the arches, into "
+"Benagil’s dome, out to where the dolphins run."
+msgstr ""
+
+#: src/carvoeiro-water-fun/html.scm:190 src/carvoeiro-water-fun/html.scm:217
 #, fuzzy
 msgid "The best of"
 msgstr "Enjoy the best of"
@@ -178,7 +192,7 @@ msgstr "Enjoy the best of"
 msgid "Enjoy Algarve's spectacular coast"
 msgstr "Enjoy Algarve's spectacular coast"
 
-#: src/carvoeiro-water-fun/html.scm:197
+#: src/carvoeiro-water-fun/html.scm:197 src/carvoeiro-water-fun/html.scm:224
 msgid "is only visible from the sea."
 msgstr ""
 
@@ -261,6 +275,7 @@ msgstr "Treatment and Repatriation Expenses €196,000.00"
 #: src/carvoeiro-water-fun/html.scm:251 src/carvoeiro-water-fun/html.scm:277
 #: src/carvoeiro-water-fun/html.scm:383 src/carvoeiro-water-fun/html.scm:413
 #: src/carvoeiro-water-fun/html.scm:452 src/carvoeiro-water-fun/html.scm:453
+#: src/carvoeiro-water-fun/html.scm:477
 msgid "Leave a review"
 msgstr "Leave a review"
 
@@ -282,7 +297,7 @@ msgstr "Where to find us?"
 msgid "Open daily from 09:00AM until 06:00PM."
 msgstr "Open daily from 09:00AM until 06:00PM."
 
-#: src/carvoeiro-water-fun/html.scm:282
+#: src/carvoeiro-water-fun/html.scm:282 src/carvoeiro-water-fun/html.scm:310
 msgid "Close"
 msgstr "Close"
 
@@ -302,22 +317,23 @@ msgstr ""
 msgid "We really appreciate it if you can book our services in advance."
 msgstr "We really appreciate it if you can book our services in advance."
 
-#: src/carvoeiro-water-fun/html.scm:287
+#: src/carvoeiro-water-fun/html.scm:287 src/carvoeiro-water-fun/html.scm:315
 msgid "Previous photograph"
 msgstr "Previous photograph"
 
 #: src/carvoeiro-water-fun/html.scm:290 src/carvoeiro-water-fun/html.scm:317
 #: src/carvoeiro-water-fun/html.scm:427 src/carvoeiro-water-fun/html.scm:457
 #: src/carvoeiro-water-fun/html.scm:496 src/carvoeiro-water-fun/html.scm:497
+#: src/carvoeiro-water-fun/html.scm:520
 msgid "Our address:"
 msgstr "Our address:"
 
-#: src/carvoeiro-water-fun/html.scm:292
+#: src/carvoeiro-water-fun/html.scm:292 src/carvoeiro-water-fun/html.scm:320
 msgid "Next photograph"
 msgstr "Next photograph"
 
 #: src/carvoeiro-water-fun/html.scm:294 src/carvoeiro-water-fun/html.scm:324
-#: src/carvoeiro-water-fun/html.scm:370
+#: src/carvoeiro-water-fun/html.scm:370 src/carvoeiro-water-fun/html.scm:394
 msgid "Dolphins & wildlife"
 msgstr "Dolphins & wildlife"
 
@@ -337,12 +353,12 @@ msgstr ""
 "tour and offers!"
 
 #: src/carvoeiro-water-fun/html.scm:310 src/carvoeiro-water-fun/html.scm:340
-#: src/carvoeiro-water-fun/html.scm:386
+#: src/carvoeiro-water-fun/html.scm:386 src/carvoeiro-water-fun/html.scm:410
 msgid "Benagil & the caves"
 msgstr "Benagil & the caves"
 
 #: src/carvoeiro-water-fun/html.scm:329 src/carvoeiro-water-fun/html.scm:359
-#: src/carvoeiro-water-fun/html.scm:405
+#: src/carvoeiro-water-fun/html.scm:405 src/carvoeiro-water-fun/html.scm:429
 msgid "Your day on the water"
 msgstr "Your day on the water"
 
@@ -367,23 +383,25 @@ msgstr ""
 "You may incur monetary costs while calling our phone number, as it will be a "
 "call to a Portuguese telephone."
 
-#: src/carvoeiro-water-fun/html.scm:358
+#: src/carvoeiro-water-fun/html.scm:358 src/carvoeiro-water-fun/html.scm:382
 msgid "The Algarve, seen from the sea"
 msgstr ""
 
 #: src/carvoeiro-water-fun/html.scm:359 src/carvoeiro-water-fun/html.scm:391
 #: src/carvoeiro-water-fun/html.scm:506 src/carvoeiro-water-fun/html.scm:604
 #: src/carvoeiro-water-fun/html.scm:625 src/carvoeiro-water-fun/html.scm:649
+#: src/carvoeiro-water-fun/html.scm:651
 msgid "Tour duration"
 msgstr "Tour duration"
 
 #: src/carvoeiro-water-fun/html.scm:360 src/carvoeiro-water-fun/html.scm:392
 #: src/carvoeiro-water-fun/html.scm:507 src/carvoeiro-water-fun/html.scm:605
 #: src/carvoeiro-water-fun/html.scm:626 src/carvoeiro-water-fun/html.scm:650
+#: src/carvoeiro-water-fun/html.scm:652
 msgid "2 hours"
 msgstr "2 hours"
 
-#: src/carvoeiro-water-fun/html.scm:361
+#: src/carvoeiro-water-fun/html.scm:361 src/carvoeiro-water-fun/html.scm:385
 msgid ""
 "Join a boat tour to the caves and the dolphins, or take a kayak out on your "
 "own. Either way, the cliffs look their best from sea level."
@@ -392,6 +410,7 @@ msgstr ""
 #: src/carvoeiro-water-fun/html.scm:362 src/carvoeiro-water-fun/html.scm:394
 #: src/carvoeiro-water-fun/html.scm:509 src/carvoeiro-water-fun/html.scm:607
 #: src/carvoeiro-water-fun/html.scm:628 src/carvoeiro-water-fun/html.scm:652
+#: src/carvoeiro-water-fun/html.scm:654
 msgid "Boarding location"
 msgstr "Boarding location"
 
@@ -415,7 +434,7 @@ msgstr ""
 "on this tour. The boarding is done in Carvoeiro, we provide transport to "
 "Ferragudo to start the tour."
 
-#: src/carvoeiro-water-fun/html.scm:372
+#: src/carvoeiro-water-fun/html.scm:372 src/carvoeiro-water-fun/html.scm:396
 msgid ""
 "Dolphins are a common sight along this coast and often come to ride the bow. "
 "Seeing them in the wild is the part guests remember longest."
@@ -431,7 +450,7 @@ msgstr ""
 "We are a team of professionals, passionate about the sea, who are dedicated "
 "to their work to make your trip a unique and unforgettable moment!"
 
-#: src/carvoeiro-water-fun/html.scm:378
+#: src/carvoeiro-water-fun/html.scm:378 src/carvoeiro-water-fun/html.scm:402
 #, fuzzy
 msgid "Kayaks & paddling"
 msgstr "Kayak & paddle"
@@ -463,10 +482,11 @@ msgstr ""
 #: src/carvoeiro-water-fun/html.scm:387 src/carvoeiro-water-fun/html.scm:419
 #: src/carvoeiro-water-fun/html.scm:535 src/carvoeiro-water-fun/html.scm:633
 #: src/carvoeiro-water-fun/html.scm:654 src/carvoeiro-water-fun/html.scm:678
+#: src/carvoeiro-water-fun/html.scm:680
 msgid "Health & Safety"
 msgstr "Health & Safety"
 
-#: src/carvoeiro-water-fun/html.scm:388
+#: src/carvoeiro-water-fun/html.scm:388 src/carvoeiro-water-fun/html.scm:412
 msgid ""
 "Benagil’s dome, the heart-shaped window and caves you can only reach by "
 "water — this is the stretch everyone comes for."
@@ -487,6 +507,7 @@ msgstr ""
 #: src/carvoeiro-water-fun/html.scm:392 src/carvoeiro-water-fun/html.scm:424
 #: src/carvoeiro-water-fun/html.scm:540 src/carvoeiro-water-fun/html.scm:638
 #: src/carvoeiro-water-fun/html.scm:659 src/carvoeiro-water-fun/html.scm:683
+#: src/carvoeiro-water-fun/html.scm:685
 msgid "Included"
 msgstr "Included"
 
@@ -499,10 +520,11 @@ msgstr "Life jacket, Waterproofing when necessary."
 #: src/carvoeiro-water-fun/html.scm:396 src/carvoeiro-water-fun/html.scm:428
 #: src/carvoeiro-water-fun/html.scm:544 src/carvoeiro-water-fun/html.scm:642
 #: src/carvoeiro-water-fun/html.scm:664 src/carvoeiro-water-fun/html.scm:687
+#: src/carvoeiro-water-fun/html.scm:690
 msgid "Not included"
 msgstr "Not included"
 
-#: src/carvoeiro-water-fun/html.scm:396
+#: src/carvoeiro-water-fun/html.scm:396 src/carvoeiro-water-fun/html.scm:420
 msgid ""
 "You can walk the clifftops, but the arches, the hidden beaches and the sheer "
 "scale of the rock only make sense from below."
@@ -517,6 +539,7 @@ msgstr "Swimsuit, towel, sun lotion, sunglasses."
 #: src/carvoeiro-water-fun/html.scm:400 src/carvoeiro-water-fun/html.scm:432
 #: src/carvoeiro-water-fun/html.scm:548 src/carvoeiro-water-fun/html.scm:646
 #: src/carvoeiro-water-fun/html.scm:669 src/carvoeiro-water-fun/html.scm:691
+#: src/carvoeiro-water-fun/html.scm:695
 msgid "Cancellation policy"
 msgstr "Cancellation policy"
 
@@ -530,17 +553,17 @@ msgstr ""
 "For a full refund, cancel at least 24 hours in advance of the tour start "
 "date."
 
-#: src/carvoeiro-water-fun/html.scm:407
+#: src/carvoeiro-water-fun/html.scm:407 src/carvoeiro-water-fun/html.scm:431
 msgid ""
 "Two hours on the water, a small group and a skipper who knows every arch. "
 "Reserve your place before you arrive."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:433
+#: src/carvoeiro-water-fun/html.scm:433 src/carvoeiro-water-fun/html.scm:457
 msgid "Licensed and insured"
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:435
+#: src/carvoeiro-water-fun/html.scm:435 src/carvoeiro-water-fun/html.scm:459
 #, fuzzy
 msgid ""
 "Registered with the Municipal Chamber of Lagoa, licence E/8399/2023, issued "
@@ -549,63 +572,64 @@ msgstr ""
 "Proceedings from the Municipal Chamber of Lagoa E/8399/2023 date of "
 "2023-03-13."
 
-#: src/carvoeiro-water-fun/html.scm:438
+#: src/carvoeiro-water-fun/html.scm:438 src/carvoeiro-water-fun/html.scm:462
 #, fuzzy
 msgid ""
 "Civil liability insurance, policy no. 85/25935 (maritime tourism): €50,000."
 msgstr ""
 "Civil Liability Insurance Policy No. 85/25935 Maritime Tourism €50,000.00"
 
-#: src/carvoeiro-water-fun/html.scm:441
+#: src/carvoeiro-water-fun/html.scm:441 src/carvoeiro-water-fun/html.scm:465
 #, fuzzy
 msgid "Death or permanent disability: €1,120,000."
 msgstr "Death or Permanent Disability €1,120,000.00"
 
-#: src/carvoeiro-water-fun/html.scm:444
+#: src/carvoeiro-water-fun/html.scm:444 src/carvoeiro-water-fun/html.scm:468
 #, fuzzy
 msgid "Treatment and repatriation: €196,000."
 msgstr "Treatment and Repatriation Expenses €196,000.00"
 
-#: src/carvoeiro-water-fun/html.scm:455
+#: src/carvoeiro-water-fun/html.scm:455 src/carvoeiro-water-fun/html.scm:479
 msgid ""
 "Read what other guests said — and if you enjoyed the ride, a few words from "
 "you help others find us."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:485
+#: src/carvoeiro-water-fun/html.scm:485 src/carvoeiro-water-fun/html.scm:508
 #, fuzzy
 msgid "Where to find us"
 msgstr "Where to find us?"
 
-#: src/carvoeiro-water-fun/html.scm:487
+#: src/carvoeiro-water-fun/html.scm:487 src/carvoeiro-water-fun/html.scm:510
 #, fuzzy
 msgid "Open daily, 09:00–18:00."
 msgstr "Open daily from 09:00AM until 06:00PM."
 
 #: src/carvoeiro-water-fun/html.scm:488 src/carvoeiro-water-fun/html.scm:518
 #: src/carvoeiro-water-fun/html.scm:556 src/carvoeiro-water-fun/html.scm:557
+#: src/carvoeiro-water-fun/html.scm:579
 msgid "Map showing the location of our business"
 msgstr "Map showing the location of our business"
 
-#: src/carvoeiro-water-fun/html.scm:489
+#: src/carvoeiro-water-fun/html.scm:489 src/carvoeiro-water-fun/html.scm:512
 msgid ""
 "You will find us on the sand at Praia do Carvoeiro — just look for the boats."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:493
+#: src/carvoeiro-water-fun/html.scm:493 src/carvoeiro-water-fun/html.scm:516
 msgid ""
 "Booking ahead is kindest: it means we can save you a seat on the boat you "
 "want."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:512
+#: src/carvoeiro-water-fun/html.scm:512 src/carvoeiro-water-fun/html.scm:535
 msgid ""
 "Reservations, questions, or a tip about the sea that day — message us and we "
 "will answer."
 msgstr ""
 
 #: src/carvoeiro-water-fun/html.scm:532 src/carvoeiro-water-fun/html.scm:570
-#: src/carvoeiro-water-fun/html.scm:571
+#: src/carvoeiro-water-fun/html.scm:571 src/carvoeiro-water-fun/html.scm:593
 msgid "Carvoeiro & Benagil in panorama"
 msgstr "Carvoeiro & Benagil in panorama"
 
@@ -617,53 +641,53 @@ msgstr ""
 "Take the photograph by its edge and pull: the view turns the way it does "
 "from the boat."
 
-#: src/carvoeiro-water-fun/html.scm:544
+#: src/carvoeiro-water-fun/html.scm:544 src/carvoeiro-water-fun/html.scm:567
 msgid "Calls to a Portuguese mobile may be charged by your operator."
 msgstr ""
 
 #: src/carvoeiro-water-fun/html.scm:546 src/carvoeiro-water-fun/html.scm:586
-#: src/carvoeiro-water-fun/html.scm:587
+#: src/carvoeiro-water-fun/html.scm:587 src/carvoeiro-water-fun/html.scm:610
 msgid "Carvoeiro beach"
 msgstr "Carvoeiro beach"
 
 #: src/carvoeiro-water-fun/html.scm:554 src/carvoeiro-water-fun/html.scm:596
-#: src/carvoeiro-water-fun/html.scm:597
+#: src/carvoeiro-water-fun/html.scm:597 src/carvoeiro-water-fun/html.scm:621
 msgid "Benagil cave"
 msgstr "Benagil cave"
 
 #: src/carvoeiro-water-fun/html.scm:566 src/carvoeiro-water-fun/html.scm:610
-#: src/carvoeiro-water-fun/html.scm:611
+#: src/carvoeiro-water-fun/html.scm:611 src/carvoeiro-water-fun/html.scm:636
 msgid "Drag to look around"
 msgstr "Drag to look around"
 
-#: src/carvoeiro-water-fun/html.scm:572
+#: src/carvoeiro-water-fun/html.scm:572 src/carvoeiro-water-fun/html.scm:595
 msgid ""
 "Drag the photograph sideways, from the beach at Carvoeiro to the roof of the "
 "Benagil cave."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:630
+#: src/carvoeiro-water-fun/html.scm:630 src/carvoeiro-water-fun/html.scm:656
 msgid "Praia do Carvoeiro, with free transport to Ferragudo"
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:633
+#: src/carvoeiro-water-fun/html.scm:633 src/carvoeiro-water-fun/html.scm:659
 msgid "Weather permitting, we stop by a beach for a swim along the way."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:637
+#: src/carvoeiro-water-fun/html.scm:637 src/carvoeiro-water-fun/html.scm:663
 msgid ""
 "We meet you at Praia do Carvoeiro and drive you to Ferragudo, where the boat "
 "is waiting. From there it is two hours of cliffs, caves and open water."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:641
+#: src/carvoeiro-water-fun/html.scm:641 src/carvoeiro-water-fun/html.scm:667
 msgid ""
 "We are a small team who grew up on this coast. We know which cave is worth "
 "the detour and where the dolphins usually are — and we will tell you the "
 "stories behind both."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:645
+#: src/carvoeiro-water-fun/html.scm:645 src/carvoeiro-water-fun/html.scm:671
 #, fuzzy
 msgid ""
 "We head out to the dolphins' feeding grounds first, then turn back along the "
@@ -674,13 +698,13 @@ msgstr ""
 "visit Praia da Marinha, Algar de Benagil, Olhos de Deus, the largest cave in "
 "the Algarve, and much more."
 
-#: src/carvoeiro-water-fun/html.scm:649
+#: src/carvoeiro-water-fun/html.scm:649 src/carvoeiro-water-fun/html.scm:675
 msgid ""
 "Our skippers talk about the marine life and the local ecosystem as we go, so "
 "you leave knowing more than when you stepped aboard."
 msgstr ""
 
-#: src/carvoeiro-water-fun/html.scm:656
+#: src/carvoeiro-water-fun/html.scm:656 src/carvoeiro-water-fun/html.scm:682
 #, fuzzy
 msgid ""
 "The speedboat is not suitable for people with serious back problems, anyone "
@@ -690,16 +714,16 @@ msgstr ""
 "problems, or weighing more than 120kg and pregnant women in late stages of "
 "pregnancy."
 
-#: src/carvoeiro-water-fun/html.scm:661
+#: src/carvoeiro-water-fun/html.scm:661 src/carvoeiro-water-fun/html.scm:687
 #, fuzzy
 msgid "Life jacket, and waterproof bags when the sea asks for them."
 msgstr "Life jacket, Waterproofing when necessary."
 
-#: src/carvoeiro-water-fun/html.scm:666
+#: src/carvoeiro-water-fun/html.scm:666 src/carvoeiro-water-fun/html.scm:692
 #, fuzzy
 msgid "Swimsuit, towel, sun cream and sunglasses — bring your own."
 msgstr "Swimsuit, towel, sun lotion, sunglasses."
 
-#: src/carvoeiro-water-fun/html.scm:671
+#: src/carvoeiro-water-fun/html.scm:671 src/carvoeiro-water-fun/html.scm:697
 msgid "Cancel at least 24 hours before departure for a full refund."
 msgstr ""
