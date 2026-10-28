@@ -165,7 +165,7 @@ recognised by the absence of an extension."
                             #:name "a dolphin rides at the bow")
                (assert-true (mentions? english-page "FB_IMG_1719434138555.jpg")
                             #:name "the boat waits in the harbour")
-               (assert-true (mentions? english-page "FB_IMG_1719434180086.jpg")
+               (assert-true (mentions? english-page "/img/benagil-cathedral.jpg")
                             #:name "a cave is lit from above")
                (assert-true (mentions? english-page "FB_IMG_1719434196131.jpg")
                             #:name "the grotto is framed"))
@@ -175,7 +175,37 @@ recognised by the absence of an extension."
                (assert-true (appears-before? english-page
                                              "benagil-boat.jpg"
                                              "FB_IMG_1719434096367.jpg")
-                            #:name "it is the first slide"))
+                            #:name "it is the first slide")
+               (assert-true (appears-before? english-page
+                                             "benagil-boat.jpg"
+                                             "benagil-cathedral.jpg")
+                            #:name "the cave follows the boat")
+               (assert-true (appears-before? english-page
+                                             "benagil-cathedral.jpg"
+                                             "FB_IMG_1719434096367.jpg")
+                            #:name "the dolphins come after the cave"))
+         (test "the cave and Ferragudo are photographed afresh"
+               (assert-true (mentions? english-page "/img/benagil-cathedral.jpg")
+                            #:name "the skylight cathedral is shown")
+               (assert-true (mentions? english-page "/img/benagil-exterior.jpg")
+                            #:name "the dome is shown from the water")
+               (assert-true (mentions? english-page "/img/ferragudo-village.jpg")
+                            #:name "Ferragudo's white village is shown")
+               (assert-true (mentions? english-page "/img/ferragudo-beach.jpg")
+                            #:name "the Ferragudo waterfront is shown")
+               (assert-true (appears-before? english-page
+                                             "ferragudo-village.jpg"
+                                             "FB_IMG_1719434138555.jpg")
+                            #:name "Ferragudo is not buried at the end"))
+         (test "the borrowed cave and village frames are credited"
+               (assert-true (mentions? english-page "carousel-credit")
+                            #:name "the gallery carries a credit line")
+               (assert-true (mentions? english-page "Joseolgon")
+                            #:name "the cave photographer is named")
+               (assert-true (mentions? english-page "muffinn")
+                            #:name "the Ferragudo photographer is named")
+               (assert-true (mentions? english-page "CC BY-SA 4.0")
+                            #:name "the cave licence is named"))
          (test "kayaks, guests and the heart of the cave are on the page"
                (assert-true (mentions? english-page
                                         "FB_IMG_1685655800663.jpg")
@@ -224,7 +254,13 @@ recognised by the absence of an extension."
                (assert-true (file-exists? "resources/img/pano-benagil.jpg")
                             #:name "the Benagil panorama exists")
                (assert-true (mentions? portuguese-page "Arraste para olhar em volta")
-                            #:name "the hint is translated"))
+                            #:name "the hint is translated")
+               (assert-true (mentions? english-page "data-pano-focus=\"100%\"")
+                            #:name "the beach scene is anchored to its shore")
+               (assert-true (mentions? english-page "data-pano-start")
+                            #:name "each scene opens on its subject")
+               (assert-true (mentions? motion-script "is-swapping")
+                            #:name "switching scenes dips rather than cuts"))
          (test "the borrowed panoramas are credited"
                (assert-true (mentions? english-page "Enric Rubio Ros")
                             #:name "the cave photographer is named")

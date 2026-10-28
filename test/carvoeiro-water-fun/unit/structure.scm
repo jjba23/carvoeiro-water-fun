@@ -88,7 +88,8 @@
                            ".theme-card--arch" ".theme-card--cta"
                            ".theme-card__caption" ".carousel-dot"
                            ".carousel-dots" ".panorama-stage"
-                           ".panorama-hint" ".panorama-rail")))
+                           ".panorama-hint" ".panorama-rail"
+                           ".carousel-credit")))
          (test "a dragged gallery stops snapping while it moves"
                (assert-true (mentions? stylesheet ".carousel-glass.is-dragging")
                             #:name "the dragging state is styled")

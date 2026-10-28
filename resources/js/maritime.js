@@ -402,6 +402,11 @@
 
             const ratio = () => Number(stage.getAttribute("data-pano-ratio")) || 2;
             const source = () => stage.getAttribute("data-pano-src") || "";
+            /* Each scene has its own interesting band: the cave arch sits low,
+               the village sits at the bottom of its photograph. */
+            const focus = () => stage.getAttribute("data-pano-focus") || "center";
+            /* Where the scene opens: the village, or the boat in the arch. */
+            const start = () => Math.min(1, Math.max(0, Number(stage.getAttribute("data-pano-start")) || 0));
 
             const load = () => {
                 if (loaded) return;
@@ -425,7 +430,7 @@
             };
 
             const paint = () => {
-                surface.style.backgroundPosition = (-x).toFixed(1) + "px center";
+                surface.style.backgroundPosition = (-x).toFixed(1) + "px " + focus();
                 if (thumb instanceof HTMLElement) {
                     const width = max > 0
                         ? Math.max(12, (stage.clientWidth / (stage.clientWidth + max)) * 100)
@@ -459,9 +464,13 @@
                 const url = tab.getAttribute("data-pano-src");
                 const value = tab.getAttribute("data-pano-ratio");
                 const label = tab.getAttribute("data-pano-label");
+                const line = tab.getAttribute("data-pano-focus");
+                const entry = tab.getAttribute("data-pano-start");
                 if (!url) return;
                 stage.setAttribute("data-pano-src", url);
                 if (value) stage.setAttribute("data-pano-ratio", value);
+                if (line) stage.setAttribute("data-pano-focus", line);
+                if (entry) stage.setAttribute("data-pano-start", entry);
                 if (label) stage.setAttribute("aria-label", "Panorama: " + label);
                 tabs.forEach((other) => {
                     const on = other === tab;
@@ -474,6 +483,7 @@
                 if (reducedMotion.matches) {
                     load();
                     measure();
+                    x = max * start();
                     paint();
                     return;
                 }
@@ -485,6 +495,7 @@
                     loaded = false;
                     load();
                     measure();
+                    x = max * start();
                     paint();
                     surface.classList.remove("is-swapping");
                 }, 170);
@@ -566,6 +577,7 @@
                         if (!visible) return;
                         load();
                         measure();
+                        x = max * start();
                         paint();
                         if ("requestIdleCallback" in window) {
                             requestIdleCallback(() => {
@@ -585,6 +597,8 @@
             } else {
                 load();
                 measure();
+                x = max * start();
+                paint();
             }
 
             if (hint) hint.setAttribute("aria-hidden", "true");

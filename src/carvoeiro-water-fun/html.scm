@@ -204,44 +204,44 @@
               ,(carousel #:id 'first-carousel
                     #:item-width '(w-96)
                     #:item-height '(h-auto)
+                    ;; Ordered for the first glance: the boat in the arch, the
+                    ;; cave's skylight, then dolphins; Ferragudo comes early so
+                    ;; the free crossing earns its place before the fold.
                     #:fragments (list (mk-header-img "/img/benagil-boat.jpg")
+                                      (mk-header-img
+                                       "/img/benagil-cathedral.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434096367.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434026784.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434007758.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434387257.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434180086.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434201178.jpg")
+                                      (mk-header-img "/img/ferragudo-village.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434206316.jpg")
                                       (mk-header-img
-                                       "/img/FB_IMG_1719434185151.jpg")
+                                       "/img/FB_IMG_1719434007758.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434405533.jpg")
                                       (mk-header-img
+                                       "/img/FB_IMG_1719434185151.jpg")
+                                      (mk-header-img "/img/ferragudo-beach.jpg")
+                                      (mk-header-img "/img/carvoeiro-beach.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434387257.jpg")
+                                      (mk-header-img "/img/benagil-exterior.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434201178.jpg")
+                                      (mk-header-img
                                        "/img/FB_IMG_1719434125429.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1685658664328.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434138555.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434142313.jpg")
-                                      (mk-header-img "/img/carvoeiro-beach.jpg")
                                       (mk-header-img
-                                       "/img/FB_IMG_1719434214171.jpg")
+                                       "/img/FB_IMG_1719434166275.jpg")
                                       (mk-header-img
-                                       "/img/FB_IMG_1719434401426.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434089800.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434153508.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1685658664328.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434166275.jpg"))
+                                       "/img/FB_IMG_1719434401426.jpg"))
                     #:carousel-button-css '(glass hover-lift absolute
                                                    bottom-1/2
                                                    w-14
@@ -260,7 +260,30 @@
          (div (@ (class "carousel-dots")
                  (role "group")
                  (aria-label "Gallery"))
-              ,@(carousel-dots 20)))
+              ,@(carousel-dots 20))
+         (div (@ (class "panorama-credit carousel-credit"))
+              ,(p (G_ "Photographs:")
+                  #:size '(text-sm)
+                  #:weight '(font-light))
+              ,(a "Joseolgon"
+                  #:href "https://commons.wikimedia.org/wiki/User:Joseolgon"
+                  #:size '(text-sm)
+                  #:extra-classes '(link-lux))
+              (span (@ (class "panorama-credit__dot")) "·")
+              ,(a "CC BY-SA 4.0"
+                  #:href "https://creativecommons.org/licenses/by-sa/4.0/"
+                  #:size '(text-sm)
+                  #:extra-classes '(link-lux))
+              (span (@ (class "panorama-credit__dot")) "·")
+              ,(a "muffinn"
+                  #:href "https://www.flickr.com/people/26445715@N00"
+                  #:size '(text-sm)
+                  #:extra-classes '(link-lux))
+              (span (@ (class "panorama-credit__dot")) "·")
+              ,(a "CC BY 2.0"
+                  #:href "https://creativecommons.org/licenses/by/2.0/"
+                  #:size '(text-sm)
+                  #:extra-classes '(link-lux))))
 
     ,(enjoy-algarve-section)
     ,(panorama-section)
@@ -553,6 +576,8 @@
                               (data-pano-tab "carvoeiro")
                               (data-pano-src "/img/pano-carvoeiro.jpg")
                               (data-pano-ratio "2.029")
+                              (data-pano-focus "100%")
+                              (data-pano-start "0")
                               (data-pano-label "Carvoeiro beach")
                               (aria-pressed "true"))
                            ,(G_ "Carvoeiro beach"))
@@ -561,6 +586,8 @@
                               (data-pano-tab "benagil")
                               (data-pano-src "/img/pano-benagil.jpg")
                               (data-pano-ratio "1.899")
+                              (data-pano-focus "58%")
+                              (data-pano-start "0.85")
                               (data-pano-label "Benagil cave")
                               (aria-pressed "false"))
                            ,(G_ "Benagil cave")))
@@ -568,6 +595,8 @@
                       (data-panorama "true")
                       (data-pano-src "/img/pano-carvoeiro.jpg")
                       (data-pano-ratio "2.029")
+                      (data-pano-focus "100%")
+                      (data-pano-start "0")
                       (tabindex "0")
                       (role "img")
                       (aria-label "Panorama of Carvoeiro beach"))

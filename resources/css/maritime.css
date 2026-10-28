@@ -763,6 +763,13 @@
     margin: -0.35rem 0 0.65rem;
 }
 
+/* The borrowed cave and Ferragudo frames are credited, not absorbed. */
+.carousel-credit {
+    justify-content: center;
+    margin: -0.05rem 0 0.4rem;
+    text-align: center;
+}
+
 .carousel-dot {
     width: 0.5rem;
     height: 0.5rem;
@@ -801,10 +808,10 @@
 
 .panorama-tab {
     padding: 0.45rem 1rem;
-    border: 1px solid var(--glass-line-strong);
+    border: 1px solid color-mix(in oklab, var(--sea-ink) 16%, transparent);
     border-radius: 999px;
-    background: oklch(1 0 0 / 0.55);
-    color: var(--sea-ink);
+    background: oklch(1 0 0 / 0.62);
+    color: color-mix(in oklab, var(--sea-ink) 82%, white);
     font-family: 'Lora', ui-serif, serif;
     font-size: 0.85rem;
     letter-spacing: 0.02em;
@@ -815,7 +822,8 @@
 }
 
 .panorama-tab:hover {
-    background: oklch(1 0 0 / 0.85);
+    border-color: color-mix(in oklab, var(--sea-ink) 30%, transparent);
+    background: oklch(1 0 0 / 0.9);
 }
 
 .panorama-tab.is-active {
@@ -909,17 +917,28 @@
     transform: translateY(4px);
 }
 
+/* The rail is a scrubber, not furniture: it appears when the view is held. */
 .panorama-rail {
     position: absolute;
-    left: 1rem;
-    right: 1rem;
-    bottom: 0.75rem;
+    left: 1.1rem;
+    right: 1.1rem;
+    bottom: 0.9rem;
     z-index: 2;
-    height: 4px;
+    height: 3px;
     border-radius: 999px;
-    background: oklch(0.2 0.03 232 / 0.38);
-    box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.25);
+    background: oklch(0.16 0.03 232 / 0.5);
+    box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.3),
+        0 1px 3px oklch(0.16 0.03 232 / 0.35);
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 480ms var(--ease-lux);
+}
+
+.panorama-stage:hover .panorama-rail,
+.panorama-stage:focus-visible .panorama-rail,
+.panorama-stage.is-used .panorama-rail,
+.panorama-stage.is-dragging .panorama-rail {
+    opacity: 1;
 }
 
 .panorama-rail__thumb {
@@ -929,7 +948,8 @@
     left: 0;
     width: 30%;
     border-radius: inherit;
-    background: linear-gradient(90deg, oklch(1 0 0), var(--brass));
+    background: linear-gradient(90deg, oklch(1 0 0 / 0.96), var(--brass));
+    box-shadow: 0 0 8px oklch(0.2 0.03 232 / 0.45);
     transition: width 200ms linear, left 200ms linear;
 }
 
