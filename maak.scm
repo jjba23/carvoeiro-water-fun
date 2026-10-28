@@ -43,6 +43,13 @@
 (define copyright-holders
   '("Josep Bigorra"))
 
+;; The veritas checkout the test suite runs against.  The framework is pre-1.0
+;; and the checkout is newer than the packaged release, so its sources are
+;; addressed directly; VERITAS_SRC moves it without editing this file.
+(define veritas-src
+  (or (getenv "VERITAS_SRC")
+      (format #f "~a/Hacking/veritas/src" (getenv "HOME"))))
+
 ;; ====== Maak prelude ======
 
 ;; Specify the directory where the MO file is located
@@ -157,6 +164,14 @@ Args: update? represents whether we should update a template or create a new one
   (build* 'en_US "./dist/en")
   (build* 'pt_PT "./dist/pt")
   (mv "dist/en/*" "dist/" #:expand? #t))
+
+(define (test)
+  "Run the test suite with veritas."
+  (manifest-shell (list "guile" "-L" "./src"
+                        "-L" veritas-src
+                        "-L" "./test"
+                        "test/run.scm")
+                  #:verbose? #t))
 
 (define (build-and-serve)
   "Build and serve."

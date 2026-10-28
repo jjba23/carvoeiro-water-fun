@@ -72,98 +72,118 @@
                                        (href
                                         "/css/carvoeiro-water-fun.olive.min.css"))
                                     "")
-                              ,speculation-rules)
+                              (link (@ (rel stylesheet)
+                                       (href "/css/maritime.css"))
+                                    "")
+                              ,speculation-rules
+                              (script "" "document.documentElement.classList.add('js');")
+                              (noscript (style (@ (type "text/css"))
+                                               ".js [data-reveal] {opacity: 1; transform: none; filter: none;}")))
                         (script (@(src "/js/symbanta.js")) "")
-                        (body (@ (class ,(mk-class '(break-words
+                        (body (@ (class ,(mk-class '(maritime-body
+                                                     break-words
                                                      bg-white-smoke-300))))
-                              (div (@ (class ,(mk-class '())))
+                              (div (@ (class "tide-line")
+                                      (aria-hidden "true"))
+                                   (span (@ (class "tide-line__fill")) ""))
+                              (div (@ (class "sea-canvas")
+                                      (aria-hidden "true"))
+                                   (div (@ (class "tide tide--1")) "")
+                                   (div (@ (class "tide tide--2")) "")
+                                   (div (@ (class "tide tide--3")) ""))
+                              (div (@ (class "page-layer"))
                                    ,@body
-                                   ,(footer-section))))))
+                                   ,(footer-section))
+                              (script (@ (src "/js/maritime.js")
+                                         (defer "defer"))
+                                      "")))))
 
 (define* (mk-header-img src)
-  `((img (@ (class ,(mk-class '(h-auto max-w-full shadow-2xl rounded-2xl)))
-            (src ,src)))))
+  `((div (@ (class "photo-frame"))
+         (img (@ (class ,(mk-class '(h-auto w-full)))
+                 (src ,src)
+                 (loading "lazy")
+                 (decoding "async")
+                 (alt ""))))))
 
 (define* (carvoeiro-water-fun-main-body #:key locale)
-  `((div (@ (class ,(mk-class '(pt-12 flex
-                                      flex-row
-                                      flex-wrap
-                                      gap-2
-                                      slide-from-right
-                                      justify-center))))
-         ,(h1 (G_ "Carvoeiro")
-              #:weight '(font-light)
-              #:size '(text-16))
-         (span (@ (class ,(mk-class '(text-16)))) "⚓")
-         ,(h1 (G_ "Water Fun")
-              #:color '(text-jeans-blue-300)
-              #:weight '(font-light)
-              #:size '(text-16)))
-    (div (@ (class ,(mk-class '(py-12 px-4
-                                      md:px-6
-                                      lg:px-8
-                                      flex
-                                      flex-row
-                                      flex-wrap
-                                      justify-center
-                                      w-full))))
-         (div (@ (class ,(mk-class '(max-w-prose text-center flex flex-col
-                                                 gap-8))))
-              ,(p (G_
-                   "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")
-                  #:weight '(font-light leading-8)
-                  #:family '(font-serif)
-                  #:size '(text-lg))
-              (div (@ (class ,(mk-class '(my-3 flex
-                                               flex-row
-                                               flex-wrap
-                                               gap-4
-                                               justify-center
-                                               items-center
-                                               align-center))))
-                   ,locale
-                   ,(when (eq? locale
-                               'en_US)
-                      (a (button "🇵🇹 Português"
-                                 #:weight '(font-light)
-                                 #:size '(text-sm)
-                                 #:background '(bg-stone-300))
-                         #:href "/pt"))
-                   ,(when (eq? locale
-                               'pt_PT)
-                      (a (button "🇬🇧 English"
-                                 #:weight '(font-light)
-                                 #:size '(text-sm)
-                                 #:background '(bg-stone-300))
-                         #:href "/"))
-                   ,(a (icon-button #:icon 'sailboat
-                                    #:content (G_ "About the boat tour")
-                                    #:background '(bg-stone-300)
-                                    #:icon-css '(text-onyx-300 text-xl)
-                                    #:color '(text-onyx-300)
-                                    #:weight '(font-light)
-                                    #:hover-background '(hover:bg-stone-700))
-                       #:href "#about-boat-tour-section")
-                   ,(a (icon-button #:icon 'calendar
-                                    #:content (G_ "Book your experience")
-                                    #:background '(bg-jeans-blue-500)
-                                    #:color '(text-white-smoke-300)
-                                    #:icon-css '(text-white-smoke-100 text-xl)
-                                    #:weight '(font-light)
-                                    #:hover-background '(hover:bg-jeans-blue-900))
-                       #:href "#contact-us-section"))
-              (div ,(em (G_ "Enjoy the best of")
+  `((div (@ (class "hero-shell"))
+         (div (@ (class "glass glass--panel hero")
+                 (data-tilt "true"))
+              (div (@ (class "hero-title-row"))
+                   ,(h1 (G_ "Carvoeiro")
                         #:weight '(font-light)
-                        #:size '(text-lg))
-                   ,(em (G_ " Carvoeiro & Benagil ")
-                        #:weight '(font-bold)
-                        #:color '(text-onyx-100)
-                        #:size '(text-lg))
-                   ,(em (G_ "from the beautiful ocean.")
-                        #:weight '(font-light)
-                        #:size '(text-lg)))))
+                        #:size '(text-16))
+                   (span (@ (class ,(mk-class '(text-16 hero-anchor)))
+                            (aria-hidden "true"))
+                         "⚓")
+                   (h1 (@ (class ,(mk-class '(text-16 hero-title
+                                                      shimmer font-light
+                                                      font-sans))))
+                       ,(G_ "Water Fun")))
+              (div (@ (class "gold-rule")) "")
+              (div (@ (class "hero-content max-w-prose flex flex-col gap-8"))
+                   ,(p (G_
+                        "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")
+                       #:weight '(font-light leading-8)
+                       #:family '(font-serif)
+                       #:size '(text-lg))
+                   (div (@ (class ,(mk-class '(hero-actions my-3 flex
+                                                            flex-row
+                                                            flex-wrap
+                                                            gap-4
+                                                            justify-center
+                                                            items-center
+                                                            align-center))))
+                        ,(when (eq? locale
+                                    'en_US)
+                           (a (button "🇵🇹 Português"
+                                      #:weight '(font-light)
+                                      #:size '(text-sm)
+                                      #:background '(bg-stone-300))
+                              #:href "/pt"))
+                        ,(when (eq? locale
+                                    'pt_PT)
+                           (a (button "🇬🇧 English"
+                                      #:weight '(font-light)
+                                      #:size '(text-sm)
+                                      #:background '(bg-stone-300))
+                              #:href "/"))
+                        ,(a (icon-button #:icon 'sailboat
+                                         #:content (G_ "About the boat tour")
+                                         #:background '(bg-stone-300)
+                                         #:icon-css '(text-onyx-300 text-xl)
+                                         #:color '(text-onyx-300)
+                                         #:weight '(font-light)
+                                         #:extra-classes '(hover-lift py-2 px-4
+                                                                    max-w-prose
+                                                                    cursor-pointer)
+                                         #:hover-background '(hover:bg-stone-700))
+                            #:href "#about-boat-tour-section")
+                        ,(a (icon-button #:icon 'calendar
+                                         #:content (G_ "Book your experience")
+                                         #:background '(bg-jeans-blue-500)
+                                         #:color '(text-white-smoke-300)
+                                         #:icon-css '(text-white-smoke-100 text-xl)
+                                         #:weight '(font-light)
+                                         #:extra-classes '(hover-lift py-2 px-4
+                                                                    max-w-prose
+                                                                    cursor-pointer)
+                                         #:hover-background '(hover:bg-jeans-blue-900))
+                            #:href "#contact-us-section"))
+                   (div ,(em (G_ "Enjoy the best of")
+                             #:weight '(font-light)
+                             #:size '(text-lg))
+                        ,(em (G_ " Carvoeiro & Benagil ")
+                             #:weight '(font-bold)
+                             #:color '(text-onyx-100)
+                             #:size '(text-lg))
+                        ,(em (G_ "from the beautiful ocean.")
+                             #:weight '(font-light)
+                             #:size '(text-lg))))))
 
-    (div (@ (class ,(mk-class '(px-3))))
+    (div (@ (class "carousel-shell px-3 py-2")
+            (data-reveal "true"))
          ,(carousel #:id 'first-carousel
                     #:item-width '(w-96)
                     #:item-height '(h-auto)
@@ -173,67 +193,46 @@
                                        "/img/FB_IMG_1719434185151.jpg")
                                       (mk-header-img "/img/barco-scaled.jpg")
                                       (mk-header-img "/img/car2.jpeg"))
-                    #:carousel-button-css '(absolute bottom-1/2
-                                                     w-14
-                                                     h-14
-                                                     bg-stone-500/75
-                                                     p-1
-                                                     rounded-3xl
-                                                     text-onyx-500
-                                                     cursor-pointer
-                                                     font-bold
-                                                     text-3xl)
-                    #:carousel-list-css '(flex gap-16
-                                               p-4
-                                               list-none
-                                               overflow-x-scroll
-                                               snap-x
-                                               bg-stone-300/75
-                                               rounded-xl
-                                               shadow-md
-                                               my-6)))
+                    #:carousel-button-css '(glass hover-lift absolute
+                                                   bottom-1/2
+                                                   w-14
+                                                   h-14
+                                                   p-1
+                                                   text-onyx-500
+                                                   cursor-pointer
+                                                   font-bold
+                                                   text-3xl)
+                    #:carousel-list-css '(carousel-glass flex gap-16
+                                                         p-4
+                                                         list-none
+                                                         overflow-x-scroll
+                                                         snap-x
+                                                         my-6)))
 
     ,(enjoy-algarve-section)
-    (div (@ (class ,(mk-class '(flex flex-row
-                                     flex-wrap
-                                     gap-10
-                                     items-center
-                                     justify-center
-                                     shadow-md
-                                     px-4
-                                     md:px-6
-                                     lg:px-8
-                                     py-12
-                                     bg-white-smoke-500/75))))
+    (div (@ (class "glass glass--panel section-shell flex flex-row
+                    flex-wrap gap-10 items-center justify-center")
+            (data-reveal "true"))
          ,(contact-us-section)
          ,(where-to-find-us-section))
 
-    (div (@ (class ,(mk-class '(py-8 px-4 md:px-6 lg:px-8))))
+    (div (@ (class "section-shell")
+            (data-reveal "true"))
          ,(map-frame-section))
 
-    (div (@ (class ,(mk-class '(py-8 px-4 md:px-6 lg:px-8))))
+    (div (@ (class "section-shell")
+            (data-reveal "true"))
          ,(about-boat-tour-section))
 
-    (div (@ (class ,(mk-class '(py-12 px-4 md:px-6 lg:px-8
-
-                                      ))))
-         (div (@ (class ,(mk-class '(bg-white-smoke-500/75 py-12
-                                     flex
-                                     flex-row
-                                     flex-wrap
-                                     gap-12
-                                     justify-center
-                                     border-lapis-lazuli-100/50
-                                     border-2
-                                     shadow-xl
-                                     rounded-5xl))))
+    (div (@ (class "section-shell")
+            (data-reveal "true"))
+         (div (@ (class "glass glass--panel flex flex-row
+                         flex-wrap gap-12 justify-center"))
               ,(leave-a-review-section)
-              ,(insurance-section)))
-
-    ))
+              ,(insurance-section)))))
 
 (define* (enjoy-algarve-section)
-  `((div (@ (class ,(mk-class '(py-6 px-4 md:px-6 lg:px-8 bg-white shadow-xl))))
+  `((div (@ (class "glass glass--panel section-shell"))
          ,(h3 `(div ,(icon #:type 'island
                            #:icon-css '(text-xl text-onyx-500 mr-2))
                     ,(G_ "Enjoy Algarve's spectacular coast")))
@@ -257,10 +256,12 @@
                    ,(p (G_
                         "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
                        #:weight '(font-light leading-8)))
-              (div (img (@ (class ,(mk-class '(h-auto max-w-full md:max-w-96
-                                                      lg:max-w-128 shadow-2xl
-                                                      rounded-2xl)))
-                           (src "/img/FB_IMG_1685655800663.jpg"))))))))
+              (div (@ (class "photo-frame w-full md:max-w-96 lg:max-w-128"))
+                   (img (@ (class ,(mk-class '(h-auto w-full)))
+                           (src "/img/FB_IMG_1685655800663.jpg")
+                           (loading "lazy")
+                           (decoding "async")
+                           (alt ""))))))))
 
 (define* (insurance-section)
   `((div (@ (class ,(mk-class '(px-4 md:px-6
@@ -296,19 +297,20 @@
          ,(em (G_
                "You can read more reviews, and we are thankful if you write us one."))
          (a (@ (href "https://maps.app.goo.gl/evwhXe4U8YWzJuDe6")
-               (target _blank))
+               (target _blank)
+               (rel "noopener"))
             ,(icon-button #:icon 'link
                           #:content (G_ "Reviews on Google Maps")
+                          #:extra-classes '(hover-lift py-2 px-4
+                                                     max-w-prose
+                                                     cursor-pointer)
                           #:size '(text-sm)))
-         (div (img (@ (class ,(mk-class '(h-auto max-h-80
-                                                 max-w-1/2
-                                                 w-full
-                                                 sm:w-1/2
-                                                 md:w-1/3
-                                                 lg:w-1/4
-                                                 shadow-xl
-                                                 rounded-xl)))
-                      (src "/img/carvoeiro-water-fun-review.png")))))))
+         (div (@ (class "photo-frame max-w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4"))
+              (img (@ (class ,(mk-class '(h-auto max-h-80 w-full)))
+                      (src "/img/carvoeiro-water-fun-review.png")
+                      (loading "lazy")
+                      (decoding "async")
+                      (alt "")))))))
 
 (define* (carvoeiro-water-fun #:key (locale 'en_US))
   (with-output-to-string (lambda ()
@@ -358,7 +360,8 @@
               ,(p (G_ "WhatsApp:")
                   #:weight '(font-light))
               ,(a "wa.me/+351931933847"
-                  #:href "https://wa.me/+351931933847"))
+                  #:href "https://wa.me/+351931933847"
+                  #:extra-classes '(link-lux no-underline)))
          (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
                                           items-center))))
               ,(icon #:type 'phone
@@ -366,7 +369,8 @@
               ,(p (G_ "Telephone:")
                   #:weight '(font-light))
               ,(a "+351 931 933 847"
-                  #:href "tel:+351931933847"))
+                  #:href "tel:+351931933847"
+                  #:extra-classes '(link-lux no-underline)))
          (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
                                           items-center))))
               ,(icon #:type 'envelope
@@ -374,7 +378,8 @@
               ,(p (G_ "Email:")
                   #:weight '(font-light))
               ,(a "carvoeirowaterfun@gmail.com"
-                  #:href "mailto:carvoeirowaterfun@gmail.com"))
+                  #:href "mailto:carvoeirowaterfun@gmail.com"
+                  #:extra-classes '(link-lux no-underline)))
          (div (@ (class ,(mk-class '(flex flex-col gap-2 mt-2))))
               ,(em (G_ "Note: Call costs to mobile network.")
                    #:size '(text-sm))
@@ -386,36 +391,35 @@
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3182.37556480607!2d-8.471684899999998!3d37.09617659999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ad764b5120b8b%3A0x108f3a9ef89e164e!2sCarvoeiro%20Water%20Fun!5e0!3m2!1snl!2snl!4v1718611022914!5m2!1snl!2snl")
 
 (define* (map-frame-section)
-  `((iframe (@ (src ,map-frame-url)
-               (width "100%")
-               (height 500)
-               (title (G_ "Map showing the location of our business"))
-               (style "border:0;")
-               (allowfullscreen true)
-               (loading lazy)
-               (referrerpolicy "no-referrer-when-downgrade")
-               (class ,(mk-class '(rounded-2xl shadow-xl)))) "")))
+  `((div (@ (class "map-shell glass")
+            (data-tilt "true"))
+         (iframe (@ (src ,map-frame-url)
+                    (width "100%")
+                    (height 500)
+                    (title (G_ "Map showing the location of our business"))
+                    (style "border:0;")
+                    (allowfullscreen true)
+                    (loading lazy)
+                    (referrerpolicy "no-referrer-when-downgrade")
+                    (class ,(mk-class '(w-full)))) ""))))
 
 (define* (about-boat-tour-section)
   `((div (@ (id about-boat-tour-section)
-            (class ,(mk-class '(flex flex-row
-                                     flex-wrap
-                                     gap-12
-                                     justify-center
-                                     align-center
-                                     items-center))))
+            (class "glass glass--panel section-shell flex flex-row
+                    flex-wrap gap-12 justify-center items-center"))
          (div (@ (class ,(mk-class '(flex flex-col gap-2 md:max-w-128
                                           leading-6))))
               (div (@ (class ,(mk-class '(flex flex-row gap-2 py-3))))
                    ,(icon #:type 'sailboat)
                    ,(h3 (G_ "About the boat tour")))
-              ,(dl (list (dt (G_ "Tour duration"))
-                         (dd (G_ "2 hours")
-                             #:size '(text-md))
-                         (dt (G_ "Boarding location"))
-                         (dd
-                          "Praia do Carvoeiro (with free transport to Ferragudo)"
-                          #:size '(text-md))))
+              (div (@ (class "spec-list"))
+                   ,(dl (list (dt (G_ "Tour duration"))
+                              (dd (G_ "2 hours")
+                                  #:size '(text-md))
+                              (dt (G_ "Boarding location"))
+                              (dd
+                               "Praia do Carvoeiro (with free transport to Ferragudo)"
+                               #:size '(text-md)))))
               ,(p (G_
                    "This program includes a brief stop by the beach to dive whenever be possible.")
                   #:size '(text-md)
@@ -437,21 +441,22 @@
                   #:size '(text-md)
                   #:weight '(font-light)))
          (div (@ (class ,(mk-class '(md:max-w-1/3 leading-6))))
-              ,(dl (list (dt (G_ "Health & Safety"))
-                         (dd (G_
-                              "We do not recommend the speed boat tour to people with serious back problems, or weighing more than 120kg and pregnant women in late stages of pregnancy.")
-                             #:weight '(font-light)
-                             #:size '(text-md))
-                         (dt (G_ "Included"))
-                         (dd (G_ "Life jacket, Waterproofing when necessary.")
-                             #:weight '(font-light)
-                             #:size '(text-md))
-                         (dt (G_ "Not included"))
-                         (dd (G_ "Swimsuit, towel, sun lotion, sunglasses.")
-                             #:weight '(font-light)
-                             #:size '(text-md))
-                         (dt (G_ "Cancellation policy"))
-                         (dd (G_
-                              "For a full refund, cancel at least 24 hours in advance of the tour start date.")
-                             #:weight '(font-light)
-                             #:size '(text-md))))))))
+              (div (@ (class "spec-list"))
+                   ,(dl (list (dt (G_ "Health & Safety"))
+                              (dd (G_
+                                   "We do not recommend the speed boat tour to people with serious back problems, or weighing more than 120kg and pregnant women in late stages of pregnancy.")
+                                  #:weight '(font-light)
+                                  #:size '(text-md))
+                              (dt (G_ "Included"))
+                              (dd (G_ "Life jacket, Waterproofing when necessary.")
+                                  #:weight '(font-light)
+                                  #:size '(text-md))
+                              (dt (G_ "Not included"))
+                              (dd (G_ "Swimsuit, towel, sun lotion, sunglasses.")
+                                  #:weight '(font-light)
+                                  #:size '(text-md))
+                              (dt (G_ "Cancellation policy"))
+                              (dd (G_
+                                   "For a full refund, cancel at least 24 hours in advance of the tour start date.")
+                                  #:weight '(font-light)
+                                  #:size '(text-md)))))))))

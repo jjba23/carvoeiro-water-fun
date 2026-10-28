@@ -85,4 +85,6 @@ easing the learning curve, and reducing the cognitive load.")
                           guile-ares-rs
                           guile-hygguile
                           watchexec
-                          guile-kracht))
+                          guile-kracht
+                          ;; veritas writes its JSON report through (json).
+                          (specification->package "guile-json")))
