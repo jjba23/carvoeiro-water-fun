@@ -486,7 +486,7 @@
                   #:size '(text-md)
                   #:weight '(font-light)))
          (div (@ (class ,(mk-class '(md:max-w-1/3 leading-6))))
-              (div (@ (class "spec-list"))
+              (div (@ (class "spec-list spec-list--stacked"))
                    ,(dl (list (dt (G_ "Health & Safety"))
                               (dd (G_
                                    "We do not recommend the speed boat tour to people with serious back problems, or weighing more than 120kg and pregnant women in late stages of pregnancy.")

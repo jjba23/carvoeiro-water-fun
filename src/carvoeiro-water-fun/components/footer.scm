@@ -56,7 +56,7 @@
                   #:size '(text-sm)
                   #:weight '(font-light))
               ,(a "source code"
-                  #:href "https://codeberg.org/jjba23/carvoeiro-water-fun"
+                  #:href "https://github.com/jjba23/carvoeiro-water-fun"
                   #:size '(text-sm)
                   #:family '(font-sans)
                   #:weight '(font-light))))))
