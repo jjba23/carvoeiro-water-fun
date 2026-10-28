@@ -1,0 +1,33 @@
+# Carvoeiro Water Fun
+#
+# SPDX-LICENSE-IDENTIFIER: MIT
+# Copyright © Josep Bigorra <jjbigorra@gmail.com>
+
+# The pipeline: a push to the trunk branch hands Byggsteg a job and follows it
+# to a green or a red build, which is the whole of it -- nothing here runs a
+# command of its own, because the job is Byggsteg's to run and this is only the
+# asking.
+#
+# The steps are not written out here: they are the reusable workflow of
+# jjba23/byggsteg-github, so the bridge that drives Byggsteg is the same one
+# every project using it calls, and a fix to it is a fix for all of them. Which
+# means the interesting part below is the request: the tasks, the daemon, and
+# which branch a run is about.
+
+name: CI
+
+on:
+  push:
+    branches: [trunk]
+
+permissions:
+  contents: read
+
+jobs:
+  byggsteg:
+    name: 🧱 Byggsteg
+    uses: jjba23/byggsteg-github/.github/workflows/byggsteg.yml@trunk
+    with:
+      tasks: maak-deploy
+      timeout-minutes: 60
+    secrets: inherit
