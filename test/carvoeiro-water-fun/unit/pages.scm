@@ -94,7 +94,7 @@ recognised by the absence of an extension."
                (assert-true (mentions? english-page "og:image")
                             #:name "the social card has an image")
                (assert-true (mentions? english-page
-                                        "fun beach day in the Algarve")
+                                        "boat tours from Carvoeiro")
                             #:name "the description is in the page"))
          (test "the Portuguese page keeps its language and translations"
                (assert-true (mentions? portuguese-page "lang=\"pt\"")
@@ -104,6 +104,14 @@ recognised by the absence of an extension."
                (assert-true (mentions? portuguese-page
                                         "Acerca da viagem de barco")
                             #:name "the boat tour heading is translated")
+               (assert-true (mentions? portuguese-page
+                                        "O Algarve visto do mar")
+                            #:name "the coast copy is translated")
+               (assert-true (mentions? portuguese-page
+                                        "com transporte gratuito até Ferragudo")
+                            #:name "the boarding notes are translated")
+               (assert-true (mentions? portuguese-page "código-fonte")
+                            #:name "the source code link is translated")
                (assert-false (mentions? portuguese-page ">Contact us<")
                              #:name "the English heading is not left behind"))
          (test "the source code is offered under the MIT licence"
@@ -145,6 +153,26 @@ recognised by the absence of an extension."
                                         #:name (string-append (resource-path path)
                                                               " exists")))
                          english-assets))
+         (test "every photograph offers an AVIF copy that exists"
+               (let ((renditions
+                      (delete-duplicates
+                       (group-matches
+                        "<source type=\"image/avif\" srcset=\"(/[^\"]+)\""
+                        1 english-page))))
+                 (assert-true (pair? renditions)
+                              #:name "the page offers AVIF sources")
+                 (for-each (lambda (path)
+                             (assert-true (file-exists?
+                                           (resource-path path))
+                                          #:name (string-append
+                                                  (resource-path path)
+                                                  " exists")))
+                           renditions)
+                 ;; A <picture> per photograph, except the dialog's view, whose
+                 ;; source is set when it opens.
+                 (assert-true (= (match-count "<picture>" english-page)
+                                 (- (match-count "<img " english-page) 1))
+                              #:name "every photograph sits in a picture")))
          (test "every photograph is lazily loaded and marked decorative"
                (let ((images (group-matches "<img[^>]*>" 0 english-page)))
                  (assert-true (pair? images)

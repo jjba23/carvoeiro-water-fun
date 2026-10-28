@@ -65,7 +65,7 @@
                                        (content ,title)) "")
                               (meta (@ (name description)
                                        (content ,(G_
-                                                  "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")))
+                                                  "Two-hour boat tours from Carvoeiro to the Benagil cave, the dolphins and the sea caves of the Algarve.")))
                                     "")
 
                               (link (@ (rel stylesheet)
@@ -79,7 +79,9 @@
                               (script "" "document.documentElement.classList.add('js');")
                               (noscript (style (@ (type "text/css"))
                                                ".js [data-reveal] {opacity: 1; transform: none; filter: none;}")))
-                        (script (@(src "/js/symbanta.js")) "")
+                        ;; Deferred: the statistics ping must not stand between
+                        ;; the parser and the photographs the page asks for.
+                        (script (@ (src "/js/symbanta.js") (defer "defer")) "")
                         (body (@ (class ,(mk-class '(maritime-body
                                                      break-words
                                                      bg-white-smoke-300))))
@@ -98,13 +100,38 @@
                                          (defer "defer"))
                                       "")))))
 
+;; Every photograph sits beside an AVIF rendition of itself, so a browser that
+;; can read AVIF downloads a fifth of the bytes and the rest keep the JPEG.
+;; The stylesheet takes <picture> out of the layout, so nothing shifts.
+(define (avif-rendition src)
+  "The AVIF copy of @var{src}, which lives beside it in resources/img."
+  (regexp-substitute/global #f "[.][A-Za-z]+$" src 'pre ".avif" 'post))
+
+(define* (photo src #:key class (loading "lazy") priority width height)
+  "A photograph offered as AVIF first, with @var{src} as the fallback.
+
+@var{loading} is passed to the browser unchanged, so the caller decides what
+waits; @var{priority} becomes fetchpriority, which is how the one photograph
+in the opening screen asks to be fetched before the rest."
+  `(picture
+    (source (@ (type "image/avif")
+               (srcset ,(avif-rendition src))))
+    (img (@ (class ,class)
+            (src ,src)
+            (loading ,loading)
+            ,@(if priority
+                  `((fetchpriority ,priority))
+                  '())
+            (decoding "async")
+            ,@(if width
+                  `((width ,(number->string width))
+                    (height ,(number->string height)))
+                  '())
+            (alt "")))))
+
 (define* (mk-header-img src)
   `((div (@ (class "photo-frame"))
-         (img (@ (class ,(mk-class '(h-auto w-full)))
-                 (src ,src)
-                 (loading "lazy")
-                 (decoding "async")
-                 (alt ""))))))
+         ,(photo src #:class (mk-class '(h-auto w-full))))))
 
 (define* (carousel-dots count)
   "Return @var{count} buttons, one per slide, for the gallery strip."
@@ -140,7 +167,7 @@
               (div (@ (class "gold-rule")) "")
               (div (@ (class "hero-content max-w-prose flex flex-col gap-8"))
                    ,(p (G_
-                        "Book a boat tour around the beautiful cliffs and caves or rent some nautical equipment for a fun beach day in the Algarve.")
+                        "Two hours on the water with the cliffs, caves and dolphins of the Algarve — or a kayak and a paddleboard for a slower day at the beach.")
                        #:weight '(font-light leading-8)
                        #:family '(font-serif)
                        #:size '(text-lg))
@@ -187,22 +214,23 @@
                                                                     cursor-pointer)
                                          #:hover-background '(hover:bg-jeans-blue-900))
                             #:href "#contact-us-section"))
-                   (div ,(em (G_ "Enjoy the best of")
+                   (div ,(em (G_ "The best of")
                              #:weight '(font-light)
                              #:size '(text-lg))
                         ,(em (G_ " Carvoeiro & Benagil ")
                              #:weight '(font-bold)
                              #:color '(text-onyx-100)
                              #:size '(text-lg))
-                        ,(em (G_ "from the beautiful ocean.")
+                        ,(em (G_ "is only visible from the sea.")
                              #:weight '(font-light)
                              #:size '(text-lg)))))
               (figure (@ (class "hero-media"))
-                      (img (@ (class "hero-media__img")
-                              (src "/img/benagil-cathedral.jpg")
-                              (loading "eager")
-                              (decoding "async")
-                              (alt ""))))))
+                      ,(photo "/img/benagil-cathedral.jpg"
+                              #:class "hero-media__img"
+                              #:loading "eager"
+                              #:priority "high"
+                              #:width 1400
+                              #:height 933))))
 
     (div (@ (class "carousel-shell px-3 py-2")
             (data-reveal "true")
@@ -339,11 +367,7 @@
                          ,(p caption #:size '(text-sm) #:weight '(font-bold))))
                   '())))
     `((div (@ (class ,class))
-           (img (@ (class "")
-                   (src ,src)
-                   (loading "lazy")
-                   (decoding "async")
-                   (alt "")))
+           ,(photo src #:class "")
            ,@badge
            ,@cap))))
 
@@ -355,10 +379,10 @@
               (div (@ (class "card-head"))
                    (div (@ (class "medallion"))
                         ,(icon #:type 'waves #:icon-css '(text-lg)))
-                   ,(h3 (G_ "Enjoy Algarve's spectacular coast")))
+                   ,(h3 (G_ "The Algarve, seen from the sea")))
               (div (@ (class "gold-rule")) "")
               ,(p (G_
-                   "Take a boat tour with us, or row in a kayak, and make your way to the many beautiful caves in the Algarve's coastline.")
+                   "Join a boat tour to the caves and the dolphins, or take a kayak out on your own. Either way, the cliffs look their best from sea level.")
                   #:weight '(font-light leading-8))
               (div (@ (class ,(mk-class '(theme-grid my-6))))
                    ;; A wide split card: the dolphins headline the section.
@@ -369,13 +393,13 @@
                              (div (@ (class "theme-card__eyebrow"))
                                   ,(G_ "Dolphins & wildlife"))
                              ,(p (G_
-                                  "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our coasts, and add to the magical experience of a great holiday here.")
+                                  "Dolphins are a common sight along this coast and often come to ride the bow. Seeing them in the wild is the part guests remember longest.")
                                  #:size '(text-md)
                                  #:weight '(font-light leading-8))))
                    ;; A portrait card, its caption sitting on the photograph.
                    (div (@ (class "glass glass--card theme-card theme-card--tall"))
                         ,@(theme-card-media "/img/FB_IMG_1685655800663.jpg" #f
-                                            #:caption (G_ "Kayak & paddle")
+                                            #:caption (G_ "Kayaks & paddling")
                                             #:caption-icon 'waves))
                    ;; An arched card, echoing the cave mouth below it.
                    (div (@ (class "glass glass--card theme-card theme-card--arch"))
@@ -385,7 +409,7 @@
                              (div (@ (class "theme-card__eyebrow"))
                                   ,(G_ "Benagil & the caves"))
                              ,(p (G_
-                                  "The Algarve’s coastline is known for its beautiful cliffs, rock formations, grottos, and many sea caves.")
+                                  "Benagil’s dome, the heart-shaped window and caves you can only reach by water — this is the stretch everyone comes for.")
                                  #:size '(text-md)
                                  #:weight '(font-light leading-8))))
                    ;; The same coast seen from the land, for contrast.
@@ -393,7 +417,7 @@
                         ,@(theme-card-media "/img/carvoeiro-beach.jpg" 'map-pin)
                         (div (@ (class "theme-card__body"))
                              ,(p (G_
-                                  "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
+                                  "You can walk the clifftops, but the arches, the hidden beaches and the sheer scale of the rock only make sense from below.")
                                  #:size '(text-md)
                                  #:weight '(font-light leading-8))))
                    ;; The one card with no photograph, closing the grid with a
@@ -403,7 +427,8 @@
                              (div (@ (class "medallion"))
                                   ,(icon #:type 'anchor #:icon-css '(text-lg)))
                              ,(h4 (G_ "Your day on the water")))
-                        ,(p (G_ "Ready to see the caves from the water?")
+                        ,(p (G_
+                              "Two hours on the water, a small group and a skipper who knows every arch. Reserve your place before you arrive.")
                             #:size '(text-md)
                             #:weight '(font-light leading-8))
                         ,(a (icon-button #:icon 'calendar
@@ -429,18 +454,18 @@
          (div (@ (class "card-head"))
               (div (@ (class "medallion"))
                    ,(icon #:type 'newspaper #:icon-css '(text-lg)))
-              ,(h4 (G_ "About us - Insurance")))
+              ,(h4 (G_ "Licensed and insured")))
          ,(em (G_
-               "Proceedings from the Municipal Chamber of Lagoa E/8399/2023 date of 2023-03-13.")
+               "Registered with the Municipal Chamber of Lagoa, licence E/8399/2023, issued 13 March 2023.")
               #:size '(text-sm))
          ,(p (G_
-              "Civil Liability Insurance Policy No. 85/25935 Maritime Tourism €50,000.00")
+              "Civil liability insurance, policy no. 85/25935 (maritime tourism): €50,000.")
              #:weight '(font-light)
              #:size '(text-sm))
-         ,(p (G_ "Death or Permanent Disability €1,120,000.00")
+         ,(p (G_ "Death or permanent disability: €1,120,000.")
              #:weight '(font-light)
              #:size '(text-sm))
-         ,(p (G_ "Treatment and Repatriation Expenses €196,000.00")
+         ,(p (G_ "Treatment and repatriation: €196,000.")
              #:weight '(font-light)
              #:size '(text-sm)))))
 
@@ -451,7 +476,7 @@
                    ,(icon #:type 'list-star #:icon-css '(text-lg)))
               ,(h4 (G_ "Leave a review")))
          ,(em (G_
-               "You can read more reviews, and we are thankful if you write us one."))
+               "Read what other guests said — and if you enjoyed the ride, a few words from you help others find us."))
          (a (@ (href "https://maps.app.goo.gl/evwhXe4U8YWzJuDe6")
                (target _blank)
                (rel "noopener"))
@@ -462,11 +487,10 @@
                                                      cursor-pointer)
                           #:size '(text-sm)))
          (div (@ (class "photo-frame review-qr"))
-              (img (@ (class ,(mk-class '(h-auto w-full)))
-                      (src "/img/carvoeiro-water-fun-review.png")
-                      (loading "lazy")
-                      (decoding "async")
-                      (alt "")))))))
+              ,(photo "/img/carvoeiro-water-fun-review.png"
+                      #:class (mk-class '(h-auto w-full))
+                      #:width 259
+                      #:height 259)))))
 
 (define* (carvoeiro-water-fun #:key (locale 'en_US))
   (with-output-to-string (lambda ()
@@ -481,15 +505,15 @@
          ,(h3 `(div (@ (class "card-head"))
                     (div (@ (class "medallion"))
                          ,(icon #:type 'map-pin #:icon-css '(text-lg)))
-                    ,(G_ "Where to find us?")))
+                    ,(G_ "Where to find us")))
          (div (@ (class ,(mk-class '(my-3))))
-              ,(em (G_ "Open daily from 09:00AM until 06:00PM.")))
+              ,(em (G_ "Open daily, 09:00–18:00.")))
          ,(p (G_
-              "You can find us daily, right on Carvoeiro's beach sands, and feel free to approach our co-workers.")
+              "You will find us on the sand at Praia do Carvoeiro — just look for the boats.")
              #:weight '(font-light)
              #:size '(text-md))
          ,(p (G_
-              "We really appreciate it if you can book our services in advance.")
+              "Booking ahead is kindest: it means we can save you a seat on the boat you want.")
              #:weight '(font-light))
          (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
                                           items-center my-4))))
@@ -508,7 +532,7 @@
                          ,(icon #:type 'phone-transfer #:icon-css '(text-lg)))
                     ,(G_ "Contact us")))
          ,(p (G_
-              "Please contact us for reservations and for any questions regarding the boat tour and offers!")
+              "Reservations, questions, or a tip about the sea that day — message us and we will answer.")
              #:weight '(font-light)
              #:size '(text-md))
          (div (@ (class ,(mk-class '(flex flex-row flex-wrap gap-3
@@ -539,10 +563,8 @@
                   #:href "mailto:carvoeirowaterfun@gmail.com"
                   #:extra-classes '(link-lux no-underline)))
          (div (@ (class ,(mk-class '(flex flex-col gap-2 mt-2))))
-              ,(em (G_ "Note: Call costs to mobile network.")
-                   #:size '(text-sm))
               ,(em (G_
-                    "You may incur monetary costs while calling our phone number, as it will be a call to a Portuguese telephone.")
+                    "Calls to a Portuguese mobile may be charged by your operator.")
                    #:size '(text-sm))))))
 
 (define map-frame-url
@@ -570,7 +592,7 @@
                         ,(icon #:type 'compass #:icon-css '(text-lg)))
                    ,(h3 (G_ "Carvoeiro & Benagil in panorama")))
               ,(p (G_
-                   "Take the photograph by its edge and pull: the view turns the way it does from the boat.")
+                   "Drag the photograph sideways, from the beach at Carvoeiro to the roof of the Benagil cave.")
                   #:weight '(font-light leading-8))
               (div (@ (class "panorama-tabs")
                       (role "group")
@@ -579,6 +601,7 @@
                               (type "button")
                               (data-pano-tab "carvoeiro")
                               (data-pano-src "/img/pano-carvoeiro.jpg")
+                              (data-pano-avif "/img/pano-carvoeiro.avif")
                               (data-pano-ratio "2.029")
                               (data-pano-focus "100%")
                               (data-pano-start "0")
@@ -589,6 +612,7 @@
                               (type "button")
                               (data-pano-tab "benagil")
                               (data-pano-src "/img/pano-benagil.jpg")
+                              (data-pano-avif "/img/pano-benagil.avif")
                               (data-pano-ratio "1.899")
                               (data-pano-focus "58%")
                               (data-pano-start "0.85")
@@ -598,6 +622,7 @@
               (div (@ (class "panorama-stage")
                       (data-panorama "true")
                       (data-pano-src "/img/pano-benagil.jpg")
+                      (data-pano-avif "/img/pano-benagil.avif")
                       (data-pano-ratio "1.899")
                       (data-pano-focus "58%")
                       (data-pano-start "0.85")
@@ -627,46 +652,48 @@
                               (dd (G_ "2 hours")
                                   #:size '(text-md))
                               (dt (G_ "Boarding location"))
-                              (dd
-                               "Praia do Carvoeiro (with free transport to Ferragudo)"
-                               #:size '(text-md)))))
+                              (dd (G_
+                                   "Praia do Carvoeiro, with free transport to Ferragudo")
+                                  #:size '(text-md)))))
               ,(p (G_
-                   "This program includes a brief stop by the beach to dive whenever be possible.")
+                   "Weather permitting, we stop by a beach for a swim along the way.")
                   #:size '(text-md)
                   #:weight '(font-light))
               ,(p (G_
-                   "Experience the breathtaking beauty of Portugal's stunning Algarve coastline on this tour. The boarding is done in Carvoeiro, we provide transport to Ferragudo to start the tour.")
+                   "We meet you at Praia do Carvoeiro and drive you to Ferragudo, where the boat is waiting. From there it is two hours of cliffs, caves and open water.")
                   #:size '(text-md)
                   #:weight '(font-light))
               ,(p (G_
-                   "We are a team of professionals, passionate about the sea, who are dedicated to their work to make your trip a unique and unforgettable moment!")
+                   "We are a small team who grew up on this coast. We know which cave is worth the detour and where the dolphins usually are — and we will tell you the stories behind both.")
                   #:size '(text-md)
                   #:weight '(font-light))
               ,(p (G_
-                   "The trip will start heading to the dolphins habitat and on the way back we visit Praia da Marinha, Algar de Benagil, Olhos de Deus, the largest cave in the Algarve, and much more.")
+                   "We head out to the dolphins' feeding grounds first, then turn back along the coast: Praia da Marinha, Algar de Benagil, Olhos de Deus, the largest cave in the Algarve, and a few places with no name at all.")
                   #:size '(text-md)
                   #:weight '(font-light))
               ,(p (G_
-                   "Our professionals like to share their extensive knowledge about the region, as well as marine life, and the local ecosystem, ensuring that all our passengers can fully understand and appreciate the wonderful marine life.")
+                   "Our skippers talk about the marine life and the local ecosystem as we go, so you leave knowing more than when you stepped aboard.")
                   #:size '(text-md)
                   #:weight '(font-light)))
          (div (@ (class ,(mk-class '(md:max-w-1/3 leading-6))))
               (div (@ (class "spec-list spec-list--stacked"))
                    ,(dl (list (dt (G_ "Health & Safety"))
                               (dd (G_
-                                   "We do not recommend the speed boat tour to people with serious back problems, or weighing more than 120kg and pregnant women in late stages of pregnancy.")
+                                   "The speedboat is not suitable for people with serious back problems, anyone weighing more than 120 kg, or late-stage pregnancy.")
                                   #:weight '(font-light)
                                   #:size '(text-md))
                               (dt (G_ "Included"))
-                              (dd (G_ "Life jacket, Waterproofing when necessary.")
+                              (dd (G_
+                                   "Life jacket, and waterproof bags when the sea asks for them.")
                                   #:weight '(font-light)
                                   #:size '(text-md))
                               (dt (G_ "Not included"))
-                              (dd (G_ "Swimsuit, towel, sun lotion, sunglasses.")
+                              (dd (G_
+                                   "Swimsuit, towel, sun cream and sunglasses — bring your own.")
                                   #:weight '(font-light)
                                   #:size '(text-md))
                               (dt (G_ "Cancellation policy"))
                               (dd (G_
-                                   "For a full refund, cancel at least 24 hours in advance of the tour start date.")
+                                   "Cancel at least 24 hours before departure for a full refund.")
                                   #:weight '(font-light)
                                   #:size '(text-md)))))))))

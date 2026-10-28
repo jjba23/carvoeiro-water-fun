@@ -90,7 +90,7 @@
                   #:weight '(font-light)
                   #:extra-classes '(link-lux))
               (span (@ (class "footer-legal__dot")) "·")
-              ,(a "source code"
+              ,(a (G_ "source code")
                   #:href "https://github.com/jjba23/carvoeiro-water-fun"
                   #:size '(text-sm)
                   #:family '(font-sans)

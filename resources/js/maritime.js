@@ -525,7 +525,8 @@
     /**
      * A panorama you can pull by its edge: the photograph slides under the
      * frame, drifts on its own while nobody is holding it, and answers the
-     * keyboard.  A second scene is preloaded only after the first is in view.
+     * keyboard.  The first scene waits for the panel to come into view; the
+     * second is not fetched until somebody reaches for its tab.
      */
     const panorama = () => {
         /** @type {HTMLElement[]} */
@@ -556,17 +557,33 @@
 
             const ratio = () => Number(stage.getAttribute("data-pano-ratio")) || 2;
             const source = () => stage.getAttribute("data-pano-src") || "";
+            const avif = () => stage.getAttribute("data-pano-avif") || "";
             /* Each scene has its own interesting band: the cave arch sits low,
                the village sits at the bottom of its photograph. */
             const focus = () => stage.getAttribute("data-pano-focus") || "center";
             /* Where the scene opens: the village, or the boat in the arch. */
             const start = () => Math.min(1, Math.max(0, Number(stage.getAttribute("data-pano-start")) || 0));
 
+            /* A panorama is a CSS background, so the JPEG is painted first and
+               the AVIF is offered through image-set() where it is understood:
+               a browser that reads neither still shows the photograph. */
+            const canPickFormat = "supports" in CSS
+                && CSS.supports("background-image",
+                    'image-set(url("x.avif") type("image/avif"))');
+
+            const paintSource = (skin, jpg, small) => {
+                if (!jpg) return;
+                skin.style.backgroundImage = "url(" + JSON.stringify(jpg) + ")";
+                if (!small || !canPickFormat) return;
+                skin.style.backgroundImage = "image-set(url("
+                    + JSON.stringify(small) + ') type("image/avif"), url('
+                    + JSON.stringify(jpg) + ') type("image/jpeg"))';
+            };
+
             const load = () => {
                 if (loaded) return;
-                const url = source();
-                if (!url) return;
-                surface.style.backgroundImage = "url(" + JSON.stringify(url) + ")";
+                if (!source()) return;
+                paintSource(surface, source(), avif());
                 loaded = true;
             };
 
@@ -616,12 +633,14 @@
             const select = (tab) => {
                 if (tab.classList.contains("is-active")) return;
                 const url = tab.getAttribute("data-pano-src");
+                const small = tab.getAttribute("data-pano-avif");
                 const value = tab.getAttribute("data-pano-ratio");
                 const label = tab.getAttribute("data-pano-label");
                 const line = tab.getAttribute("data-pano-focus");
                 const entry = tab.getAttribute("data-pano-start");
                 if (!url) return;
                 stage.setAttribute("data-pano-src", url);
+                if (small) stage.setAttribute("data-pano-avif", small);
                 if (value) stage.setAttribute("data-pano-ratio", value);
                 if (line) stage.setAttribute("data-pano-focus", line);
                 if (entry) stage.setAttribute("data-pano-start", entry);
@@ -655,8 +674,24 @@
                 }, 170);
             };
 
+            /* The scene that is not on show is fetched when someone reaches
+               for it — a hover, a tap, a keyboard focus — rather than on the
+               chance that they might. */
+            const warmed = new Set();
+            const warm = (tab) => {
+                const jpg = tab.getAttribute("data-pano-src");
+                const small = tab.getAttribute("data-pano-avif");
+                const url = canPickFormat && small ? small : jpg;
+                if (!url || warmed.has(url)) return;
+                warmed.add(url);
+                const image = new Image();
+                image.src = url;
+            };
+
             tabs.forEach((tab) => {
                 tab.addEventListener("click", () => select(tab));
+                tab.addEventListener("pointerenter", () => warm(tab));
+                tab.addEventListener("focus", () => warm(tab));
             });
 
             stage.addEventListener("pointerenter", (event) => {
@@ -733,17 +768,6 @@
                         measure();
                         x = max * start();
                         paint();
-                        if ("requestIdleCallback" in window) {
-                            requestIdleCallback(() => {
-                                tabs.forEach((tab) => {
-                                    const url = tab.getAttribute("data-pano-src");
-                                    if (url && tab !== tabs[0]) {
-                                        const image = new Image();
-                                        image.src = url;
-                                    }
-                                });
-                            }, { timeout: 4000 });
-                        }
                         watcher.unobserve(stage);
                     });
                 }, { rootMargin: "200px" });

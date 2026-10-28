@@ -435,6 +435,13 @@
 
 /* ====== Photographs ====== */
 
+/* Each photograph is a <picture> with an AVIF source and the JPEG behind it.
+   The wrapper is taken out of the layout so every frame sizes its <img> exactly
+   as it did before. */
+picture {
+    display: contents;
+}
+
 .photo-frame {
     position: relative;
     overflow: hidden;
