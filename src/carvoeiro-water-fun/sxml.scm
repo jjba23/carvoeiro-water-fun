@@ -79,7 +79,7 @@
   (attribute-value->xml value port)
   (display #\" port))
 
-(define (element->xml tag attrs body port)
+(define (element->xml tag attrs body port escape?)
   (check-name tag)
   (display #\< port)
   (display tag port)
@@ -103,7 +103,7 @@
           ((body body))
           (cond
             ((pair? body)
-             (sxml->xml (car body) port)
+             (sxml->xml (car body) port escape?)
              (lp (cdr body)))
             ((null? body)
              (display "</" port)
@@ -161,7 +161,7 @@ present."
                                       (cdar elems))))
                      (element->xml tag attrs
                                    (if attrs
-                                       (cdr elems) elems) port)))))
+                                       (cdr elems) elems) port escape?)))))
          ;; A nodelist.
          (for-each (lambda (x)
                      (sxml->xml x port)) tree)))
