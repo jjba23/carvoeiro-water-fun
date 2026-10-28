@@ -106,6 +106,21 @@
                  (decoding "async")
                  (alt ""))))))
 
+(define* (carousel-dots count)
+  "Return @var{count} buttons, one per slide, for the gallery strip."
+  (do ((i 0 (+ i 1))
+       (acc '() (cons `(button (@ (class ,(if (= i 0)
+                                              "carousel-dot is-active"
+                                              "carousel-dot"))
+                                     (type "button")
+                                     (aria-label ,(format #f "~a ~a"
+                                                          (G_ "Photograph")
+                                                          (+ i 1)))
+                                     (aria-pressed ,(if (= i 0) "true" "false"))
+                                     (data-carousel-dot ,(number->string i)))
+                              "") acc)))
+      ((= i count) (reverse acc))))
+
 (define* (carvoeiro-water-fun-main-body #:key locale)
   `((div (@ (class "hero-shell"))
          (div (@ (class "glass glass--panel hero")
@@ -183,24 +198,50 @@
                              #:size '(text-lg))))))
 
     (div (@ (class "carousel-shell px-3 py-2")
-            (data-reveal "true"))
-         ,(carousel #:id 'first-carousel
+            (data-reveal "true")
+            (data-carousel "true"))
+         (div (@ (class "carousel-frame"))
+              ,(carousel #:id 'first-carousel
                     #:item-width '(w-96)
                     #:item-height '(h-auto)
-                    #:fragments (list (mk-header-img
-                                       "/img/FB_IMG_1719434007758.jpg")
+                    #:fragments (list (mk-header-img "/img/benagil-boat.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434096367.jpg")
                                       (mk-header-img
-                                       "/img/FB_IMG_1719434138555.jpg")
+                                       "/img/FB_IMG_1719434026784.jpg")
                                       (mk-header-img
-                                       "/img/FB_IMG_1719434185151.jpg")
-                                      (mk-header-img "/img/barco-scaled.jpg")
+                                       "/img/FB_IMG_1719434007758.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434387257.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434180086.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434201178.jpg")
                                       (mk-header-img
-                                       "/img/FB_IMG_1719434026784.jpg")
-                                      (mk-header-img "/img/car2.jpeg"))
+                                       "/img/FB_IMG_1719434206316.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434185151.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434405533.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434125429.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434138555.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434142313.jpg")
+                                      (mk-header-img "/img/carvoeiro-beach.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434214171.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434401426.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434089800.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434153508.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1685658664328.jpg")
+                                      (mk-header-img
+                                       "/img/FB_IMG_1719434166275.jpg"))
                     #:carousel-button-css '(glass hover-lift absolute
                                                    bottom-1/2
                                                    w-14
@@ -216,8 +257,13 @@
                                                          overflow-x-scroll
                                                          snap-x
                                                          my-6)))
+         (div (@ (class "carousel-dots")
+                 (role "group")
+                 (aria-label "Gallery"))
+              ,@(carousel-dots 20)))
 
     ,(enjoy-algarve-section)
+    ,(panorama-section)
     (div (@ (class "card-row section-shell"))
          (div (@ (class "glass glass--card")
                  (data-reveal "true"))
@@ -242,6 +288,32 @@
                  (data-reveal "true"))
               ,(insurance-section)))))
 
+;; A card built around a photograph: the image carries the theme, and the body
+;; says what the sea is like there.
+(define* (theme-card-media src icon-type #:key (extra-class "")
+                           (caption #f) (caption-icon 'waves))
+  (let* ((class (if (string=? extra-class "")
+                    "theme-card__media"
+                    (string-append "theme-card__media " extra-class)))
+         (badge (if icon-type
+                    `((div (@ (class "medallion theme-card__badge"))
+                           ,(icon #:type icon-type #:icon-css '(text-lg))))
+                    '()))
+         (cap (if caption
+                  `((div (@ (class "theme-card__caption"))
+                         ,(icon #:type caption-icon
+                                #:icon-css '(text-lg text-white-smoke-100))
+                         ,(p caption #:size '(text-sm) #:weight '(font-bold))))
+                  '())))
+    `((div (@ (class ,class))
+           (img (@ (class "")
+                   (src ,src)
+                   (loading "lazy")
+                   (decoding "async")
+                   (alt "")))
+           ,@badge
+           ,@cap))))
+
 (define* (enjoy-algarve-section)
   `((div (@ (class "section-shell")
             (data-reveal "true"))
@@ -255,48 +327,63 @@
                    "Take a boat tour with us, or row in a kayak, and make your way to the many beautiful caves in the Algarve's coastline.")
                   #:weight '(font-light leading-8))
               (div (@ (class ,(mk-class '(theme-grid my-6))))
-                   (div (@ (class "glass glass--card theme-card"))
-                        (div (@ (class "theme-card__media"))
-                             (img (@ (class "")
-                                     (src "/img/FB_IMG_1719434096367.jpg")
-                                     (loading "lazy")
-                                     (decoding "async")
-                                     (alt "")))
-                             (div (@ (class "medallion theme-card__badge"))
-                                  ,(icon #:type 'fish #:icon-css '(text-lg))))
+                   ;; A wide split card: the dolphins headline the section.
+                   (div (@ (class "glass glass--card theme-card theme-card--feature"))
+                        ,@(theme-card-media "/img/FB_IMG_1719434096367.jpg"
+                                            'fish)
                         (div (@ (class "theme-card__body"))
+                             (div (@ (class "theme-card__eyebrow"))
+                                  ,(G_ "Dolphins & wildlife"))
                              ,(p (G_
                                   "🐬 Corvine and other kinds of dolphins and wildlife are common sight in our coasts, and add to the magical experience of a great holiday here.")
                                  #:size '(text-md)
                                  #:weight '(font-light leading-8))))
-                   (div (@ (class "glass glass--card theme-card"))
-                        (div (@ (class "theme-card__media"))
-                             (img (@ (class "")
-                                     (src "/img/FB_IMG_1719434180086.jpg")
-                                     (loading "lazy")
-                                     (decoding "async")
-                                     (alt "")))
-                             (div (@ (class "medallion theme-card__badge"))
-                                  ,(icon #:type 'island #:icon-css '(text-lg))))
+                   ;; A portrait card, its caption sitting on the photograph.
+                   (div (@ (class "glass glass--card theme-card theme-card--tall"))
+                        ,@(theme-card-media "/img/FB_IMG_1685655800663.jpg" #f
+                                            #:caption (G_ "Kayak & paddle")
+                                            #:caption-icon 'waves))
+                   ;; An arched card, echoing the cave mouth below it.
+                   (div (@ (class "glass glass--card theme-card theme-card--arch"))
+                        ,@(theme-card-media "/img/FB_IMG_1719434201178.jpg"
+                                            'island)
                         (div (@ (class "theme-card__body"))
+                             (div (@ (class "theme-card__eyebrow"))
+                                  ,(G_ "Benagil & the caves"))
                              ,(p (G_
                                   "The Algarve’s coastline is known for its beautiful cliffs, rock formations, grottos, and many sea caves.")
                                  #:size '(text-md)
                                  #:weight '(font-light leading-8))))
+                   ;; The same coast seen from the land, for contrast.
                    (div (@ (class "glass glass--card theme-card"))
-                        (div (@ (class "theme-card__media"))
-                             (img (@ (class "")
-                                     (src "/img/FB_IMG_1719434138555.jpg")
-                                     (loading "lazy")
-                                     (decoding "async")
-                                     (alt "")))
-                             (div (@ (class "medallion theme-card__badge"))
-                                  ,(icon #:type 'boat #:icon-css '(text-lg))))
+                        ,@(theme-card-media "/img/carvoeiro-beach.jpg" 'map-pin)
                         (div (@ (class "theme-card__body"))
                              ,(p (G_
                                   "While it’s possible to enjoy the beauty of the coast from land, seeing it from the sea is a unique experience.")
                                  #:size '(text-md)
-                                 #:weight '(font-light leading-8))))))
+                                 #:weight '(font-light leading-8))))
+                   ;; The one card with no photograph, closing the grid with a
+                   ;; way to book.
+                   (div (@ (class "glass glass--card theme-card theme-card--cta"))
+                        (div (@ (class "card-head"))
+                             (div (@ (class "medallion"))
+                                  ,(icon #:type 'anchor #:icon-css '(text-lg)))
+                             ,(h4 (G_ "Your day on the water")))
+                        ,(p (G_ "Ready to see the caves from the water?")
+                            #:size '(text-md)
+                            #:weight '(font-light leading-8))
+                        ,(a (icon-button #:icon 'calendar
+                                         #:content (G_ "Book your experience")
+                                         #:background '(bg-jeans-blue-500)
+                                         #:color '(text-white-smoke-300)
+                                         #:icon-css '(text-white-smoke-100
+                                                      text-xl)
+                                         #:weight '(font-light)
+                                         #:extra-classes '(hover-lift py-2 px-4
+                                                                    max-w-prose
+                                                                    cursor-pointer)
+                                         #:hover-background '(hover:bg-jeans-blue-900))
+                            #:href "#contact-us-section"))))
      (div (@ (class "grotto-band") (data-reveal "true"))
           (div (@ (class "grotto-frame") (data-parallax "26"))
                (img (@ (class "")
@@ -446,6 +533,74 @@
                     (loading lazy)
                     (referrerpolicy "no-referrer-when-downgrade")
                     (class ,(mk-class '(w-full)))) ""))))
+
+(define* (panorama-section)
+  `((div (@ (class "section-shell panorama-shell")
+            (data-reveal "true"))
+         (div (@ (class "glass glass--panel panorama"))
+              (div (@ (class "card-head"))
+                   (div (@ (class "medallion"))
+                        ,(icon #:type 'compass #:icon-css '(text-lg)))
+                   ,(h3 (G_ "Carvoeiro & Benagil in panorama")))
+              ,(p (G_
+                   "Take the photograph by its edge and pull: the view turns the way it does from the boat.")
+                  #:weight '(font-light leading-8))
+              (div (@ (class "panorama-tabs")
+                      (role "group")
+                      (aria-label "Panorama"))
+                   (button (@ (class "panorama-tab is-active")
+                              (type "button")
+                              (data-pano-tab "carvoeiro")
+                              (data-pano-src "/img/pano-carvoeiro.jpg")
+                              (data-pano-ratio "2.029")
+                              (data-pano-label "Carvoeiro beach")
+                              (aria-pressed "true"))
+                           ,(G_ "Carvoeiro beach"))
+                   (button (@ (class "panorama-tab")
+                              (type "button")
+                              (data-pano-tab "benagil")
+                              (data-pano-src "/img/pano-benagil.jpg")
+                              (data-pano-ratio "1.899")
+                              (data-pano-label "Benagil cave")
+                              (aria-pressed "false"))
+                           ,(G_ "Benagil cave")))
+              (div (@ (class "panorama-stage")
+                      (data-panorama "true")
+                      (data-pano-src "/img/pano-carvoeiro.jpg")
+                      (data-pano-ratio "2.029")
+                      (tabindex "0")
+                      (role "img")
+                      (aria-label "Panorama of Carvoeiro beach"))
+                   (div (@ (class "panorama-surface")) "")
+                   (div (@ (class "panorama-hint"))
+                        ,(icon #:type 'arrows-horizontal
+                               #:icon-css '(text-md))
+                        (span ,(G_ "Drag to look around")))
+                   (div (@ (class "panorama-rail"))
+                        (div (@ (class "panorama-rail__thumb")) "")))
+              (div (@ (class "panorama-credit"))
+                   ,(p (G_ "Photographs:")
+                       #:size '(text-sm)
+                       #:weight '(font-light))
+                   ,(a "Enric Rubio Ros"
+                       #:href "https://www.flickr.com/photos/windenric1/51844729713/"
+                       #:size '(text-sm)
+                       #:extra-classes '(link-lux))
+                   (span (@ (class "panorama-credit__dot")) "·")
+                   ,(a "CC BY 2.0"
+                       #:href "https://creativecommons.org/licenses/by/2.0/"
+                       #:size '(text-sm)
+                       #:extra-classes '(link-lux))
+                   (span (@ (class "panorama-credit__dot")) "·")
+                   ,(a "Vitor Oliveira"
+                       #:href "https://www.flickr.com/photos/vitor107/16247829346/"
+                       #:size '(text-sm)
+                       #:extra-classes '(link-lux))
+                   (span (@ (class "panorama-credit__dot")) "·")
+                   ,(a "CC BY-SA 2.0"
+                       #:href "https://creativecommons.org/licenses/by-sa/2.0/"
+                       #:size '(text-sm)
+                       #:extra-classes '(link-lux)))))))
 
 (define* (about-boat-tour-section)
   `((div (@ (id about-boat-tour-section)

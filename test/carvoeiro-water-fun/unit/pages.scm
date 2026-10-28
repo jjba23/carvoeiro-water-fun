@@ -106,6 +106,16 @@ recognised by the absence of an extension."
                             #:name "the boat tour heading is translated")
                (assert-false (mentions? portuguese-page ">Contact us<")
                              #:name "the English heading is not left behind"))
+         (test "the source code is offered under the MIT licence"
+               (assert-true (mentions? english-page
+                                        "licensed under the MIT License")
+                            #:name "the English footer names the MIT licence")
+               (assert-true (mentions? portuguese-page "Licença MIT")
+                            #:name "the Portuguese footer names the MIT licence")
+               (assert-false (mentions? english-page "Affero")
+                             #:name "the old licence is gone")
+               (assert-false (mentions? portuguese-page "Affero")
+                             #:name "the old licence is gone in Portuguese"))
          (test "the sea sits behind the content"
                (assert-true (appears-before? english-page "tide-line" "page-layer")
                             #:name "the reading line comes before the page")
@@ -159,6 +169,69 @@ recognised by the absence of an extension."
                             #:name "a cave is lit from above")
                (assert-true (mentions? english-page "FB_IMG_1719434196131.jpg")
                             #:name "the grotto is framed"))
+         (test "the gallery opens on the boat beneath Benagil"
+               (assert-true (mentions? english-page "/img/benagil-boat.jpg")
+                            #:name "the high resolution boat photograph is used")
+               (assert-true (appears-before? english-page
+                                             "benagil-boat.jpg"
+                                             "FB_IMG_1719434096367.jpg")
+                            #:name "it is the first slide"))
+         (test "kayaks, guests and the heart of the cave are on the page"
+               (assert-true (mentions? english-page
+                                        "FB_IMG_1685655800663.jpg")
+                            #:name "a kayak is paddled below the cliffs")
+               (assert-true (mentions? english-page
+                                        "FB_IMG_1719434125429.jpg")
+                            #:name "guests are aboard the boat")
+               (assert-true (mentions? english-page
+                                        "FB_IMG_1719434206316.jpg")
+                            #:name "the heart shaped cave is shown")
+               (assert-true (mentions? english-page
+                                        "/img/carvoeiro-beach.jpg")
+                            #:name "the village beach is shown from above"))
+         (test "the cards are not all the same shape"
+               (for-each (lambda (class)
+                           (assert-true (mentions? english-page class)
+                                        #:name (string-append class
+                                                              " is on the page")))
+                         '("theme-card--feature" "theme-card--tall"
+                           "theme-card--arch" "theme-card--cta")))
+         (test "the footer offers a way around the page"
+               (assert-true (mentions? english-page "footer-brand")
+                            #:name "the brand block is there")
+               (assert-true (mentions? english-page "footer-nav")
+                            #:name "the navigation block is there")
+               (assert-true (mentions? english-page "footer-legal")
+                            #:name "the legal row is there"))
+         (test "the gallery moves, stops and can be pulled"
+               (assert-true (>= (match-count "data-carousel-dot" english-page) 10)
+                            #:name "there is a dot for every slide")
+               (assert-true (mentions? motion-script "setInterval")
+                            #:name "the strip can advance itself")
+               (assert-true (mentions? motion-script "list.setPointerCapture")
+                            #:name "the strip can be dragged")
+               (assert-true (mentions? motion-script "event.key === \"ArrowRight\"")
+                            #:name "the strip answers the keyboard")  
+               (assert-true (mentions? motion-script "document.hidden")
+                            #:name "autoplay stops in a hidden tab"))
+         (test "the panorama holds two scenes of the coast"
+               (assert-true (mentions? english-page "data-panorama")
+                            #:name "the viewer is on the page")
+               (assert-true (mentions? english-page "data-pano-tab")
+                            #:name "both scenes have a tab")
+               (assert-true (file-exists? "resources/img/pano-carvoeiro.jpg")
+                            #:name "the Carvoeiro panorama exists")
+               (assert-true (file-exists? "resources/img/pano-benagil.jpg")
+                            #:name "the Benagil panorama exists")
+               (assert-true (mentions? portuguese-page "Arraste para olhar em volta")
+                            #:name "the hint is translated"))
+         (test "the borrowed panoramas are credited"
+               (assert-true (mentions? english-page "Enric Rubio Ros")
+                            #:name "the cave photographer is named")
+               (assert-true (mentions? english-page "Vitor Oliveira")
+                            #:name "the beach photographer is named")
+               (assert-true (mentions? english-page "CC BY-SA 2.0")
+                            #:name "the share-alike licence is named"))
          (test "the cave drifts as the page is read"
                (assert-true (mentions? english-page "data-parallax")
                             #:name "the grotto asks for a parallax layer"))

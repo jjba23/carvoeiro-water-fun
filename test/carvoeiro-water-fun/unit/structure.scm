@@ -83,7 +83,32 @@
                          '(".photo-frame" ".gold-rule" ".spec-list" ".shimmer"
                            ".footer-glass" ".carousel-glass" ".hero-title-row"
                            ".theme-card" ".medallion" ".grotto-frame"
-                           ".card-row")))
+                           ".card-row" ".footer-grid" ".footer-legal"
+                           ".theme-card--feature" ".theme-card--tall"
+                           ".theme-card--arch" ".theme-card--cta"
+                           ".theme-card__caption" ".carousel-dot"
+                           ".carousel-dots" ".panorama-stage"
+                           ".panorama-hint" ".panorama-rail")))
+         (test "a dragged gallery stops snapping while it moves"
+               (assert-true (mentions? stylesheet ".carousel-glass.is-dragging")
+                            #:name "the dragging state is styled")
+               (assert-true (mentions? stylesheet "cursor: grab")
+                            #:name "the strip offers a hand"))
+         (test "the hairlines are warm white rather than grey"
+               (assert-true (mentions? stylesheet "--glass-line")
+                            #:name "the pane hairline is a variable")
+               (assert-true (mentions? stylesheet
+                                        "--glass-line: rgb(255 252 246")
+                            #:name "it is a warm white, held low")
+               (assert-false (mentions? stylesheet "rgb(255 255 255 / 0.8)")
+                             #:name "the old grey-white line is gone"))
+         (test "a phone shows the content, not the gutter"
+               (assert-true (mentions? stylesheet "@media (max-width: 640px)")
+                            #:name "there is a phone breakpoint")
+               (assert-true (mentions? stylesheet ".hero-shell {\n        padding: 0.7rem")
+                            #:name "the hero gutter is tightened")
+               (assert-true (mentions? stylesheet ".glass--panel {\n        padding: 1.05rem")
+                            #:name "the panel padding is tightened"))
          (test "every animation has keyframes"
                (for-each (lambda (name)
                            (assert-true (member? name (keyframe-names stylesheet))

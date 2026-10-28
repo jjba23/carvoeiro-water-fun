@@ -17,12 +17,14 @@
     --sea-foam: oklch(0.97 0.01 205);
     --brass: oklch(0.74 0.09 82);
     --brass-deep: oklch(0.55 0.08 74);
-    --glass-line: rgb(255 255 255 / 0.8);
+    /* Warm, barely-there hairlines: the panes are held by light, not by grey. */
+    --glass-line: rgb(255 252 246 / 0.5);
+    --glass-line-strong: rgb(255 253 249 / 0.72);
     --glass-blur: 26px;
-    --glass-shadow: 0 26px 60px -34px oklch(0.28 0.04 240 / 0.5),
-        0 2px 12px oklch(0.28 0.04 240 / 0.05);
-    --glass-shadow-lifted: 0 38px 80px -36px oklch(0.28 0.04 240 / 0.55),
-        0 10px 24px oklch(0.28 0.04 240 / 0.07);
+    --glass-shadow: 0 24px 56px -38px oklch(0.36 0.03 232 / 0.34),
+        0 2px 10px oklch(0.36 0.03 232 / 0.04);
+    --glass-shadow-lifted: 0 34px 72px -40px oklch(0.36 0.03 232 / 0.4),
+        0 8px 20px oklch(0.36 0.03 232 / 0.05);
     --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -156,12 +158,12 @@
     border: 1px solid var(--glass-line);
     background:
         linear-gradient(158deg,
-                        oklch(1 0 0 / 0.88),
-                        oklch(1 0 0 / 0.62) 56%,
-                        oklch(0.975 0.01 205 / 0.62));
+                        oklch(1 0 0 / 0.92),
+                        oklch(1 0 0 / 0.68) 56%,
+                        oklch(0.985 0.006 205 / 0.66));
     box-shadow:
         inset 0 1px 0 oklch(1 0 0 / 0.95),
-        inset 0 -1px 0 oklch(1 0 0 / 0.35),
+        inset 0 -1px 0 oklch(1 0 0 / 0.25),
         var(--glass-shadow);
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(165%) brightness(1.02);
     backdrop-filter: blur(var(--glass-blur)) saturate(165%) brightness(1.02);
@@ -182,8 +184,8 @@
     position: absolute;
     inset: 8px;
     border-radius: inherit;
-    border: 1px solid color-mix(in oklab, var(--brass) 38%, transparent);
-    opacity: 0.32;
+    border: 1px solid color-mix(in oklab, var(--brass) 30%, transparent);
+    opacity: 0.2;
     pointer-events: none;
     transition: opacity 700ms var(--ease-lux);
 }
@@ -217,7 +219,7 @@
 .glass--card:hover,
 .glass--card:focus-within {
     transform: translateY(-5px);
-    border-color: color-mix(in oklab, var(--brass) 70%, white);
+    border-color: var(--glass-line-strong);
     box-shadow:
         inset 0 1px 0 oklch(1 0 0 / 0.95),
         var(--glass-shadow-lifted);
@@ -231,7 +233,7 @@
 
 .glass--card:hover::before,
 .glass--card:focus-within::before {
-    opacity: 0.85;
+    opacity: 0.55;
 }
 
 /* Panels that follow the pointer a little; the script writes the angles. */
@@ -338,7 +340,7 @@
     overflow: hidden;
     border-radius: 22px;
     border: 1px solid var(--glass-line);
-    box-shadow: 0 24px 48px -34px oklch(0.28 0.04 240 / 0.7);
+    box-shadow: 0 22px 44px -34px oklch(0.36 0.03 232 / 0.42);
     background: oklch(0.97 0.01 205);
 }
 
@@ -424,14 +426,18 @@
         0 0 0 1px color-mix(in oklab, var(--brass) 55%, transparent);
 }
 
-/* Cards built around a photograph: the image carries the theme. */
+/* Cards built around a photograph.  Several shapes share the grid, so the
+   section reads as a spread rather than a row of identical tiles. */
 .theme-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
-    gap: clamp(1rem, 2.4vw, 1.75rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2.2vw, 1.5rem);
+    align-items: stretch;
 }
 
 .theme-card {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     padding: 0;
 }
@@ -469,9 +475,20 @@
 
 .theme-card__body {
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     gap: 0.7rem;
+    justify-content: center;
     padding: clamp(1.15rem, 2.2vw, 1.7rem);
+}
+
+/* The small serif label that names each scene. */
+.theme-card__eyebrow {
+    font-family: 'Lora', ui-serif, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
 }
 
 /* The card's icon sits on the photograph, like a wax seal on a postcard. */
@@ -481,6 +498,117 @@
     bottom: 1rem;
     width: 2.5rem;
     height: 2.5rem;
+}
+
+/* A wide card: photograph on one side, the wildlife note on the other. */
+.theme-card--feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    grid-column: span 2;
+}
+
+.theme-card--feature .theme-card__media {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 19rem;
+}
+
+/* A portrait card, cropped tall and captioned on the glass. */
+.theme-card--tall .theme-card__media {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 21rem;
+}
+
+/* The kayak sits low and right in its frame; keep it in the crop. */
+.theme-card--tall .theme-card__media img {
+    object-position: 62% 72%;
+}
+
+.theme-card__caption {
+    position: absolute;
+    left: 1rem;
+    right: auto;
+    bottom: 1rem;
+    max-width: calc(100% - 2rem);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid oklch(1 0 0 / 0.42);
+    border-radius: 999px;
+    background: linear-gradient(155deg,
+                              oklch(0.3 0.03 232 / 0.5),
+                              oklch(0.16 0.03 232 / 0.68));
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.4);
+    color: oklch(1 0 0);
+}
+
+.theme-card__caption p {
+    margin: 0;
+    color: inherit;
+    text-shadow: 0 1px 2px oklch(0.2 0.03 232 / 0.35);
+}
+
+/* An arched card, so the grid echoes the cave mouth below it. */
+.theme-card--arch .theme-card__media {
+    aspect-ratio: 1 / 1;
+    margin: 0.85rem 0.85rem 0;
+    border-radius: 50% 50% 0 0 / 38% 38% 0 0;
+}
+
+/* The only card with no photograph: a clear way to book. */
+.theme-card--cta {
+    justify-content: center;
+    gap: 0.85rem;
+    padding: clamp(1.3rem, 2.4vw, 1.8rem);
+    background:
+        radial-gradient(120% 90% at 8% 0%,
+                        oklch(1 0 0 / 0.95),
+                        transparent 62%),
+        linear-gradient(150deg,
+                        oklch(0.97 0.015 205 / 0.92),
+                        oklch(0.91 0.03 214 / 0.86));
+}
+
+.theme-card--cta .card-head {
+    margin-bottom: 0;
+}
+
+.theme-card--cta a {
+    align-self: flex-start;
+}
+
+@media (max-width: 960px) {
+    .theme-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .theme-card--feature {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .theme-card--feature .theme-card__media {
+        aspect-ratio: 16 / 9;
+        height: auto;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .theme-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .theme-card--feature {
+        grid-column: auto;
+    }
+
+    .theme-card--tall .theme-card__media {
+        min-height: 17rem;
+    }
 }
 
 /* ====== The grotto ====== */
@@ -498,7 +626,7 @@
     overflow: hidden;
     height: clamp(16rem, 31vw, 23rem);
     border-radius: 50% 50% 1.5rem 1.5rem / 54% 54% 1.5rem 1.5rem;
-    border: 1px solid oklch(1 0 0 / 0.8);
+    border: 1px solid oklch(1 0 0 / 0.6);
     background: oklch(0.3 0.03 232);
     box-shadow:
         inset 0 1px 0 oklch(1 0 0 / 0.9),
@@ -554,6 +682,10 @@
     aspect-ratio: 4 / 3;
 }
 
+.carousel-glass .carousel-list-item {
+    scroll-snap-align: start;
+}
+
 .carousel-glass .photo-frame img {
     height: 100%;
     object-fit: cover;
@@ -573,8 +705,14 @@
     -webkit-backdrop-filter: blur(22px) saturate(160%);
     backdrop-filter: blur(22px) saturate(160%);
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: oklch(0.28 0.04 240 / 0.35) transparent;
+    /* Snap each slide to the same inset the strip starts with, so a dot and
+       the photograph it names always line up. */
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 1.12rem;
+    /* The dots, the arrows and the drag are the controls; a native scrollbar
+       under the glass only ever read as a stray grey rule. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     transition: box-shadow 700ms var(--ease-lux);
 }
 
@@ -585,16 +723,9 @@
 }
 
 .carousel-glass::-webkit-scrollbar {
-    height: 8px;
-}
-
-.carousel-glass::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.carousel-glass::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-    background: oklch(0.28 0.04 240 / 0.3);
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 .carousel-glass button {
@@ -606,6 +737,238 @@
 .carousel-glass button:hover {
     transform: scale(1.08);
     box-shadow: 0 16px 30px -18px oklch(0.28 0.04 240 / 0.55);
+}
+
+/* ====== Gallery controls ====== */
+
+.carousel-glass {
+    cursor: grab;
+}
+
+.carousel-glass.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+.carousel-glass.is-dragging img {
+    pointer-events: none;
+}
+
+.carousel-dots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: center;
+    margin: -0.35rem 0 0.65rem;
+}
+
+.carousel-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--sea-ink) 22%, white);
+    cursor: pointer;
+    transition: width 520ms var(--ease-lux),
+        background 520ms var(--ease-lux),
+        box-shadow 520ms var(--ease-lux);
+}
+
+.carousel-dot:hover {
+    background: color-mix(in oklab, var(--sea-ink) 45%, white);
+}
+
+.carousel-dot.is-active {
+    width: 1.5rem;
+    background: linear-gradient(90deg, var(--brass), var(--sea-mid));
+    box-shadow: 0 2px 8px -2px oklch(0.55 0.08 74 / 0.6);
+}
+
+/* ====== The panorama ====== */
+
+.panorama {
+    padding-bottom: clamp(1.1rem, 2.4vw, 1.6rem);
+}
+
+.panorama-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.1rem 0 0.9rem;
+}
+
+.panorama-tab {
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--glass-line-strong);
+    border-radius: 999px;
+    background: oklch(1 0 0 / 0.55);
+    color: var(--sea-ink);
+    font-family: 'Lora', ui-serif, serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background 500ms var(--ease-lux),
+        border-color 500ms var(--ease-lux),
+        box-shadow 500ms var(--ease-lux);
+}
+
+.panorama-tab:hover {
+    background: oklch(1 0 0 / 0.85);
+}
+
+.panorama-tab.is-active {
+    border-color: color-mix(in oklab, var(--brass) 62%, white);
+    background: linear-gradient(155deg,
+                              oklch(0.99 0.012 84 / 0.98),
+                              oklch(0.94 0.03 84 / 0.94));
+    color: var(--brass-deep);
+    box-shadow:
+        inset 0 1px 0 oklch(1 0 0 / 1),
+        0 0 0 1px color-mix(in oklab, var(--brass) 28%, transparent),
+        0 10px 20px -16px oklch(0.36 0.03 232 / 0.5);
+}
+
+.panorama-stage {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 21 / 9;
+    border: 1px solid var(--glass-line);
+    border-radius: 26px;
+    background: linear-gradient(160deg,
+                              oklch(0.9 0.02 210),
+                              oklch(0.76 0.045 222));
+    box-shadow:
+        inset 0 1px 0 oklch(1 0 0 / 0.9),
+        0 30px 60px -46px oklch(0.36 0.03 232 / 0.6);
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.panorama-stage.is-dragging {
+    cursor: grabbing;
+}
+
+.panorama-surface {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: auto 165%;
+    transition: background-position 260ms linear,
+        opacity 320ms var(--ease-lux);
+    will-change: background-position;
+}
+
+/* Changing scene dips the photograph rather than snapping it. */
+.panorama-surface.is-swapping {
+    opacity: 0.15;
+}
+
+.panorama-stage.is-dragging .panorama-surface {
+    transition: none;
+}
+
+/* A soft vignette so the photograph sits inside the glass. */
+.panorama-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(120% 95% at 50% 42%,
+                                transparent 52%,
+                                oklch(0.2 0.03 232 / 0.3));
+}
+
+.panorama-hint {
+    position: absolute;
+    left: 1rem;
+    bottom: 1.6rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid oklch(1 0 0 / 0.38);
+    border-radius: 999px;
+    background: linear-gradient(155deg,
+                              oklch(0.3 0.03 232 / 0.48),
+                              oklch(0.16 0.03 232 / 0.66));
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    color: oklch(1 0 0);
+    font-size: 0.8rem;
+    transition: opacity 600ms var(--ease-lux),
+        transform 600ms var(--ease-lux);
+}
+
+.panorama-stage.is-used .panorama-hint {
+    opacity: 0;
+    transform: translateY(4px);
+}
+
+.panorama-rail {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.75rem;
+    z-index: 2;
+    height: 4px;
+    border-radius: 999px;
+    background: oklch(0.2 0.03 232 / 0.38);
+    box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.25);
+    overflow: hidden;
+}
+
+.panorama-rail__thumb {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, oklch(1 0 0), var(--brass));
+    transition: width 200ms linear, left 200ms linear;
+}
+
+.panorama-credit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.8rem;
+    color: color-mix(in oklab, var(--sea-ink) 68%, white);
+}
+
+.panorama-credit p {
+    margin: 0;
+}
+
+.panorama-credit a {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.panorama-credit a:hover {
+    color: var(--sea-deep);
+}
+
+.panorama-credit__dot {
+    opacity: 0.5;
+}
+
+@media (max-width: 760px) {
+    .panorama-stage {
+        aspect-ratio: 4 / 3;
+        border-radius: 20px;
+    }
+
+    .panorama-surface {
+        background-size: auto 138%;
+    }
 }
 
 /* ====== Details and links ====== */
@@ -726,13 +1089,16 @@
 
 .footer-glass {
     position: relative;
+    margin-top: clamp(2rem, 5vw, 3.5rem);
+    padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1.25rem, 6vw, 3.5rem)
+        clamp(1.25rem, 3vw, 1.9rem);
     background:
         linear-gradient(180deg,
-                        oklch(1 0 0 / 0.72),
-                        oklch(0.96 0.012 210 / 0.66));
-    border-top: 1px solid color-mix(in oklab, var(--brass) 45%, transparent);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
-    backdrop-filter: blur(24px) saturate(150%);
+                        oklch(1 0 0 / 0.78),
+                        oklch(0.965 0.012 210 / 0.7));
+    border-top: 1px solid color-mix(in oklab, var(--brass) 30%, transparent);
+    -webkit-backdrop-filter: blur(26px) saturate(150%);
+    backdrop-filter: blur(26px) saturate(150%);
 }
 
 .footer-glass::before {
@@ -745,6 +1111,151 @@
                               transparent,
                               var(--brass) 50%,
                               transparent);
+    opacity: 0.7;
+}
+
+/* Three quiet columns: who we are, where to go, how to reach us. */
+.footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.75fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+    max-width: 72rem;
+    margin-inline: auto;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    max-width: 24rem;
+}
+
+.footer-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    margin-bottom: 0.15rem;
+    border: 1px solid color-mix(in oklab, var(--brass) 38%, white);
+    border-radius: 999px;
+    color: var(--sea-deep);
+    background: linear-gradient(160deg,
+                              oklch(1 0 0 / 0.95),
+                              oklch(1 0 0 / 0.6));
+    box-shadow:
+        inset 0 1px 0 oklch(1 0 0 / 1),
+        0 10px 22px -16px oklch(0.36 0.03 232 / 0.45);
+}
+
+.footer-name {
+    font-family: 'Lora', ui-serif, serif;
+    font-size: clamp(1.2rem, 2vw, 1.45rem);
+    letter-spacing: 0.01em;
+    color: var(--sea-ink);
+}
+
+.footer-col__title {
+    margin-bottom: 0.35rem;
+    font-family: 'Lora', ui-serif, serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+}
+
+.footer-nav,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.42rem;
+}
+
+.footer-contact__row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-nav a,
+.footer-contact a,
+.footer-legal a {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.footer-nav a,
+.footer-contact a {
+    font-size: 0.95rem;
+}
+
+.footer-legal a {
+    color: var(--sea-ink);
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover,
+.footer-legal a:hover {
+    color: var(--sea-deep);
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 72rem;
+    margin: clamp(1.75rem, 3.5vw, 2.5rem) auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid oklch(1 0 0 / 0.55);
+    color: color-mix(in oklab, var(--sea-ink) 72%, white);
+}
+
+.footer-legal p {
+    margin: 0;
+}
+
+.footer-legal__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.footer-legal__dot {
+    opacity: 0.5;
+}
+
+@media (max-width: 760px) {
+    .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.6rem;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.4rem;
+    }
+
+    .footer-legal__links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.15rem;
+    }
+
+    .footer-legal__dot {
+        display: none;
+    }
+
+    .footer-legal__links a:last-child::before {
+        content: "· ";
+        opacity: 0.5;
+    }
 }
 
 /* ====== Scroll reveal (only hidden when the script can reveal it) ====== */
@@ -898,5 +1409,99 @@
 
     .hero {
         border-radius: 22px;
+    }
+
+    /* Tighter gutters, so a phone shows the content rather than the margin. */
+    .hero-shell {
+        padding: 0.7rem 0.7rem 0;
+    }
+
+    .section-shell {
+        margin: 0.7rem;
+    }
+
+    .glass--panel {
+        padding: 1.05rem;
+    }
+
+    .glass--card:not(.theme-card) {
+        border-radius: 22px;
+        padding: 1rem;
+    }
+
+    .card-row,
+    .theme-grid {
+        gap: 0.7rem;
+    }
+
+    .card-head {
+        gap: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .medallion {
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+
+    .theme-card__body {
+        padding: 0.95rem;
+    }
+
+    .theme-card--cta {
+        padding: 1.05rem;
+    }
+
+    .grotto-band {
+        margin: 1.1rem 0.7rem;
+    }
+
+    .gold-rule {
+        margin: 1.1rem auto;
+    }
+
+    .footer-glass {
+        padding: 1.8rem 0.9rem 1.1rem;
+    }
+
+    /* One photograph fills the phone, the next one only peeks in. */
+    .carousel-list {
+        gap: 0.85rem;
+        padding: 0.7rem;
+        scroll-padding-left: 0.7rem;
+    }
+
+    .carousel-list-item {
+        width: min(74vw, 18rem);
+    }
+
+    .carousel-frame button {
+        width: 2.55rem;
+        height: 2.55rem;
+        font-size: 1.35rem;
+    }
+
+    /* Twenty dots have to stay on one line. */
+    .carousel-dots {
+        gap: 0.28rem;
+        margin: -0.1rem 0 0.6rem;
+    }
+
+    .carousel-dot,
+    .carousel-dot.is-active {
+        height: 0.36rem;
+    }
+
+    .carousel-dot {
+        width: 0.36rem;
+    }
+
+    .carousel-dot.is-active {
+        width: 1rem;
+    }
+
+    .panorama-rail {
+        left: 0.7rem;
+        right: 0.7rem;
     }
 }
