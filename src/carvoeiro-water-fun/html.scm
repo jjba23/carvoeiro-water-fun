@@ -260,30 +260,7 @@
          (div (@ (class "carousel-dots")
                  (role "group")
                  (aria-label "Gallery"))
-              ,@(carousel-dots 20))
-         (div (@ (class "panorama-credit carousel-credit"))
-              ,(p (G_ "Photographs:")
-                  #:size '(text-sm)
-                  #:weight '(font-light))
-              ,(a "Joseolgon"
-                  #:href "https://commons.wikimedia.org/wiki/User:Joseolgon"
-                  #:size '(text-sm)
-                  #:extra-classes '(link-lux))
-              (span (@ (class "panorama-credit__dot")) "·")
-              ,(a "CC BY-SA 4.0"
-                  #:href "https://creativecommons.org/licenses/by-sa/4.0/"
-                  #:size '(text-sm)
-                  #:extra-classes '(link-lux))
-              (span (@ (class "panorama-credit__dot")) "·")
-              ,(a "muffinn"
-                  #:href "https://www.flickr.com/people/26445715@N00"
-                  #:size '(text-sm)
-                  #:extra-classes '(link-lux))
-              (span (@ (class "panorama-credit__dot")) "·")
-              ,(a "CC BY 2.0"
-                  #:href "https://creativecommons.org/licenses/by/2.0/"
-                  #:size '(text-sm)
-                  #:extra-classes '(link-lux))))
+              ,@(carousel-dots 20)))
 
     ,(enjoy-algarve-section)
     ,(panorama-section)
@@ -337,9 +314,10 @@
            ,@badge
            ,@cap))))
 
+;; This first section is deliberately not hidden behind a scroll reveal: it
+;; carries the page's opening pitch and must be readable the moment it loads.
 (define* (enjoy-algarve-section)
-  `((div (@ (class "section-shell")
-            (data-reveal "true"))
+  `((div (@ (class "section-shell"))
          (div (@ (class "glass glass--panel"))
               (div (@ (class "card-head"))
                    (div (@ (class "medallion"))
@@ -406,14 +384,7 @@
                                                                     max-w-prose
                                                                     cursor-pointer)
                                          #:hover-background '(hover:bg-jeans-blue-900))
-                            #:href "#contact-us-section"))))
-     (div (@ (class "grotto-band") (data-reveal "true"))
-          (div (@ (class "grotto-frame") (data-parallax "26"))
-               (img (@ (class "")
-                       (src "/img/FB_IMG_1719434196131.jpg")
-                       (loading "lazy")
-                       (decoding "async")
-                       (alt ""))))))))
+                            #:href "#contact-us-section")))))))
 
 (define* (insurance-section)
   `((div (@ (class ,(mk-class '(px-4 md:px-6
@@ -571,7 +542,7 @@
               (div (@ (class "panorama-tabs")
                       (role "group")
                       (aria-label "Panorama"))
-                   (button (@ (class "panorama-tab is-active")
+                   (button (@ (class "panorama-tab")
                               (type "button")
                               (data-pano-tab "carvoeiro")
                               (data-pano-src "/img/pano-carvoeiro.jpg")
@@ -579,9 +550,9 @@
                               (data-pano-focus "100%")
                               (data-pano-start "0")
                               (data-pano-label "Carvoeiro beach")
-                              (aria-pressed "true"))
+                              (aria-pressed "false"))
                            ,(G_ "Carvoeiro beach"))
-                   (button (@ (class "panorama-tab")
+                   (button (@ (class "panorama-tab is-active")
                               (type "button")
                               (data-pano-tab "benagil")
                               (data-pano-src "/img/pano-benagil.jpg")
@@ -589,17 +560,17 @@
                               (data-pano-focus "58%")
                               (data-pano-start "0.85")
                               (data-pano-label "Benagil cave")
-                              (aria-pressed "false"))
+                              (aria-pressed "true"))
                            ,(G_ "Benagil cave")))
               (div (@ (class "panorama-stage")
                       (data-panorama "true")
-                      (data-pano-src "/img/pano-carvoeiro.jpg")
-                      (data-pano-ratio "2.029")
-                      (data-pano-focus "100%")
-                      (data-pano-start "0")
+                      (data-pano-src "/img/pano-benagil.jpg")
+                      (data-pano-ratio "1.899")
+                      (data-pano-focus "58%")
+                      (data-pano-start "0.85")
                       (tabindex "0")
                       (role "img")
-                      (aria-label "Panorama of Carvoeiro beach"))
+                      (aria-label "Panorama of the Benagil cave"))
                    (div (@ (class "panorama-surface")) "")
                    (div (@ (class "panorama-hint"))
                         ,(icon #:type 'arrows-horizontal

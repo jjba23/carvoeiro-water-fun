@@ -82,14 +82,14 @@
                                                               " is defined")))
                          '(".photo-frame" ".gold-rule" ".spec-list" ".shimmer"
                            ".footer-glass" ".carousel-glass" ".hero-title-row"
-                           ".theme-card" ".medallion" ".grotto-frame"
+                           ".theme-card" ".medallion"
                            ".card-row" ".footer-grid" ".footer-legal"
                            ".theme-card--feature" ".theme-card--tall"
                            ".theme-card--arch" ".theme-card--cta"
                            ".theme-card__caption" ".carousel-dot"
                            ".carousel-dots" ".panorama-stage"
                            ".panorama-hint" ".panorama-rail"
-                           ".carousel-credit")))
+                           ".footer-credit")))
          (test "a dragged gallery stops snapping while it moves"
                (assert-true (mentions? stylesheet ".carousel-glass.is-dragging")
                             #:name "the dragging state is styled")

@@ -166,9 +166,7 @@ recognised by the absence of an extension."
                (assert-true (mentions? english-page "FB_IMG_1719434138555.jpg")
                             #:name "the boat waits in the harbour")
                (assert-true (mentions? english-page "/img/benagil-cathedral.jpg")
-                            #:name "a cave is lit from above")
-               (assert-true (mentions? english-page "FB_IMG_1719434196131.jpg")
-                            #:name "the grotto is framed"))
+                            #:name "a cave is lit from above"))
          (test "the gallery opens on the boat beneath Benagil"
                (assert-true (mentions? english-page "/img/benagil-boat.jpg")
                             #:name "the high resolution boat photograph is used")
@@ -197,15 +195,9 @@ recognised by the absence of an extension."
                                              "ferragudo-village.jpg"
                                              "FB_IMG_1719434138555.jpg")
                             #:name "Ferragudo is not buried at the end"))
-         (test "the borrowed cave and village frames are credited"
-               (assert-true (mentions? english-page "carousel-credit")
-                            #:name "the gallery carries a credit line")
-               (assert-true (mentions? english-page "Joseolgon")
-                            #:name "the cave photographer is named")
-               (assert-true (mentions? english-page "muffinn")
-                            #:name "the Ferragudo photographer is named")
-               (assert-true (mentions? english-page "CC BY-SA 4.0")
-                            #:name "the cave licence is named"))
+         (test "the gallery keeps a clean lower edge"
+               (assert-false (mentions? english-page "carousel-credit")
+                             #:name "no credit strip sits under the dots"))
          (test "kayaks, guests and the heart of the cave are on the page"
                (assert-true (mentions? english-page
                                         "FB_IMG_1685655800663.jpg")
@@ -233,6 +225,18 @@ recognised by the absence of an extension."
                             #:name "the navigation block is there")
                (assert-true (mentions? english-page "footer-legal")
                             #:name "the legal row is there"))
+         (test "the borrowed photographs are credited at the foot of the page"
+               (assert-true (mentions? english-page "footer-credit")
+                            #:name "the footer carries the colophon")
+               (assert-true (appears-before? english-page "carousel-dots"
+                                             "Joseolgon")
+                            #:name "the credit sits after the gallery")
+               (assert-true (mentions? english-page "Joseolgon")
+                            #:name "the cave photographer is named")
+               (assert-true (mentions? english-page "muffinn")
+                            #:name "the Ferragudo photographer is named")
+               (assert-true (mentions? portuguese-page "Fotografias:")
+                            #:name "the colophon is translated"))
          (test "the gallery moves, stops and can be pulled"
                (assert-true (>= (match-count "data-carousel-dot" english-page) 10)
                             #:name "there is a dot for every slide")
@@ -249,6 +253,12 @@ recognised by the absence of an extension."
                             #:name "the viewer is on the page")
                (assert-true (mentions? english-page "data-pano-tab")
                             #:name "both scenes have a tab")
+               (assert-true (mentions? english-page
+                                       "panorama-tab is-active\" type=\"button\" data-pano-tab=\"benagil\"")
+                            #:name "the cave is the scene on offer")
+               (assert-true (mentions? english-page
+                                       "data-pano-src=\"/img/pano-benagil.jpg\"")
+                            #:name "the cave panorama is loaded")
                (assert-true (file-exists? "resources/img/pano-carvoeiro.jpg")
                             #:name "the Carvoeiro panorama exists")
                (assert-true (file-exists? "resources/img/pano-benagil.jpg")
@@ -268,9 +278,12 @@ recognised by the absence of an extension."
                             #:name "the beach photographer is named")
                (assert-true (mentions? english-page "CC BY-SA 2.0")
                             #:name "the share-alike licence is named"))
-         (test "the cave drifts as the page is read"
-               (assert-true (mentions? english-page "data-parallax")
-                            #:name "the grotto asks for a parallax layer"))
+         (test "the arched cave window has been taken out of the page"
+               (assert-false (mentions? english-page "grotto-band")
+                             #:name "no arched band sits above the panorama")
+               (assert-false (mentions? english-page
+                                       "FB_IMG_1719434196131.jpg")
+                             #:name "its photograph is gone too"))
          (test "the cards carry their icon coins"
                (assert-true (>= (match-count "medallion" english-page) 6)
                             #:name "each card head has a medallion"))))

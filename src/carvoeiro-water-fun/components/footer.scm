@@ -97,10 +97,43 @@
                   #:weight '(font-light)
                   #:extra-classes '(link-lux))))))
 
+;; The cave and Ferragudo photographs are borrowed under CC licences, so their
+;; authors and terms live in one quiet line at the foot of the page.
+(define* (footer-credit-section)
+  `((div (@ (class "footer-credit"))
+         ,(p (G_ "Photographs:")
+             #:family '(font-sans)
+             #:size '(text-sm)
+             #:weight '(font-light))
+         ,(a "Joseolgon"
+             #:href "https://commons.wikimedia.org/wiki/User:Joseolgon"
+             #:size '(text-sm)
+             #:family '(font-sans)
+             #:weight '(font-light))
+         (span (@ (class "footer-legal__dot")) "·")
+         ,(a "CC BY-SA 4.0"
+             #:href "https://creativecommons.org/licenses/by-sa/4.0/"
+             #:size '(text-sm)
+             #:family '(font-sans)
+             #:weight '(font-light))
+         (span (@ (class "footer-legal__dot")) "·")
+         ,(a "muffinn"
+             #:href "https://www.flickr.com/people/26445715@N00"
+             #:size '(text-sm)
+             #:family '(font-sans)
+             #:weight '(font-light))
+         (span (@ (class "footer-legal__dot")) "·")
+         ,(a "CC BY 2.0"
+             #:href "https://creativecommons.org/licenses/by/2.0/"
+             #:size '(text-sm)
+             #:family '(font-sans)
+             #:weight '(font-light)))))
+
 (define* (footer-section)
   `((div (@ (class "footer-glass"))
          (div (@ (class "footer-grid"))
               ,(footer-brand-section)
               ,(footer-nav-section)
               ,(footer-contact-section))
-         ,(footer-legal-section))))
+         ,(footer-legal-section)
+         ,(footer-credit-section))))

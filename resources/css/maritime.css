@@ -611,69 +611,6 @@
     }
 }
 
-/* ====== The grotto ====== */
-
-/* A photograph seen from inside a sea cave: arched, lit from above, and
-   drifting a little as the page is read. Kept narrower than a panel so it
-   reads as a window in the page rather than a dark band across it. */
-.grotto-band {
-    margin: clamp(1.5rem, 4vw, 3rem) auto;
-    max-width: min(100% - clamp(2rem, 8vw, 5rem), 58rem);
-}
-
-.grotto-frame {
-    position: relative;
-    overflow: hidden;
-    height: clamp(16rem, 31vw, 23rem);
-    border-radius: 50% 50% 1.5rem 1.5rem / 54% 54% 1.5rem 1.5rem;
-    border: 1px solid oklch(1 0 0 / 0.6);
-    background: oklch(0.3 0.03 232);
-    box-shadow:
-        inset 0 1px 0 oklch(1 0 0 / 0.9),
-        inset 0 -40px 60px -40px oklch(1 0 0 / 0.4),
-        0 34px 70px -50px oklch(0.28 0.04 238 / 0.65);
-}
-
-.grotto-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate3d(0, var(--parallax, 0px), 0) scale(1.14);
-    filter: saturate(1) contrast(1.02) brightness(1.08);
-}
-
-/* Morning light from the roof of the cave, and the sea mist that softens its
-   lower edge into the page. */
-.grotto-frame::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(56% 48% at 50% 8%,
-                        oklch(0.98 0.07 88 / 0.55),
-                        transparent 66%),
-        linear-gradient(180deg,
-                        oklch(1 0 0 / 0.3),
-                        transparent 38%,
-                        oklch(1 0 0 / 0.34));
-}
-
-/* The shaft of daylight that makes a cave a cathedral. */
-.grotto-frame::after {
-    content: "";
-    position: absolute;
-    inset: -12% 0 auto;
-    height: 130%;
-    pointer-events: none;
-    background: linear-gradient(104deg,
-                              transparent 37%,
-                              oklch(1 0.06 90 / 0.34) 46%,
-                              transparent 55%);
-    mix-blend-mode: screen;
-    animation: light-shaft 19s ease-in-out infinite alternate;
-}
-
 /* ====== Carousel ====== */
 
 /* Every gallery slide shows the same window, so the row stays level whatever
@@ -761,13 +698,6 @@
     gap: 0.45rem;
     justify-content: center;
     margin: -0.35rem 0 0.65rem;
-}
-
-/* The borrowed cave and Ferragudo frames are credited, not absorbed. */
-.carousel-credit {
-    justify-content: center;
-    margin: -0.05rem 0 0.4rem;
-    text-align: center;
 }
 
 .carousel-dot {
@@ -1249,6 +1179,31 @@
     opacity: 0.5;
 }
 
+/* A single line of attribution, quiet at the very end of the page. */
+.footer-credit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 72rem;
+    margin: 0.55rem auto 0;
+    color: color-mix(in oklab, var(--sea-ink) 62%, white);
+}
+
+.footer-credit p {
+    margin: 0;
+}
+
+.footer-credit a {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.footer-credit a:hover {
+    color: var(--sea-deep);
+}
+
 @media (max-width: 760px) {
     .footer-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -1268,7 +1223,9 @@
         gap: 0.15rem;
     }
 
-    .footer-legal__dot {
+    /* The legal links stack, so their separators go; the colophon still needs
+       its dots to tell authors from licences. */
+    .footer-legal .footer-legal__dot {
         display: none;
     }
 
@@ -1366,17 +1323,6 @@
     }
 }
 
-@keyframes light-shaft {
-    from {
-        transform: translateX(-6%) rotate(-1deg);
-        opacity: 0.75;
-    }
-    to {
-        transform: translateX(6%) rotate(1deg);
-        opacity: 1;
-    }
-}
-
 @keyframes tide-drift {
     from {
         transform: translate3d(-3%, 1%, 0) scaleX(1);
@@ -1396,9 +1342,6 @@
     .shimmer,
     .hero-title-row,
     .hero-content,
-    .grotto-frame::after {
-        animation: none;
-    }
 
     .shimmer {
         background: none;
@@ -1470,10 +1413,6 @@
 
     .theme-card--cta {
         padding: 1.05rem;
-    }
-
-    .grotto-band {
-        margin: 1.1rem 0.7rem;
     }
 
     .gold-rule {

@@ -46,9 +46,20 @@
                 item.classList.add("is-visible");
                 observer.unobserve(item);
             });
-        }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+            /* Any sliver is enough: a tall panel used to stay blank until a
+               sixth of it had crossed the fold. */
+        }, { rootMargin: "0px 0px 6% 0px", threshold: 0 });
 
-        items.forEach((item) => observer.observe(item));
+        items.forEach((item) => {
+            const box = item.getBoundingClientRect();
+            /* Anything already on screen is shown at once, without waiting
+               for the observer's first callback. */
+            if (box.top < window.innerHeight && box.bottom > 0) {
+                item.classList.add("is-visible");
+                return;
+            }
+            observer.observe(item);
+        });
     };
 
     /**
