@@ -80,8 +80,9 @@
                            (assert-true (mentions? stylesheet class)
                                         #:name (string-append class
                                                               " is defined")))
-                         '(".photo-frame" ".gold-rule" ".spec-list" ".shimmer"
+                         '(                           ".photo-frame" ".gold-rule" ".spec-list" ".shimmer"
                            ".footer-glass" ".carousel-glass" ".hero-title-row"
+                           ".hero-copy" ".hero-media"
                            ".theme-card" ".medallion"
                            ".card-row" ".footer-grid" ".footer-legal"
                            ".theme-card--feature" ".theme-card--tall"
@@ -89,6 +90,8 @@
                            ".theme-card__caption" ".carousel-dot"
                            ".carousel-dots" ".panorama-stage"
                            ".panorama-hint" ".panorama-rail"
+                           ".lightbox" ".lightbox__frame"
+                           ".lightbox__nav" ".lightbox__count"
                            ".footer-credit")))
          (test "a dragged gallery stops snapping while it moves"
                (assert-true (mentions? stylesheet ".carousel-glass.is-dragging")

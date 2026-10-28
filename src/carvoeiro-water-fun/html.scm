@@ -125,6 +125,7 @@
   `((div (@ (class "hero-shell"))
          (div (@ (class "glass glass--panel hero")
                  (data-tilt "true"))
+              (div (@ (class "hero-copy"))
               (div (@ (class "hero-title-row"))
                    ,(h1 (G_ "Carvoeiro")
                         #:weight '(font-light)
@@ -195,7 +196,13 @@
                              #:size '(text-lg))
                         ,(em (G_ "from the beautiful ocean.")
                              #:weight '(font-light)
-                             #:size '(text-lg))))))
+                             #:size '(text-lg)))))
+              (figure (@ (class "hero-media"))
+                      (img (@ (class "hero-media__img")
+                              (src "/img/benagil-cathedral.jpg")
+                              (loading "eager")
+                              (decoding "async")
+                              (alt ""))))))
 
     (div (@ (class "carousel-shell px-3 py-2")
             (data-reveal "true")
@@ -208,8 +215,6 @@
                     ;; cave's skylight, then dolphins; Ferragudo comes early so
                     ;; the free crossing earns its place before the fold.
                     #:fragments (list (mk-header-img "/img/benagil-boat.jpg")
-                                      (mk-header-img
-                                       "/img/benagil-cathedral.jpg")
                                       (mk-header-img
                                        "/img/FB_IMG_1719434096367.jpg")
                                       (mk-header-img
@@ -260,7 +265,35 @@
          (div (@ (class "carousel-dots")
                  (role "group")
                  (aria-label "Gallery"))
-              ,@(carousel-dots 20)))
+              ,@(carousel-dots 19)))
+
+    ;; A native dialog: the browser brings the backdrop, the focus trap, Esc
+    ;; and the top layer; the script only fills it with the chosen photograph.
+    (dialog (@ (class "lightbox")
+               (data-lightbox "true")
+               (aria-label ,(G_ "Photograph")))
+            (div (@ (class "lightbox__frame"))
+                 (img (@ (class "lightbox__img")
+                         (data-lightbox-img "true")
+                         (alt "")))
+                 (button (@ (class "lightbox__close")
+                            (type "button")
+                            (data-lightbox-close "true")
+                            (aria-label ,(G_ "Close")))
+                         ,(icon #:type 'x #:icon-css '(text-lg)))
+                 (button (@ (class "lightbox__nav lightbox__nav--prev")
+                            (type "button")
+                            (data-lightbox-prev "true")
+                            (aria-label ,(G_ "Previous photograph")))
+                         ,(icon #:type 'caret-left #:icon-css '(text-xl)))
+                 (button (@ (class "lightbox__nav lightbox__nav--next")
+                            (type "button")
+                            (data-lightbox-next "true")
+                            (aria-label ,(G_ "Next photograph")))
+                         ,(icon #:type 'caret-right #:icon-css '(text-xl)))
+                 (p (@ (class "lightbox__count")
+                       (data-lightbox-count "true"))
+                    "")))
 
     ,(enjoy-algarve-section)
     ,(panorama-section)
@@ -577,30 +610,7 @@
                                #:icon-css '(text-md))
                         (span ,(G_ "Drag to look around")))
                    (div (@ (class "panorama-rail"))
-                        (div (@ (class "panorama-rail__thumb")) "")))
-              (div (@ (class "panorama-credit"))
-                   ,(p (G_ "Photographs:")
-                       #:size '(text-sm)
-                       #:weight '(font-light))
-                   ,(a "Enric Rubio Ros"
-                       #:href "https://www.flickr.com/photos/windenric1/51844729713/"
-                       #:size '(text-sm)
-                       #:extra-classes '(link-lux))
-                   (span (@ (class "panorama-credit__dot")) "·")
-                   ,(a "CC BY 2.0"
-                       #:href "https://creativecommons.org/licenses/by/2.0/"
-                       #:size '(text-sm)
-                       #:extra-classes '(link-lux))
-                   (span (@ (class "panorama-credit__dot")) "·")
-                   ,(a "Vitor Oliveira"
-                       #:href "https://www.flickr.com/photos/vitor107/16247829346/"
-                       #:size '(text-sm)
-                       #:extra-classes '(link-lux))
-                   (span (@ (class "panorama-credit__dot")) "·")
-                   ,(a "CC BY-SA 2.0"
-                       #:href "https://creativecommons.org/licenses/by-sa/2.0/"
-                       #:size '(text-sm)
-                       #:extra-classes '(link-lux)))))))
+                        (div (@ (class "panorama-rail__thumb")) "")))))))
 
 (define* (about-boat-tour-section)
   `((div (@ (id about-boat-tour-section)

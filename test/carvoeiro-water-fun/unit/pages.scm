@@ -150,7 +150,11 @@ recognised by the absence of an extension."
                  (assert-true (pair? images)
                               #:name "the page has photographs")
                  (for-each (lambda (image)
-                             (assert-true (mentions? image "loading=\"lazy\"")
+                             ;; Everything waits its turn except the hero, which
+                             ;; is the page's first impression.
+                             (assert-true (or (mentions? image "loading=\"lazy\"")
+                                              (mentions? image "hero-media__img")
+                                              (mentions? image "data-lightbox-img"))
                                           #:name "the photograph is lazy")
                              (assert-true (mentions? image "alt=")
                                           #:name "the photograph declares alt"))
@@ -176,12 +180,16 @@ recognised by the absence of an extension."
                             #:name "it is the first slide")
                (assert-true (appears-before? english-page
                                              "benagil-boat.jpg"
-                                             "benagil-cathedral.jpg")
-                            #:name "the cave follows the boat")
-               (assert-true (appears-before? english-page
-                                             "benagil-cathedral.jpg"
                                              "FB_IMG_1719434096367.jpg")
-                            #:name "the dolphins come after the cave"))
+                            #:name "the dolphins come next"))
+         (test "the hero opens on the cave, not on a gallery slide"
+               (assert-true (mentions? english-page "hero-media")
+                            #:name "the hero has its own window")
+               (assert-true (mentions? english-page "/img/benagil-cathedral.jpg")
+                            #:name "the skylight fills it")
+               (assert-true (= 1 (match-count "/img/benagil-cathedral.jpg"
+                                             english-page))
+                            #:name "the same frame is not repeated below"))
          (test "the cave and Ferragudo are photographed afresh"
                (assert-true (mentions? english-page "/img/benagil-cathedral.jpg")
                             #:name "the skylight cathedral is shown")
@@ -195,6 +203,21 @@ recognised by the absence of an extension."
                                              "ferragudo-village.jpg"
                                              "FB_IMG_1719434138555.jpg")
                             #:name "Ferragudo is not buried at the end"))
+         (test "a gallery photograph opens full size"
+               (assert-true (mentions? english-page "data-lightbox=\"true\"")
+                            #:name "the dialog is on the page")
+               (assert-true (mentions? english-page "lightbox__img")
+                            #:name "it has a place for the photograph")
+               (assert-true (mentions? english-page "data-lightbox-next")
+                            #:name "it can step forward")
+               (assert-true (mentions? motion-script "box.showModal")
+                            #:name "it opens as a modal")
+               (assert-true (mentions? motion-script "event.key === \"ArrowRight\"")
+                            #:name "the keyboard moves through it")
+               (assert-true (mentions? motion-script "list.dataset.dragged")
+                            #:name "a drag is not mistaken for a tap")
+               (assert-true (mentions? portuguese-page "Fechar")
+                            #:name "the controls are translated"))
          (test "the gallery keeps a clean lower edge"
                (assert-false (mentions? english-page "carousel-credit")
                              #:name "no credit strip sits under the dots"))
@@ -235,6 +258,12 @@ recognised by the absence of an extension."
                             #:name "the cave photographer is named")
                (assert-true (mentions? english-page "muffinn")
                             #:name "the Ferragudo photographer is named")
+               (assert-true (mentions? english-page "Enric Rubio Ros")
+                            #:name "the cave panorama is credited there too")
+               (assert-true (mentions? english-page "Vitor Oliveira")
+                            #:name "the beach panorama is credited there too")
+               (assert-false (mentions? english-page "panorama-credit")
+                             #:name "the panorama carries no credit of its own")
                (assert-true (mentions? portuguese-page "Fotografias:")
                             #:name "the colophon is translated"))
          (test "the gallery moves, stops and can be pulled"
@@ -277,7 +306,10 @@ recognised by the absence of an extension."
                (assert-true (mentions? english-page "Vitor Oliveira")
                             #:name "the beach photographer is named")
                (assert-true (mentions? english-page "CC BY-SA 2.0")
-                            #:name "the share-alike licence is named"))
+                            #:name "the share-alike licence is named")
+               (assert-true (appears-before? english-page "footer-credit"
+                                             "Enric Rubio Ros")
+                            #:name "the credit lives in the footer"))
          (test "the arched cave window has been taken out of the page"
                (assert-false (mentions? english-page "grotto-band")
                              #:name "no arched band sits above the panorama")

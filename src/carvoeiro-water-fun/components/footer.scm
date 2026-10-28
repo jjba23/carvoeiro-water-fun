@@ -127,6 +127,30 @@
              #:href "https://creativecommons.org/licenses/by/2.0/"
              #:size '(text-sm)
              #:family '(font-sans)
+             #:weight '(font-light))
+         (span (@ (class "footer-legal__dot")) "·")
+         ,(a "Enric Rubio Ros"
+             #:href "https://www.flickr.com/photos/windenric1/51844729713/"
+             #:size '(text-sm)
+             #:family '(font-sans)
+             #:weight '(font-light))
+         (span (@ (class "footer-legal__dot")) "·")
+         ,(a "CC BY 2.0"
+             #:href "https://creativecommons.org/licenses/by/2.0/"
+             #:size '(text-sm)
+             #:family '(font-sans)
+             #:weight '(font-light))
+         (span (@ (class "footer-legal__dot")) "·")
+         ,(a "Vitor Oliveira"
+             #:href "https://www.flickr.com/photos/vitor107/16247829346/"
+             #:size '(text-sm)
+             #:family '(font-sans)
+             #:weight '(font-light))
+         (span (@ (class "footer-legal__dot")) "·")
+         ,(a "CC BY-SA 2.0"
+             #:href "https://creativecommons.org/licenses/by-sa/2.0/"
+             #:size '(text-sm)
+             #:family '(font-sans)
              #:weight '(font-light)))))
 
 (define* (footer-section)

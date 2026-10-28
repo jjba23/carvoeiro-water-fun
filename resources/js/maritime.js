@@ -312,6 +312,8 @@
                 if (event.pointerType !== "mouse" || event.button !== 0) return;
                 dragging = true;
                 moved = false;
+                /* A pull should never be mistaken for a tap by the lightbox. */
+                list.dataset.dragged = "false";
                 startX = event.clientX;
                 startLeft = list.scrollLeft;
                 lastX = event.clientX;
@@ -343,6 +345,7 @@
                 } catch (error) {
                     /* the pointer may already be gone */
                 }
+                list.dataset.dragged = moved ? "true" : "false";
                 if (moved) {
                     list.scrollTo({
                         left: list.scrollLeft - velocity * 240,
@@ -376,6 +379,146 @@
 
             mark(0);
             restart();
+        });
+    };
+
+    /**
+     * Open any gallery slide at full size.  The dialog is native, so Esc, the
+     * focus trap and the backdrop come from the browser; the script only fills
+     * it, steps through the photographs and holds the strip still behind it.
+     */
+    const lightbox = () => {
+        const box = document.querySelector("[data-lightbox]");
+        const list = document.querySelector(".carousel-list");
+        if (!(box instanceof HTMLElement) || !(list instanceof HTMLElement)) return;
+
+        const view = box.querySelector("[data-lightbox-img]");
+        const count = box.querySelector("[data-lightbox-count]");
+        /** @type {HTMLImageElement[]} */
+        const shots = Array.from(list.querySelectorAll("img"));
+        if (!(view instanceof HTMLImageElement) || shots.length < 2) return;
+
+        /** @type {HTMLElement[]} */
+        const slides = Array.from(list.children).filter((node) => node instanceof HTMLElement);
+        const dots = Array.from(document.querySelectorAll("[data-carousel-dot]"));
+
+        let index = 0;
+        let opener = null;
+
+        /* A tall photograph fills the height, a wide one fills the width; the
+           frame never leaves pale bars around the picture. */
+        const fit = () => {
+            const wide = (view.naturalWidth || 4) >= (view.naturalHeight || 3);
+            view.style.width = wide ? "100%" : "auto";
+            view.style.height = wide ? "auto" : "min(78vh, 46rem)";
+            const frame = view.closest(".lightbox__frame");
+            if (frame instanceof HTMLElement) {
+                frame.classList.toggle("is-portrait", !wide);
+            }
+        };
+
+        const paint = () => {
+            const shot = shots[index];
+            view.src = shot.currentSrc || shot.src;
+            view.alt = shot.alt || "";
+            if (count) count.textContent = index + 1 + " / " + shots.length;
+            fit();
+        };
+
+        view.addEventListener("load", fit);
+
+        const step = (delta) => {
+            index = (index + delta + shots.length) % shots.length;
+            paint();
+        };
+
+        /* The strip pauses while its photographs are being looked at. */
+        const gesture = (type) => {
+            if (typeof PointerEvent !== "function") return;
+            list.dispatchEvent(new PointerEvent(type, { pointerType: "mouse" }));
+        };
+
+        const teardown = () => {
+            document.documentElement.classList.remove("is-lightbox");
+            gesture("pointerleave");
+            if (opener) opener.focus();
+        };
+
+        const open = (at, trigger) => {
+            index = Math.max(0, Math.min(shots.length - 1, at));
+            opener = trigger instanceof HTMLElement ? trigger : null;
+            paint();
+            gesture("pointerenter");
+            document.documentElement.classList.add("is-lightbox");
+            if (typeof box.showModal === "function") box.showModal();
+            else box.setAttribute("open", "");
+        };
+
+        const close = () => {
+            if (typeof box.close === "function" && box.hasAttribute("open")) {
+                box.close();
+            } else {
+                box.removeAttribute("open");
+                teardown();
+            }
+        };
+
+        /* Each slide is a button that opens it; the label is the one the dots
+           already use, so it arrives translated. */
+        slides.forEach((slide, at) => {
+            const label = dots[at] ? dots[at].getAttribute("aria-label") : null;
+            slide.setAttribute("role", "button");
+            slide.setAttribute("tabindex", "0");
+            if (label) slide.setAttribute("aria-label", label);
+            slide.addEventListener("keydown", (event) => {
+                if (event.key !== "Enter" && event.key !== " ") return;
+                event.preventDefault();
+                open(at, slide);
+            });
+        });
+
+        list.addEventListener("click", (event) => {
+            if (list.dataset.dragged === "true") return;
+            const target = event.target instanceof Element
+                ? event.target.closest(".carousel-list-item")
+                : null;
+            if (!(target instanceof HTMLElement)) return;
+            const at = slides.indexOf(target);
+            if (at < 0) return;
+            open(at, target);
+        });
+
+        box.addEventListener("click", (event) => {
+            const target = event.target;
+            if (target === box) {
+                close();
+                return;
+            }
+            if (!(target instanceof Element)) return;
+            if (target.closest("[data-lightbox-next]")) step(1);
+            else if (target.closest("[data-lightbox-prev]")) step(-1);
+            else if (target.closest("[data-lightbox-close]")) close();
+        });
+
+        box.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") {
+                event.preventDefault();
+                step(1);
+            } else if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                step(-1);
+            }
+        });
+
+        box.addEventListener("close", teardown);
+
+        let startX = 0;
+        box.addEventListener("pointerdown", (event) => {
+            startX = event.clientX;
+        });
+        box.addEventListener("pointerup", (event) => {
+            const dx = event.clientX - startX;
+            if (Math.abs(dx) > 60) step(dx < 0 ? 1 : -1);
         });
     };
 
@@ -638,5 +781,6 @@
     parallax();
     tideLine();
     carousel();
+    lightbox();
     panorama();
 })();

@@ -256,9 +256,109 @@
     padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 2.5rem) 0;
 }
 
+/* The hero is the boat itself: the copy on the left, the Black Dolphin under
+   the Benagil dome in a window on the right. */
 .hero {
+    position: relative;
+    isolation: isolate;
     overflow: hidden;
-    text-align: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    align-items: center;
+    min-height: clamp(24rem, 34vw, 31rem);
+    text-align: left;
+}
+
+.hero-copy {
+    min-width: 0;
+}
+
+.hero .hero-title-row {
+    justify-content: flex-start;
+}
+
+.hero .gold-rule {
+    margin-inline: 0 auto;
+}
+
+.hero .hero-content {
+    margin-inline: 0;
+}
+
+.hero .hero-actions {
+    justify-content: flex-start;
+}
+
+/* A window of the day itself, framed in the same glass as the page. */
+.hero-media {
+    position: relative;
+    margin: 0;
+    height: 100%;
+    min-height: clamp(18rem, 27vw, 24rem);
+    overflow: hidden;
+    border: 1px solid var(--glass-line);
+    border-radius: 24px;
+    background: oklch(0.9 0.02 210);
+    box-shadow:
+        inset 0 1px 0 oklch(1 0 0 / 0.7),
+        0 34px 64px -48px oklch(0.3 0.04 232 / 0.75);
+}
+
+.hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(200deg, oklch(1 0 0 / 0.16), transparent 40%),
+        radial-gradient(120% 85% at 50% 100%,
+                        transparent 55%,
+                        oklch(0.24 0.04 235 / 0.22));
+}
+
+.hero-media__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 56% center;
+    transform: scale(1.01);
+    transition: transform 1200ms var(--ease-lux);
+}
+
+.hero:hover .hero-media__img {
+    transform: scale(1.055);
+}
+
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        min-height: 0;
+        text-align: center;
+    }
+
+    .hero .hero-title-row {
+        justify-content: center;
+    }
+
+    .hero .gold-rule {
+        margin-inline: auto;
+    }
+
+    .hero .hero-content {
+        margin-inline: auto;
+    }
+
+    .hero .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-media {
+        min-height: 13rem;
+        aspect-ratio: 16 / 10;
+        border-radius: 20px;
+    }
 }
 
 .hero-title-row {
@@ -621,6 +721,13 @@
 
 .carousel-glass .carousel-list-item {
     scroll-snap-align: start;
+    cursor: zoom-in;
+}
+
+.carousel-glass .carousel-list-item:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 4px;
+    border-radius: 18px;
 }
 
 .carousel-glass .photo-frame img {
@@ -721,6 +828,134 @@
     width: 1.5rem;
     background: linear-gradient(90deg, var(--brass), var(--sea-mid));
     box-shadow: 0 2px 8px -2px oklch(0.55 0.08 74 / 0.6);
+}
+
+/* ====== Lightbox ====== */
+
+/* The dialog sits in the browser's top layer; only its contents are styled. */
+.lightbox {
+    display: none;
+    width: min(92vw, 56rem);
+    max-width: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    overflow: visible;
+}
+
+.lightbox[open] {
+    display: grid;
+    place-items: center;
+    animation: lightbox-in 380ms var(--ease-lux) both;
+}
+
+.lightbox::backdrop {
+    background: oklch(0.18 0.03 235 / 0.74);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    backdrop-filter: blur(14px) saturate(120%);
+}
+
+.lightbox__frame {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding: clamp(0.4rem, 1.2vw, 0.85rem);
+    border: 1px solid oklch(1 0 0 / 0.32);
+    border-radius: 24px;
+    background: oklch(1 0 0 / 0.08);
+    box-shadow: 0 50px 110px -50px oklch(0.1 0.02 240 / 0.85);
+}
+
+/* A tall photograph gets a frame of its own width, not a wide matte. */
+.lightbox__frame.is-portrait {
+    width: fit-content;
+}
+
+.lightbox__img {
+    display: block;
+    max-width: 100%;
+    max-height: min(78vh, 46rem);
+    border-radius: 18px;
+    box-shadow: 0 30px 60px -34px oklch(0.08 0.02 240 / 0.8);
+}
+
+.lightbox__close,
+.lightbox__nav {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.85rem;
+    height: 2.85rem;
+    padding: 0;
+    border: 1px solid oklch(1 0 0 / 0.38);
+    border-radius: 999px;
+    background: oklch(0.3 0.03 232 / 0.5);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+    color: oklch(1 0 0);
+    cursor: pointer;
+    transition: background 400ms var(--ease-lux),
+        transform 400ms var(--ease-lux);
+}
+
+.lightbox__close:hover,
+.lightbox__nav:hover {
+    background: oklch(0.24 0.03 232 / 0.72);
+    transform: scale(1.06);
+}
+
+.lightbox__close {
+    top: 1rem;
+    right: 1rem;
+}
+
+.lightbox__nav {
+    top: 50%;
+    margin-top: -1.42rem;
+}
+
+.lightbox__nav--prev {
+    left: 0.85rem;
+}
+
+.lightbox__nav--next {
+    right: 0.85rem;
+}
+
+.lightbox__count {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: oklch(0.22 0.03 232 / 0.55);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    color: oklch(1 0 0 / 0.92);
+    font-family: 'Lora', ui-serif, serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
+
+html.is-lightbox,
+html.is-lightbox body {
+    overflow: hidden;
+}
+
+@keyframes lightbox-in {
+    from {
+        opacity: 0;
+        transform: scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* ====== The panorama ====== */
@@ -881,33 +1116,6 @@
     background: linear-gradient(90deg, oklch(1 0 0 / 0.96), var(--brass));
     box-shadow: 0 0 8px oklch(0.2 0.03 232 / 0.45);
     transition: width 200ms linear, left 200ms linear;
-}
-
-.panorama-credit {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem;
-    margin-top: 0.8rem;
-    color: color-mix(in oklab, var(--sea-ink) 68%, white);
-}
-
-.panorama-credit p {
-    margin: 0;
-}
-
-.panorama-credit a {
-    color: inherit;
-    font-weight: 400;
-    text-decoration: none;
-}
-
-.panorama-credit a:hover {
-    color: var(--sea-deep);
-}
-
-.panorama-credit__dot {
-    opacity: 0.5;
 }
 
 @media (max-width: 760px) {
@@ -1342,6 +1550,9 @@
     .shimmer,
     .hero-title-row,
     .hero-content,
+    .lightbox[open] {
+        animation: none;
+    }
 
     .shimmer {
         background: none;
@@ -1462,5 +1673,23 @@
     .panorama-rail {
         left: 0.7rem;
         right: 0.7rem;
+    }
+
+    .lightbox {
+        width: 96vw;
+    }
+
+    .lightbox__img {
+        max-height: 72vh;
+    }
+
+    .lightbox__close,
+    .lightbox__nav {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .lightbox__nav {
+        margin-top: -1.2rem;
     }
 }
