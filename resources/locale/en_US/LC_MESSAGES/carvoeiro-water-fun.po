@@ -180,6 +180,8 @@ msgid ""
 "Cast off from Carvoeiro and follow the cliffs — under the arches, into "
 "Benagil’s dome, out to where the dolphins run."
 msgstr ""
+"Following the cliffs from Carvoeiro, under the arches, into "
+"Benagil’s dome, out to where the dolphins run."
 
 #: src/carvoeiro-water-fun/html.scm:190 src/carvoeiro-water-fun/html.scm:217
 #, fuzzy

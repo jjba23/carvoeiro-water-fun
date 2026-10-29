@@ -177,7 +177,7 @@ msgid ""
 "Cast off from Carvoeiro and follow the cliffs — under the arches, into "
 "Benagil’s dome, out to where the dolphins run."
 msgstr ""
-"Zarpe do Carvoeiro e siga as falésias — sob os arcos, dentro da cúpula "
+"Seguindo as falésias desde Carvoeiro e sob os arcos, dentro da cúpula "
 "de Benagil, até onde andam os golfinhos."
 
 #: src/carvoeiro-water-fun/html.scm:190 src/carvoeiro-water-fun/html.scm:217
