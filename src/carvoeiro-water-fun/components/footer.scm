@@ -1,7 +1,7 @@
-;; Carvoeiro Water Fun
-;;
-;; SPDX-License-Identifier: MIT
-;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
+;;; Carvoeiro Water Fun
+;;;
+;;; SPDX-License-Identifier: MIT
+;;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 (define-module (carvoeiro-water-fun components footer)
   #:declarative? #t
@@ -97,8 +97,8 @@
                   #:weight '(font-light)
                   #:extra-classes '(link-lux))))))
 
-;; The cave and Ferragudo photographs are borrowed under CC licences, so their
-;; authors and terms live in one quiet line at the foot of the page.
+;;; The cave and Ferragudo photographs are borrowed under CC licences, so their
+;;; authors and terms live in one quiet line at the foot of the page.
 (define* (footer-credit-section)
   `((div (@ (class "footer-credit"))
          ,(p (G_ "Photographs:")

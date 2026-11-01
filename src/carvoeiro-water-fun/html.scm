@@ -1,7 +1,7 @@
-;; Carvoeiro Water Fun
-;;
-;; SPDX-License-Identifier: MIT
-;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
+;;; Carvoeiro Water Fun
+;;;
+;;; SPDX-License-Identifier: MIT
+;;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 (define-module (carvoeiro-water-fun html)
   #:declarative? #t
@@ -100,9 +100,9 @@
                                          (defer "defer"))
                                       "")))))
 
-;; Every photograph sits beside an AVIF rendition of itself, so a browser that
-;; can read AVIF downloads a fifth of the bytes and the rest keep the JPEG.
-;; The stylesheet takes <picture> out of the layout, so nothing shifts.
+;;; Every photograph sits beside an AVIF rendition of itself, so a browser that
+;;; can read AVIF downloads a fifth of the bytes and the rest keep the JPEG.
+;;; The stylesheet takes <picture> out of the layout, so nothing shifts.
 (define (avif-rendition src)
   "The AVIF copy of @var{src}, which lives beside it in resources/img."
   (regexp-substitute/global #f "[.][A-Za-z]+$" src 'pre ".avif" 'post))
@@ -120,13 +120,13 @@ in the opening screen asks to be fetched before the rest."
             (src ,src)
             (loading ,loading)
             ,@(if priority
-                  `((fetchpriority ,priority))
-                  '())
+                `((fetchpriority ,priority))
+                '())
             (decoding "async")
             ,@(if width
-                  `((width ,(number->string width))
-                    (height ,(number->string height)))
-                  '())
+                `((width ,(number->string width))
+                  (height ,(number->string height)))
+                '())
             (alt "")))))
 
 (define* (mk-header-img src)
@@ -137,93 +137,93 @@ in the opening screen asks to be fetched before the rest."
   "Return @var{count} buttons, one per slide, for the gallery strip."
   (do ((i 0 (+ i 1))
        (acc '() (cons `(button (@ (class ,(if (= i 0)
-                                              "carousel-dot is-active"
-                                              "carousel-dot"))
-                                     (type "button")
-                                     (aria-label ,(format #f "~a ~a"
-                                                          (G_ "Photograph")
-                                                          (+ i 1)))
-                                     (aria-pressed ,(if (= i 0) "true" "false"))
-                                     (data-carousel-dot ,(number->string i)))
-                              "") acc)))
-      ((= i count) (reverse acc))))
+                                            "carousel-dot is-active"
+                                            "carousel-dot"))
+                                  (type "button")
+                                  (aria-label ,(format #f "~a ~a"
+                                                       (G_ "Photograph")
+                                                       (+ i 1)))
+                                  (aria-pressed ,(if (= i 0) "true" "false"))
+                                  (data-carousel-dot ,(number->string i)))
+                               "") acc)))
+    ((= i count) (reverse acc))))
 
 (define* (carvoeiro-water-fun-main-body #:key locale)
   `((div (@ (class "hero-shell"))
          (div (@ (class "glass glass--panel hero")
                  (data-tilt "true"))
               (div (@ (class "hero-copy"))
-              (div (@ (class "hero-title-row"))
-                   ,(h1 (G_ "Carvoeiro")
-                        #:weight '(font-light)
-                        #:size '(text-16))
-                   (span (@ (class ,(mk-class '(text-16 hero-anchor)))
-                            (aria-hidden "true"))
-                         "⚓")
-                   (h1 (@ (class ,(mk-class '(text-16 hero-title
-                                                      shimmer font-light
-                                                      font-sans))))
-                       ,(G_ "Water Fun")))
-              (div (@ (class "gold-rule")) "")
-              (div (@ (class "hero-content max-w-prose flex flex-col gap-8"))
-                   ,(p (G_
-                        "Cast off from Carvoeiro and follow the cliffs — under the arches, into Benagil’s dome, out to where the dolphins run.")
-                       #:weight '(font-light leading-8)
-                       #:family '(font-serif)
-                       #:size '(text-lg))
-                   (div (@ (class ,(mk-class '(hero-actions my-3 flex
-                                                            flex-row
-                                                            flex-wrap
-                                                            gap-4
-                                                            justify-center
-                                                            items-center
-                                                            align-center))))
-                        ,(when (eq? locale
-                                    'en_US)
-                           (a (button "🇵🇹 Português"
-                                      #:weight '(font-light)
-                                      #:size '(text-sm)
-                                      #:background '(bg-stone-300))
-                              #:href "/pt"))
-                        ,(when (eq? locale
-                                    'pt_PT)
-                           (a (button "🇬🇧 English"
-                                      #:weight '(font-light)
-                                      #:size '(text-sm)
-                                      #:background '(bg-stone-300))
-                              #:href "/"))
-                        ,(a (icon-button #:icon 'sailboat
-                                         #:content (G_ "About the boat tour")
-                                         #:background '(bg-stone-300)
-                                         #:icon-css '(text-onyx-300 text-xl)
-                                         #:color '(text-onyx-300)
-                                         #:weight '(font-light)
-                                         #:extra-classes '(hover-lift py-2 px-4
-                                                                    max-w-prose
-                                                                    cursor-pointer)
-                                         #:hover-background '(hover:bg-stone-700))
-                            #:href "#about-boat-tour-section")
-                        ,(a (icon-button #:icon 'calendar
-                                         #:content (G_ "Book your experience")
-                                         #:background '(bg-jeans-blue-500)
-                                         #:color '(text-white-smoke-300)
-                                         #:icon-css '(text-white-smoke-100 text-xl)
-                                         #:weight '(font-light)
-                                         #:extra-classes '(hover-lift py-2 px-4
-                                                                    max-w-prose
-                                                                    cursor-pointer)
-                                         #:hover-background '(hover:bg-jeans-blue-900))
-                            #:href "#contact-us-section"))
-                   (div ,(em (G_ "The best of")
+                   (div (@ (class "hero-title-row"))
+                        ,(h1 (G_ "Carvoeiro")
                              #:weight '(font-light)
-                             #:size '(text-lg))
-                        ,(em (G_ " Carvoeiro & Benagil ")
-                             #:weight '(font-bold)
-                             #:color '(text-onyx-100)
-                             #:size '(text-lg))
-                        ,(em (G_ "is only visible from the sea.")
-                             #:weight '(font-light)
-                             #:size '(text-lg)))))
+                             #:size '(text-16))
+                        (span (@ (class ,(mk-class '(text-16 hero-anchor)))
+                                 (aria-hidden "true"))
+                              "⚓")
+                        (h1 (@ (class ,(mk-class '(text-16 hero-title
+                                                           shimmer font-light
+                                                           font-sans))))
+                            ,(G_ "Water Fun")))
+                   (div (@ (class "gold-rule")) "")
+                   (div (@ (class "hero-content max-w-prose flex flex-col gap-8"))
+                        ,(p (G_
+                             "Cast off from Carvoeiro and follow the cliffs — under the arches, into Benagil’s dome, out to where the dolphins run.")
+                            #:weight '(font-light leading-8)
+                            #:family '(font-serif)
+                            #:size '(text-lg))
+                        (div (@ (class ,(mk-class '(hero-actions my-3 flex
+                                                                 flex-row
+                                                                 flex-wrap
+                                                                 gap-4
+                                                                 justify-center
+                                                                 items-center
+                                                                 align-center))))
+                             ,(when (eq? locale
+                                         'en_US)
+                                (a (button "🇵🇹 Português"
+                                           #:weight '(font-light)
+                                           #:size '(text-sm)
+                                           #:background '(bg-stone-300))
+                                   #:href "/pt"))
+                             ,(when (eq? locale
+                                         'pt_PT)
+                                (a (button "🇬🇧 English"
+                                           #:weight '(font-light)
+                                           #:size '(text-sm)
+                                           #:background '(bg-stone-300))
+                                   #:href "/"))
+                             ,(a (icon-button #:icon 'sailboat
+                                              #:content (G_ "About the boat tour")
+                                              #:background '(bg-stone-300)
+                                              #:icon-css '(text-onyx-300 text-xl)
+                                              #:color '(text-onyx-300)
+                                              #:weight '(font-light)
+                                              #:extra-classes '(hover-lift py-2 px-4
+                                                                           max-w-prose
+                                                                           cursor-pointer)
+                                              #:hover-background '(hover:bg-stone-700))
+                                 #:href "#about-boat-tour-section")
+                             ,(a (icon-button #:icon 'calendar
+                                              #:content (G_ "Book your experience")
+                                              #:background '(bg-jeans-blue-500)
+                                              #:color '(text-white-smoke-300)
+                                              #:icon-css '(text-white-smoke-100 text-xl)
+                                              #:weight '(font-light)
+                                              #:extra-classes '(hover-lift py-2 px-4
+                                                                           max-w-prose
+                                                                           cursor-pointer)
+                                              #:hover-background '(hover:bg-jeans-blue-900))
+                                 #:href "#contact-us-section"))
+                        (div ,(em (G_ "The best of")
+                                  #:weight '(font-light)
+                                  #:size '(text-lg))
+                             ,(em (G_ " Carvoeiro & Benagil ")
+                                  #:weight '(font-bold)
+                                  #:color '(text-onyx-100)
+                                  #:size '(text-lg))
+                             ,(em (G_ "is only visible from the sea.")
+                                  #:weight '(font-light)
+                                  #:size '(text-lg)))))
               (figure (@ (class "hero-media"))
                       ,(photo "/img/benagil-cathedral.jpg"
                               #:class "hero-media__img"
@@ -237,59 +237,59 @@ in the opening screen asks to be fetched before the rest."
             (data-carousel "true"))
          (div (@ (class "carousel-frame"))
               ,(carousel #:id 'first-carousel
-                    #:item-width '(w-96)
-                    #:item-height '(h-auto)
-                    ;; Ordered for the first glance: the boat in the arch, the
-                    ;; cave's skylight, then dolphins; Ferragudo comes early so
-                    ;; the free crossing earns its place before the fold.
-                    #:fragments (list (mk-header-img "/img/benagil-boat.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434096367.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434026784.jpg")
-                                      (mk-header-img "/img/ferragudo-village.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434206316.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434007758.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434405533.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434185151.jpg")
-                                      (mk-header-img "/img/ferragudo-beach.jpg")
-                                      (mk-header-img "/img/carvoeiro-beach.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434387257.jpg")
-                                      (mk-header-img "/img/benagil-exterior.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434201178.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434125429.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1685658664328.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434138555.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434142313.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434166275.jpg")
-                                      (mk-header-img
-                                       "/img/FB_IMG_1719434401426.jpg"))
-                    #:carousel-button-css '(glass hover-lift absolute
-                                                   bottom-1/2
-                                                   w-14
-                                                   h-14
-                                                   p-1
-                                                   text-onyx-500
-                                                   cursor-pointer
-                                                   font-bold
-                                                   text-3xl)
-                    #:carousel-list-css '(carousel-glass flex gap-16
-                                                         p-4
-                                                         list-none
-                                                         overflow-x-scroll
-                                                         snap-x
-                                                         my-6)))
+                         #:item-width '(w-96)
+                         #:item-height '(h-auto)
+                         ;; Ordered for the first glance: the boat in the arch, the
+                         ;; cave's skylight, then dolphins; Ferragudo comes early so
+                         ;; the free crossing earns its place before the fold.
+                         #:fragments (list (mk-header-img "/img/benagil-boat.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434096367.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434026784.jpg")
+                                           (mk-header-img "/img/ferragudo-village.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434206316.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434007758.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434405533.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434185151.jpg")
+                                           (mk-header-img "/img/ferragudo-beach.jpg")
+                                           (mk-header-img "/img/carvoeiro-beach.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434387257.jpg")
+                                           (mk-header-img "/img/benagil-exterior.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434201178.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434125429.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1685658664328.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434138555.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434142313.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434166275.jpg")
+                                           (mk-header-img
+                                            "/img/FB_IMG_1719434401426.jpg"))
+                         #:carousel-button-css '(glass hover-lift absolute
+                                                       bottom-1/2
+                                                       w-14
+                                                       h-14
+                                                       p-1
+                                                       text-onyx-500
+                                                       cursor-pointer
+                                                       font-bold
+                                                       text-3xl)
+                         #:carousel-list-css '(carousel-glass flex gap-16
+                                                              p-4
+                                                              list-none
+                                                              overflow-x-scroll
+                                                              snap-x
+                                                              my-6)))
          (div (@ (class "carousel-dots")
                  (role "group")
                  (aria-label "Gallery"))
@@ -349,30 +349,30 @@ in the opening screen asks to be fetched before the rest."
                  (data-reveal "true"))
               ,(insurance-section)))))
 
-;; A card built around a photograph: the image carries the theme, and the body
-;; says what the sea is like there.
+;;; A card built around a photograph: the image carries the theme, and the body
+;;; says what the sea is like there.
 (define* (theme-card-media src icon-type #:key (extra-class "")
                            (caption #f) (caption-icon 'waves))
   (let* ((class (if (string=? extra-class "")
-                    "theme-card__media"
-                    (string-append "theme-card__media " extra-class)))
+                  "theme-card__media"
+                  (string-append "theme-card__media " extra-class)))
          (badge (if icon-type
-                    `((div (@ (class "medallion theme-card__badge"))
-                           ,(icon #:type icon-type #:icon-css '(text-lg))))
-                    '()))
+                  `((div (@ (class "medallion theme-card__badge"))
+                         ,(icon #:type icon-type #:icon-css '(text-lg))))
+                  '()))
          (cap (if caption
-                  `((div (@ (class "theme-card__caption"))
-                         ,(icon #:type caption-icon
-                                #:icon-css '(text-lg text-white-smoke-100))
-                         ,(p caption #:size '(text-sm) #:weight '(font-bold))))
-                  '())))
+                `((div (@ (class "theme-card__caption"))
+                       ,(icon #:type caption-icon
+                              #:icon-css '(text-lg text-white-smoke-100))
+                       ,(p caption #:size '(text-sm) #:weight '(font-bold))))
+                '())))
     `((div (@ (class ,class))
            ,(photo src #:class "")
            ,@badge
            ,@cap))))
 
-;; This first section is deliberately not hidden behind a scroll reveal: it
-;; carries the page's opening pitch and must be readable the moment it loads.
+;;; This first section is deliberately not hidden behind a scroll reveal: it
+;;; carries the page's opening pitch and must be readable the moment it loads.
 (define* (enjoy-algarve-section)
   `((div (@ (class "section-shell"))
          (div (@ (class "glass glass--panel"))
@@ -428,7 +428,7 @@ in the opening screen asks to be fetched before the rest."
                                   ,(icon #:type 'anchor #:icon-css '(text-lg)))
                              ,(h4 (G_ "Your day on the water")))
                         ,(p (G_
-                              "Two hours on the water, a small group and a skipper who knows every arch. Reserve your place before you arrive.")
+                             "Two hours on the water, a small group and a skipper who knows every arch. Reserve your place before you arrive.")
                             #:size '(text-md)
                             #:weight '(font-light leading-8))
                         ,(a (icon-button #:icon 'calendar
@@ -439,8 +439,8 @@ in the opening screen asks to be fetched before the rest."
                                                       text-xl)
                                          #:weight '(font-light)
                                          #:extra-classes '(hover-lift py-2 px-4
-                                                                    max-w-prose
-                                                                    cursor-pointer)
+                                                                      max-w-prose
+                                                                      cursor-pointer)
                                          #:hover-background '(hover:bg-jeans-blue-900))
                             #:href "#contact-us-section")))))))
 
@@ -483,8 +483,8 @@ in the opening screen asks to be fetched before the rest."
             ,(icon-button #:icon 'link
                           #:content (G_ "Reviews on Google Maps")
                           #:extra-classes '(hover-lift py-2 px-4
-                                                     max-w-prose
-                                                     cursor-pointer)
+                                                       max-w-prose
+                                                       cursor-pointer)
                           #:size '(text-sm)))
          (div (@ (class "photo-frame review-qr"))
               ,(photo "/img/carvoeiro-water-fun-review.png"

@@ -1,12 +1,12 @@
-;; Carvoeiro Water Fun
-;;
-;; SPDX-License-Identifier: MIT
-;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
+;;; Carvoeiro Water Fun
+;;;
+;;; SPDX-License-Identifier: MIT
+;;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
-;; The motion layer is two hand-written files that have to agree with
-;; themselves before they can agree with the page: every animation needs its
-;; keyframes, every keyframe needs a use, and the decoration must have a way to
-;; switch itself off.  These checks read the files, not a browser.
+;;; The motion layer is two hand-written files that have to agree with
+;;; themselves before they can agree with the page: every animation needs its
+;;; keyframes, every keyframe needs a use, and the decoration must have a way to
+;;; switch itself off.  These checks read the files, not a browser.
 
 (define-module (carvoeiro-water-fun unit structure)
   #:use-module (veritas veritas)
@@ -16,11 +16,11 @@
   #:use-module (ice-9 textual-ports)
   #:export (stylesheet-suite script-suite))
 
-;; ====== Helpers ======
+;;; ====== Helpers ======
 
 (define (file-content path)
   "Return the whole of @var{path} as a string."
-  (call-with-input-file path (lambda (port) (get-string-all port))))
+  (call-with-input-file path get-string-all))
 
 (define (mentions? text needle)
   "True when @var{text} contains @var{needle}."
@@ -37,9 +37,9 @@
                (found '()))
       (let ((match (regexp-exec rx text start)))
         (if match
-            (loop (match:end match 0)
-                  (cons (match:substring match group) found))
-            (reverse found))))))
+          (loop (match:end match 0)
+                (cons (match:substring match group) found))
+          (reverse found))))))
 
 (define (char-count char text)
   "How often @var{char} occurs in @var{text}."
@@ -60,97 +60,97 @@
   (delete-duplicates (group-matches "@keyframes[[:space:]]+([a-z][a-z-]*)"
                                     1 sheet)))
 
-;; ====== Tests ======
+;;; ====== Tests ======
 
 (define stylesheet-suite
   (suite "the maritime stylesheet"
-         (test "the rules are balanced"
-               (assert-equal #:expect (char-count #\{ stylesheet)
-                             #:got (char-count #\} stylesheet)
-                             #:name "every block is closed"))
-         (test "the frosted glass is really frosted"
-               (assert-true (mentions? stylesheet "backdrop-filter")
-                            #:name "a backdrop filter is used")
-               (assert-true (mentions? stylesheet "-webkit-backdrop-filter")
-                            #:name "the prefixed filter is used too")
-               (assert-true (mentions? stylesheet ".glass")
-                            #:name "the glass panel is defined"))
-         (test "the finish that carries the expensive look is defined"
-               (for-each (lambda (class)
-                           (assert-true (mentions? stylesheet class)
-                                        #:name (string-append class
-                                                              " is defined")))
-                         '(                           ".photo-frame" ".gold-rule" ".spec-list" ".shimmer"
-                           ".footer-glass" ".carousel-glass" ".hero-title-row"
-                           ".hero-copy" ".hero-media"
-                           ".theme-card" ".medallion"
-                           ".card-row" ".footer-grid" ".footer-legal"
-                           ".theme-card--feature" ".theme-card--tall"
-                           ".theme-card--arch" ".theme-card--cta"
-                           ".theme-card__caption" ".carousel-dot"
-                           ".carousel-dots" ".panorama-stage"
-                           ".panorama-hint" ".panorama-rail"
-                           ".lightbox" ".lightbox__frame"
-                           ".lightbox__nav" ".lightbox__count"
-                           ".footer-credit")))
-         (test "a dragged gallery stops snapping while it moves"
-               (assert-true (mentions? stylesheet ".carousel-glass.is-dragging")
-                            #:name "the dragging state is styled")
-               (assert-true (mentions? stylesheet "cursor: grab")
-                            #:name "the strip offers a hand"))
-         (test "the hairlines are warm white rather than grey"
-               (assert-true (mentions? stylesheet "--glass-line")
-                            #:name "the pane hairline is a variable")
-               (assert-true (mentions? stylesheet
-                                        "--glass-line: rgb(255 252 246")
-                            #:name "it is a warm white, held low")
-               (assert-false (mentions? stylesheet "rgb(255 255 255 / 0.8)")
-                             #:name "the old grey-white line is gone"))
-         (test "a phone shows the content, not the gutter"
-               (assert-true (mentions? stylesheet "@media (max-width: 640px)")
-                            #:name "there is a phone breakpoint")
-               (assert-true (mentions? stylesheet ".hero-shell {\n        padding: 0.7rem")
-                            #:name "the hero gutter is tightened")
-               (assert-true (mentions? stylesheet ".glass--panel {\n        padding: 1.05rem")
-                            #:name "the panel padding is tightened"))
-         (test "every animation has keyframes"
-               (for-each (lambda (name)
-                           (assert-true (member? name (keyframe-names stylesheet))
-                                        #:name (string-append name
-                                                              " has keyframes")))
-                         (animation-names stylesheet)))
-         (test "every keyframe is used"
-               (for-each (lambda (name)
-                           (assert-true (member? name (animation-names stylesheet))
-                                        #:name (string-append name " is animated")))
-                         (keyframe-names stylesheet)))
-         (test "the decoration can be switched off"
-               (assert-true (mentions? stylesheet "prefers-reduced-motion")
-                            #:name "reduced motion is honoured")
-               (assert-true (mentions? stylesheet ".js [data-reveal]")
-                            #:name "reveals are hidden only when the script runs")
-               (assert-true (mentions? stylesheet
-                                        "@supports not ((-webkit-backdrop-filter")
-                            #:name "glass has a fallback"))))
+    (test "the rules are balanced"
+      (assert-equal #:expect (char-count #\{ stylesheet)
+        #:got (char-count #\} stylesheet)
+        #:name "every block is closed"))
+    (test "the frosted glass is really frosted"
+      (assert-true (mentions? stylesheet "backdrop-filter")
+        #:name "a backdrop filter is used")
+      (assert-true (mentions? stylesheet "-webkit-backdrop-filter")
+        #:name "the prefixed filter is used too")
+      (assert-true (mentions? stylesheet ".glass")
+        #:name "the glass panel is defined"))
+    (test "the finish that carries the expensive look is defined"
+      (for-each (lambda (class)
+                  (assert-true (mentions? stylesheet class)
+                    #:name (string-append class
+                                          " is defined")))
+                '(".photo-frame" ".gold-rule" ".spec-list" ".shimmer"
+                  ".footer-glass" ".carousel-glass" ".hero-title-row"
+                  ".hero-copy" ".hero-media"
+                  ".theme-card" ".medallion"
+                  ".card-row" ".footer-grid" ".footer-legal"
+                  ".theme-card--feature" ".theme-card--tall"
+                  ".theme-card--arch" ".theme-card--cta"
+                  ".theme-card__caption" ".carousel-dot"
+                  ".carousel-dots" ".panorama-stage"
+                  ".panorama-hint" ".panorama-rail"
+                  ".lightbox" ".lightbox__frame"
+                  ".lightbox__nav" ".lightbox__count"
+                  ".footer-credit")))
+    (test "a dragged gallery stops snapping while it moves"
+      (assert-true (mentions? stylesheet ".carousel-glass.is-dragging")
+        #:name "the dragging state is styled")
+      (assert-true (mentions? stylesheet "cursor: grab")
+        #:name "the strip offers a hand"))
+    (test "the hairlines are warm white rather than grey"
+      (assert-true (mentions? stylesheet "--glass-line")
+        #:name "the pane hairline is a variable")
+      (assert-true (mentions? stylesheet
+                              "--glass-line: rgb(255 252 246")
+        #:name "it is a warm white, held low")
+      (assert-false (mentions? stylesheet "rgb(255 255 255 / 0.8)")
+        #:name "the old grey-white line is gone"))
+    (test "a phone shows the content, not the gutter"
+      (assert-true (mentions? stylesheet "@media (max-width: 640px)")
+        #:name "there is a phone breakpoint")
+      (assert-true (mentions? stylesheet ".hero-shell {\n        padding: 0.7rem")
+        #:name "the hero gutter is tightened")
+      (assert-true (mentions? stylesheet ".glass--panel {\n        padding: 1.05rem")
+        #:name "the panel padding is tightened"))
+    (test "every animation has keyframes"
+      (for-each (lambda (name)
+                  (assert-true (member? name (keyframe-names stylesheet))
+                    #:name (string-append name
+                                          " has keyframes")))
+                (animation-names stylesheet)))
+    (test "every keyframe is used"
+      (for-each (lambda (name)
+                  (assert-true (member? name (animation-names stylesheet))
+                    #:name (string-append name " is animated")))
+                (keyframe-names stylesheet)))
+    (test "the decoration can be switched off"
+      (assert-true (mentions? stylesheet "prefers-reduced-motion")
+        #:name "reduced motion is honoured")
+      (assert-true (mentions? stylesheet ".js [data-reveal]")
+        #:name "reveals are hidden only when the script runs")
+      (assert-true (mentions? stylesheet
+                              "@supports not ((-webkit-backdrop-filter")
+        #:name "glass has a fallback"))))
 
 (define script-suite
   (suite "the motion script"
-         (test "the blocks are balanced"
-               (assert-equal #:expect (char-count #\{ script)
-                             #:got (char-count #\} script)
-                             #:name "every block is closed"))
-         (test "the behaviours the page relies on are implemented"
-               (for-each (lambda (behaviour)
-                           (assert-true (mentions? script behaviour)
-                                        #:name (string-append behaviour
-                                                              " is present")))
-                         '("data-reveal" "data-tilt" "tide-line__fill"
-                           "IntersectionObserver" "requestAnimationFrame"
-                           "matchMedia")))
-         (test "the script stays defensive"
-               (assert-true (mentions? script "prefers-reduced-motion")
-                            #:name "reduced motion is read")
-               (assert-false (mentions? script "innerHTML")
-                             #:name "nothing is written as raw HTML")
-               (assert-false (mentions? script "eval(")
-                             #:name "nothing is evaluated"))))
+    (test "the blocks are balanced"
+      (assert-equal #:expect (char-count #\{ script)
+        #:got (char-count #\} script)
+        #:name "every block is closed"))
+    (test "the behaviours the page relies on are implemented"
+      (for-each (lambda (behaviour)
+                  (assert-true (mentions? script behaviour)
+                    #:name (string-append behaviour
+                                          " is present")))
+                '("data-reveal" "data-tilt" "tide-line__fill"
+                  "IntersectionObserver" "requestAnimationFrame"
+                  "matchMedia")))
+    (test "the script stays defensive"
+      (assert-true (mentions? script "prefers-reduced-motion")
+        #:name "reduced motion is read")
+      (assert-false (mentions? script "innerHTML")
+        #:name "nothing is written as raw HTML")
+      (assert-false (mentions? script "eval(")
+        #:name "nothing is evaluated"))))

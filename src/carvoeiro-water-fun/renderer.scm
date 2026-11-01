@@ -1,7 +1,7 @@
-;; Carvoeiro Water Fun
-;;
-;; SPDX-License-Identifier: MIT
-;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
+;;; Carvoeiro Water Fun
+;;;
+;;; SPDX-License-Identifier: MIT
+;;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 (define-module (carvoeiro-water-fun renderer)
   #:declarative? #f
@@ -17,16 +17,16 @@
   (log-info "\tresources-dir: ~a" resources-dir)
   (log-info "\toutput-dir: ~a" output-dir)
 
-  (let* ((cp-to-dist-cmds (list (format #f "cp -rfv ~a/css ~a/css"
-                                        resources-dir output-dir)
-                                (format #f "cp -rfv ~a/js ~a/js"
-                                        resources-dir output-dir)
-                                (format #f "cp -rfv ~a/img ~a/img"
-                                        resources-dir output-dir))))
+  (let ((cp-to-dist-cmds (list (format #f "cp -rfv ~a/css ~a/css"
+                                       resources-dir output-dir)
+                               (format #f "cp -rfv ~a/js ~a/js"
+                                       resources-dir output-dir)
+                               (format #f "cp -rfv ~a/img ~a/img"
+                                       resources-dir output-dir))))
 
-    (map (lambda (c)
-           (log-info "executing: ~a" c)
-           (syscall c)) cp-to-dist-cmds)
+    (map (lambda (command)
+           (log-info "executing: ~a" command)
+           (syscall command)) cp-to-dist-cmds)
 
     (with-output-to-file (format #f "~a/index.html" output-dir)
       (lambda ()

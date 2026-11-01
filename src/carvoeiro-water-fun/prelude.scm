@@ -1,7 +1,7 @@
-;; Carvoeiro Water Fun
-;;
-;; SPDX-License-Identifier: MIT
-;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
+;;; Carvoeiro Water Fun
+;;;
+;;; SPDX-License-Identifier: MIT
+;;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 (define-module (carvoeiro-water-fun prelude)
   #:declarative? #t

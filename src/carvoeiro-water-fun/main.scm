@@ -1,12 +1,11 @@
-;; Carvoeiro Water Fun
-;;
-;; SPDX-License-Identifier: MIT
-;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
+;;; Carvoeiro Water Fun
+;;;
+;;; SPDX-License-Identifier: MIT
+;;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 (define-module (carvoeiro-water-fun main)
   #:declarative? #t
   #:use-module (ice-9 getopt-long)
-  #:use-module (carvoeiro-water-fun prelude)
   #:use-module (carvoeiro-water-fun renderer)
   #:use-module (kracht prelude)
   #:export (main))
@@ -25,7 +24,7 @@
          (resources-dir (option-ref options
                                     'resources-dir #f))
          (locale (string->symbol (option-ref options
-                             'locale "en_US"))))
+                                             'locale "en_US"))))
     (log-info "Carvoeiro Water Fun:")
     (render-page #:locale locale
                  #:output-dir output-dir

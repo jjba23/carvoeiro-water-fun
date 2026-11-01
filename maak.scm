@@ -1,7 +1,7 @@
-;; Carvoeiro Water Fun
-;;
-;; SPDX-License-Identifier: MIT
-;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
+;;; Carvoeiro Water Fun
+;;;
+;;; SPDX-License-Identifier: MIT
+;;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
 (define-module (maak)
   #:declarative? #t
@@ -9,9 +9,9 @@
   #:use-module (ice-9 string-fun)
   #:use-module (srfi srfi-1))
 
-;; ====== Maak constants ======
+;;; ====== Maak constants ======
 
-;; The path to the directory where the main project files will be deployed.
+;;; The path to the directory where the main project files will be deployed.
 (define deploy-dir
   "/srv/http/carvoeirowaterfun.com")
 
@@ -21,15 +21,15 @@
 (define hot-reload-file-types
   '(scm mo))
 
-;; The TCP port on which the development web server will listen.
+;;; The TCP port on which the development web server will listen.
 (define http-port
   50065)
 
-;; The path to the directory where the i18n resources are located.
+;;; The path to the directory where the i18n resources are located.
 (define i18n-dir
   "./resources/locale")
 
-;; The text domain for the i18n translations.
+;;; The text domain for the i18n translations.
 (define i18n-textdomain
   "carvoeiro-water-fun")
 
@@ -39,28 +39,28 @@
 (define default-locale
   'pt_PT)
 
-;; The main copyright holders of the project.
+;;; The main copyright holders of the project.
 (define copyright-holders
   '("Josep Bigorra"))
 
-;; The veritas checkout the test suite runs against.  The framework is pre-1.0
-;; and the checkout is newer than the packaged release, so its sources are
-;; addressed directly; VERITAS_SRC moves it without editing this file.
+;;; The veritas checkout the test suite runs against.  The framework is pre-1.0
+;;; and the checkout is newer than the packaged release, so its sources are
+;;; addressed directly; VERITAS_SRC moves it without editing this file.
 (define veritas-src
   (or (getenv "VERITAS_SRC")
-      (format #f "~a/Hacking/veritas/src" (getenv "HOME"))))
+    (format #f "~a/Hacking/veritas/src" (getenv "HOME"))))
 
-;; ====== Maak prelude ======
+;;; ====== Maak prelude ======
 
-;; Specify the directory where the MO file is located
+;;; Specify the directory where the MO file is located
 (bindtextdomain i18n-textdomain i18n-dir)
 (bind-textdomain-codeset i18n-textdomain "UTF-8")
-;; Specify the domain of the MO file
+;;; Specify the domain of the MO file
 (textdomain i18n-textdomain)
 (define G_
   gettext)
 
-;; ====== Maak i18n abstractions ======
+;;; ====== Maak i18n abstractions ======
 
 (define (i18n-compile* lang)
   "Compile the translation file (.po) into a machine-readable (.mo) format
@@ -121,7 +121,7 @@ Args: update? represents whether we should update a template or create a new one
        #:expand? #t
        #:verbose? #t))
 
-;; ====== Maak tasks ======
+;;; ====== Maak tasks ======
 
 (define (kill-server)
   "Kill any running HTTP server in the same port."
@@ -210,7 +210,7 @@ Args: update? represents whether we should update a template or create a new one
    #:output "./resources/css/carvoeiro-water-fun.olive.min.css"
    #:verbose? #t))
 
-;; ====== Maak i18n tasks ======
+;;; ====== Maak i18n tasks ======
 
 (define (i18n-compile)
   "Compile the translation files for all locales."
@@ -243,10 +243,10 @@ Args: update? represents whether we should update a template or create a new one
                                     (cdr s))) str pairs))
 
 (define* (convert-to-avif file)
-  (let* ((destination-file (string-replace-substrings file
-                                                      '((".png" . "")
-                                                        (".jpg" . "")
-                                                        (".jpeg" . "")))))
+  (let ((destination-file (string-replace-substrings file
+                                                     '((".png" . "")
+                                                       (".jpg" . "")
+                                                       (".jpeg" . "")))))
     (delete-file-recursively (~ "~a.avif" destination-file))
     (log-info "converting file: ~a -> ~a.avif\n" file destination-file)
     (run (list "magick" file "-quality" "40" "-define" "avif:speed=1"
@@ -254,14 +254,14 @@ Args: update? represents whether we should update a template or create a new one
 
 (define (avif-gen)
   "Generate AVIF images from others."
-  (let* ((original-files
-          (filter (lambda (file) (not (string=? file "")))
-                  (string-split
-                   (string-trim-both
-                    (capture (unwords (list "find" "./resources/img"
-                                            "-maxdepth" "8"
-                                            "-name" "'*.jpg'"
-                                            "-o" "-name" "'*.jpeg'"
-                                            "-o" "-name" "'*.png'"))))
-                   #\newline))))
+  (let ((original-files
+         (filter (lambda (file) (not (string=? file "")))
+                 (string-split
+                  (string-trim-both
+                   (capture (unwords (list "find" "./resources/img"
+                                           "-maxdepth" "8"
+                                           "-name" "'*.jpg'"
+                                           "-o" "-name" "'*.jpeg'"
+                                           "-o" "-name" "'*.png'"))))
+                  #\newline))))
     (for-each convert-to-avif original-files)))
