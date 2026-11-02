@@ -40,23 +40,74 @@
 }
 ")))
 
-(define custom-fonts
-  `((link (@ (rel preconnect)
-             (href "https://fonts.googleapis.com")))
-    (link (@ (rel preconnect)
-             (href "https://fonts.gstatic.com")
-             (crossorigin "")))
-    (link (@ (rel stylesheet)
-             (href
-              "https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap")))))
+;; The faces the pages are set in, served by the site itself: Work Sans for
+;; prose, Source Serif 4 for the serif runs and JuliaMono for the monospaced
+;; ones, all three libre (SIL Open Font License 1.1) and all three copied into
+;; the built site by the renderer (`resources/fonts' -> `<locale>/fonts'), so a
+;; page declares them from its own host and asks no font service for its type.
+;;
+;; The addresses are relative to the page rather than to a stylesheet, because
+;; the block below is inlined into the document's `<style>': `fonts/' resolves
+;; against the directory the page itself is served from.
+(define self-hosted-fonts
+  `((style (@ (type "text/css"))
+           "
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/work-sans-normal-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/work-sans-italic-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('fonts/source-serif-4-normal-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('fonts/source-serif-4-italic-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JuliaMono';
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url('fonts/juliamono-normal-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JuliaMono';
+  font-style: normal;
+  font-weight: 600 900;
+  font-display: swap;
+  src: url('fonts/juliamono-bold-latin.woff2') format('woff2');
+}
+")))
 
 (define* (carvoeiro-water-fun-html-template #:key title body locale)
   `(,doctype-html (html (@ (style "scroll-behavior: smooth;")
                            (lang ,(string-take (format #f "~a" locale) 2)))
                         (head (title ,title)
                               ,(hygguile-recommended-meta)
-                              ,(hygguile-recommended-resources #:fonts
-                                                               custom-fonts)
+                              ,(hygguile-recommended-resources
+                                #:fonts self-hosted-fonts)
                               (meta (@ (property "og:image")
                                        (content
                                         "https://carvoeirowaterfun.com/img/barco-scaled.jpg"))

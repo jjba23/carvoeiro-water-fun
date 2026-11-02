@@ -21,6 +21,13 @@
                                        resources-dir output-dir)
                                (format #f "cp -rfv ~a/js ~a/js"
                                        resources-dir output-dir)
+                               ;; The woff2 files the inlined `@font-face'
+                               ;; rules name, kept beside the pages that ask
+                               ;; for them: each locale's directory is copied
+                               ;; whole, so the relative address in the sheet
+                               ;; finds them wherever the site is served from.
+                               (format #f "cp -rfv ~a/fonts ~a/fonts"
+                                       resources-dir output-dir)
                                (format #f "cp -rfv ~a/img ~a/img"
                                        resources-dir output-dir))))
 
