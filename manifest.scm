@@ -3,7 +3,8 @@
 ;;; SPDX-License-Identifier: MIT
 ;;; Copyright © Josep Bigorra <jjbigorra@gmail.com>
 
-(use-modules (guix packages)
+(use-modules (gnu packages)
+             (guix packages)
              (gnu)
              (guix utils)
              (guix git-download)
@@ -87,5 +88,12 @@ which stands for: KRACHT Reliable And Consistent Helper Tools")
                           guile-hygguile
                           watchexec
                           guile-kracht
+                          ;; The API documentation: `dokgen' writes the chapter
+                          ;; and `texi2any' renders it as HTML.  guile-dokgen is
+                          ;; defined by the jointhefreeworld channel
+                          ;; channels.scm pins, so it is resolved by name
+                          ;; against the channels rather than imported.
+                          (specification->package "guile-dokgen")
+                          texinfo
                           ;; veritas writes its JSON report through (json).
                           (specification->package "guile-json")))

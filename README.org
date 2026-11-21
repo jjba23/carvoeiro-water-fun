@@ -5,6 +5,30 @@
 
 ------------------
 
+* Documentation
+:PROPERTIES:
+:CUSTOM_ID: documentation
+:END:
+
+The source of this site is the modules under ~src/carvoeiro-water-fun~, and
+their reference is generated rather than written: ~maak docs~ runs
+[[https://github.com/jjba23/guile-dokgen][dokgen]] over them and renders the chapter
+to ~doc/api-dist/index.html~, drawing every mermaid diagram a module's
+commentary carries.  ~maak diagrams~ renders every mermaid source under
+~resources/diagrams~ to the SVG beside it.
+
+#+attr_html: :width 720 :alt One locale built: options, renderer, page and the assets copied beside it
+[[file:resources/diagrams/build.svg]]
+
+~maak build~ calls ~main~ once per locale (~en_US~ and ~pt_PT~), and each call
+renders one page: ~render-page~ sets the locale up, asks
+~(carvoeiro-water-fun html)~ for the page, copies the stylesheets, the scripts,
+the fonts and the pictures the page names into the output directory, and writes
+~index.html~ there.  The diagram's source is
+[[file:resources/diagrams/build.mmd][resources/diagrams/build.mmd]].
+
+------------------
+
 * Licensing
 :PROPERTIES:
 :CUSTOM_ID: licensing

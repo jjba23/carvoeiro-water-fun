@@ -24,7 +24,7 @@
   #:use-module (ice-9 string-fun)
   #:use-module (ice-9 iconv)
   #:use-module (ice-9 threads)
-  #:export (carvoeiro-water-fun carvoeiro-water-fun-main-body asset-library
+  #:export (carvoeiro-water-fun carvoeiro-water-fun-main-body
                                 carvoeiro-water-fun-html-template))
 
 (define speculation-rules

@@ -8,6 +8,8 @@
   #:use-module (maak maak)
   #:use-module ((ice-9 rdelim) #:select (read-line))
   #:use-module (ice-9 string-fun)
+  ;; `scandir' lists the mermaid sources the `diagrams' task renders.
+  #:use-module (ice-9 ftw)
   #:use-module (srfi srfi-1))
 
 ;;; ====== Maak constants ======
@@ -15,6 +17,10 @@
 ;;; The path to the directory where the main project files will be deployed.
 (define deploy-dir
   "/srv/http/carvoeirowaterfun.com")
+
+;;; The URL for the CSS stylesheet the API documentation is read with.
+(define api-docs-css-url
+  "https://jointhefreeworld.org/static/css/jointhefreeworld.css")
 
 (define project-name
   'carvoeiro-water-fun)
@@ -148,8 +154,11 @@ Args: update? represents whether we should update a template or create a new one
 
 (define (repl)
   "Development REPL."
-  (manifest-shell (list "guile" "-L" "./src"
-                        "-c" "'((@ (ares server) run-nrepl-server))'")))
+  ;; The pinned shell rather than the ambient one: manifest.scm names
+  ;; guile-dokgen, which the jointhefreeworld channel defines and the guix in
+  ;; the developer's profile does not have to.
+  (time-machine-manifest-shell (list "guile" "-L" "./src"
+                                     "-c" "'((@ (ares server) run-nrepl-server))'")))
 
 (define (build* locale output-dir)
   (mkdir-p output-dir)
@@ -168,11 +177,68 @@ Args: update? represents whether we should update a template or create a new one
 
 (define (test)
   "Run the test suite with veritas."
-  (manifest-shell (list "guile" "-L" "./src"
-                        "-L" veritas-src
-                        "-L" "./test"
-                        "test/run.scm")
-                  #:verbose? #t))
+  ;; The pinned shell, for the reason `repl' gives: the manifest names a package
+  ;; the channel carries, so the ambient guix cannot load it.
+  (time-machine-manifest-shell (list "guile" "-L" "./src"
+                                     "-L" veritas-src
+                                     "-L" "./test"
+                                     "test/run.scm")
+                               #:verbose? #t))
+
+(define (docs)
+  "Generate Carvoeiro Water Fun's API reference and render it as HTML.
+
+`dokgen' reads the modules under src/carvoeiro-water-fun -- the pages, the
+renderer and the SXML helpers -- and writes the chapter to doc/api, drawing
+every mermaid diagram a commentary carries into doc/api/diagrams.  `texi2any'
+copies neither a stylesheet, a script nor an image into its output, so the HTML
+goes to doc/api-dist and the three are copied beside it afterwards; the head
+below points each page at the stylesheet and the script `dokgen' writes."
+  (delete-file-recursively "doc")
+  (time-machine-manifest-shell
+   (list "dokgen" "api"
+         "--destination" "doc/api"
+         (~ "./src/~a" project-name))
+   #:verbose? #t)
+  (mkdir-p "doc/api-dist")
+  ;; `-I doc/api' is what finds the diagrams beside the chapter, and
+  ;; `--no-split' keeps the reference one page.
+  (time-machine-manifest-shell
+   (list "texi2any" "-v" "--html" "--no-split"
+         (~ "--css-ref=~a" api-docs-css-url)
+         "-I" "doc/api"
+         "-c" (shell-quote
+               (string-append
+                "EXTRA_HEAD="
+                "<link rel=\"stylesheet\" href=\"dokgen.css\">"
+                "<script src=\"dokgen.js\" defer></script>"))
+         "-o" "doc/api-dist/index.html"
+         "./doc/api/index.texi")
+   #:verbose? #t)
+  (for-each (lambda (asset)
+              (when (file-exists? (~ "doc/api/~a" asset))
+                (cp (~ "doc/api/~a" asset) "doc/api-dist"
+                    #:force? #t #:verbose? #t)))
+            '("dokgen.css" "dokgen.js"))
+  (when (file-exists? "doc/api/diagrams")
+    (cp "doc/api/diagrams" "doc/api-dist" #:force? #t #:verbose? #t)))
+
+(define (diagrams)
+  "Render every mermaid source under resources/diagrams to the SVG beside it.
+
+The images are committed, so this runs only when a diagram's source changes; the
+diagrams the API reference itself shows are drawn by `dokgen' during `docs'."
+  (for-each
+   (lambda (name)
+     (let* ((source (in-vicinity "resources/diagrams" name))
+            (image (string-append (string-drop-right source 4) ".svg")))
+       (run (list "mmdc" "-i" source "-o" image
+                  "--backgroundColor" "transparent")
+            #:verbose? #t)))
+   (scandir "resources/diagrams"
+            (lambda (name)
+              (and (not (member name '("." "..")))
+                   (string-suffix? ".mmd" name))))))
 
 (define (build-and-serve)
   "Build and serve."

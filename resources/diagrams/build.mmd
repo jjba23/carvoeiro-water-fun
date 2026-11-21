@@ -1,0 +1,8 @@
+flowchart LR
+  cli["maak build"] --> main["main<br/>--locale --output-dir --resources-dir"]
+  main --> render["render-page<br/>(carvoeiro-water-fun renderer)"]
+  render --> i18n["setup-i18n<br/>(carvoeiro-water-fun prelude)"]
+  render --> page["carvoeiro-water-fun<br/>(carvoeiro-water-fun html)"]
+  render --> assets["resources/css, js, fonts and img"]
+  page --> dist["output-dir/index.html"]
+  assets --> dist
