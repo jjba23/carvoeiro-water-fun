@@ -94,6 +94,6 @@ which stands for: KRACHT Reliable And Consistent Helper Tools")
                           ;; channels.scm pins, so it is resolved by name
                           ;; against the channels rather than imported.
                           (specification->package "guile-dokgen")
-                          texinfo
+                          (specification->package "texinfo")
                           ;; veritas writes its JSON report through (json).
                           (specification->package "guile-json")))
