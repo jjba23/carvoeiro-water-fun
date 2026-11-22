@@ -3,6 +3,8 @@
 #+attr_html: :width 160 :alt Carvoeiro Water Fun logo
 [[file:logo.svg]]
 
+- 📖 *API reference:* [[https://jointhefreeworld.org/api-docs/carvoeiro-water-fun/index.html][Carvoeiro Water Fun API reference]]
+
 ------------------
 
 * Documentation
